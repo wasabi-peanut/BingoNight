@@ -6,8 +6,6 @@
 //
 //
 
-
-//new comment
 #import <UIKit/UIKit.h>
 
 @interface LocalSettingsViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate, UIAlertViewDelegate, UITextFieldDelegate, UITextViewDelegate>
