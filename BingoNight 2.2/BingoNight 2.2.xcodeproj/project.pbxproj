@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E39824E81DE5053100ACC5A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E39824E71DE5053100ACC5A7 /* main.m */; };
+		E39825011DE5053100ACC5A7 /* BingoNight_2_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825001DE5053100ACC5A7 /* BingoNight_2_2Tests.m */; };
+		E398250C1DE5053100ACC5A7 /* BingoNight_2_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E398250B1DE5053100ACC5A7 /* BingoNight_2_2UITests.m */; };
+		E39825391DE5054B00ACC5A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E39825191DE5054B00ACC5A7 /* Assets.xcassets */; };
+		E398253A1DE5054B00ACC5A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E398251A1DE5054B00ACC5A7 /* Main.storyboard */; };
+		E398253B1DE5054B00ACC5A7 /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E398251C1DE5054B00ACC5A7 /* IntroViewController.m */; };
+		E398253C1DE5054B00ACC5A7 /* LocalSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E398251E1DE5054B00ACC5A7 /* LocalSettingsViewController.m */; };
+		E398253D1DE5054B00ACC5A7 /* GlobalSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825201DE5054B00ACC5A7 /* GlobalSettingsViewController.m */; };
+		E398253E1DE5054B00ACC5A7 /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825221DE5054B00ACC5A7 /* StartViewController.m */; };
+		E398253F1DE5054B00ACC5A7 /* GamePlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825241DE5054B00ACC5A7 /* GamePlayViewController.m */; };
+		E39825401DE5054B00ACC5A7 /* PDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825261DE5054B00ACC5A7 /* PDFViewController.m */; };
+		E39825411DE5054B00ACC5A7 /* PDFRenderer.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825281DE5054B00ACC5A7 /* PDFRenderer.m */; };
+		E39825421DE5054B00ACC5A7 /* CreateCardArrays.m in Sources */ = {isa = PBXBuildFile; fileRef = E398252A1DE5054B00ACC5A7 /* CreateCardArrays.m */; };
+		E39825431DE5054B00ACC5A7 /* BallColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = E398252C1DE5054B00ACC5A7 /* BallColorView.m */; };
+		E39825441DE5054B00ACC5A7 /* CheckingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E398252E1DE5054B00ACC5A7 /* CheckingViewController.m */; };
+		E39825451DE5054B00ACC5A7 /* WinnerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825301DE5054B00ACC5A7 /* WinnerViewController.m */; };
+		E39825461DE5054B00ACC5A7 /* DefaultsDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825321DE5054B00ACC5A7 /* DefaultsDataManager.m */; };
+		E39825471DE5054B00ACC5A7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825341DE5054B00ACC5A7 /* AppDelegate.m */; };
+		E39825481DE5054B00ACC5A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E39825351DE5054B00ACC5A7 /* LaunchScreen.xib */; };
+		E39825491DE5054B00ACC5A7 /* LocalSettingsTrash.txt in Resources */ = {isa = PBXBuildFile; fileRef = E39825361DE5054B00ACC5A7 /* LocalSettingsTrash.txt */; };
+		E398254A1DE5054B00ACC5A7 /* GamePlayTrash.txt in Resources */ = {isa = PBXBuildFile; fileRef = E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */; };
+		E398254B1DE5054B00ACC5A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E39824FD1DE5053100ACC5A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E39824DB1DE5053100ACC5A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E39824E21DE5053100ACC5A7;
+			remoteInfo = "BingoNight 2.2";
+		};
+		E39825081DE5053100ACC5A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E39824DB1DE5053100ACC5A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E39824E21DE5053100ACC5A7;
+			remoteInfo = "BingoNight 2.2";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E39824E31DE5053100ACC5A7 /* BingoNight 2.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BingoNight 2.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E39824E71DE5053100ACC5A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E39824F71DE5053100ACC5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E39824FC1DE5053100ACC5A7 /* BingoNight 2.2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BingoNight 2.2Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E39825001DE5053100ACC5A7 /* BingoNight_2_2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BingoNight_2_2Tests.m; sourceTree = "<group>"; };
+		E39825021DE5053100ACC5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E39825071DE5053100ACC5A7 /* BingoNight 2.2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BingoNight 2.2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E398250B1DE5053100ACC5A7 /* BingoNight_2_2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BingoNight_2_2UITests.m; sourceTree = "<group>"; };
+		E398250D1DE5053100ACC5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E39825191DE5054B00ACC5A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E398251A1DE5054B00ACC5A7 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		E398251B1DE5054B00ACC5A7 /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntroViewController.h; sourceTree = "<group>"; };
+		E398251C1DE5054B00ACC5A7 /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroViewController.m; sourceTree = "<group>"; };
+		E398251D1DE5054B00ACC5A7 /* LocalSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalSettingsViewController.h; sourceTree = "<group>"; };
+		E398251E1DE5054B00ACC5A7 /* LocalSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalSettingsViewController.m; sourceTree = "<group>"; };
+		E398251F1DE5054B00ACC5A7 /* GlobalSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalSettingsViewController.h; sourceTree = "<group>"; };
+		E39825201DE5054B00ACC5A7 /* GlobalSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalSettingsViewController.m; sourceTree = "<group>"; };
+		E39825211DE5054B00ACC5A7 /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		E39825221DE5054B00ACC5A7 /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
+		E39825231DE5054B00ACC5A7 /* GamePlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamePlayViewController.h; sourceTree = "<group>"; };
+		E39825241DE5054B00ACC5A7 /* GamePlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamePlayViewController.m; sourceTree = "<group>"; };
+		E39825251DE5054B00ACC5A7 /* PDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFViewController.h; sourceTree = "<group>"; };
+		E39825261DE5054B00ACC5A7 /* PDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFViewController.m; sourceTree = "<group>"; };
+		E39825271DE5054B00ACC5A7 /* PDFRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFRenderer.h; sourceTree = "<group>"; };
+		E39825281DE5054B00ACC5A7 /* PDFRenderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFRenderer.m; sourceTree = "<group>"; };
+		E39825291DE5054B00ACC5A7 /* CreateCardArrays.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateCardArrays.h; sourceTree = "<group>"; };
+		E398252A1DE5054B00ACC5A7 /* CreateCardArrays.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateCardArrays.m; sourceTree = "<group>"; };
+		E398252B1DE5054B00ACC5A7 /* BallColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BallColorView.h; sourceTree = "<group>"; };
+		E398252C1DE5054B00ACC5A7 /* BallColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BallColorView.m; sourceTree = "<group>"; };
+		E398252D1DE5054B00ACC5A7 /* CheckingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckingViewController.h; sourceTree = "<group>"; };
+		E398252E1DE5054B00ACC5A7 /* CheckingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckingViewController.m; sourceTree = "<group>"; };
+		E398252F1DE5054B00ACC5A7 /* WinnerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WinnerViewController.h; sourceTree = "<group>"; };
+		E39825301DE5054B00ACC5A7 /* WinnerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WinnerViewController.m; sourceTree = "<group>"; };
+		E39825311DE5054B00ACC5A7 /* DefaultsDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultsDataManager.h; sourceTree = "<group>"; };
+		E39825321DE5054B00ACC5A7 /* DefaultsDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultsDataManager.m; sourceTree = "<group>"; };
+		E39825331DE5054B00ACC5A7 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E39825341DE5054B00ACC5A7 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E39825351DE5054B00ACC5A7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		E39825361DE5054B00ACC5A7 /* LocalSettingsTrash.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalSettingsTrash.txt; sourceTree = "<group>"; };
+		E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GamePlayTrash.txt; sourceTree = "<group>"; };
+		E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E39824E01DE5053100ACC5A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39824F91DE5053100ACC5A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39825041DE5053100ACC5A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E39824DA1DE5053100ACC5A7 = {
+			isa = PBXGroup;
+			children = (
+				E39824E51DE5053100ACC5A7 /* BingoNight 2.2 */,
+				E39824FF1DE5053100ACC5A7 /* BingoNight 2.2Tests */,
+				E398250A1DE5053100ACC5A7 /* BingoNight 2.2UITests */,
+				E39824E41DE5053100ACC5A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E39824E41DE5053100ACC5A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E39824E31DE5053100ACC5A7 /* BingoNight 2.2.app */,
+				E39824FC1DE5053100ACC5A7 /* BingoNight 2.2Tests.xctest */,
+				E39825071DE5053100ACC5A7 /* BingoNight 2.2UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E39824E51DE5053100ACC5A7 /* BingoNight 2.2 */ = {
+			isa = PBXGroup;
+			children = (
+				E39825191DE5054B00ACC5A7 /* Assets.xcassets */,
+				E398251A1DE5054B00ACC5A7 /* Main.storyboard */,
+				E398251B1DE5054B00ACC5A7 /* IntroViewController.h */,
+				E398251C1DE5054B00ACC5A7 /* IntroViewController.m */,
+				E398251D1DE5054B00ACC5A7 /* LocalSettingsViewController.h */,
+				E398251E1DE5054B00ACC5A7 /* LocalSettingsViewController.m */,
+				E398251F1DE5054B00ACC5A7 /* GlobalSettingsViewController.h */,
+				E39825201DE5054B00ACC5A7 /* GlobalSettingsViewController.m */,
+				E39825211DE5054B00ACC5A7 /* StartViewController.h */,
+				E39825221DE5054B00ACC5A7 /* StartViewController.m */,
+				E39825231DE5054B00ACC5A7 /* GamePlayViewController.h */,
+				E39825241DE5054B00ACC5A7 /* GamePlayViewController.m */,
+				E39825251DE5054B00ACC5A7 /* PDFViewController.h */,
+				E39825261DE5054B00ACC5A7 /* PDFViewController.m */,
+				E39825271DE5054B00ACC5A7 /* PDFRenderer.h */,
+				E39825281DE5054B00ACC5A7 /* PDFRenderer.m */,
+				E39825291DE5054B00ACC5A7 /* CreateCardArrays.h */,
+				E398252A1DE5054B00ACC5A7 /* CreateCardArrays.m */,
+				E398252B1DE5054B00ACC5A7 /* BallColorView.h */,
+				E398252C1DE5054B00ACC5A7 /* BallColorView.m */,
+				E398252D1DE5054B00ACC5A7 /* CheckingViewController.h */,
+				E398252E1DE5054B00ACC5A7 /* CheckingViewController.m */,
+				E398252F1DE5054B00ACC5A7 /* WinnerViewController.h */,
+				E39825301DE5054B00ACC5A7 /* WinnerViewController.m */,
+				E39825311DE5054B00ACC5A7 /* DefaultsDataManager.h */,
+				E39825321DE5054B00ACC5A7 /* DefaultsDataManager.m */,
+				E39825331DE5054B00ACC5A7 /* AppDelegate.h */,
+				E39825341DE5054B00ACC5A7 /* AppDelegate.m */,
+				E39825351DE5054B00ACC5A7 /* LaunchScreen.xib */,
+				E39825361DE5054B00ACC5A7 /* LocalSettingsTrash.txt */,
+				E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */,
+				E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */,
+				E39824F71DE5053100ACC5A7 /* Info.plist */,
+				E39824E61DE5053100ACC5A7 /* Supporting Files */,
+			);
+			path = "BingoNight 2.2";
+			sourceTree = "<group>";
+		};
+		E39824E61DE5053100ACC5A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E39824E71DE5053100ACC5A7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E39824FF1DE5053100ACC5A7 /* BingoNight 2.2Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E39825001DE5053100ACC5A7 /* BingoNight_2_2Tests.m */,
+				E39825021DE5053100ACC5A7 /* Info.plist */,
+			);
+			path = "BingoNight 2.2Tests";
+			sourceTree = "<group>";
+		};
+		E398250A1DE5053100ACC5A7 /* BingoNight 2.2UITests */ = {
+			isa = PBXGroup;
+			children = (
+				E398250B1DE5053100ACC5A7 /* BingoNight_2_2UITests.m */,
+				E398250D1DE5053100ACC5A7 /* Info.plist */,
+			);
+			path = "BingoNight 2.2UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E39824E21DE5053100ACC5A7 /* BingoNight 2.2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E39825101DE5053100ACC5A7 /* Build configuration list for PBXNativeTarget "BingoNight 2.2" */;
+			buildPhases = (
+				E39824DF1DE5053100ACC5A7 /* Sources */,
+				E39824E01DE5053100ACC5A7 /* Frameworks */,
+				E39824E11DE5053100ACC5A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BingoNight 2.2";
+			productName = "BingoNight 2.2";
+			productReference = E39824E31DE5053100ACC5A7 /* BingoNight 2.2.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E39824FB1DE5053100ACC5A7 /* BingoNight 2.2Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E39825131DE5053100ACC5A7 /* Build configuration list for PBXNativeTarget "BingoNight 2.2Tests" */;
+			buildPhases = (
+				E39824F81DE5053100ACC5A7 /* Sources */,
+				E39824F91DE5053100ACC5A7 /* Frameworks */,
+				E39824FA1DE5053100ACC5A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E39824FE1DE5053100ACC5A7 /* PBXTargetDependency */,
+			);
+			name = "BingoNight 2.2Tests";
+			productName = "BingoNight 2.2Tests";
+			productReference = E39824FC1DE5053100ACC5A7 /* BingoNight 2.2Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E39825061DE5053100ACC5A7 /* BingoNight 2.2UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E39825161DE5053100ACC5A7 /* Build configuration list for PBXNativeTarget "BingoNight 2.2UITests" */;
+			buildPhases = (
+				E39825031DE5053100ACC5A7 /* Sources */,
+				E39825041DE5053100ACC5A7 /* Frameworks */,
+				E39825051DE5053100ACC5A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E39825091DE5053100ACC5A7 /* PBXTargetDependency */,
+			);
+			name = "BingoNight 2.2UITests";
+			productName = "BingoNight 2.2UITests";
+			productReference = E39825071DE5053100ACC5A7 /* BingoNight 2.2UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E39824DB1DE5053100ACC5A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "AandA Development";
+				TargetAttributes = {
+					E39824E21DE5053100ACC5A7 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 46FKL82M3N;
+						ProvisioningStyle = Automatic;
+					};
+					E39824FB1DE5053100ACC5A7 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 46FKL82M3N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E39824E21DE5053100ACC5A7;
+					};
+					E39825061DE5053100ACC5A7 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 46FKL82M3N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E39824E21DE5053100ACC5A7;
+					};
+				};
+			};
+			buildConfigurationList = E39824DE1DE5053100ACC5A7 /* Build configuration list for PBXProject "BingoNight 2.2" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E39824DA1DE5053100ACC5A7;
+			productRefGroup = E39824E41DE5053100ACC5A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E39824E21DE5053100ACC5A7 /* BingoNight 2.2 */,
+				E39824FB1DE5053100ACC5A7 /* BingoNight 2.2Tests */,
+				E39825061DE5053100ACC5A7 /* BingoNight 2.2UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E39824E11DE5053100ACC5A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39825391DE5054B00ACC5A7 /* Assets.xcassets in Resources */,
+				E39825481DE5054B00ACC5A7 /* LaunchScreen.xib in Resources */,
+				E39825491DE5054B00ACC5A7 /* LocalSettingsTrash.txt in Resources */,
+				E398254B1DE5054B00ACC5A7 /* LaunchScreen.storyboard in Resources */,
+				E398254A1DE5054B00ACC5A7 /* GamePlayTrash.txt in Resources */,
+				E398253A1DE5054B00ACC5A7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39824FA1DE5053100ACC5A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39825051DE5053100ACC5A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E39824DF1DE5053100ACC5A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39825441DE5054B00ACC5A7 /* CheckingViewController.m in Sources */,
+				E39824E81DE5053100ACC5A7 /* main.m in Sources */,
+				E39825411DE5054B00ACC5A7 /* PDFRenderer.m in Sources */,
+				E39825461DE5054B00ACC5A7 /* DefaultsDataManager.m in Sources */,
+				E398253B1DE5054B00ACC5A7 /* IntroViewController.m in Sources */,
+				E39825431DE5054B00ACC5A7 /* BallColorView.m in Sources */,
+				E39825471DE5054B00ACC5A7 /* AppDelegate.m in Sources */,
+				E398253F1DE5054B00ACC5A7 /* GamePlayViewController.m in Sources */,
+				E398253E1DE5054B00ACC5A7 /* StartViewController.m in Sources */,
+				E398253D1DE5054B00ACC5A7 /* GlobalSettingsViewController.m in Sources */,
+				E39825401DE5054B00ACC5A7 /* PDFViewController.m in Sources */,
+				E398253C1DE5054B00ACC5A7 /* LocalSettingsViewController.m in Sources */,
+				E39825421DE5054B00ACC5A7 /* CreateCardArrays.m in Sources */,
+				E39825451DE5054B00ACC5A7 /* WinnerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39824F81DE5053100ACC5A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E39825011DE5053100ACC5A7 /* BingoNight_2_2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E39825031DE5053100ACC5A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E398250C1DE5053100ACC5A7 /* BingoNight_2_2UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E39824FE1DE5053100ACC5A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E39824E21DE5053100ACC5A7 /* BingoNight 2.2 */;
+			targetProxy = E39824FD1DE5053100ACC5A7 /* PBXContainerItemProxy */;
+		};
+		E39825091DE5053100ACC5A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E39824E21DE5053100ACC5A7 /* BingoNight 2.2 */;
+			targetProxy = E39825081DE5053100ACC5A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E398250E1DE5053100ACC5A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E398250F1DE5053100ACC5A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E39825111DE5053100ACC5A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = "BingoNight 2.2/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AandA.BingoNight-2-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E39825121DE5053100ACC5A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = "BingoNight 2.2/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AandA.BingoNight-2-2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E39825141DE5053100ACC5A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = "BingoNight 2.2Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AandA.BingoNight-2-2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingoNight 2.2.app/BingoNight 2.2";
+			};
+			name = Debug;
+		};
+		E39825151DE5053100ACC5A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = "BingoNight 2.2Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AandA.BingoNight-2-2Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BingoNight 2.2.app/BingoNight 2.2";
+			};
+			name = Release;
+		};
+		E39825171DE5053100ACC5A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = "BingoNight 2.2UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AandA.BingoNight-2-2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "BingoNight 2.2";
+			};
+			name = Debug;
+		};
+		E39825181DE5053100ACC5A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = "BingoNight 2.2UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AandA.BingoNight-2-2UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "BingoNight 2.2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E39824DE1DE5053100ACC5A7 /* Build configuration list for PBXProject "BingoNight 2.2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E398250E1DE5053100ACC5A7 /* Debug */,
+				E398250F1DE5053100ACC5A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E39825101DE5053100ACC5A7 /* Build configuration list for PBXNativeTarget "BingoNight 2.2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E39825111DE5053100ACC5A7 /* Debug */,
+				E39825121DE5053100ACC5A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E39825131DE5053100ACC5A7 /* Build configuration list for PBXNativeTarget "BingoNight 2.2Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E39825141DE5053100ACC5A7 /* Debug */,
+				E39825151DE5053100ACC5A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E39825161DE5053100ACC5A7 /* Build configuration list for PBXNativeTarget "BingoNight 2.2UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E39825171DE5053100ACC5A7 /* Debug */,
+				E39825181DE5053100ACC5A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E39824DB1DE5053100ACC5A7 /* Project object */;
+}

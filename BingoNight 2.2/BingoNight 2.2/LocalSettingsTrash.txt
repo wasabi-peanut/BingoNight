@@ -1,0 +1,351 @@
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+NSString *name = [alertView textFieldAtIndex:0].text;
+
+
+//1 means colors
+//2 means grid
+
+if (buttonIndex==1 && name.length>0) {
+
+
+if (_alertNumber == 1) {
+
+[_arrayPickerPresets addObject:name];
+[DefaultsDataManager saveData:_arrayPickerPresets forKey:_keyForArrayPickerPresets];
+[_pickerPresets reloadAllComponents];
+
+[_arrayGameColorSettingsShell addObject:_arrayGameColorSettingsShell[_presetSelected]];
+
+
+[DefaultsDataManager saveData:_arrayGameColorSettingsShell forKey:_keyForGameColorSettingsShell];
+
+
+}
+
+if (_alertNumber ==2) {
+
+[_arrayPickerGrids addObject:name];
+[DefaultsDataManager saveData:_arrayPickerGrids forKey:_keyForPickerGrids];
+[_arrayGridsShell addObject:_arrayGridsShell[_gridSelected]];
+
+
+//Add a blank grid here
+
+
+}
+
+[_pickerPresets reloadAllComponents];
+
+
+
+}
+
+}
+
+
+//  [self saveSettings];
+
+/*if (_changeHappened == YES) {
+
+UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Save" message:@"Do you want to save before changing views?" delegate:self cancelButtonTitle:@"Yes, save it" otherButtonTitles:@"No, don't save it", nil];
+[saveAlert show];
+_changeHappened = NO;
+}*/
+
+
+
+
+/*-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+switch (buttonIndex) {
+case 0:
+[self saveSettings:self];
+[self createGameSettingsArray];
+[self applySetupDisplay];
+
+break;
+
+case 1:
+[self createGameSettingsArray];
+[self applySetupDisplay];
+
+break;
+
+default:
+break;
+}
+_changeHappened = NO;
+
+
+}*/
+
+---
+All of the original array codes below. Starting Over
+
+//CREATE PICKER ARRAYS
+
+-(void)createPickerArray {
+
+_arrayPickerGameColors = [[NSMutableArray alloc] initWithObjects:
+@"Background", @"Box Background",@"Box Text",@"Called Background",@"Called Text",@"BINGO Letters",@"Game Title Color",@"Edit Name/Grid", nil];
+
+_arrayPickerGameNumber = [[NSMutableArray alloc] init];
+
+NSString *arrayItem;
+for (int z=1; z<=_numberOfGames; z++) {
+switch (z) {
+case 1:
+arrayItem = @"Game One";
+break;
+case 2:
+arrayItem = @"Game Two";
+break;
+case 3:
+arrayItem = @"Game Three";
+break;
+case 4:
+arrayItem = @"Game Four";
+break;
+case 5:
+arrayItem = @"Game Five";
+break;
+case 6:
+arrayItem = @"Game Six";
+break;
+case 7:
+arrayItem = @"Game Seven";
+break;
+case 8:
+arrayItem = @"Game Eight";
+break;
+case 9:
+arrayItem = @"Game Nine";
+break;
+case 10:
+arrayItem = @"Game Ten";
+break;
+case 11:
+arrayItem = @"Game Eleven";
+break;
+case 12:
+arrayItem = @"Game Twelve";
+break;
+
+default:
+break;
+}
+
+[_arrayPickerGameNumber addObject:arrayItem];
+
+}
+
+_arrayPickerPresets = [[NSMutableArray alloc] initWithObjects:@"Preset One",@"Preset Two", nil];
+
+_arrayPickerGrids =[[NSMutableArray alloc]initWithObjects:@"Straight", nil];
+
+
+
+
+}
+
+-(void)createPresetColorArrays {
+
+
+
+_arrayPresetOne = [[NSMutableArray alloc] initWithObjects:@0,@0,@0,@155,@0,
+@0,@0,@0,@155,@155,
+@100,@165,@190,@190,@190,
+@0,@0,@200,@0,@0,
+@100,
+@"Design One",
+//22 objects so far
+//add 25 1's for grid. Count starts at 22 for grid.
+/*   @1,@0,@0,@0,@1,
+@1,@0,@0,@1,@0,
+@1,@0,@1,@0,@0,
+@1,@1,@0,@0,@0,
+@1,@1,@1,@1,@1,*/
+
+nil];
+
+
+_arrayPresetTwo = [[NSMutableArray alloc] initWithObjects:@100,@100,@100,@155,@0,
+@0,@0,@0,@155,@155,
+@100,@165,@190,@190,@190,
+@0,@0,@200,@0,@0,
+@100,
+@"Design Two",
+//22 objects so far
+//add 25 1's for grid. Count starts at 22 for grid.
+@1,@1,@1,@1,@1,
+@1,@1,@1,@1,@1,
+@1,@1,@0,@1,@1,
+@1,@1,@1,@1,@1,
+@1,@1,@1,@1,@1,
+
+nil];
+
+/*
+
+_arrayPresetThree = [[NSMutableArray alloc] initWithObjects:@10,@50,@100,@155,@0,
+@200,@200,@0,@155,@155,
+@100,@165,@190,@190,@190,
+@0,@0,@200,@0,@0,
+@100,
+@"Design Three",
+//22 objects so far
+//add 25 1's for grid. Count starts at 22 for grid.
+@1,@0,@1,@0,@1,
+@1,@0,@1,@0,@1,
+@1,@0,@1,@0,@1,
+@1,@0,@1,@0,@1,
+@1,@0,@1,@0,@1,
+
+nil];
+_arrayAddedPreset = [[NSMutableArray alloc] initWithObjects:@10,@50,@100,@155,@0,
+@200,@200,@0,@155,@155,
+@100,@165,@190,@190,@190,
+@0,@0,@200,@0,@0,
+@100,
+@"Custom Design",
+//22 objects so far
+//add 25 1's for grid. Count starts at 22 for grid.
+@1,@0,@1,@0,@1,
+@1,@0,@1,@0,@1,
+@1,@0,@1,@0,@1,
+@1,@0,@1,@0,@1,
+@1,@0,@1,@0,@1,
+nil];
+*/
+
+
+_arrayAllPresets = [[NSMutableArray alloc] initWithObjects:_arrayPresetOne, _arrayPresetTwo, nil];
+
+
+
+
+}
+
+
+
+
+-(void)createGameArrays {
+//Create or look up GameSettings,GridSettings,ColorSettings and Game Number
+
+switch (_gameNumber) {
+case 1:
+_keyForCoordinates = @"keyGameOne";
+break;
+case 2:
+_keyForCoordinates = @"keyGameTwo";
+break;
+case 3:
+_keyForCoordinates = @"keyGameThree";
+break;
+case 4:
+_keyForCoordinates = @"keyGameFour";
+break;
+case 5:
+_keyForCoordinates = @"keyGameFive";
+break;
+case 6:
+_keyForCoordinates = @"keyGameSix";
+break;
+case 7:
+_keyForCoordinates = @"keyGameSeven";
+break;
+case 8:
+_keyForCoordinates = @"keyGameEight";
+break;
+case 9:
+_keyForCoordinates = @"keyGameNine";
+break;
+case 10:
+_keyForCoordinates = @"keyGameTen";
+break;
+case 11:
+_keyForCoordinates = @"keyGameEleven";
+break;
+case 12:
+_keyForCoordinates = @"keyGameTweleve";
+break;
+default:
+_keyForCoordinates = @"keyGameDefault";
+break;
+}
+
+_keyForNumberOfGames = @"keyNumberOfGames";
+_keyForCoordinates = @"keyForCoordinates";
+
+
+
+
+
+_arrayCoordinatesGameSettings = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getDataForKey:_keyForCoordinates]];
+_numberOfGames = [[DefaultsDataManager getDataForKey:_keyForNumberOfGames]integerValue];
+_arrayGameColorSettings = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getDataForKey:_keyForGameSettings]];
+
+if (_numberOfGames == 0) {
+_numberOfGames = 8;
+}
+
+
+
+
+if (![_arrayGameColorSettings count]) {
+_arrayGameColorSettings = [[NSMutableArray alloc] initWithObjects:
+@255,@255,@255,@255,@0,
+@0,@0,@0,@255,@255,
+@100,@165,@130,@130,@130,
+@0,@0,@255,@0,@0,
+@255,
+@"Name of Game",
+//22 objects so far
+//add 25 1's for grid. Count starts at 22 for grid.
+/* @0,@1,@1,@1,@0,
+@0,@1,@1,@0,@1,
+@0,@1,@0,@1,@1,
+@0,@0,@1,@1,@1,
+@0,@0,@0,@0,@0,*/
+
+nil];
+
+}
+if (![_arrayCoordinatesGameSettings count]) {
+_arrayCoordinatesGameSettings = [[NSMutableArray alloc] initWithObjects:
+@0,@0,@0,@0,
+nil];
+
+}
+if (![_arrayGridPatterns count]) {
+_arrayGridPatterns = [[NSMutableArray alloc] initWithObjects:
+@"Straight",
+@1,@0,@0,@0,@0,
+@1,@1,@1,@0,@0,
+@1,@0,@1,@0,@0,
+@1,@0,@0,@1,@0,
+@1,@1,@1,@1,@1,
+nil];
+
+
+}
+
+
+
+[self applySetupDisplay];
+
+}
+
+-----------
+
+/*  if (_changeHappened ==YES) {
+UIAlertView *saveAlert = [[UIAlertView alloc] initWithTitle:@"Save" message:@"Do you want to give up custom changes? If not, switch game number first" delegate:self cancelButtonTitle:@"Yes, I do" otherButtonTitles:@"No, I don't", nil];
+[saveAlert show];
+}
+else {
+//   [self applySetupDisplay];
+//   [self saveSettings];
+//  [self createGameArrays];
+_changeHappened = NO;
+}*/
+

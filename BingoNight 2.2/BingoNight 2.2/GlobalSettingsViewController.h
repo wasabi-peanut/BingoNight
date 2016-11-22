@@ -1,0 +1,89 @@
+//current
+//  GlobalSettingsViewController.h
+//  Bingo Night 3.0
+//
+//  Created by Adam Schor on 7/17/15.
+//  Copyright (c) 2015 AandA Development. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface GlobalSettingsViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate>
+
+
+
+
+
+
+
+@property (strong,nonatomic) NSMutableArray *arrayGlobalSettings;
+@property (strong,nonatomic) NSString *keyForGlobalSettings;
+
+//SLIDERS
+@property (strong, nonatomic) IBOutlet UISlider *sliderRed;
+@property (strong, nonatomic) IBOutlet UISlider *sliderGreen;
+@property (strong, nonatomic) IBOutlet UISlider *sliderBlue;
+
+
+//SETTINGS FOR SWITCH SELECTOR
+@property Boolean useSelector;
+
+@property (strong, nonatomic) IBOutlet UISwitch *switchUseSelector;
+- (IBAction)changeSwitchUseSelector:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelUseSelector;
+;
+//OTHER
+
+@property (strong, nonatomic) UITextView *nameOfEvent;
+
+@property float height;
+@property float width;
+
+
+
+@property Boolean changeHappened;
+
+//SEGMENT
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentTextOrBackground;
+@property  NSInteger selectedSegment;
+
+
+- (IBAction)segmentTextOrBackgroundSelected:(id)sender;
+
+//PICKER FOR FONTS and SIZE
+
+@property (strong, nonatomic) IBOutlet UIPickerView *pickerFonts;
+@property (strong, nonatomic) NSMutableArray *arrayPickerFonts;
+@property (strong, nonatomic) NSMutableArray *arrayPickerSize;
+
+@property (strong, nonatomic) NSString *font;
+@property (strong, nonatomic) UITextField *fontSize;
+//STEPPER DELAY
+
+//@property (strong, nonatomic) IBOutlet UIStepper *stepperDelay;
+//- (IBAction)stepperDelayChanged:(id)sender;
+@property (strong, nonatomic) IBOutlet UIStepper *stepperRoll;
+@property (strong, nonatomic) IBOutlet UIStepper *stepperDisplay;
+@property (strong, nonatomic) IBOutlet UIStepper *stepperDrop;
+
+- (IBAction)stepperRollChanged:(id)sender;
+- (IBAction)stepperDisplayChanged:(id)sender;
+- (IBAction)stepperDropChanged:(id)sender;
+
+
+@property (strong, nonatomic) IBOutlet UILabel *labelRollTime;
+@property (strong, nonatomic) IBOutlet UILabel *labelDisplayTime;
+@property (strong, nonatomic) IBOutlet UILabel *labelDropTime;
+
+//PAGES
+@property (strong, nonatomic) IBOutlet UITextField *labelNumberOfPages;
+- (IBAction)labelNumberOfPagesEntered:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btnMakeCards;
+- (IBAction)btnMakeCaresPressed:(id)sender;
+
+- (IBAction)NumberPageBeginEdit:(id)sender;
+
+
+
+@end

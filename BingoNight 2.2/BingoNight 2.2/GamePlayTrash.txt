@@ -1,0 +1,463 @@
+
+/*
+_labelCalled = [[UILabel alloc] initWithFrame:CGRectMake(295, 75, 500, 340)];
+[self.view addSubview:_labelCalled];
+
+
+
+_labelCalled.text = _stringCalled;
+_labelCalled.font = [UIFont fontWithName:@"Helvetica Bold" size:200];
+
+_labelCalled.layer.borderColor = [[UIColor blackColor] CGColor];
+_labelCalled.layer.borderWidth = 5;
+_labelCalled.clipsToBounds = YES;
+_labelCalled.layer.cornerRadius = 170;
+
+
+_labelCalled.textColor = _boxLetterColor;
+_labelCalled.backgroundColor = _boxBackgroundColor;
+
+
+_labelCalled.textAlignment = NSTextAlignmentCenter;
+_labelCalled.shadowColor = [UIColor blackColor];
+_labelCalled.shadowOffset = CGSizeMake(3, 3);
+
+
+
+
+_labelCalled.alpha = 0; */
+
+
+//[self DisplayCalled];
+
+//[self drawBall];
+
+
+[self selectedBallAction];
+
+
+
+/*   //Redraw Grid
+
+int x;
+int y;
+int ystart = 125;
+int xstart = 40;
+int xspace = 60;
+int yspace = 70;
+int width = 50;
+int height = 50;
+
+
+
+for (int j = 1; j<76; j++)
+{
+
+if (j<16) {
+x= (j * xspace) + xstart;
+y = ystart;
+
+
+} else {
+if (j<31) {
+x = (j-15) * xspace + xstart;
+y = ystart + yspace;
+} else {
+if (j<46) {
+x = (j -30) * xspace + xstart;
+y = ystart + 2 * yspace;
+} else {
+if (j <61) {
+x = (j -45) * xspace + xstart;
+y = ystart + 3 * yspace;
+}else{
+x = (j-60) * xspace + xstart;
+y = ystart + 4 * yspace;
+}
+
+}
+
+}
+
+}
+
+
+
+
+UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+button.tag = j;
+NSString *buttonLabel = [NSString stringWithFormat:@"%ld",(long)button.tag];
+
+
+button.frame = CGRectMake(x, y, width, height);
+[button setTitle:buttonLabel forState:UIControlStateNormal];
+//[button addTarget:self action:@selector(numberPressed:) forControlEvents:UIControlEventTouchUpInside];
+//  [button addTarget:self action:@selector(deselectButton:) forControlEvents:UIControlEventTouchDragExit];
+
+
+button.backgroundColor = _boxBackgroundColor;
+button.tintColor = _boxLetterColor;
+
+button.layer.borderWidth=1.0f;
+button.layer.borderColor=[_boxLetterColor CGColor];
+button.layer.cornerRadius = 15;
+button.titleLabel.font = [UIFont fontWithName:@"Helvetica Bold" size:40];
+
+
+_hasBeenCalled = [_arrayCalledNumbers containsObject:@(button.tag)];
+
+
+
+
+
+if (_hasBeenCalled == 1) {
+button.tintColor = _usedBoxLetterColor;
+button.backgroundColor = _usedBoxBackgroundColor;
+
+}
+
+[self.view addSubview:button];
+
+
+
+
+
+}
+[self.view bringSubviewToFront:_labelCalled];*/
+
+
+
+
+# warning Undo this block out to return to traditional display
+
+
+/*
+_labelCalled = [[UILabel alloc] initWithFrame:CGRectMake(295, 75, 500, 340)];
+[self.view addSubview:_labelCalled];
+
+
+
+_labelCalled.text = _stringCalled;
+_labelCalled.font = [UIFont fontWithName:@"Helvetica Bold" size:200];
+
+_labelCalled.layer.borderColor = [[UIColor blackColor] CGColor];
+_labelCalled.layer.borderWidth = 5;
+_labelCalled.clipsToBounds = YES;
+_labelCalled.layer.cornerRadius = 170;
+
+
+_labelCalled.textColor = _boxLetterColor;
+_labelCalled.backgroundColor = _boxBackgroundColor;
+
+
+_labelCalled.textAlignment = NSTextAlignmentCenter;
+_labelCalled.shadowColor = [UIColor blackColor];
+_labelCalled.shadowOffset = CGSizeMake(3, 3);
+
+
+
+
+_labelCalled.alpha = 0; */
+
+
+//[self DisplayCalled];
+
+//[self drawBall];
+
+
+
+
+/*
+_labelCalled = [[UILabel alloc] initWithFrame:CGRectMake(295, 75, 500, 340)];
+_labelCalled.layer.borderColor = [[UIColor blackColor] CGColor];
+_labelCalled.layer.borderWidth = 5;
+_labelCalled.clipsToBounds = YES;
+_labelCalled.layer.cornerRadius = 170;
+
+
+[self.view addSubview:_labelCalled];
+[self.view bringSubviewToFront:_labelCalled];
+_labelCalled.text = _stringCalled;
+_labelCalled.font = [UIFont fontWithName:@"Helvetica Bold" size:200];
+
+_labelCalled.textAlignment = NSTextAlignmentCenter;
+_labelCalled.shadowColor = [UIColor blackColor];
+_labelCalled.shadowOffset = CGSizeMake(3, 3);
+
+_labelCalled.textColor = _boxLetterColor;
+_labelCalled.backgroundColor = _boxBackgroundColor;*/
+
+
+/*
+_LC5.text = _LC4.text;
+_LC4.text = _LC3.text;
+_LC3.text = _LC2.text;
+_LC2.text = _LC1.text;
+_LC1.text = _labelCalled.text;
+*/
+
+
+
+-(void)DisplayCalled{
+
+float delay = [[_arrayGlobalSettings objectAtIndex:12] floatValue];
+
+
+_labelCalled.alpha=0.95;
+[UIView animateWithDuration:delay
+animations:^{
+_labelCalled.alpha=1;
+
+}completion:^(BOOL finished){
+[self FadeOutCalled];
+}];
+
+}
+
+-(void)FadeOutCalled {
+
+[UIView animateWithDuration:1
+animations:^{
+
+_labelCalled.alpha=0;
+
+}];
+
+
+[_labelCalled removeFromSuperview];
+
+_useSelector = [[_arrayGlobalSettings objectAtIndex:0] intValue];
+[self createBar];
+_ready = YES;
+
+
+}
+
+
+-(void)fadeCalledNumber{
+UIButton *currentButton = [_arrayButtonsCreated objectAtIndex:_ballCount-1];
+currentButton.backgroundColor = _usedBoxBackgroundColor;
+currentButton.tintColor = _usedBoxLetterColor;
+
+
+/*
+
+_LC5.text = _LC4.text;
+_LC4.text = _LC3.text;
+_LC3.text = _LC2.text;
+_LC2.text = _LC1.text;
+_LC1.text = _stringCalled;*/
+
+}
+
+//  [self.view addSubview:lastCalledTitleLabel];
+
+/*  _gradient.frame = _ballActive.bounds;
+_gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor cyanColor]CGColor],(id)[[UIColor whiteColor]CGColor],(id)[[UIColor whiteColor]CGColor], (id)[[UIColor cyanColor]CGColor],nil];
+
+CGContextRef contextBackground = UIGraphicsGetCurrentContext();
+CGContextSaveGState(contextBackground);
+
+[_ballActive.layer insertSublayer:_gradient atIndex:0];
+
+
+_LC1 = [[UILabel alloc] initWithFrame:CGRectMake(xLastCalled, yLastCalled2, _lastCalledWidth, _lastCalledHeight)];
+_LC1.layer.borderColor = [[UIColor redColor]CGColor];
+_LC1.layer.borderWidth = 1.0;
+_LC1.backgroundColor = lcBackgroundColor;
+_LC1.textColor = lcTextColor;
+_LC1.font = [UIFont fontWithName:@"Helvetica" size:fontSize];
+_LC1.adjustsFontSizeToFitWidth = YES;
+_LC1.textAlignment = NSTextAlignmentCenter;
+_LC1.layer.cornerRadius = _lastCalledHeight/2;
+_LC1.clipsToBounds = YES;
+
+
+
+
+[self.view addSubview:_LC1];
+
+_LC2 = [[UILabel alloc] initWithFrame:CGRectMake(xLastCalled + _lastCalledWidth +spaceLastCalled, yLastCalled2, _lastCalledWidth, _lastCalledHeight)];
+_LC2.layer.borderColor = [[UIColor blackColor]CGColor];
+_LC2.layer.borderWidth = 1.0;
+_LC2.backgroundColor = lcBackgroundColor;
+_LC2.textColor = lcTextColor;
+_LC2.font = [UIFont fontWithName:@"Helvetica" size:fontSize];
+_LC2.adjustsFontSizeToFitWidth = YES;
+_LC2.textAlignment = NSTextAlignmentCenter;
+_LC2.layer.cornerRadius = _lastCalledHeight/2;
+_LC2.clipsToBounds = YES;
+
+[self.view addSubview:_LC2];
+
+_LC3 = [[UILabel alloc] initWithFrame:CGRectMake(xLastCalled + 2*_lastCalledWidth +spaceLastCalled, yLastCalled2, _lastCalledWidth, _lastCalledHeight)];
+_LC3.layer.borderColor = [[UIColor blackColor]CGColor];
+_LC3.layer.borderWidth = 1.0;
+_LC3.backgroundColor = lcBackgroundColor;
+_LC3.textColor = lcTextColor;
+_LC3.font = [UIFont fontWithName:@"Helvetica" size:fontSize];
+_LC3.adjustsFontSizeToFitWidth = YES;
+_LC3.textAlignment = NSTextAlignmentCenter;
+_LC3.layer.cornerRadius = _lastCalledHeight/2;
+_LC3.clipsToBounds = YES;
+
+[self.view addSubview:_LC3];
+
+
+_LC4 = [[UILabel alloc] initWithFrame:CGRectMake(xLastCalled + 3*_lastCalledWidth +spaceLastCalled, yLastCalled2, _lastCalledWidth, _lastCalledHeight)];
+_LC4.layer.borderColor = [[UIColor blackColor]CGColor];
+_LC4.layer.borderWidth = 1.0;
+_LC4.backgroundColor = lcBackgroundColor;
+_LC4.textColor = lcTextColor;
+_LC4.font = [UIFont fontWithName:@"Helvetica" size:fontSize];
+_LC4.adjustsFontSizeToFitWidth = YES;
+_LC4.textAlignment = NSTextAlignmentCenter;
+_LC4.layer.cornerRadius = _lastCalledHeight/2;
+_LC4.clipsToBounds = YES;
+
+
+[self.view addSubview:_LC4];
+
+_LC5 = [[UILabel alloc] initWithFrame:CGRectMake(xLastCalled + 4*_lastCalledWidth +spaceLastCalled, yLastCalled2, _lastCalledWidth, _lastCalledHeight)];
+_LC5.layer.borderColor = [[UIColor blackColor]CGColor];
+_LC5.layer.borderWidth = 1.0;
+_LC5.backgroundColor = lcBackgroundColor;
+_LC5.textColor = lcTextColor;
+_LC5.font = [UIFont fontWithName:@"Helvetica" size:fontSize];
+_LC5.adjustsFontSizeToFitWidth = YES;
+_LC5.textAlignment = NSTextAlignmentCenter;
+_LC5.layer.cornerRadius = _lastCalledHeight/2;
+_LC5.clipsToBounds = YES;
+
+[self.view addSubview:_LC5]; */
+
+
+//add Rails
+
+
+/*
+UIView *topBar = [[UIView alloc] initWithFrame:CGRectMake(0, topRailY, 650, 10)];
+topBar.backgroundColor = [UIColor grayColor];
+topBar.layer.shadowColor = [[UIColor blackColor] CGColor];
+topBar.layer.shadowOpacity = 0.75f;
+topBar.layer.shadowOffset = CGSizeMake(5.0f, 5.0f);
+[self.view addSubview:topBar];
+
+UIView *bottomBar = [[UIView alloc] initWithFrame:CGRectMake(0, bottomRailY, 650, 10)];
+bottomBar.backgroundColor = [UIColor grayColor];
+bottomBar.layer.shadowColor = [[UIColor blackColor] CGColor];
+bottomBar.layer.shadowOpacity = 0.75f;
+bottomBar.layer.shadowOffset = CGSizeMake(5.0f, 5.0f);
+[self.view addSubview:bottomBar];
+*/
+
+
+
+/*   //Redraw Grid
+
+int x;
+int y;
+int ystart = 125;
+int xstart = 40;
+int xspace = 60;
+int yspace = 70;
+int width = 50;
+int height = 50;
+
+
+
+for (int j = 1; j<76; j++)
+{
+
+if (j<16) {
+x= (j * xspace) + xstart;
+y = ystart;
+
+
+} else {
+if (j<31) {
+x = (j-15) * xspace + xstart;
+y = ystart + yspace;
+} else {
+if (j<46) {
+x = (j -30) * xspace + xstart;
+y = ystart + 2 * yspace;
+} else {
+if (j <61) {
+x = (j -45) * xspace + xstart;
+y = ystart + 3 * yspace;
+}else{
+x = (j-60) * xspace + xstart;
+y = ystart + 4 * yspace;
+}
+
+}
+
+}
+
+}
+
+
+
+
+UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+button.tag = j;
+NSString *buttonLabel = [NSString stringWithFormat:@"%ld",(long)button.tag];
+
+
+button.frame = CGRectMake(x, y, width, height);
+[button setTitle:buttonLabel forState:UIControlStateNormal];
+//[button addTarget:self action:@selector(numberPressed:) forControlEvents:UIControlEventTouchUpInside];
+//  [button addTarget:self action:@selector(deselectButton:) forControlEvents:UIControlEventTouchDragExit];
+
+
+button.backgroundColor = _boxBackgroundColor;
+button.tintColor = _boxLetterColor;
+
+button.layer.borderWidth=1.0f;
+button.layer.borderColor=[_boxLetterColor CGColor];
+button.layer.cornerRadius = 15;
+button.titleLabel.font = [UIFont fontWithName:@"Helvetica Bold" size:40];
+
+
+_hasBeenCalled = [_arrayCalledNumbers containsObject:@(button.tag)];
+
+
+
+
+
+if (_hasBeenCalled == 1) {
+button.tintColor = _usedBoxLetterColor;
+button.backgroundColor = _usedBoxBackgroundColor;
+
+}
+
+[self.view addSubview:button];
+
+
+
+
+
+}
+[self.view bringSubviewToFront:_labelCalled];*/
+
+
+
+#pragma mark SET UP LAST FIVE CALLED
+
+UILabel *lastCalledTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(xLastCalled, yLastCalled, 5*_lastCalledWidth + spaceLastCalled, _lastCalledHeight)];
+lastCalledTitleLabel.text = @"Last Five Called";
+lastCalledTitleLabel.font = [UIFont fontWithName:@"Helvetica" size:_lastCalledHeight/2];
+lastCalledTitleLabel.textColor = _bingoLettersColor;
+lastCalledTitleLabel.textAlignment = NSTextAlignmentCenter;
+lastCalledTitleLabel.adjustsFontSizeToFitWidth = YES;
+lastCalledTitleLabel.layer.shadowColor = [[UIColor redColor] CGColor];
+lastCalledTitleLabel.layer.shadowOpacity = 1.0f;
+lastCalledTitleLabel.layer.shadowOffset = CGSizeMake(1.0f, -1.0f);
+
+
+
+
+
+
+
