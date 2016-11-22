@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-//another new comment
+
 @interface LocalSettingsViewController : UIViewController <UIPickerViewDataSource,UIPickerViewDelegate, UIAlertViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 
 
