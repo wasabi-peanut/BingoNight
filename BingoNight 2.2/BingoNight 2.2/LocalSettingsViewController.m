@@ -360,7 +360,8 @@
                _allowGridEdits = NO;
                
            }
-           
+        
+        
     }
         
 
@@ -393,7 +394,7 @@
                 [DefaultsDataManager saveData:_arrayCoordinatesColors forKey:_keyForCoordinatesColors];
                 [_pickerMarkerColors selectRow:[_arrayGameColorSettings[21] integerValue] inComponent:0 animated:YES];
               
-                break;
+                                   break;
             
             case 2://GRID SELECTION
                 _gridSelected = row;
@@ -857,6 +858,7 @@
 - (IBAction)sliderChanged:(id)sender {
     if (_presetSelected<_protectedPresets) {
        
+        
          [self applySetupDisplay];
          [self colorChangeAlert];
         
@@ -983,7 +985,7 @@
     [_arrayGameColorSettingsShell replaceObjectAtIndex:_presetSelected withObject:_arrayGameColorSettings];
     [DefaultsDataManager saveData:_arrayGameColorSettingsShell forKey:_keyForGameColorSettingsShell];
     
-        [self createDisplayGrid];
+      //  [self createDisplayGrid];
     }
 }
 

@@ -500,12 +500,12 @@
         
         
         
-        UIButton *squares = [[UIButton alloc] initWithFrame:CGRectMake(xForGrid, yForGrid, boxHeight, boxHeight)];
+        UILabel *squares = [[UILabel alloc] initWithFrame:CGRectMake(xForGrid, yForGrid, boxHeight, boxHeight)];
         
         
         NSInteger colorchoiceInt = [[_arrayGridPatterns objectAtIndex:s] integerValue];
         NSString *markerText;
-        
+        UIColor *fontColor;
         switch (colorchoiceInt) {
             case 0:
                 
@@ -522,6 +522,7 @@
                         break;
                     case 2:
                         markerText = @"\u272D";
+                        fontColor = [UIColor greenColor];
                         break;
                     case 3:
                         markerText = @"\u272A";
@@ -546,13 +547,16 @@
                 }
 
                 
+                squares.text = markerText;
+                squares.textAlignment = NSTextAlignmentCenter;
+                squares.textColor = fontColor;
+                squares.font = [UIFont fontWithName:@"Helvetica" size:50];
+                
+                
                 
                
-                    [squares setTitle:markerText forState:UIControlStateNormal];               
+              /*
                 
-                
-               
- 
                 squares.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
                 squares.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
                 squares.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:60];
@@ -560,7 +564,7 @@
                 squares.titleLabel.textColor = [UIColor blackColor];
                 [squares setTitleColor:_boxLetterColor forState:UIControlStateNormal];
                 
-            
+            */
                 
                 break;
                 
