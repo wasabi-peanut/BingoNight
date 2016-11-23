@@ -399,7 +399,7 @@
                 _gridSelected = row;
                 [_arrayCoordinatesGrids replaceObjectAtIndex:_gameNumber withObject:@(row)];
                 [DefaultsDataManager saveData:_arrayCoordinatesGrids forKey:_keyForCoordinatesGrid];
-                
+             //    [_pickerMarkerColors selectRow:[_arrayGameColorSettings[21] integerValue] inComponent:0 animated:YES];
                 break;
                 
             default:
@@ -419,7 +419,7 @@
         
         [_arrayGameColorSettingsShell replaceObjectAtIndex: _presetSelected withObject:_arrayGameColorSettings];
         [DefaultsDataManager saveData:_arrayGameColorSettingsShell forKey:_keyForGameColorSettingsShell];
-      
+       
       
 
     }
@@ -430,7 +430,8 @@
     _arrayGridPatterns = [[NSMutableArray alloc] initWithArray:_arrayGridsShell[_gridSelected]];
     
      _markerSelected = [_arrayGameColorSettings[21] integerValue];
-    [self applySetupDisplay];
+     [self applySetupDisplay];
+    
     
 }
 
@@ -1035,10 +1036,10 @@
         
         button.frame = CGRectMake(xForGrid, yForGrid, boxWidth, boxHeight);
         [button addTarget:self action:@selector(btnGridPressed:) forControlEvents:UIControlEventTouchUpInside];
-        button.backgroundColor = _gridBackgroundColor;
+        button.backgroundColor = [UIColor whiteColor];
         button.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:boxWidth];
         NSString *markerText;
-        NSLog(@"Marker row is %li",_markerSelected);
+        
         switch (_markerSelected) {
             case 0:
                 markerText = @"\u26AA";
@@ -1081,7 +1082,7 @@
         
         if ([[_arrayGridPatterns objectAtIndex:button.tag] intValue] == 1) {
          
-            [button setTitle:markerText forState:UIControlStateNormal];
+          [button setTitle:markerText forState:UIControlStateNormal];
 
         }
         
@@ -1096,6 +1097,8 @@
     
     
 }
+
+
 
 -(IBAction)btnGridPressed:(UIButton *)sender {
     
