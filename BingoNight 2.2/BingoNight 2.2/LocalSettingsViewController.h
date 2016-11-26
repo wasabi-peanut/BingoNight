@@ -32,8 +32,10 @@
 @property BOOL isProtected;
 
 
+//BUTTONS FOR GRID
 
 
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttonGridCollection;
 
 
 
@@ -175,7 +177,9 @@
 @property Boolean allowGridEdits;
 
 
-@property UITextField *textFieldNameOfGame;
+@property (strong, nonatomic) IBOutlet UITextField *textFieldNameOfGame;
+
+//@property UITextField *textFieldNameOfGame;
 @property int alertNumber;
 
 

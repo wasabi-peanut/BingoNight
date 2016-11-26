@@ -36,6 +36,9 @@
     _width = [UIScreen mainScreen].bounds.size.width;
    
    
+   
+    
+    
     //SET UP SLIDERS
     
     self.sliderRed.value = 255;
@@ -118,7 +121,7 @@
     [super viewDidLoad];
     
     [self makeDisplayButtons];
-    [self createDisplayGrid];
+   // [self createDisplayGrid];
     
     
     // Do any additional setup after loading the view.
@@ -131,6 +134,8 @@
    [self pickerView:_pickerGameSettings didSelectRow:0 inComponent:0];
     
    [self pickerView:_pickerPresets didSelectRow:0 inComponent:0];
+    
+    [self gridButtons];
     
    
     
@@ -296,6 +301,7 @@
 
 
 /*
+ UNFORMATED TITLES FOR PICKERS ROWS
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSString *title = [NSString alloc];
     
@@ -764,7 +770,7 @@
     
     //title of game
     
-    for (int t=0; t<1; t++) {
+    /*for (int t=0; t<1; t++) {
         width = 5*(_width/15);
         height = _width/16;
         useX = _width - _width/2.5;
@@ -776,7 +782,8 @@
         [_textFieldNameOfGame setDelegate:self];
         
         
-        
+      */
+    
         _textFieldNameOfGame.layer.borderColor = [[UIColor blackColor] CGColor];
         _textFieldNameOfGame.layer.borderWidth = 2;
         _textFieldNameOfGame.font = [UIFont fontWithName:@"Helvetica" size:100];
@@ -784,15 +791,15 @@
         _textFieldNameOfGame.adjustsFontSizeToFitWidth = YES;
         
         
-    //    _textFieldNameOfGame.text = [_arrayGameColorSettings objectAtIndex:21];
+    //   _textFieldNameOfGame.text = [_arrayGameColorSettings objectAtIndex:21];
         
         _textFieldNameOfGame.enabled = NO;
         
         [_textFieldNameOfGame addTarget:self action:@selector(updateNameOfGame:) forControlEvents:UIControlEventEditingDidEnd];
         
-        [self.view addSubview:_textFieldNameOfGame];
+    //    [self.view addSubview:_textFieldNameOfGame];
        
-        [_arrayDisplayButtons addObject:_textFieldNameOfGame];}
+        [_arrayDisplayButtons addObject:_textFieldNameOfGame];
     
     
     }
@@ -903,7 +910,7 @@
                 currentLabel = [_arrayDisplayButtons objectAtIndex:count];
                 currentLabel.backgroundColor = [UIColor colorWithRed:_sliderRed.value/255 green:_sliderGreen.value/255 blue:_sliderBlue.value/255 alpha:1];
             }
-             //   _gridBackgroundColor = [UIColor colorWithRed:_sliderRed.value/255 green:_sliderGreen.value/255 blue:_sliderBlue.value/255 alpha:1];
+            _gridBackgroundColor = [UIColor colorWithRed:_sliderRed.value/255 green:_sliderGreen.value/255 blue:_sliderBlue.value/255 alpha:1];
             [_arrayGameColorSettings replaceObjectAtIndex:3 withObject:redValue];
             [_arrayGameColorSettings replaceObjectAtIndex:4 withObject:greenValue];
             [_arrayGameColorSettings replaceObjectAtIndex:5 withObject:blueValue];
@@ -991,7 +998,7 @@
 
 -(void)createDisplayGrid {
     
-    _arrayGridPatterns = [[NSMutableArray alloc] initWithArray: _arrayGridsShell[_gridSelected]];
+  /*  _arrayGridPatterns = [[NSMutableArray alloc] initWithArray: _arrayGridsShell[_gridSelected]];
     
     
     int boxWidth = _width/15;
@@ -1097,10 +1104,73 @@
         
     }
     
-    
+    */
 }
 
+-(void)gridButtons {
+    
+    for (UIButton *button in _buttonGridCollection)
+        
+    {
+        button.layer.borderColor = [[UIColor blackColor] CGColor];
+        button.layer.borderWidth = 1;
+        button.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:button.frame.size.height*.95];
+        button.titleLabel.adjustsFontSizeToFitWidth = YES;
+        button.backgroundColor = _gridBackgroundColor;
+        
+        NSString *markerText;
+        
+        switch (_markerSelected) {
+            case 0:
+                markerText = @"\u26AA";
+                break;
+            case 1:
+                markerText = @"\u26AB";
+                break;
+            case 2:
+                markerText = @"\u272D";
+                break;
+            case 3:
+                markerText = @"\u272A";
+                break;
+            case 4:
+                markerText = @"\u25CF";
+                break;
+            case 5:
+                markerText = @"\u272A";
+                break;
+            case 6:
+                markerText = @"\u263c";
+                break;
+            case 7:
+                markerText = @"\u2600";
+                break;
+            case 8:
+                markerText = @"\u2726";
+                break;
+            default:
+                break;
+        }
+        
+        
+        if ([[_arrayGridPatterns objectAtIndex:button.tag] intValue] == 0) {
+            
+            [button setTitle:@" " forState:UIControlStateNormal];
+            
+            
+        }
+        
+        if ([[_arrayGridPatterns objectAtIndex:button.tag] intValue] == 1) {
+            
+            [button setTitle:markerText forState:UIControlStateNormal];
+            
+        }
 
+    
+    
+    
+    }
+}
 
 -(IBAction)btnGridPressed:(UIButton *)sender {
     
@@ -1134,7 +1204,7 @@
     [DefaultsDataManager saveData:_arrayGridsShell forKey:_keyForGridsShell];
     
     }
-    [self createDisplayGrid];
+    [self gridButtons];
 }
 
 /*-(void)saveSettings {
@@ -1221,7 +1291,7 @@
     for (int count = 1; count <5; count++) {
         currentLabel = [_arrayDisplayButtons objectAtIndex:count];
         currentLabel.backgroundColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:3] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:4] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:5] floatValue]/255 alpha:1];
-       // _gridBackgroundColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:3] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:4] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:5] floatValue]/255 alpha:1];
+        _gridBackgroundColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:3] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:4] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:5] floatValue]/255 alpha:1];
     }
 
     
@@ -1260,8 +1330,9 @@
 
     
    
-   [self createDisplayGrid];
-  
+   //[self createDisplayGrid];
+    [self gridButtons];
+    
     }
 
 

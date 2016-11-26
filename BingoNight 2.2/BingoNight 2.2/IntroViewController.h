@@ -5,7 +5,8 @@
 //  Created by Adam Schor on 7/19/15.
 //  Copyright (c) 2015 AandA Development. All rights reserved.
 //
-//GIT HUB 11/23/16 11:59 PM
+
+
 #import <UIKit/UIKit.h>
 
 @interface IntroViewController : UIViewController
