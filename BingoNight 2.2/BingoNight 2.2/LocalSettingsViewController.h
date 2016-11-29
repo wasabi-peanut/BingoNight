@@ -17,6 +17,22 @@
 
 @property UIColor *gridBackgroundColor;
 
+//labels and colors
+@property UIColor *screenBackgroundColor;
+@property UIColor *boxBackgroundColor;
+@property UIColor *boxLetterColor;
+@property UIColor *selectedBackgroundColor;
+@property UIColor *selectedLetterColor;
+@property UIColor *gridSelectedBoxColor;
+@property UIColor *gridUnselectedBoxColor;
+@property UIColor *nameOfGameLabelColor;
+@property UIColor *nameOfGameTextColor;
+@property UIColor *bingoLettersColor;
+@property UIColor *usedBoxBackgroundColor;
+@property UIColor *usedBoxLetterColor;
+@property UIColor *lastCalledTitleColor;
+@property UIColor *lastCalledColor;
+@property UIColor *mostRecentLastCalledColor;
 
 
 //ARRAYS FOR PICKERS: PROPERTIES, GAME NUMBER AND PRESETS
@@ -36,8 +52,11 @@
 
 
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *buttonGridCollection;
+@property (strong, nonatomic) IBOutletCollection(UILabel) NSArray *labelCollection;
 
+//VIEW FOR LABELS
 
+@property (strong, nonatomic) IBOutlet UIView *viewLabelHolder;
 
 
 //STEPPER AND NUMBER OF GAMES
