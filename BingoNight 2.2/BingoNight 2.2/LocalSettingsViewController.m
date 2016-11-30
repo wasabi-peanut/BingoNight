@@ -120,7 +120,7 @@
 
     [super viewDidLoad];
     
-    [self makeDisplayButtons];
+    //[self makeDisplayButtons];
    // [self createDisplayGrid];
     
     
@@ -135,7 +135,7 @@
     
    [self pickerView:_pickerPresets didSelectRow:0 inComponent:0];
     
-    [self gridButtons];
+  //  [self gridButtons];
     
    
     
@@ -148,6 +148,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark PICKER ELEMENTS HERE
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     int componentNumber = 0;
@@ -437,7 +439,9 @@
     _arrayGridPatterns = [[NSMutableArray alloc] initWithArray:_arrayGridsShell[_gridSelected]];
     
      _markerSelected = [_arrayGameColorSettings[21] integerValue];
-     [self applySetupDisplay];
+    
+    [self theProcess];
+     //[self applySetupDisplay];
     
     
 }
@@ -536,6 +540,8 @@
     
     
 }
+#pragma mark    MAKE ARRAYS HERE
+
 
 -(void)createGameArrays {
     //Create or look up GameSettings,GridSettings,ColorSettings and Game Number
@@ -682,135 +688,9 @@
 
 }
 
--(void)makeDisplayButtons {
-    
-    //For array, box is 0, buttons 1-6, and letters 7 & 8, textFieldNameOfGame is 9
-    
-    _arrayDisplayButtons = [[NSMutableArray alloc] init];
-    
-    float startX= 40;
-    float startY = 100;
-    float horizontalGap = 10;
-    float verticalGap = 5;
-    float width = _width/10;
-    float height = width;
-    float useX = 0;
-    float useY = 0;
-    
-    NSString *buttonText = @"1";
-    
-    
-    //box around buttons
-    UILabel *boxAroundButtons = [[UILabel alloc] initWithFrame:CGRectMake(startX -20, startY -20, width * 4 + 25 + 4*horizontalGap, height * 2 + 2*verticalGap + 35)];
-    boxAroundButtons.backgroundColor = [UIColor whiteColor];
-    boxAroundButtons.layer.borderColor = [[UIColor blackColor] CGColor];
-    boxAroundButtons.layer.borderWidth = 4;
-    
-//TEMP BLOCK
-    // [self.view addSubview:boxAroundButtons];
-    
-    [_arrayDisplayButtons addObject:boxAroundButtons];
-    //buttons including called buttons
-    for (int i=0; i<6; i++) {
-        if (i<3) {
-            useX= (startX + width + horizontalGap) + i*(width + horizontalGap);
-            useY= startY;
-            buttonText = [NSString stringWithFormat:@"%d",i];
-            
-            
-        }
-        else {
-            useX= (startX + width +horizontalGap) + (i-3)*(width + horizontalGap);
-            useY= startY +height + verticalGap;
-            buttonText = [NSString stringWithFormat:@"%d",i+13];
-        }
-        
-        UILabel *labelDisplayButtons = [[UILabel alloc] initWithFrame:CGRectMake(useX, useY, width, height)];
-        
-        labelDisplayButtons.backgroundColor = [UIColor redColor];
-        labelDisplayButtons.layer.borderColor = [[UIColor blackColor] CGColor];
-        labelDisplayButtons.layer.borderWidth = 1;
-        labelDisplayButtons.text = buttonText;
-        labelDisplayButtons.textColor = [UIColor blackColor];
-        labelDisplayButtons.font = [UIFont fontWithName:@"Marker Felt" size:56];
-        labelDisplayButtons.textAlignment = NSTextAlignmentCenter;
-   //TEMP BLOCK
-        //[self.view addSubview:labelDisplayButtons];
-        
-        [_arrayDisplayButtons addObject:labelDisplayButtons];
-    }
-    //letters
-    
-    for (int j=0; j<2; j++) {
-        
-        useX = startX ;
-        useY = startY + j*(height +verticalGap);
-        
-        UILabel *labelDisplayLabels = [[UILabel alloc] initWithFrame:CGRectMake(useX, useY, width, height)];
-        
-        
-        labelDisplayLabels.backgroundColor = [UIColor whiteColor];
-        if (j==0) {
-            labelDisplayLabels.text = @"B";
-            
-        }
-        else {
-            labelDisplayLabels.text = @"I";
-            
-        }
-        
-        labelDisplayLabels.font = [UIFont fontWithName:@"Marker Felt" size:75];
-        labelDisplayLabels.textAlignment = NSTextAlignmentCenter;
-        labelDisplayLabels.adjustsFontSizeToFitWidth = YES;
-        
-    // TEMP BLOCK
-      //  [self.view addSubview:labelDisplayLabels];
-        [self.view bringSubviewToFront:labelDisplayLabels];
-        
-        
-        [_arrayDisplayButtons addObject:labelDisplayLabels];
-        
-    }
-    
-    //title of game
-    
-    /*for (int t=0; t<1; t++) {
-        width = 5*(_width/15);
-        height = _width/16;
-        useX = _width - _width/2.5;
-        useY = _width/15;
-        
-        
-        _textFieldNameOfGame = [[UITextField alloc] initWithFrame:CGRectMake(useX, useY, width, height)];
-        
-        [_textFieldNameOfGame setDelegate:self];
-        
-        
-      */
-    
-        _textFieldNameOfGame.layer.borderColor = [[UIColor blackColor] CGColor];
-        _textFieldNameOfGame.layer.borderWidth = 2;
-        _textFieldNameOfGame.font = [UIFont fontWithName:@"Helvetica" size:100];
-        _textFieldNameOfGame.textAlignment = NSTextAlignmentCenter;
-        _textFieldNameOfGame.adjustsFontSizeToFitWidth = YES;
-        
-        
-    //   _textFieldNameOfGame.text = [_arrayGameColorSettings objectAtIndex:21];
-        
-        _textFieldNameOfGame.enabled = NO;
-        
-        [_textFieldNameOfGame addTarget:self action:@selector(updateNameOfGame:) forControlEvents:UIControlEventEditingDidEnd];
-        
-    //    [self.view addSubview:_textFieldNameOfGame];
-       
-        [_arrayDisplayButtons addObject:_textFieldNameOfGame];
-    
-    
-    }
 
 
-
-//STEPPER and NUMBER OF GAMES CODE
+#pragma mark  STEPPER FOR NUMBER OF GAMES CODE
 
 -(IBAction)stepperNumberOfGamesPress:(id)sender{
 
@@ -832,6 +712,7 @@
     
     
 }
+#pragma mark  ALERTS
 
 -(void)colorChangeAlert {
     
@@ -868,7 +749,7 @@
     if (_presetSelected<_protectedPresets) {
        
         
-         [self applySetupDisplay];
+        // [self applySetupDisplay];
          [self colorChangeAlert];
         
     }
@@ -997,123 +878,90 @@
         }
 }
 
--(void)createDisplayGrid {
-    
-  /*  _arrayGridPatterns = [[NSMutableArray alloc] initWithArray: _arrayGridsShell[_gridSelected]];
-    
-    
-    int boxWidth = _width/15;
-    int boxHeight = boxWidth;
-    
-    int xstart =_width - 7* boxWidth;
-    int ystart = 2*boxHeight;
-    
-    
-    
-    int xForGrid;
-    int yForGrid;
-    int sq;
-    
-    
-    for (sq = 1; sq<26; sq++) {
-        
-        if (sq < 6) {
-            xForGrid =  xstart + (boxWidth * sq);
-            yForGrid = ystart;}
-        else {
-            if (sq < 11) {
-                xForGrid = xstart + (boxWidth * (sq-5));
-                yForGrid = ystart + boxWidth;}
-            else {
-                if (sq < 16){
-                    xForGrid = xstart +(boxWidth * (sq-10));
-                    yForGrid = ystart + 2 * boxWidth;}
-                else{
-                    if (sq < 21){
-                        xForGrid = xstart +(boxWidth * (sq-15));
-                        yForGrid = ystart + 3 * boxWidth;}
-                    else{
-                        xForGrid = xstart + (boxWidth * (sq-20));
-                        yForGrid = ystart+ 4 * boxWidth;}
-                }
-            }
-        }
-        
-        
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        button.tag = sq;
-        
-        
-        button.frame = CGRectMake(xForGrid, yForGrid, boxWidth, boxHeight);
-        [button addTarget:self action:@selector(btnGridPressed:) forControlEvents:UIControlEventTouchUpInside];
-        button.backgroundColor = [UIColor whiteColor];
-        button.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:boxWidth];
-        NSString *markerText;
-        
-        switch (_markerSelected) {
-            case 0:
-                markerText = @"\u26AA";
-                break;
-            case 1:
-                markerText = @"\u26AB";
-                break;
-            case 2:
-                markerText = @"\u272D";
-                break;
-            case 3:
-                markerText = @"\u272A";
-                break;
-            case 4:
-                markerText = @"\u25CF";
-                break;
-            case 5:
-                markerText = @"\u272A";
-                break;
-            case 6:
-                markerText = @"\u263c";
-                break;
-            case 7:
-                markerText = @"\u2600";
-                break;
-            case 8:
-                markerText = @"\u2726";
-                break;
-            default:
-                break;
-        }
-        
-    
-       if ([[_arrayGridPatterns objectAtIndex:button.tag] intValue] == 0) {
-        
-           [button setTitle:@" " forState:UIControlStateNormal];
-           
-           
-        }
-        
-        if ([[_arrayGridPatterns objectAtIndex:button.tag] intValue] == 1) {
-         
-          [button setTitle:markerText forState:UIControlStateNormal];
+#pragma mark  THE PROCESS
 
-        }
-        
-        
-        button.layer.borderWidth=2.0f;
-        button.layer.borderColor=[[UIColor blackColor] CGColor];
-        
-        
-        [self.view addSubview:button];
-        
-    }
-    
-    */
+-(void)theProcess{
+    [self gatherColors];
+    [self gridButtons];
+    [self makeLabels];
 }
+
 
 -(void)gatherColors{
     _screenBackgroundColor = [UIColor colorWithRed:[_arrayGameColorSettings[0] floatValue] green:[_arrayGameColorSettings[1] floatValue] blue:[_arrayGameColorSettings[2] floatValue] alpha:1.0];
-#warning and so on for other color names
+    _boxBackgroundColor = [UIColor colorWithRed:[_arrayGameColorSettings[3] floatValue] green:[_arrayGameColorSettings[4] floatValue] blue:[_arrayGameColorSettings[5] floatValue] alpha:1.0];
+    _bingoLettersColor = [UIColor colorWithRed:[_arrayGameColorSettings[6] floatValue] green:[_arrayGameColorSettings[7] floatValue] blue:[_arrayGameColorSettings[8] floatValue] alpha:1.0];
+    _selectedBackgroundColor = [UIColor colorWithRed:[_arrayGameColorSettings[9] floatValue] green:[_arrayGameColorSettings[10] floatValue] blue:[_arrayGameColorSettings[11] floatValue] alpha:1.0];
+    _selectedLetterColor =[UIColor colorWithRed:[_arrayGameColorSettings[12] floatValue] green:[_arrayGameColorSettings[13] floatValue] blue:[_arrayGameColorSettings[14] floatValue] alpha:1.0];
+    _bingoLettersColor = [UIColor colorWithRed:[_arrayGameColorSettings[15] floatValue] green:[_arrayGameColorSettings[16] floatValue] blue:[_arrayGameColorSettings[17] floatValue] alpha:1.0];
+    _nameOfGameTextColor = [UIColor colorWithRed:[_arrayGameColorSettings[18] floatValue] green:[_arrayGameColorSettings[19] floatValue] blue:[_arrayGameColorSettings[20] floatValue] alpha:1.0];
+    
+    
+    
+
     
     //Then Set Up Sliders using pattern in ApplySetUpDisplay
+    [_pickerMarkerColors selectRow:[_arrayGameColorSettings[21] integerValue] inComponent:0 animated:YES];
     
+    switch (_attributeNumber) {
+        case 1:
+            
+            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:0]floatValue];
+            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:1] floatValue];
+            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:2] floatValue];
+            
+            break;
+            
+            
+        case 2:
+            
+            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:3] floatValue];
+            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:4] floatValue];
+            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:5] floatValue];
+            
+            break;
+        case 3:
+            
+            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:6] floatValue];
+            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:7] floatValue];
+            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:8] floatValue];
+            
+            break;
+        case 4:
+            
+            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:9] floatValue];
+            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:10] floatValue];
+            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:11] floatValue];
+            
+            break;
+        case 5:
+            
+            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:12] floatValue];
+            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:13] floatValue];
+            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:14] floatValue];
+            break;
+            
+        case 6:
+            
+            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:15] floatValue];
+            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:16] floatValue];
+            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:17] floatValue];
+            break;
+            
+        case 7:
+            
+            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:18] floatValue];
+            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:19] floatValue];
+            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:20] floatValue];
+            break;
+            
+        default:
+            break;
+    }
+
+    _textFieldRedValue.text = [NSString stringWithFormat:@"%0.f",_sliderRed.value];
+    _textFieldGreenValue.text = [NSString stringWithFormat:@"%0.f",_sliderGreen.value];
+    _textFieldBlueValue.text = [NSString stringWithFormat:@"%0.f",_sliderBlue.value];
 }
 
 
@@ -1260,143 +1108,7 @@
     [self gridButtons];
 }
 
-/*-(void)saveSettings {
-    
-    
- //[DefaultsDataManager saveData:_arrayGameColorSettings forKey:_keyForGameSettings];
 
-}*/
-
-
--(void)applySetupDisplay {
-    
-    UILabel *currentLabel = [UILabel alloc];
-    
-     [_pickerMarkerColors selectRow:[_arrayGameColorSettings[21] integerValue] inComponent:0 animated:YES];
-
-    switch (_attributeNumber) {
-        case 1:
-            
-            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:0]floatValue];
-            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:1] floatValue];
-            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:2] floatValue];
-            
-            break;
-            
-            
-        case 2:
-            
-            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:3] floatValue];
-            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:4] floatValue];
-            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:5] floatValue];
-            
-            break;
-        case 3:
-            
-            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:6] floatValue];
-            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:7] floatValue];
-            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:8] floatValue];
-            
-            break;
-        case 4:
-            
-            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:9] floatValue];
-            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:10] floatValue];
-            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:11] floatValue];
-            
-            break;
-        case 5:
-            
-            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:12] floatValue];
-            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:13] floatValue];
-            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:14] floatValue];
-            break;
-            
-        case 6:
-            
-            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:15] floatValue];
-            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:16] floatValue];
-            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:17] floatValue];
-            break;
-            
-        case 7:
-            
-            _sliderRed.value = [[_arrayGameColorSettings objectAtIndex:18] floatValue];
-            _sliderGreen.value = [[_arrayGameColorSettings objectAtIndex:19] floatValue];
-            _sliderBlue.value = [[_arrayGameColorSettings objectAtIndex:20] floatValue];
-            
-            
-            break;
-            
-        default:
-            break;
-    }
-    
-    for (int count = 0; count < 1; count++) {
-        currentLabel = [_arrayDisplayButtons objectAtIndex:count];
-        currentLabel.backgroundColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:0] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:1] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:2] floatValue]/255 alpha:1];
-    }
-    
-    for (int count = 7; count <9; count++) {
-        currentLabel = [_arrayDisplayButtons objectAtIndex:count];
-        currentLabel.backgroundColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:0] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:1] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:2] floatValue]/255 alpha:1];}
-    
-    for (int count = 1; count <5; count++) {
-        currentLabel = [_arrayDisplayButtons objectAtIndex:count];
-        currentLabel.backgroundColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:3] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:4] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:5] floatValue]/255 alpha:1];
-        _gridBackgroundColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:3] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:4] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:5] floatValue]/255 alpha:1];
-    }
-
-    
-    for (int count = 1; count <5; count++) {
-            currentLabel = [_arrayDisplayButtons objectAtIndex:count];
-        currentLabel.textColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:6] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:7] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:8] floatValue]/255 alpha:1];
-
-    }
-        
-    for (int count = 5; count <7; count++) {
-            currentLabel = [_arrayDisplayButtons objectAtIndex:count];
-        currentLabel.backgroundColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:9] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:10] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:11] floatValue]/255 alpha:1];
-}
-        
-    for (int count = 5; count <7; count++) {
-            currentLabel = [_arrayDisplayButtons objectAtIndex:count];
-        currentLabel.textColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:12] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:13] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:14] floatValue]/255 alpha:1];
-}
-    
-    for (int count = 7; count <9; count++) {
-            currentLabel = [_arrayDisplayButtons objectAtIndex:count];
-        currentLabel.textColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:15] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:16] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:17] floatValue]/255 alpha:1];
-}
-        
-    for (int count = 9; count <10; count++) {
-            currentLabel = [_arrayDisplayButtons objectAtIndex:count];
-        currentLabel.textColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:18] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:19] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:20] floatValue]/255 alpha:1];
-}
-    _textFieldNameOfGame.text = [_arrayCoordinatesNameOfGame objectAtIndex:_gameNumber];
-    _textFieldNameOfGame.backgroundColor =  [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:0] floatValue]/255 green:[[_arrayGameColorSettings objectAtIndex:1] floatValue]/255 blue:[[_arrayGameColorSettings objectAtIndex:2] floatValue]/255 alpha:1];
-    
-    
-    _textFieldRedValue.text = [NSString stringWithFormat:@"%0.f",_sliderRed.value];
-    _textFieldGreenValue.text = [NSString stringWithFormat:@"%0.f",_sliderGreen.value];
-    _textFieldBlueValue.text = [NSString stringWithFormat:@"%0.f",_sliderBlue.value];
-
-    
-   
-   //[self createDisplayGrid];
-    [self gridButtons];
-    
-    }
-
-
-- (IBAction)updateNameOfGame:(id)sender {
-    NSString *nameOfGame = _textFieldNameOfGame.text;
-    [_arrayCoordinatesNameOfGame replaceObjectAtIndex:_gameNumber withObject:nameOfGame];
-    [DefaultsDataManager saveData:_arrayCoordinatesNameOfGame forKey:_keyForCoordinatesNameOfGame];
-    
-   
-    
-}
 
 
 
@@ -1602,6 +1314,7 @@
 }
 
 
+#pragma mark  TEXT FIELD RESPONSES
 
 
 
