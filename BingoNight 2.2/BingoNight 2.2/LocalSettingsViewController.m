@@ -441,7 +441,7 @@
      _markerSelected = [_arrayGameColorSettings[21] integerValue];
     
     [self theProcess];
-     //[self applySetupDisplay];
+    
     
     
 }
@@ -871,7 +871,7 @@
     [_arrayGameColorSettingsShell replaceObjectAtIndex:_presetSelected withObject:_arrayGameColorSettings];
     [DefaultsDataManager saveData:_arrayGameColorSettingsShell forKey:_keyForGameColorSettingsShell];
     
-    [self makeLabels];
+    [self theProcess];
     
 
         
@@ -888,13 +888,15 @@
 
 
 -(void)gatherColors{
-    _screenBackgroundColor = [UIColor colorWithRed:[_arrayGameColorSettings[0] floatValue] green:[_arrayGameColorSettings[1] floatValue] blue:[_arrayGameColorSettings[2] floatValue] alpha:1.0];
-    _boxBackgroundColor = [UIColor colorWithRed:[_arrayGameColorSettings[3] floatValue] green:[_arrayGameColorSettings[4] floatValue] blue:[_arrayGameColorSettings[5] floatValue] alpha:1.0];
-    _bingoLettersColor = [UIColor colorWithRed:[_arrayGameColorSettings[6] floatValue] green:[_arrayGameColorSettings[7] floatValue] blue:[_arrayGameColorSettings[8] floatValue] alpha:1.0];
-    _selectedBackgroundColor = [UIColor colorWithRed:[_arrayGameColorSettings[9] floatValue] green:[_arrayGameColorSettings[10] floatValue] blue:[_arrayGameColorSettings[11] floatValue] alpha:1.0];
-    _selectedLetterColor =[UIColor colorWithRed:[_arrayGameColorSettings[12] floatValue] green:[_arrayGameColorSettings[13] floatValue] blue:[_arrayGameColorSettings[14] floatValue] alpha:1.0];
-    _bingoLettersColor = [UIColor colorWithRed:[_arrayGameColorSettings[15] floatValue] green:[_arrayGameColorSettings[16] floatValue] blue:[_arrayGameColorSettings[17] floatValue] alpha:1.0];
-    _nameOfGameTextColor = [UIColor colorWithRed:[_arrayGameColorSettings[18] floatValue] green:[_arrayGameColorSettings[19] floatValue] blue:[_arrayGameColorSettings[20] floatValue] alpha:1.0];
+    _screenBackgroundColor = [UIColor colorWithRed:[_arrayGameColorSettings[0] floatValue]/255 green:[_arrayGameColorSettings[1] floatValue]/255 blue:[_arrayGameColorSettings[2] floatValue]/255 alpha:1.0];
+    _boxBackgroundColor = [UIColor colorWithRed:[_arrayGameColorSettings[3] floatValue]/255 green:[_arrayGameColorSettings[4] floatValue]/255 blue:[_arrayGameColorSettings[5] floatValue]/255 alpha:1.0];
+    _boxLetterColor = [UIColor colorWithRed:[_arrayGameColorSettings[6] floatValue]/255 green:[_arrayGameColorSettings[7] floatValue]/255 blue:[_arrayGameColorSettings[8] floatValue]/255 alpha:1.0];
+    _selectedBackgroundColor = [UIColor colorWithRed:[_arrayGameColorSettings[9] floatValue]/255 green:[_arrayGameColorSettings[10] floatValue]/255 blue:[_arrayGameColorSettings[11] floatValue]/255 alpha:1.0];
+    _selectedLetterColor =[UIColor colorWithRed:[_arrayGameColorSettings[12] floatValue]/255 green:[_arrayGameColorSettings[13] floatValue]/255 blue:[_arrayGameColorSettings[14] floatValue]/255 alpha:1.0];
+    _bingoLettersColor = [UIColor colorWithRed:[_arrayGameColorSettings[15] floatValue]/255 green:[_arrayGameColorSettings[16] floatValue]/255 blue:[_arrayGameColorSettings[17] floatValue]/255 alpha:1.0];
+    _nameOfGameTextColor = [UIColor colorWithRed:[_arrayGameColorSettings[18] floatValue]/255 green:[_arrayGameColorSettings[19] floatValue]/255 blue:[_arrayGameColorSettings[20] floatValue]/255 alpha:1.0];
+    
+    _textFieldNameOfGame.text = _arrayCoordinatesNameOfGame[_gameNumber];
     
     
     
@@ -962,7 +964,11 @@
     _textFieldRedValue.text = [NSString stringWithFormat:@"%0.f",_sliderRed.value];
     _textFieldGreenValue.text = [NSString stringWithFormat:@"%0.f",_sliderGreen.value];
     _textFieldBlueValue.text = [NSString stringWithFormat:@"%0.f",_sliderBlue.value];
+    
+    
+    
 }
+
 
 
 -(void)makeLabels {
@@ -1002,6 +1008,8 @@
                 break;
         }
     }
+
+   
 }
 
 -(void)gridButtons {
@@ -1316,6 +1324,13 @@
 
 #pragma mark  TEXT FIELD RESPONSES
 
+-(IBAction)editEndedTextFieldNameOfGame:(id)sender{
+    [_arrayCoordinatesNameOfGame replaceObjectAtIndex:_gameNumber withObject:_textFieldNameOfGame.text];
+    [DefaultsDataManager saveData:_arrayCoordinatesNameOfGame forKey:_keyForCoordinatesNameOfGame];
+    
+    
+
+}
 
 
 -(IBAction)enteredTextFieldRedValue:(id)sender{
@@ -1392,6 +1407,8 @@
     [_textFieldBlueValue setKeyboardType:UIKeyboardTypeNumberPad];
     }
 }
+
+
 
 -(void)textViewDidBeginEditing:(UITextView *)textView {
     

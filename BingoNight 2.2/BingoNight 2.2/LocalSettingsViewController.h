@@ -112,6 +112,7 @@
 - (IBAction)startedEditTextFieldGreenValue:(id)sender;
 - (IBAction)startedEditTextFieldBlueValue:(id)sender;
 
+- (IBAction)editEndedTextFieldNameOfGame:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UISlider *sliderRed;
 @property (strong, nonatomic) IBOutlet UISlider *sliderGreen;
