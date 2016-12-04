@@ -11,7 +11,11 @@
 @interface GlobalSettingsViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate>
 
 
+//COLUMN SWITCH
 
+@property (strong, nonatomic) IBOutlet UISwitch *switchUnmarkedColumns;
+- (IBAction)switchUnmarkedColumnsChanged:(id)sender;
+@property BOOL skipUnmarkedColumns;
 
 
 

@@ -29,6 +29,10 @@
 		E39825491DE5054B00ACC5A7 /* LocalSettingsTrash.txt in Resources */ = {isa = PBXBuildFile; fileRef = E39825361DE5054B00ACC5A7 /* LocalSettingsTrash.txt */; };
 		E398254A1DE5054B00ACC5A7 /* GamePlayTrash.txt in Resources */ = {isa = PBXBuildFile; fileRef = E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */; };
 		E398254B1DE5054B00ACC5A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */; };
+		E3F66C461DF3C136000B3D06 /* global icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C451DF3C136000B3D06 /* global icon.png */; };
+		E3F66C481DF3C1EC000B3D06 /* global.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C471DF3C1EC000B3D06 /* global.png */; };
+		E3F66C4A1DF3EAB6000B3D06 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C491DF3EAB5000B3D06 /* card.jpg */; };
+		E3F66C4C1DF3EBAA000B3D06 /* bingo.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C4B1DF3EBAA000B3D06 /* bingo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +94,10 @@
 		E39825361DE5054B00ACC5A7 /* LocalSettingsTrash.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalSettingsTrash.txt; sourceTree = "<group>"; };
 		E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GamePlayTrash.txt; sourceTree = "<group>"; };
 		E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3F66C451DF3C136000B3D06 /* global icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "global icon.png"; sourceTree = "<group>"; };
+		E3F66C471DF3C1EC000B3D06 /* global.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = global.png; sourceTree = "<group>"; };
+		E3F66C491DF3EAB5000B3D06 /* card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpg; sourceTree = "<group>"; };
+		E3F66C4B1DF3EBAA000B3D06 /* bingo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bingo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +189,10 @@
 		E39824E61DE5053100ACC5A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E3F66C4B1DF3EBAA000B3D06 /* bingo.png */,
+				E3F66C491DF3EAB5000B3D06 /* card.jpg */,
+				E3F66C471DF3C1EC000B3D06 /* global.png */,
+				E3F66C451DF3C136000B3D06 /* global icon.png */,
 				E39824E71DE5053100ACC5A7 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -314,11 +326,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E39825391DE5054B00ACC5A7 /* Assets.xcassets in Resources */,
+				E3F66C4C1DF3EBAA000B3D06 /* bingo.png in Resources */,
+				E3F66C4A1DF3EAB6000B3D06 /* card.jpg in Resources */,
 				E39825481DE5054B00ACC5A7 /* LaunchScreen.xib in Resources */,
 				E39825491DE5054B00ACC5A7 /* LocalSettingsTrash.txt in Resources */,
 				E398254B1DE5054B00ACC5A7 /* LaunchScreen.storyboard in Resources */,
 				E398254A1DE5054B00ACC5A7 /* GamePlayTrash.txt in Resources */,
+				E3F66C461DF3C136000B3D06 /* global icon.png in Resources */,
 				E398253A1DE5054B00ACC5A7 /* Main.storyboard in Resources */,
+				E3F66C481DF3C1EC000B3D06 /* global.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +591,7 @@
 				E39825121DE5053100ACC5A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E39825131DE5053100ACC5A7 /* Build configuration list for PBXNativeTarget "BingoNight 2.2Tests" */ = {
 			isa = XCConfigurationList;
@@ -583,6 +600,7 @@
 				E39825151DE5053100ACC5A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E39825161DE5053100ACC5A7 /* Build configuration list for PBXNativeTarget "BingoNight 2.2UITests" */ = {
 			isa = XCConfigurationList;
@@ -591,6 +609,7 @@
 				E39825181DE5053100ACC5A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

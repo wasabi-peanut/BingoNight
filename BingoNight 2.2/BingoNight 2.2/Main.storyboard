@@ -62,13 +62,13 @@
                                 </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9wz-on-hQN">
-                                <rect key="frame" x="30" y="717.5" width="94" height="29"/>
+                                <rect key="frame" x="30" y="717" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperNumberOfGamesPress:" destination="6sT-4d-91V" eventType="valueChanged" id="uwb-1i-BF7"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7b-Nb-iv2">
-                                <rect key="frame" x="30" y="691.5" width="80" height="21"/>
+                                <rect key="frame" x="30" y="691" width="80" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="850-8f-4ZD"/>
                                 </constraints>
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gj-px-TVV" userLabel="Delete Scheme">
-                                <rect key="frame" x="287" y="708.5" width="30" height="48"/>
+                                <rect key="frame" x="287" y="708" width="30" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="smh-0c-Yqu"/>
                                     <constraint firstAttribute="height" constant="30" id="xCg-68-kYb"/>
@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxs-eG-Tmg" userLabel="Add Grid">
-                                <rect key="frame" x="337" y="708.5" width="30" height="47"/>
+                                <rect key="frame" x="337" y="708" width="30" height="47"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SL0-tn-lN4" userLabel="Delete Grid">
-                                <rect key="frame" x="387" y="708.5" width="30" height="47"/>
+                                <rect key="frame" x="387" y="708" width="30" height="47"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 <state key="normal" title="-"/>
                                 <connections>
@@ -185,7 +185,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Maw-se-pwL">
-                                <rect key="frame" x="458" y="722.5" width="450" height="20"/>
+                                <rect key="frame" x="458" y="722" width="450" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="450" id="5dg-if-0ea"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="RgC-WV-8to"/>
@@ -716,8 +716,8 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Local" id="FD5-bm-C5u">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="-10"/>
+                    <tabBarItem key="tabBarItem" title="Local" image="card.jpg" id="FD5-bm-C5u">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="labelNumberOfGames" destination="L7b-Nb-iv2" id="2ff-9p-lLf"/>
@@ -903,7 +903,7 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Auto Select" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTF-CE-w8M">
-                                <rect key="frame" x="343.5" y="788.5" width="122.5" height="20.5"/>
+                                <rect key="frame" x="337" y="788" width="136" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -924,19 +924,19 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymf-27-eQA">
-                                <rect key="frame" x="14" y="860.5" width="11" height="20.5"/>
+                                <rect key="frame" x="14" y="860" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="G" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JxP-Bf-EFy">
-                                <rect key="frame" x="12.5" y="900.5" width="12.5" height="20.5"/>
+                                <rect key="frame" x="12" y="900" width="13" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ke-dm-rmG">
-                                <rect key="frame" x="14" y="940.5" width="11" height="20.5"/>
+                                <rect key="frame" x="14" y="940" width="11" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -972,49 +972,49 @@
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="aFo-TF-3z9" userLabel="Stepper Display">
-                                <rect key="frame" x="522.5" y="721" width="94" height="29"/>
+                                <rect key="frame" x="523" y="721" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperDisplayChanged:" destination="YIq-qZ-unX" eventType="valueChanged" id="MRw-ek-hxL"/>
                                 </connections>
                             </stepper>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="g2Q-Ad-1A7" userLabel="Stepper Drop">
-                                <rect key="frame" x="522.5" y="892" width="94" height="29"/>
+                                <rect key="frame" x="523" y="892" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperDropChanged:" destination="YIq-qZ-unX" eventType="valueChanged" id="Do8-TW-BAB"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ball Roll Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJN-yV-QPY">
-                                <rect key="frame" x="345" y="698.5" width="102.5" height="20.5"/>
+                                <rect key="frame" x="345" y="698" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ball Display Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wi-v8-qD4" userLabel="Label Display Seconds">
-                                <rect key="frame" x="522.5" y="750.5" width="102.5" height="20.5"/>
+                                <rect key="frame" x="523" y="750" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ball Drop Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvf-BO-Ufg">
-                                <rect key="frame" x="513.5" y="866.5" width="112" height="20.5"/>
+                                <rect key="frame" x="514" y="866" width="112" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNR-dU-v7Y" userLabel="Label Roll Seconds">
-                                <rect key="frame" x="345" y="750.5" width="42" height="20.5"/>
+                                <rect key="frame" x="345" y="750" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7q-Rq-MLR" userLabel="Label Display Title">
-                                <rect key="frame" x="522.5" y="695.5" width="98" height="20.5"/>
+                                <rect key="frame" x="523" y="695" width="98" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Drop Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKC-Us-Mgz">
-                                <rect key="frame" x="522.5" y="921.5" width="126" height="20.5"/>
+                                <rect key="frame" x="523" y="921" width="126" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1056,6 +1056,18 @@
                                     <action selector="sliderChanged:" destination="YIq-qZ-unX" eventType="valueChanged" id="DBa-eS-Nya"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart Ball Choice" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jo7-Tu-OYc" userLabel="Label Skip Columns">
+                                <rect key="frame" x="337" y="866" width="136" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQZ-05-QpK" userLabel="Switch Skip Columns">
+                                <rect key="frame" x="380" y="907" width="51" height="31"/>
+                                <connections>
+                                    <action selector="switchUnmarkedColumnsChanged:" destination="YIq-qZ-unX" eventType="valueChanged" id="aUY-R2-ib0"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1092,6 +1104,7 @@
                             <constraint firstItem="g2Q-Ad-1A7" firstAttribute="baseline" secondItem="aFo-TF-3z9" secondAttribute="baseline" id="Eko-W2-5Qo"/>
                             <constraint firstItem="MdL-Lr-jU4" firstAttribute="top" secondItem="hJN-yV-QPY" secondAttribute="bottom" constant="2" id="F8N-lP-7PQ"/>
                             <constraint firstItem="jfE-tx-aPH" firstAttribute="top" secondItem="iJq-ic-k6H" secondAttribute="bottom" constant="5" id="Ftj-aH-mg5"/>
+                            <constraint firstItem="jo7-Tu-OYc" firstAttribute="centerX" secondItem="WTF-CE-w8M" secondAttribute="centerX" id="GXo-mG-dWr"/>
                             <constraint firstItem="AKC-Us-Mgz" firstAttribute="baseline" secondItem="p7q-Rq-MLR" secondAttribute="baseline" id="Gtq-HY-b5T"/>
                             <constraint firstItem="7Wi-v8-qD4" firstAttribute="top" secondItem="tvf-BO-Ufg" secondAttribute="bottom" constant="8" symbolic="YES" id="HCI-ie-mCK"/>
                             <constraint firstItem="MdL-Lr-jU4" firstAttribute="top" secondItem="Jdx-R9-pMk" secondAttribute="bottom" constant="10" id="HPu-XL-LSV"/>
@@ -1127,10 +1140,14 @@
                             <constraint firstItem="7Wi-v8-qD4" firstAttribute="width" secondItem="hJN-yV-QPY" secondAttribute="width" id="dv3-IC-9jM"/>
                             <constraint firstItem="tvf-BO-Ufg" firstAttribute="leading" secondItem="7Wi-v8-qD4" secondAttribute="trailing" constant="35" id="e7R-Gn-7aJ"/>
                             <constraint firstItem="aFo-TF-3z9" firstAttribute="top" secondItem="p7q-Rq-MLR" secondAttribute="bottom" constant="5" id="eKP-AM-QNC"/>
+                            <constraint firstItem="jo7-Tu-OYc" firstAttribute="height" secondItem="WTF-CE-w8M" secondAttribute="height" id="eTo-Ds-igg"/>
+                            <constraint firstItem="jo7-Tu-OYc" firstAttribute="width" secondItem="WTF-CE-w8M" secondAttribute="width" id="eXl-FY-cPi"/>
                             <constraint firstItem="MdL-Lr-jU4" firstAttribute="leading" secondItem="SGL-Rk-we9" secondAttribute="leadingMargin" constant="325" id="f6x-qe-YxV"/>
                             <constraint firstItem="AS6-wA-yB3" firstAttribute="top" secondItem="grC-dF-rMO" secondAttribute="bottom" constant="10" id="fPK-Uf-aXC"/>
                             <constraint firstAttribute="centerX" secondItem="Jdx-R9-pMk" secondAttribute="centerX" constant="13.5" id="fXw-V3-fQS"/>
                             <constraint firstItem="XQy-rL-Das" firstAttribute="leading" secondItem="SGL-Rk-we9" secondAttribute="leadingMargin" constant="10" id="feY-09-WXy"/>
+                            <constraint firstItem="MQZ-05-QpK" firstAttribute="centerX" secondItem="Jdx-R9-pMk" secondAttribute="centerX" id="fny-hY-Qeb"/>
+                            <constraint firstItem="jo7-Tu-OYc" firstAttribute="bottom" secondItem="tvf-BO-Ufg" secondAttribute="bottom" id="gY4-w7-b1U"/>
                             <constraint firstItem="g2Q-Ad-1A7" firstAttribute="centerX" secondItem="tvf-BO-Ufg" secondAttribute="centerX" id="gxg-WA-bUz"/>
                             <constraint firstItem="7Wi-v8-qD4" firstAttribute="leading" secondItem="hJN-yV-QPY" secondAttribute="trailing" constant="35" id="hUs-E9-6eh"/>
                             <constraint firstItem="g2Q-Ad-1A7" firstAttribute="top" secondItem="AKC-Us-Mgz" secondAttribute="bottom" constant="-50" id="i4T-ac-JSN"/>
@@ -1147,6 +1164,7 @@
                             <constraint firstItem="p7q-Rq-MLR" firstAttribute="leading" secondItem="aFo-TF-3z9" secondAttribute="leading" id="q6w-8l-FGJ"/>
                             <constraint firstItem="Jdx-R9-pMk" firstAttribute="top" secondItem="WTF-CE-w8M" secondAttribute="bottom" constant="10" id="qJf-b4-0Ls"/>
                             <constraint firstItem="p7q-Rq-MLR" firstAttribute="leading" secondItem="sNR-dU-v7Y" secondAttribute="trailing" constant="10" id="tAy-vy-3Wj"/>
+                            <constraint firstItem="MQZ-05-QpK" firstAttribute="top" secondItem="jo7-Tu-OYc" secondAttribute="bottom" constant="20" id="tUf-s0-aPP"/>
                             <constraint firstItem="MdL-Lr-jU4" firstAttribute="top" secondItem="sNR-dU-v7Y" secondAttribute="bottom" constant="-50" id="uMX-GP-oKT"/>
                             <constraint firstItem="grC-dF-rMO" firstAttribute="centerX" secondItem="AS6-wA-yB3" secondAttribute="centerX" id="vaw-Bw-34Y"/>
                             <constraint firstItem="MdL-Lr-jU4" firstAttribute="top" secondItem="Jdx-R9-pMk" secondAttribute="bottom" constant="60" id="xDk-Mo-Vu0"/>
@@ -1208,8 +1226,8 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Global" id="3h8-nU-z1f">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="25" vertical="-10"/>
+                    <tabBarItem key="tabBarItem" title="Global" image="global.png" id="3h8-nU-z1f">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="20" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
                         <outlet property="btnMakeCards" destination="8iM-Q4-XMj" id="F6Q-wP-akX"/>
@@ -1226,6 +1244,7 @@
                         <outlet property="stepperDisplay" destination="aFo-TF-3z9" id="Ygf-lA-My5"/>
                         <outlet property="stepperDrop" destination="g2Q-Ad-1A7" id="MKj-Zr-G6H"/>
                         <outlet property="stepperRoll" destination="MdL-Lr-jU4" id="PVG-GX-HLZ"/>
+                        <outlet property="switchUnmarkedColumns" destination="MQZ-05-QpK" id="2lS-ys-yEv"/>
                         <outlet property="switchUseSelector" destination="Jdx-R9-pMk" id="Qrh-j6-i76"/>
                         <segue destination="HUt-Un-ryq" kind="show" identifier="segueGlobalSettingToPDF" id="5Yg-la-6ZM"/>
                     </connections>
@@ -1314,6 +1333,10 @@
             <point key="canvasLocation" x="255" y="-801"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="card.jpg" width="30" height="30"/>
+        <image name="global.png" width="30" height="30"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="kHx-Mf-IXl"/>
     </inferredMetricsTieBreakers>

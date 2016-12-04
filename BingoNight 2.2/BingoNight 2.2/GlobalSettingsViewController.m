@@ -87,8 +87,20 @@
         [_switchUseSelector setOn:YES];
         
     }
+    
     else {
         [_switchUseSelector setOn:NO];
+        
+    }
+    
+
+    if ([[_arrayGlobalSettings objectAtIndex:15] isEqual:@YES]) {
+        [_switchUnmarkedColumns setOn:YES];
+        
+    }
+    
+    else {
+        [_switchUnmarkedColumns setOn:NO];
         
     }
     
@@ -165,6 +177,7 @@
                                 @5, //10 is row number for font;
                                 @13, //11 is row number for size;
                                 @4,@3,@2, //12,13,14 is ball roll, display and drop seconds;
+                                @1, //15 is smart selector on (i.e. value of one)
                                 nil];
         
            }
@@ -254,6 +267,20 @@
     
     
 }
+
+
+- (IBAction)switchUnmarkedColumnsChanged:(id)sender {
+    
+    if (_switchUnmarkedColumns.isOn == YES) {
+       [_arrayGlobalSettings replaceObjectAtIndex:15 withObject:@1];
+    }
+    else {
+        [_arrayGlobalSettings replaceObjectAtIndex:15 withObject:@0];
+        
+    }
+    
+}
+
 - (IBAction)segmentTextOrBackgroundSelected:(id)sender {
     if (_segmentTextOrBackground.selectedSegmentIndex== 0) {
         _selectedSegment= 0;
@@ -510,7 +537,7 @@
     if (([segue.identifier isEqualToString:@"segueGlobalSettingToPDF"])) {
         
         PDFViewController *viewGlobalToPDF = [segue destinationViewController];
-        viewGlobalToPDF.pages = [_labelNumberOfPages.text integerValue];
+        viewGlobalToPDF.pages = [_labelNumberOfPages.text intValue];
         
     }
 }

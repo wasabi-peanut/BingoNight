@@ -31,6 +31,8 @@
 @property (strong, nonatomic) UILabel *labelCalled;
 
 @property int useSelector;
+@property int useSmartSelector;
+
 
 
 

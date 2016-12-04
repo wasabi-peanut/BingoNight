@@ -29,7 +29,7 @@
     
     
     _protectedGrids = 3;
-    _protectedPresets = 3;
+    _protectedPresets = 7;
     
     
    _height = [UIScreen mainScreen].bounds.size.height;
@@ -510,7 +510,15 @@
     _arrayPickerPresets = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayPickerPresets]];
     
     if (![_arrayPickerPresets count]) {
-        _arrayPickerPresets = [[NSMutableArray alloc] initWithObjects:@"Red",@"Blue",@"Green", nil];
+        _arrayPickerPresets = [[NSMutableArray alloc] initWithObjects:
+                               @"Red",
+                               @"Blue",
+                               @"Green",
+                               @"Holiday",
+                               @"Autumn",
+                               @"Fourth",
+                               @"Midnight",
+                               nil];
         
     }
     
@@ -590,6 +598,53 @@
                                      @255,@0,
                                      nil];
         
+        NSMutableArray *HolidayPreset = [[NSMutableArray alloc] initWithObjects:
+                                         @0,@197,@0, //background
+                                         @255,@0,@0, //box background
+                                         @0,@0,@255, //box letters
+                                         @255,@100,@165, //called background
+                                         @130,@130,@130, //called letters
+                                         @0,@0,@255, //Bingo letters
+                                         @0,@0,@255, //Game title color
+                                         @0,//marker
+                                         nil];
+       
+        NSMutableArray *AutumnPreset = [[NSMutableArray alloc] initWithObjects:
+                                         @255,@179,@9, //background
+                                         @113,@0,@0, //box background
+                                         @236,@19,@102, //box letters
+                                         @255,@143,@112, //called background
+                                         @197,@106,@92, //called letters
+                                         @255,@58,@255, //Bingo letters
+                                         @0,@0,@255, //Game title color
+                                         @0,//marker
+                                         nil];
+        
+        NSMutableArray *FourthPreset = [[NSMutableArray alloc] initWithObjects:
+                                        @255,@255,@255, //background
+                                        @255,@0,@0, //box background
+                                        @0,@0,@255, //box letters
+                                        @172,@0,@0, //called background
+                                        @0,@0,@175, //called letters
+                                        @0,@0,@255, //Bingo letters
+                                        @0,@0,@255, //Game title color
+                                        @0,//marker
+                                        nil];
+        
+        NSMutableArray *MidnightPreset = [[NSMutableArray alloc] initWithObjects:
+                                        @37,@4,@3, //background
+                                        @76,@76,@76, //box background
+                                        @0,@0,@255, //box letters
+                                        @37,@4,@3, //called background
+                                        @54,@0,@121, //called letters
+                                        @83,@0,@255, //Bingo letters
+                                        @0,@0,@255, //Game title color
+                                        @0,//marker
+                                        nil];
+        
+        
+        
+        
         _arrayGameColorSettings = [[NSMutableArray alloc] initWithObjects:
                               @255,@255,@255,@255,@0,
                               @0,@0,@0,@255,@255,
@@ -597,7 +652,7 @@
                               @0,@0,@255,@0,@0,
                               @255,@0,
                               nil];
-        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects:RedPreset,BluePreset,GreenPreset, nil];
+        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects:RedPreset,BluePreset,GreenPreset, HolidayPreset,AutumnPreset,FourthPreset,MidnightPreset,nil];
        
     }
     
@@ -1119,7 +1174,6 @@
 
 
 
-
 -(BOOL)textFieldShouldReturn:(UITextField *)textField {
     //_changeHappened = YES;
     [textField resignFirstResponder];
@@ -1439,6 +1493,7 @@
     
    
 }
+
 
 
 @end

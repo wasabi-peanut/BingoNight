@@ -71,6 +71,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark BAR CREATION
 
 -(void)createBar{
     
@@ -132,7 +133,7 @@
 
 }
 
-
+#pragma mark ARRAYS
 -(void) openArray {
     
      
@@ -194,6 +195,7 @@
                                 @1, //10 is row number for font;
                                 @1, //11 is row number for size;
                                 @2,@2,@2, //12,13,14 is delay in seconds for roll, display and drop;
+                                @1, //15 is use Smart Selector;
                                 nil];
         
     }
@@ -254,6 +256,8 @@
     
     
     _useSelector = [[_arrayGlobalSettings objectAtIndex:0] intValue];
+    _useSmartSelector = [_arrayGlobalSettings[15] intValue];
+    
 
 
     [self displayGame];
@@ -261,7 +265,7 @@
     }
 
 
-
+#pragma mark SET UP GAME DISPLAY ...
 -(void)displayGame {
     
     _arrayButtonsCreated = [[NSMutableArray alloc] init];
@@ -396,7 +400,7 @@
         button.frame = CGRectMake(x, y, width, height);
         [button setTitle:buttonLabel forState:UIControlStateNormal];
         [button addTarget:self action:@selector(numberPressed:) forControlEvents:UIControlEventTouchUpInside];
-        [button addTarget:self action:@selector(deselectButton) forControlEvents:UIControlEventTouchDragExit];
+       // [button addTarget:self action:@selector(deselectButton) forControlEvents:UIControlEventTouchDragExit];
         
         
         button.backgroundColor = _boxBackgroundColor;
@@ -615,7 +619,7 @@
     
     
 }
-
+#pragma mark BALL SELECTION STUFF
 -(void)numberPressed: (UIButton *) sender {
     
     if (_ready == YES && _useSelector == 0 && sender.tag != 0) {
@@ -685,6 +689,97 @@
         
     }
     
+    if (_useSmartSelector == 1) {
+    
+    //code to exclude columns
+    
+    NSMutableArray *tempArrayOfNumbers = [[NSMutableArray alloc] init];
+    
+        if ([_arrayGridPatterns[1] isEqual:@0] &&
+            [_arrayGridPatterns[6] isEqual:@0] &&
+            [_arrayGridPatterns[11] isEqual:@0] &&
+            [_arrayGridPatterns[16] isEqual:@0] &&
+            [_arrayGridPatterns[21] isEqual:@0])
+        {
+            
+            
+            for (NSString *gridMark in _bingoArray) {
+                if ([gridMark integerValue]<16) {
+                    [tempArrayOfNumbers addObject:gridMark];
+            
+        }
+            }
+        }
+ 
+    if ([_arrayGridPatterns[2] isEqual:@0]&&
+        [_arrayGridPatterns[7] isEqual:@0]&&
+        [_arrayGridPatterns[12] isEqual:@0]&&
+        [_arrayGridPatterns[17] isEqual:@0]&&
+        [_arrayGridPatterns[22] isEqual:@0]) {
+        
+        for (NSString *gridMark in _bingoArray) {
+            if ([gridMark integerValue]>15 && [gridMark integerValue]<31) {
+                [tempArrayOfNumbers addObject:gridMark];
+                
+            }
+        }
+    }
+    
+   
+    if ([_arrayGridPatterns[3] isEqual:@0]&&
+        [_arrayGridPatterns[8] isEqual:@0]&&
+        [_arrayGridPatterns[13] isEqual:@0]&&
+        [_arrayGridPatterns[18] isEqual:@0]&&
+        [_arrayGridPatterns[23] isEqual:@0])
+    {
+        
+        for (NSString *gridMark in _bingoArray) {
+            if ([gridMark integerValue]>30 && [gridMark integerValue]<46) {
+                [tempArrayOfNumbers addObject:gridMark];
+                
+            }
+        }
+    }
+
+    if ([_arrayGridPatterns[4] isEqual:@0] &&
+        [_arrayGridPatterns[9] isEqual:@0] &&
+        [_arrayGridPatterns[14] isEqual:@0] &&
+        [_arrayGridPatterns[19] isEqual:@0] &&
+        [_arrayGridPatterns[24] isEqual:@0]) {
+        
+        for (NSString *gridMark in _bingoArray) {
+            if ([gridMark integerValue]>45 && [gridMark integerValue]<61) {
+                [tempArrayOfNumbers addObject:gridMark];
+                
+            }
+        }
+    }
+    
+    if ([_arrayGridPatterns[5] isEqual:@0] &&
+        [_arrayGridPatterns[10] isEqual:@0] &&
+        [_arrayGridPatterns[15] isEqual:@0] &&
+        [_arrayGridPatterns[20] isEqual:@0] &&
+        [_arrayGridPatterns[25] isEqual:@0]) {
+        
+        for (NSString *gridMark in _bingoArray) {
+            if ([gridMark integerValue]>60 && [gridMark integerValue]<76) {
+                [tempArrayOfNumbers addObject:gridMark];
+                
+            }
+        }
+    }
+        
+        NSLog(@"temp array is %@",tempArrayOfNumbers);
+        NSLog(@"grid array is %@",_arrayGridPatterns);
+
+        if (tempArrayOfNumbers.count != 75) {
+            
+    [_bingoArray removeObjectsInArray:tempArrayOfNumbers];
+    
+    }
+    }
+    
+    
    NSUInteger count;
     count = _bingoArray.count ;
     
@@ -709,8 +804,9 @@
 
 -(void)chooseBall {
     _ready = NO;
-    [self createBar];
-    if (_ballCount <75) {
+   
+    if (_ballCount <_bingoArray.count) {
+        [self createBar];
    
     _stringCalled = [NSString alloc];
     NSInteger calledNumber = [[_bingoArray objectAtIndex:_ballCount] integerValue];
@@ -818,9 +914,10 @@
 }
 
 -(void)deselectButton {
-    if (_ballCount>0) {
+    if (_ballCount>0&_arrayCalledNumbers.count>0) {
+       // NSLog(@"This is the array called numbers %@ and this is ball count %i",_arrayCalledNumbers,_ballCount);
         
-    _numberCalled = [_arrayCalledNumbers[_ballCount] integerValue];
+    _numberCalled = [_arrayCalledNumbers[_ballCount-1] integerValue];
     _ballCount = _ballCount - 1;
     
     UIButton *activeButton = [[UIButton alloc] init];
@@ -836,7 +933,7 @@
     [_arrayCalledBalls removeObjectAtIndex:0];
     [_arrayCalledNumbers removeLastObject];
         
-        [DefaultsDataManager saveData:_arrayCalledNumbers forKey:_keyForCalledNumbers];
+    [DefaultsDataManager saveData:_arrayCalledNumbers forKey:_keyForCalledNumbers];
     
     
     }
@@ -983,9 +1080,17 @@
             _ready = YES;
         [self createBar];
         if (_useSelector) {
-            UIButton *currentButton = [_arrayButtonsCreated objectAtIndex:_ballCount-1];
-            currentButton.backgroundColor = _usedBoxBackgroundColor;
-            currentButton.tintColor = _usedBoxLetterColor;
+            for (UIButton *myButton in _arrayButtonsCreated) {
+               // NSLog(@"My tag is %i and number called is %i",myButton.tag,_numberCalled);
+                if (myButton.tag == _numberCalled)
+                    myButton.backgroundColor = _usedBoxBackgroundColor;
+                    myButton.tintColor = _usedBoxLetterColor;
+                
+            }
+            
+            //UIButton *currentButton = [_arrayButtonsCreated objectAtIndex:_ballCount-1];
+            //currentButton.backgroundColor = _usedBoxBackgroundColor;
+            //currentButton.tintColor = _usedBoxLetterColor;
         }
       
     }];
