@@ -62,13 +62,13 @@
                                 </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9wz-on-hQN">
-                                <rect key="frame" x="30" y="717.5" width="94" height="29"/>
+                                <rect key="frame" x="30" y="717" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperNumberOfGamesPress:" destination="6sT-4d-91V" eventType="valueChanged" id="uwb-1i-BF7"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7b-Nb-iv2">
-                                <rect key="frame" x="30" y="691.5" width="80" height="21"/>
+                                <rect key="frame" x="30" y="691" width="80" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="850-8f-4ZD"/>
                                 </constraints>
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gj-px-TVV" userLabel="Delete Scheme">
-                                <rect key="frame" x="287" y="708.5" width="30" height="48"/>
+                                <rect key="frame" x="287" y="708" width="30" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="smh-0c-Yqu"/>
                                     <constraint firstAttribute="height" constant="30" id="xCg-68-kYb"/>
@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxs-eG-Tmg" userLabel="Add Grid">
-                                <rect key="frame" x="337" y="708.5" width="30" height="47"/>
+                                <rect key="frame" x="337" y="708" width="30" height="47"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SL0-tn-lN4" userLabel="Delete Grid">
-                                <rect key="frame" x="387" y="708.5" width="30" height="47"/>
+                                <rect key="frame" x="387" y="708" width="30" height="47"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 <state key="normal" title="-"/>
                                 <connections>
@@ -185,7 +185,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Maw-se-pwL">
-                                <rect key="frame" x="458" y="722.5" width="450" height="20"/>
+                                <rect key="frame" x="458" y="722" width="450" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="450" id="5dg-if-0ea"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="RgC-WV-8to"/>
@@ -1346,7 +1346,7 @@
                                 <rect key="frame" x="0.0" y="28" width="1366" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T27-5v-WSZ" id="J5X-Ky-F9L">
-                                    <rect key="frame" x="0.0" y="0.0" width="1366" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1366" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1356,9 +1356,7 @@
                             <outlet property="delegate" destination="jBw-gH-75c" id="ovf-Mt-2Z4"/>
                         </connections>
                     </tableView>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="tYE-TP-4wn"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="e2U-cu-a5a" kind="show" identifier="segueInstructionsToText" id="d9o-B6-Zvh"/>
