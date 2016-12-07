@@ -33,6 +33,7 @@
 		E3F66C481DF3C1EC000B3D06 /* global.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C471DF3C1EC000B3D06 /* global.png */; };
 		E3F66C4A1DF3EAB6000B3D06 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C491DF3EAB5000B3D06 /* card.jpg */; };
 		E3F66C4C1DF3EBAA000B3D06 /* bingo.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C4B1DF3EBAA000B3D06 /* bingo.png */; };
+		E3F66C4F1DF67A7D000B3D06 /* InstructionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F66C4E1DF67A7D000B3D06 /* InstructionsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		E3F66C471DF3C1EC000B3D06 /* global.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = global.png; sourceTree = "<group>"; };
 		E3F66C491DF3EAB5000B3D06 /* card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpg; sourceTree = "<group>"; };
 		E3F66C4B1DF3EBAA000B3D06 /* bingo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bingo.png; sourceTree = "<group>"; };
+		E3F66C4D1DF67A7D000B3D06 /* InstructionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsTableViewController.h; sourceTree = "<group>"; };
+		E3F66C4E1DF67A7D000B3D06 /* InstructionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +155,8 @@
 				E398251A1DE5054B00ACC5A7 /* Main.storyboard */,
 				E398251B1DE5054B00ACC5A7 /* IntroViewController.h */,
 				E398251C1DE5054B00ACC5A7 /* IntroViewController.m */,
+				E3F66C4D1DF67A7D000B3D06 /* InstructionsTableViewController.h */,
+				E3F66C4E1DF67A7D000B3D06 /* InstructionsTableViewController.m */,
 				E398251D1DE5054B00ACC5A7 /* LocalSettingsViewController.h */,
 				E398251E1DE5054B00ACC5A7 /* LocalSettingsViewController.m */,
 				E398251F1DE5054B00ACC5A7 /* GlobalSettingsViewController.h */,
@@ -372,6 +377,7 @@
 				E39825401DE5054B00ACC5A7 /* PDFViewController.m in Sources */,
 				E398253C1DE5054B00ACC5A7 /* LocalSettingsViewController.m in Sources */,
 				E39825421DE5054B00ACC5A7 /* CreateCardArrays.m in Sources */,
+				E3F66C4F1DF67A7D000B3D06 /* InstructionsTableViewController.m in Sources */,
 				E39825451DE5054B00ACC5A7 /* WinnerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

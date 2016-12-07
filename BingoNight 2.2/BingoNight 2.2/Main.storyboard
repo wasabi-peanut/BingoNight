@@ -62,13 +62,13 @@
                                 </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9wz-on-hQN">
-                                <rect key="frame" x="30" y="717" width="94" height="29"/>
+                                <rect key="frame" x="30" y="717.5" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperNumberOfGamesPress:" destination="6sT-4d-91V" eventType="valueChanged" id="uwb-1i-BF7"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7b-Nb-iv2">
-                                <rect key="frame" x="30" y="691" width="80" height="21"/>
+                                <rect key="frame" x="30" y="691.5" width="80" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="850-8f-4ZD"/>
                                 </constraints>
@@ -97,7 +97,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gj-px-TVV" userLabel="Delete Scheme">
-                                <rect key="frame" x="287" y="708" width="30" height="48"/>
+                                <rect key="frame" x="287" y="708.5" width="30" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="smh-0c-Yqu"/>
                                     <constraint firstAttribute="height" constant="30" id="xCg-68-kYb"/>
@@ -115,7 +115,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxs-eG-Tmg" userLabel="Add Grid">
-                                <rect key="frame" x="337" y="708" width="30" height="47"/>
+                                <rect key="frame" x="337" y="708.5" width="30" height="47"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SL0-tn-lN4" userLabel="Delete Grid">
-                                <rect key="frame" x="387" y="708" width="30" height="47"/>
+                                <rect key="frame" x="387" y="708.5" width="30" height="47"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 <state key="normal" title="-"/>
                                 <connections>
@@ -185,7 +185,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Maw-se-pwL">
-                                <rect key="frame" x="458" y="722" width="450" height="20"/>
+                                <rect key="frame" x="458" y="722.5" width="450" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="450" id="5dg-if-0ea"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="RgC-WV-8to"/>
@@ -839,7 +839,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qyh-4y-NuD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601.6105417276717" y="-1094.53125"/>
+            <point key="canvasLocation" x="2622" y="-838"/>
         </scene>
         <!--Checking View Controller-->
         <scene sceneID="Ipk-QW-ZBh">
@@ -1288,11 +1288,12 @@
                     <connections>
                         <segue destination="kky-gz-aUo" kind="show" identifier="segueIntroToGamePlay" id="tUt-7s-SEd"/>
                         <segue destination="foj-WQ-Y35" kind="show" identifier="segueIntroToSetUp" id="4IB-yY-Rnf"/>
+                        <segue destination="jBw-gH-75c" kind="show" identifier="segueIntroToInstructions" id="66x-yL-g2W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKT-K6-ubD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007" y="-1069"/>
+            <point key="canvasLocation" x="985.65153733528541" y="-1051.171875"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="I4o-ED-qAj">
@@ -1312,7 +1313,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPs-FU-79o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="-371"/>
+            <point key="canvasLocation" x="1007" y="-152"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ltV-kl-Tjm">
@@ -1325,12 +1326,80 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="b9q-Rg-ygK" kind="relationship" relationship="rootViewController" id="1OV-KW-z7n"/>
+                        <segue destination="b9q-Rg-ygK" kind="relationship" relationship="rootViewController" id="4Dg-Qi-eNW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1y-cC-0eA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255" y="-801"/>
+            <point key="canvasLocation" x="309" y="-1051"/>
+        </scene>
+        <!--Instructions Table View Controller-->
+        <scene sceneID="m6s-6m-fh3">
+            <objects>
+                <tableViewController modalTransitionStyle="flipHorizontal" id="jBw-gH-75c" customClass="InstructionsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Wkv-L1-aPo">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="T27-5v-WSZ">
+                                <rect key="frame" x="0.0" y="28" width="1366" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T27-5v-WSZ" id="J5X-Ky-F9L">
+                                    <rect key="frame" x="0.0" y="0.0" width="1366" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jBw-gH-75c" id="A52-Xw-fxE"/>
+                            <outlet property="delegate" destination="jBw-gH-75c" id="ovf-Mt-2Z4"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="tYE-TP-4wn"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="e2U-cu-a5a" kind="show" identifier="segueInstructionsToText" id="d9o-B6-Zvh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7bw-4T-3w5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="-371"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="etR-Se-McQ">
+            <objects>
+                <viewController id="e2U-cu-a5a" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PhV-M7-dGJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="sQf-0n-tre"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qnh-fa-iqB">
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gEm-CL-MjT">
+                                <rect key="frame" x="40" y="84" width="1286" height="856"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gEm-CL-MjT" firstAttribute="centerX" secondItem="Qnh-fa-iqB" secondAttribute="centerX" id="8W0-6P-qsJ"/>
+                            <constraint firstItem="gEm-CL-MjT" firstAttribute="top" secondItem="PhV-M7-dGJ" secondAttribute="bottom" constant="20" id="div-Jk-raA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gEm-CL-MjT" secondAttribute="trailing" constant="20" id="oqG-bQ-Fki"/>
+                            <constraint firstItem="gEm-CL-MjT" firstAttribute="centerY" secondItem="Qnh-fa-iqB" secondAttribute="centerY" id="tAj-II-7Of"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h0e-FX-D4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="380" y="333"/>
         </scene>
     </scenes>
     <resources>
@@ -1338,6 +1407,6 @@
         <image name="global.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kHx-Mf-IXl"/>
+        <segue reference="tUt-7s-SEd"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -104,7 +104,22 @@
     _btnSetUp.titleLabel.font = [UIFont fontWithName:buttonFontName size:.05 * width];
     [_btnSetUp addTarget:self action:@selector(pushSetUp) forControlEvents:UIControlEventTouchDown];
     
+    _btnInstructions = [[UIButton alloc] init];
     
+    _btnInstructions.frame = CGRectMake(0.4 * width,0.65 * height, .2*width, .05*width);
+    _btnInstructions.backgroundColor = [UIColor whiteColor];
+    _btnInstructions.layer.cornerRadius = 10;
+    [_btnInstructions setTitle:@"Instructions" forState:UIControlStateNormal];
+    [_btnInstructions setTitleColor:buttonTextColor forState:UIControlStateNormal];
+    [_btnInstructions setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    [_btnInstructions setBackgroundColor:[UIColor lightGrayColor]];
+    
+    
+    
+    
+    _btnInstructions.titleLabel.textColor = buttonTextColor;
+    _btnInstructions.titleLabel.font = [UIFont fontWithName:buttonFontName size:.03 * width];
+    [_btnInstructions addTarget:self action:@selector(pushInstructions) forControlEvents:UIControlEventTouchDown];
     
     
     [self.view addSubview:_labelTitleBox];
@@ -113,6 +128,7 @@
     
     [self.view addSubview:_btnPlay];
     [self.view addSubview:_btnSetUp];
+    [self.view addSubview:_btnInstructions];
     
     
     
@@ -141,6 +157,11 @@
     
 }
 
+-(void)pushInstructions{
+    [self performSegueWithIdentifier:@"segueIntroToInstructions" sender:self];
+    //Do something
+    
+}
 /*
 #pragma mark - Navigation
 
