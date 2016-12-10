@@ -135,13 +135,7 @@
         [self.view bringSubviewToFront:calledNumber];
     }
     
-        
-    
-    
-    
-   
-    
-    
+ 
     
 }
 
@@ -185,9 +179,10 @@
 
 -(void)AnimationSelector {
     
-    int checkingNumber = 4;
+     int checkingNumber = +arc4random_uniform(7)+1;
     
     switch (checkingNumber) {
+        
         case 1:
             [self checkingAnimation1];
             break;
@@ -203,6 +198,13 @@
         case 5:
             [self checkingAnimation5];
             break;
+        case 6:
+            [self checkingAnimation6];
+            break;
+        case 7:
+            [self checkingAnimation7];
+            break;
+
         default:
             
             break;
@@ -213,90 +215,6 @@
     
     
     
-    
-}
-
--(void)checkingAnimation0 {
-    UILabel *checkingTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, _width-100, _height/2)];
-    checkingTopLabel.text = @"Checking";
-    checkingTopLabel.font = [UIFont fontWithName:@"Courier" size:100];
-    // spinLabel.backgroundColor = [UIColor yellowColor];
-    checkingTopLabel.textAlignment = NSTextAlignmentCenter;
-    checkingTopLabel.layer.cornerRadius = 25;
-    checkingTopLabel.clipsToBounds = YES;
-    
-    
-    checkingTopLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    checkingTopLabel.layer.borderWidth = 2;
-    
-    
-    UILabel *checkingBottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, _height/2, _width-100, _height/2)];
-    checkingBottomLabel.text = @"Hold Your Cards";
-    checkingBottomLabel.font = [UIFont fontWithName:@"Courier" size:100];
-    // spinLabel.backgroundColor = [UIColor yellowColor];
-    checkingBottomLabel.textAlignment = NSTextAlignmentCenter;
-    checkingBottomLabel.layer.cornerRadius = 25;
-    checkingBottomLabel.clipsToBounds = YES;
-    
-    
-    checkingBottomLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-    checkingBottomLabel.layer.borderWidth = 2;
-    
-    [self.view addSubview:checkingTopLabel];
-    [self.view addSubview:checkingBottomLabel];
-    
-    
-    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, _width-75, _height)];
-    labelBackground.text = @"Hold Cards";
-    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
-    labelBackground.numberOfLines = 0;
-    labelBackground.textColor = [UIColor yellowColor];
-    labelBackground.textAlignment = NSTextAlignmentCenter;
-    
-    
-    
-    
-    [self.view addSubview: labelBackground];
-    
-    
-    CABasicAnimation *spinning = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
-    //for backward text
-    spinning.toValue = [NSNumber numberWithFloat:2*M_PI];
-    //only forward text
-    //spinning.toValue = [NSNumber numberWithFloat:.5*M_PI];
-    
-    spinning.autoreverses = YES;
-    spinning.duration = 2;
-    spinning.repeatCount = HUGE_VALF;
-    
-    CABasicAnimation *colorAnimation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-    UIColor *fromColor = [UIColor redColor];
-    UIColor *toColor = [UIColor greenColor];
-    
-    colorAnimation.duration = 2.0;
-    colorAnimation.fromValue = (id)fromColor.CGColor;
-    colorAnimation.toValue = (id)toColor.CGColor;
-    colorAnimation.repeatCount = HUGE_VALF;
-    colorAnimation.autoreverses = YES;
-    
-    
-    CABasicAnimation *colorAnimation2 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-    UIColor *fromColor2 = [UIColor greenColor];
-    UIColor *toColor2 = [UIColor redColor];
-    
-    colorAnimation2.duration = 2.0;
-    colorAnimation2.fromValue = (id)fromColor2.CGColor;
-    colorAnimation2.toValue = (id)toColor2.CGColor;
-    colorAnimation2.repeatCount = HUGE_VALF;
-    colorAnimation2.autoreverses = YES;
-    
-    
-    [checkingTopLabel.layer addAnimation:spinning forKey:nil];
-    [checkingTopLabel.layer addAnimation:colorAnimation forKey:nil];
-    
-    [checkingBottomLabel.layer addAnimation:spinning forKey:nil];
-    [checkingBottomLabel.layer addAnimation:colorAnimation2 forKey:nil];
-
     
 }
 
@@ -680,10 +598,10 @@
     [self.view addSubview: labelBackground];
 
     CABasicAnimation *colorAnimation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-    UIColor *fromColor = [UIColor whiteColor];
-    UIColor *toColor = [UIColor blackColor];
+    UIColor *fromColor = [UIColor yellowColor];
+    UIColor *toColor = [UIColor blueColor];
     
-    colorAnimation.duration = 5;
+    colorAnimation.duration = 3;
     colorAnimation.fromValue = (id)fromColor.CGColor;
     colorAnimation.toValue = (id)toColor.CGColor;
     colorAnimation.repeatCount = HUGE_VALF;
@@ -693,6 +611,8 @@
     
     
     
+ 
+        
     
     
   /*  CABasicAnimation *moveHorizontal = [CABasicAnimation animationWithKeyPath:@"transform.translation.x" ];
@@ -786,8 +706,176 @@
         
     }*/
     
+}
+
+-(void)checkingAnimation6 {
+    UILabel *checkingTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, _width-100, _height/2)];
+    checkingTopLabel.text = @"Checking";
+    checkingTopLabel.font = [UIFont fontWithName:@"Courier" size:100];
+    // spinLabel.backgroundColor = [UIColor yellowColor];
+    checkingTopLabel.textAlignment = NSTextAlignmentCenter;
+    checkingTopLabel.layer.cornerRadius = 25;
+    checkingTopLabel.clipsToBounds = YES;
+    
+    
+    checkingTopLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    checkingTopLabel.layer.borderWidth = 2;
+    
+    
+    UILabel *checkingBottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, _height/2, _width-100, _height/2)];
+    checkingBottomLabel.text = @"Hold Your Cards";
+    checkingBottomLabel.font = [UIFont fontWithName:@"Courier" size:100];
+    // spinLabel.backgroundColor = [UIColor yellowColor];
+    checkingBottomLabel.textAlignment = NSTextAlignmentCenter;
+    checkingBottomLabel.layer.cornerRadius = 25;
+    checkingBottomLabel.clipsToBounds = YES;
+    
+    
+    checkingBottomLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    checkingBottomLabel.layer.borderWidth = 2;
+    
+    [self.view addSubview:checkingTopLabel];
+    [self.view addSubview:checkingBottomLabel];
+    
+    
+    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, _width-75, _height)];
+    // labelBackground.text = @"Hold Cards";
+    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
+    labelBackground.numberOfLines = 0;
+    labelBackground.textColor = [UIColor yellowColor];
+    labelBackground.textAlignment = NSTextAlignmentCenter;
+    
+    
+    
+    
+    [self.view addSubview: labelBackground];
+    
+    
+    CABasicAnimation *spinning = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
+    //for backward text
+    spinning.toValue = [NSNumber numberWithFloat:2*M_PI];
+    //only forward text
+    //spinning.toValue = [NSNumber numberWithFloat:.5*M_PI];
+    
+    spinning.autoreverses = YES;
+    spinning.duration = 4;
+    spinning.repeatCount = HUGE_VALF;
+    
+    CABasicAnimation *colorAnimation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    UIColor *fromColor = [UIColor redColor];
+    UIColor *toColor = [UIColor greenColor];
+    
+    colorAnimation.duration = 2.0;
+    colorAnimation.fromValue = (id)fromColor.CGColor;
+    colorAnimation.toValue = (id)toColor.CGColor;
+    colorAnimation.repeatCount = HUGE_VALF;
+    colorAnimation.autoreverses = YES;
+    
+    
+    CABasicAnimation *colorAnimation2 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    UIColor *fromColor2 = [UIColor greenColor];
+    UIColor *toColor2 = [UIColor redColor];
+    
+    colorAnimation2.duration = 2.0;
+    colorAnimation2.fromValue = (id)fromColor2.CGColor;
+    colorAnimation2.toValue = (id)toColor2.CGColor;
+    colorAnimation2.repeatCount = HUGE_VALF;
+    colorAnimation2.autoreverses = YES;
+    
+    
+    [checkingTopLabel.layer addAnimation:spinning forKey:nil];
+    [checkingTopLabel.layer addAnimation:colorAnimation forKey:nil];
+    
+    [checkingBottomLabel.layer addAnimation:spinning forKey:nil];
+    [checkingBottomLabel.layer addAnimation:colorAnimation2 forKey:nil];
+    
     
 }
+
+-(void)checkingAnimation7 {
+    UILabel *checkingTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, _width-100, _height/2)];
+    checkingTopLabel.text = @"Checking";
+    checkingTopLabel.font = [UIFont fontWithName:@"Courier" size:100];
+   
+    checkingTopLabel.textAlignment = NSTextAlignmentCenter;
+    checkingTopLabel.layer.cornerRadius = 25;
+    checkingTopLabel.clipsToBounds = YES;
+    
+    
+    checkingTopLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    checkingTopLabel.layer.borderWidth = 2;
+    
+    
+    UILabel *checkingBottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, _height/2, _width-100, _height/2)];
+    checkingBottomLabel.text = @"Hold Your Cards";
+    checkingBottomLabel.font = [UIFont fontWithName:@"Courier" size:100];
+    
+    checkingBottomLabel.textAlignment = NSTextAlignmentCenter;
+    checkingBottomLabel.layer.cornerRadius = 25;
+    checkingBottomLabel.clipsToBounds = YES;
+    
+    
+    checkingBottomLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    checkingBottomLabel.layer.borderWidth = 2;
+    
+    [self.view addSubview:checkingTopLabel];
+    [self.view addSubview:checkingBottomLabel];
+    
+    
+    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, _width-75, _height)];
+   
+    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
+    labelBackground.numberOfLines = 0;
+    labelBackground.textColor = [UIColor yellowColor];
+    labelBackground.textAlignment = NSTextAlignmentCenter;
+    
+    
+    
+    
+    [self.view addSubview: labelBackground];
+    
+    
+    CABasicAnimation *spinning = [CABasicAnimation animationWithKeyPath:@"transform.rotation.x"];
+    //for backward text
+    spinning.toValue = [NSNumber numberWithFloat:2*M_PI];
+    //only forward text
+    //spinning.toValue = [NSNumber numberWithFloat:.5*M_PI];
+    
+    spinning.autoreverses = YES;
+    spinning.duration = 4;
+    spinning.repeatCount = HUGE_VALF;
+    
+    CABasicAnimation *colorAnimation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    UIColor *fromColor = [UIColor redColor];
+    UIColor *toColor = [UIColor greenColor];
+    
+    colorAnimation.duration = 2.0;
+    colorAnimation.fromValue = (id)fromColor.CGColor;
+    colorAnimation.toValue = (id)toColor.CGColor;
+    colorAnimation.repeatCount = HUGE_VALF;
+    colorAnimation.autoreverses = YES;
+    
+    
+    CABasicAnimation *colorAnimation2 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    UIColor *fromColor2 = [UIColor greenColor];
+    UIColor *toColor2 = [UIColor redColor];
+    
+    colorAnimation2.duration = 2.0;
+    colorAnimation2.fromValue = (id)fromColor2.CGColor;
+    colorAnimation2.toValue = (id)toColor2.CGColor;
+    colorAnimation2.repeatCount = HUGE_VALF;
+    colorAnimation2.autoreverses = YES;
+    
+    
+    [checkingTopLabel.layer addAnimation:spinning forKey:nil];
+    [checkingTopLabel.layer addAnimation:colorAnimation forKey:nil];
+    
+    [checkingBottomLabel.layer addAnimation:spinning forKey:nil];
+    [checkingBottomLabel.layer addAnimation:colorAnimation2 forKey:nil];
+    
+    
+}
+
 
 
 @end

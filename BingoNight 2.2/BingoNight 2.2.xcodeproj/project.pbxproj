@@ -34,6 +34,7 @@
 		E3F66C4A1DF3EAB6000B3D06 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C491DF3EAB5000B3D06 /* card.jpg */; };
 		E3F66C4C1DF3EBAA000B3D06 /* bingo.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C4B1DF3EBAA000B3D06 /* bingo.png */; };
 		E3F66C4F1DF67A7D000B3D06 /* InstructionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F66C4E1DF67A7D000B3D06 /* InstructionsTableViewController.m */; };
+		E3F66C911DF9000D000B3D06 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F66C901DF9000D000B3D06 /* TextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,8 @@
 		E3F66C4B1DF3EBAA000B3D06 /* bingo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bingo.png; sourceTree = "<group>"; };
 		E3F66C4D1DF67A7D000B3D06 /* InstructionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstructionsTableViewController.h; sourceTree = "<group>"; };
 		E3F66C4E1DF67A7D000B3D06 /* InstructionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsTableViewController.m; sourceTree = "<group>"; };
+		E3F66C8F1DF9000D000B3D06 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
+		E3F66C901DF9000D000B3D06 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 				E398251C1DE5054B00ACC5A7 /* IntroViewController.m */,
 				E3F66C4D1DF67A7D000B3D06 /* InstructionsTableViewController.h */,
 				E3F66C4E1DF67A7D000B3D06 /* InstructionsTableViewController.m */,
+				E3F66C8F1DF9000D000B3D06 /* TextViewController.h */,
+				E3F66C901DF9000D000B3D06 /* TextViewController.m */,
 				E398251D1DE5054B00ACC5A7 /* LocalSettingsViewController.h */,
 				E398251E1DE5054B00ACC5A7 /* LocalSettingsViewController.m */,
 				E398251F1DE5054B00ACC5A7 /* GlobalSettingsViewController.h */,
@@ -367,6 +372,7 @@
 				E39825441DE5054B00ACC5A7 /* CheckingViewController.m in Sources */,
 				E39824E81DE5053100ACC5A7 /* main.m in Sources */,
 				E39825411DE5054B00ACC5A7 /* PDFRenderer.m in Sources */,
+				E3F66C911DF9000D000B3D06 /* TextViewController.m in Sources */,
 				E39825461DE5054B00ACC5A7 /* DefaultsDataManager.m in Sources */,
 				E398253B1DE5054B00ACC5A7 /* IntroViewController.m in Sources */,
 				E39825431DE5054B00ACC5A7 /* BallColorView.m in Sources */,

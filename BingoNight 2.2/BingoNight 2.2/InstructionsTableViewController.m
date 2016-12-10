@@ -7,6 +7,7 @@
 //
 
 #import "InstructionsTableViewController.h"
+#import "TextViewController.h"
 
 @interface InstructionsTableViewController ()
 
@@ -37,12 +38,10 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
     return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
     return 3;
 }
 
@@ -76,10 +75,26 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSLog(@"Go to the instructions page %li",(long)indexPath.row);
+    _rowSelected = indexPath.row;
+    _sectionSelected = indexPath.section;
+    
+    NSLog(@"The row selected is %li and section selected is %li",(long)_rowSelected,(long)_sectionSelected);
+    
+    
     [self performSegueWithIdentifier:@"segueInstructionsToText" sender:self];
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString: @"segueInstructionsToText"]){
+        TextViewController *view = [segue destinationViewController];
+        view.sendingRow = _rowSelected ;
+        view.sendingSection = _sectionSelected;
+             
+        
+        
+    }
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

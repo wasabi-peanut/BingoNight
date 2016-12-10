@@ -10,4 +10,9 @@
 
 @interface InstructionsTableViewController : UITableViewController
 
+@property NSInteger rowSelected;
+@property NSInteger sectionSelected;
+
+
+
 @end
