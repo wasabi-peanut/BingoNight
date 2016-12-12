@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5897585A1DFE5BBF0004D5AF /* CheckingSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589758591DFE5BBF0004D5AF /* CheckingSetUpViewController.m */; };
 		E39824E81DE5053100ACC5A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E39824E71DE5053100ACC5A7 /* main.m */; };
 		E39825011DE5053100ACC5A7 /* BingoNight_2_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825001DE5053100ACC5A7 /* BingoNight_2_2Tests.m */; };
 		E398250C1DE5053100ACC5A7 /* BingoNight_2_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E398250B1DE5053100ACC5A7 /* BingoNight_2_2UITests.m */; };
@@ -55,6 +56,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		589758581DFE5BBF0004D5AF /* CheckingSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckingSetUpViewController.h; sourceTree = "<group>"; };
+		589758591DFE5BBF0004D5AF /* CheckingSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckingSetUpViewController.m; sourceTree = "<group>"; };
 		E39824E31DE5053100ACC5A7 /* BingoNight 2.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BingoNight 2.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39824E71DE5053100ACC5A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E39824F71DE5053100ACC5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				E398252C1DE5054B00ACC5A7 /* BallColorView.m */,
 				E398252D1DE5054B00ACC5A7 /* CheckingViewController.h */,
 				E398252E1DE5054B00ACC5A7 /* CheckingViewController.m */,
+				589758581DFE5BBF0004D5AF /* CheckingSetUpViewController.h */,
+				589758591DFE5BBF0004D5AF /* CheckingSetUpViewController.m */,
 				E398252F1DE5054B00ACC5A7 /* WinnerViewController.h */,
 				E39825301DE5054B00ACC5A7 /* WinnerViewController.m */,
 				E39825311DE5054B00ACC5A7 /* DefaultsDataManager.h */,
@@ -383,6 +388,7 @@
 				E39825401DE5054B00ACC5A7 /* PDFViewController.m in Sources */,
 				E398253C1DE5054B00ACC5A7 /* LocalSettingsViewController.m in Sources */,
 				E39825421DE5054B00ACC5A7 /* CreateCardArrays.m in Sources */,
+				5897585A1DFE5BBF0004D5AF /* CheckingSetUpViewController.m in Sources */,
 				E3F66C4F1DF67A7D000B3D06 /* InstructionsTableViewController.m in Sources */,
 				E39825451DE5054B00ACC5A7 /* WinnerViewController.m in Sources */,
 			);
