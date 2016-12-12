@@ -344,7 +344,7 @@
     _ballBounceRange = topRailY-bottomRailY;
     _ballMoveDistance = _width*.5 + 100;
     _ballStartY = topRailY + height;
-    _ballTextFont = @"Helvetica";
+    _ballTextFont = @"Superclarendon-Regular";
     _ballTextColor = [UIColor blackColor];
     
     _ballRollTime = [[_arrayGlobalSettings objectAtIndex:12] integerValue];
@@ -768,10 +768,7 @@
             }
         }
     }
-        
-        NSLog(@"temp array is %@",tempArrayOfNumbers);
-        NSLog(@"grid array is %@",_arrayGridPatterns);
-
+       
         if (tempArrayOfNumbers.count != 75) {
             
     [_bingoArray removeObjectsInArray:tempArrayOfNumbers];
@@ -967,9 +964,11 @@
     UILabel *number = [[UILabel alloc]initWithFrame:CGRectMake(0,0, _lastCalledWidth/1 , _lastCalledHeight/1)];
     number.center = activeBall.center;
     number.text =  _stringCalled;
+    
     number.textColor = _ballTextColor;
     [number setTextAlignment:NSTextAlignmentCenter];
-    number.font = [UIFont fontWithName:_ballTextFont size:_lastCalledHeight*.5];
+    number.font = [UIFont fontWithName:_ballTextFont size:_lastCalledHeight*.4];
+    
     number.backgroundColor = [UIColor clearColor];
     if (_useSelector == 1) {
         number.alpha = 0;}

@@ -15,6 +15,8 @@
 @implementation WinnerViewController
 
 - (void)viewDidLoad {
+     [self.navigationController setNavigationBarHidden:YES];
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
@@ -33,13 +35,14 @@
     
     
    
-    UILabel *winnerLabel = [[UILabel alloc] initWithFrame:CGRectMake(.2*width, .3*height, .6*width, .4*height)];
+    UILabel *winnerLabel = [[UILabel alloc] initWithFrame:CGRectMake(.1*width, .2*height, .8*width, .6*height)];
     
     winnerLabel.text = @"WINNER";
     winnerLabel.textColor = [UIColor redColor];
-    winnerLabel.font = [UIFont fontWithName:@"Helvetica" size:125];
+    winnerLabel.font = [UIFont fontWithName:@"BradleyHandITCTT-Bold"  size:.5*height];
+    winnerLabel.adjustsFontSizeToFitWidth = YES;
     winnerLabel.textAlignment = NSTextAlignmentCenter;
-    winnerLabel.backgroundColor = [UIColor blueColor];
+    winnerLabel.backgroundColor = [UIColor clearColor];
     winnerLabel.layer.cornerRadius = 50;
     winnerLabel.clipsToBounds = YES;
     
@@ -56,8 +59,24 @@
     
     [self.view addSubview:winnerLabel];
     
+    CABasicAnimation *colorAnimation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
+    UIColor *fromColor = [UIColor yellowColor];
+    UIColor *toColor = [UIColor blackColor];
     
-    [UIView animateWithDuration:5 delay:2 options:UIViewAnimationOptionTransitionNone animations:^{
+    colorAnimation.duration = .1;
+    colorAnimation.fromValue = (id)fromColor.CGColor;
+    colorAnimation.toValue = (id)toColor.CGColor;
+    colorAnimation.repeatCount = HUGE_VALF;
+    colorAnimation.autoreverses = YES;
+    
+    [frame.layer addAnimation:colorAnimation forKey:nil];
+
+    
+    
+    
+    
+    
+    [UIView animateWithDuration:2 delay:2 options:UIViewAnimationOptionTransitionNone animations:^{
         winnerLabel.alpha = 0;
     } completion:^(BOOL finished) {
         [self performSegueWithIdentifier:@"segueWinnerToStart" sender:self];

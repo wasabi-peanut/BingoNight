@@ -62,7 +62,10 @@
 @property (strong, nonatomic) NSMutableArray *arrayPickerSize;
 
 @property (strong, nonatomic) NSString *font;
-@property (strong, nonatomic) UITextField *fontSize;
+//@property (strong, nonatomic) UITextField *fontSize;
+@property (strong, nonatomic) IBOutlet UITextField *fontSize;
+
+
 //STEPPER DELAY
 
 //@property (strong, nonatomic) IBOutlet UIStepper *stepperDelay;
