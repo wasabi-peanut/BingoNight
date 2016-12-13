@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CheckingSetUpViewController : UIViewController
+@property (strong, nonatomic) IBOutlet UIView *viewPreviewWindow;
+- (IBAction)switchButton:(id)sender;
 
 @end
