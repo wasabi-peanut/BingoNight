@@ -6,8 +6,7 @@
 //  Copyright (c) 2015 AandA Development. All rights reserved.
 //
 
-//GIT HUB CHANGE
-// chnge2
+
 #import <UIKit/UIKit.h>
 
 @interface IntroViewController : UIViewController
