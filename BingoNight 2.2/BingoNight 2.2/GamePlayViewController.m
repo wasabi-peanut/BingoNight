@@ -1081,10 +1081,10 @@
         if (_useSelector) {
             for (UIButton *myButton in _arrayButtonsCreated) {
                // NSLog(@"My tag is %i and number called is %i",myButton.tag,_numberCalled);
-                if (myButton.tag == _numberCalled)
+                if (myButton.tag == _numberCalled){
                     myButton.backgroundColor = _usedBoxBackgroundColor;
                     myButton.tintColor = _usedBoxLetterColor;
-                
+                }
             }
             
             //UIButton *currentButton = [_arrayButtonsCreated objectAtIndex:_ballCount-1];

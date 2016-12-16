@@ -16,7 +16,7 @@
 
 - (void)viewDidLoad {
     
-    [self showPreview2];
+    [self showPreview1];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -38,17 +38,25 @@
 */
 
 
-
+-(void)createFrame{
+    CGFloat height = [UIScreen mainScreen].bounds.size.height ;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width ;
+    
+    _viewPreviewWindow = [[UIView alloc] initWithFrame:CGRectMake(10, height/2-10, width/2, height/2)];
+    _viewPreviewWindow.layer.borderWidth = 3;
+    _viewPreviewWindow.layer.borderColor = [[UIColor yellowColor] CGColor];
+    _viewPreviewWindow.backgroundColor = [UIColor blueColor];
+    
+    [self.view addSubview:_viewPreviewWindow];
+}
 -(void)showPreview1 {
     
+    [self createFrame];
     
     
     float height = _viewPreviewWindow.bounds.size.height;
     float width = _viewPreviewWindow.bounds.size.width;
     
-    _viewPreviewWindow.layer.borderWidth = 3;
-    _viewPreviewWindow.layer.borderColor = [[UIColor blueColor] CGColor];
-    _viewPreviewWindow.backgroundColor = [UIColor blueColor];
     
     
     UIView *checkingTopView = [[UIView alloc] initWithFrame:CGRectMake(100, 50, 100, 100)];
@@ -126,14 +134,12 @@
 }
 
 -(void)showPreview2{
+    [self createFrame];
     
     float height = _viewPreviewWindow.bounds.size.height;
     float width = _viewPreviewWindow.bounds.size.width;
     
-    _viewPreviewWindow.layer.borderWidth = 3;
-    _viewPreviewWindow.layer.borderColor = [[UIColor blueColor] CGColor];
-    _viewPreviewWindow.backgroundColor = [UIColor blueColor];
-
+   
     CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
     
     shake.toValue = [NSNumber numberWithFloat:10];
@@ -197,7 +203,7 @@
                 letter.backgroundColor = [UIColor grayColor];
                 letter.textColor = [UIColor redColor];
                 letter.font = [UIFont fontWithName:@"Courier" size:90];
-                letter.frame = CGRectMake(width/2-350, 75, 700, 200);
+                letter.frame = CGRectMake(width/2-350, 75, 700/2, 200);
                 letter.textAlignment = NSTextAlignmentCenter;
                 letter.numberOfLines = 0;
                 
@@ -208,7 +214,6 @@
             default:
                 break;
         }
-        
         
         
         [_viewPreviewWindow addSubview:letter];
@@ -222,10 +227,115 @@
     }
 
 }
+
+-(void)showPreview3{
+    [self createFrame];
+    
+    float height = _viewPreviewWindow.bounds.size.height;
+    float width = _viewPreviewWindow.bounds.size.width;
+    
+    CABasicAnimation *moveUpAndDown = [CABasicAnimation animationWithKeyPath:@"transform.translation.y" ];
+    [moveUpAndDown setFromValue:[NSNumber numberWithFloat:0]];
+    [moveUpAndDown setByValue:[NSNumber numberWithFloat:height-350]];
+    [moveUpAndDown setBeginTime:CACurrentMediaTime() ];
+    [moveUpAndDown setDuration:2];
+    moveUpAndDown.removedOnCompletion = NO;
+    moveUpAndDown.autoreverses = YES;
+    moveUpAndDown.fillMode = kCAFillModeForwards;
+    moveUpAndDown.repeatCount =HUGE_VALF;
+    
+    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, width-75, height)];
+    labelBackground.text = @"Hold Cards";
+    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
+    labelBackground.numberOfLines = 0;
+    labelBackground.textColor = [UIColor yellowColor];
+    labelBackground.textAlignment = NSTextAlignmentCenter;
+    
+    float letterWidth = width/10;
+    
+    
+    [self.view addSubview: labelBackground];
+    
+    
+    
+    for (int c= 0; c<8; c++) {
+        
+        UILabel *letter = [[UILabel alloc]init];
+        letter.font = [UIFont fontWithName:@"Courier" size:25];
+        letter.textAlignment = NSTextAlignmentCenter;
+        if (c%2) {
+            letter.frame = CGRectMake(letterWidth+letterWidth*c, 150, 200, 200);
+        }
+        else{
+            letter.frame = CGRectMake(letterWidth+letterWidth*c, 50, 200, 200);
+            
+        }
+        
+        letter.layer.cornerRadius = 100;
+        letter.clipsToBounds = YES;
+        
+        switch (c) {
+            case 0:
+                letter.text = @"C";
+                letter.backgroundColor = [UIColor whiteColor];
+                break;
+            case 1:
+                letter.text = @"H";
+                letter.backgroundColor = [UIColor redColor];
+                break;
+            case 2:
+                letter.text = @"E";
+                letter.backgroundColor = [UIColor greenColor];
+                break;
+            case 3:
+                letter.text = @"C";
+                letter.backgroundColor = [UIColor orangeColor];
+                break;
+            case 4:
+                letter.text = @"K";
+                letter.backgroundColor = [UIColor magentaColor];
+                break;
+            case 5:
+                letter.text = @"I";
+                letter.backgroundColor = [UIColor cyanColor];
+                break;
+            case 6:
+                letter.text = @"N";
+                letter.backgroundColor = [UIColor brownColor];
+                break;
+            case 7:
+                letter.text = @"G";
+                letter.backgroundColor = [UIColor lightGrayColor];
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+        
+        [self.view addSubview:letter];
+        
+        [letter.layer addAnimation:moveUpAndDown forKey:nil];
+        
+        
+        
+        
+    }
+    
+    
+
+}
+
 - (IBAction)switchButton:(id)sender {
     
     [_viewPreviewWindow removeFromSuperview];
+   
+    [self showPreview2];
+    
     
   
 }
+
+
 @end

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CheckingSetUpViewController : UIViewController
-@property (strong, nonatomic) IBOutlet UIView *viewPreviewWindow;
+@interface CheckingSetUpViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
+ 
+@property (strong, nonatomic)  UIView *viewPreviewWindow;
 - (IBAction)switchButton:(id)sender;
 
 @end
