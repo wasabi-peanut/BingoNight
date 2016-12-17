@@ -7,6 +7,8 @@
 //
 
 #import "CheckingSetUpViewController.h"
+#import "DefaultsDataManager.h"
+
 
 @interface CheckingSetUpViewController ()
 
@@ -15,7 +17,26 @@
 @implementation CheckingSetUpViewController
 
 - (void)viewDidLoad {
+    
+    _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
+    _keyForCoordinatesSongs = @"keyForCoordinatesSongs";
+   
+    _arrayCoordinatesCheckingPatterns = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingPatterns]];
+    _arrayCoordinatesSongs = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesSongs]];
+    
     [self makeArrays];
+    
+   NSInteger  currentChecking = [_arrayCoordinatesCheckingPatterns[0] integerValue];
+   NSInteger  currentSong =     [_arrayCoordinatesSongs[0] integerValue];
+    
+    [_pickerChecking selectRow:currentChecking inComponent:1 animated:YES];
+    [_pickerChecking selectRow:currentSong inComponent:2 animated:YES];
+    
+    _gameNumber = 0;
+    
+    NSLog(@"The current checkign is %i and current song is %i",currentChecking,currentSong);
+    
+    
    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -36,9 +57,14 @@
     switch (component) {
         case 0:
             //change game
+            _gameNumber = row;
+            [_pickerChecking selectRow:[_arrayCoordinatesCheckingPatterns[row] integerValue] inComponent:1 animated:YES];
+            [_pickerChecking selectRow:[_arrayCoordinatesSongs[row] integerValue] inComponent:2 animated:YES];
+            
             break;
         case 1:
             //choose checking
+            
             switch (row) {
                 case 0:
                     [self showPreview1];
@@ -49,12 +75,22 @@
                 default:
                     break;
             }
-        case 3:
+                [_arrayCoordinatesCheckingPatterns replaceObjectAtIndex:_gameNumber withObject:@(row)];
+            
+        case 2:
+            
             //choose music
-            break;
+                [_arrayCoordinatesSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
+           
+                break;
         default:
             break;
     }
+    
+    
+    [DefaultsDataManager saveData:_arrayCoordinatesCheckingPatterns forKey:_keyForCoordinatesCheckingPatterns];
+    [DefaultsDataManager saveData:_arrayCoordinatesSongs forKey:_keyForCoordinatesSongs];
+    
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
@@ -129,9 +165,27 @@
                                 @"Jazz",
                    nil];
     
+    if (!(_arrayCoordinatesCheckingPatterns.count)) {
+        
+        _arrayCoordinatesCheckingPatterns = [[NSMutableArray alloc] init];
+        for (int n=0; n<12; n++) {
+            [_arrayCoordinatesCheckingPatterns addObject:@0];
+        }
+        if (!(_arrayCoordinatesSongs.count)) {
+            
+            _arrayCoordinatesSongs = [[NSMutableArray alloc] init];
+            for (int n=0; n<12; n++) {
+                [_arrayCoordinatesSongs addObject:@0];
+            }
     
     
     
+}
+        [DefaultsDataManager saveData:_arrayCoordinatesSongs forKey:_keyForCoordinatesSongs];
+        [DefaultsDataManager saveData:_arrayCoordinatesCheckingPatterns forKey:_keyForCoordinatesCheckingPatterns];
+        
+    
+    }
 }
 
 

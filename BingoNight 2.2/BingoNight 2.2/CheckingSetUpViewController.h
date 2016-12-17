@@ -25,6 +25,9 @@
 @property (strong, nonatomic) NSString *keyForCoordinatesCheckingPatterns;
 @property (strong, nonatomic) NSString *keyForCoordinatesSongs;
 
+@property NSInteger gameNumber;
+
+
 
 
 @end
