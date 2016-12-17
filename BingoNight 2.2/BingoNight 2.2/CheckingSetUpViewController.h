@@ -9,8 +9,22 @@
 #import <UIKit/UIKit.h>
 
 @interface CheckingSetUpViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
- 
+
 @property (strong, nonatomic)  UIView *viewPreviewWindow;
-- (IBAction)switchButton:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIPickerView *pickerChecking;
+
+@property (strong, nonatomic) NSMutableArray *arrayCheckingPatterns;
+@property (strong, nonatomic) NSMutableArray *arraySongs;
+@property (strong, nonatomic) NSMutableArray *arrayGameNumbers;
+
+
+@property (strong, nonatomic) NSMutableArray *arrayCoordinatesCheckingPatterns;
+@property (strong, nonatomic) NSMutableArray *arrayCoordinatesSongs;
+
+@property (strong, nonatomic) NSString *keyForCoordinatesCheckingPatterns;
+@property (strong, nonatomic) NSString *keyForCoordinatesSongs;
+
+
 
 @end

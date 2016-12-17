@@ -15,9 +15,8 @@
 @implementation CheckingSetUpViewController
 
 - (void)viewDidLoad {
-    
-    [self showPreview1];
-    
+    [self makeArrays];
+   
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -27,16 +26,118 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+
+#pragma mark PICKER CONTROLS
+
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    switch (component) {
+        case 0:
+            //change game
+            break;
+        case 1:
+            //choose checking
+            switch (row) {
+                case 0:
+                    [self showPreview1];
+                    break;
+                case 1:
+                    [self showPreview2];
+                    break;
+                default:
+                    break;
+            }
+        case 3:
+            //choose music
+            break;
+        default:
+            break;
+    }
 }
-*/
 
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    NSInteger rows;
+    if (pickerView == _pickerChecking) {
+        switch (component) {
+            case 0:
+                rows = _arrayGameNumbers.count;
+                break;
+            case 1:
+                rows = _arrayCheckingPatterns.count;
+                break;
+            case 2:
+                rows = _arraySongs.count;
+                break;
+            default:
+                break;
+        }
+  
+    }
+    
+    return rows;
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 3;
+}
+
+-(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    NSString *title;
+    switch (component) {
+        case 0:
+            title = _arrayGameNumbers[row];
+            break;
+        case 1:
+            title = _arrayCheckingPatterns[row];
+            break;
+        case 2:
+            title = _arraySongs[row];
+            break;
+            
+        default:
+            break;
+    }
+    
+    return title;
+}
+-(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
+    return 50;
+}
+
+
+#pragma mark MAKE ARRAYS
+
+-(void)makeArrays{
+    
+    
+    _arrayGameNumbers = [[NSMutableArray alloc] initWithObjects:
+                         @"Game One",
+                         @"Game Two",
+                         nil];
+    
+    
+    _arrayCheckingPatterns = [[NSMutableArray alloc] initWithObjects:
+                              @"Bouncing",
+                              @"Shaking",
+                              nil];
+    
+    _arraySongs = [[NSMutableArray alloc] initWithObjects:
+                                @"Rock",
+                                @"Jazz",
+                   nil];
+    
+    
+    
+    
+}
+
+
+
+
+#pragma mark PREVIEW METHODS
 
 -(void)createFrame{
     CGFloat height = [UIScreen mainScreen].bounds.size.height ;
@@ -327,7 +428,7 @@
 
 }
 
-- (IBAction)switchButton:(id)sender {
+/*- (IBAction)switchButton:(id)sender {
     
     [_viewPreviewWindow removeFromSuperview];
    
@@ -335,7 +436,7 @@
     
     
   
-}
+}*/
 
 
 @end
