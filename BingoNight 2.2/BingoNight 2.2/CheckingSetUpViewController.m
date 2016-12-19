@@ -11,6 +11,8 @@
 
 
 @interface CheckingSetUpViewController ()
+{AVAudioPlayer *avPlayer;
+}
 
 @end
 
@@ -34,9 +36,7 @@
     
     _gameNumber = 0;
     
-    NSLog(@"The current checkign is %i and current song is %i",currentChecking,currentSong);
-    
-    
+   
    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -78,11 +78,22 @@
                 [_arrayCoordinatesCheckingPatterns replaceObjectAtIndex:_gameNumber withObject:@(row)];
             
         case 2:
-            
-            //choose music
-                [_arrayCoordinatesSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
+            switch (row) {
+                case 0:
+                    _songTitle = @"rumble";
+                    break;
+                case 1:
+                    _songTitle = @"jazzpiano";
+                    break;
+                    
+                default:
+                    break;
+            }
            
-                break;
+                [_arrayCoordinatesSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
+            break;
+           
+            
         default:
             break;
     }
@@ -90,7 +101,7 @@
     
     [DefaultsDataManager saveData:_arrayCoordinatesCheckingPatterns forKey:_keyForCoordinatesCheckingPatterns];
     [DefaultsDataManager saveData:_arrayCoordinatesSongs forKey:_keyForCoordinatesSongs];
-    
+    NSLog(@"The song is %@",_songTitle);
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
@@ -161,8 +172,8 @@
                               nil];
     
     _arraySongs = [[NSMutableArray alloc] initWithObjects:
-                                @"Rock",
-                                @"Jazz",
+                                @"Rumble",
+                                @"Jazz Piano",
                    nil];
     
     if (!(_arrayCoordinatesCheckingPatterns.count)) {
@@ -482,15 +493,30 @@
 
 }
 
-/*- (IBAction)switchButton:(id)sender {
-    
-    [_viewPreviewWindow removeFromSuperview];
-   
-    [self showPreview2];
-    
-    
-  
-}*/
+#pragma mark MUSIC SECTION
 
 
+
+- (IBAction)btnPlay:(id)sender {
+    NSString *song;
+    NSString *songPath;
+    
+    song = _songTitle;
+    songPath =[[NSBundle mainBundle]pathForResource:song ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:songPath];
+    
+    NSError *error;
+    
+    avPlayer= [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
+    
+    [avPlayer setNumberOfLoops:-1];
+    [avPlayer setVolume:5];
+    [avPlayer play];
+
+}
+
+- (IBAction)btnStop:(id)sender {
+    [avPlayer stop];
+    
+}
 @end

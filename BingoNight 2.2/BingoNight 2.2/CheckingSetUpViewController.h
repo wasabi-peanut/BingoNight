@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+
+
 
 @interface CheckingSetUpViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
@@ -27,6 +30,11 @@
 
 @property NSInteger gameNumber;
 
+- (IBAction)btnPlay:(id)sender;
+
+- (IBAction)btnStop:(id)sender;
+
+@property (strong, nonatomic) NSString *songTitle;
 
 
 
