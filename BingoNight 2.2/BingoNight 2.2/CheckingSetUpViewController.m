@@ -58,8 +58,13 @@
         case 0:
             //change game
             _gameNumber = row;
+            
             [_pickerChecking selectRow:[_arrayCoordinatesCheckingPatterns[row] integerValue] inComponent:1 animated:YES];
+            [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[row] integerValue] inComponent:1];
+            
             [_pickerChecking selectRow:[_arrayCoordinatesSongs[row] integerValue] inComponent:2 animated:YES];
+            [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesSongs[row] integerValue] inComponent:2];
+            
             
             break;
         case 1:
@@ -101,7 +106,7 @@
     
     [DefaultsDataManager saveData:_arrayCoordinatesCheckingPatterns forKey:_keyForCoordinatesCheckingPatterns];
     [DefaultsDataManager saveData:_arrayCoordinatesSongs forKey:_keyForCoordinatesSongs];
-    NSLog(@"The song is %@",_songTitle);
+   
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
@@ -172,8 +177,22 @@
                               nil];
     
     _arraySongs = [[NSMutableArray alloc] initWithObjects:
-                                @"Rumble",
+                   
+                   
+                                @"Country Boy",
+                                @"Dance",
+                                @"Dubstep",
+                                @"Epic",
+                                @"Groovy",
+                                @"Happy Rock",
                                 @"Jazz Piano",
+                                @"Love",
+                                @"Moose",
+                                @"Pop Dance",
+                                @"Retro Soul",
+                                @"Rumble",
+                                @"Samba",
+                   
                    nil];
     
     if (!(_arrayCoordinatesCheckingPatterns.count)) {
