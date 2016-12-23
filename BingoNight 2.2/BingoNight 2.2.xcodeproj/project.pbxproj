@@ -23,6 +23,15 @@
 		E3481FB41E09ADD3004F4A33 /* retrosoul.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FB01E09ADD3004F4A33 /* retrosoul.mp3 */; };
 		E3481FB61E09AE01004F4A33 /* rumble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FB51E09AE01004F4A33 /* rumble.mp3 */; };
 		E3481FB81E09AE0D004F4A33 /* jazzpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FB71E09AE0D004F4A33 /* jazzpiano.mp3 */; };
+		E3481FBF1E09EE7D004F4A33 /* Applause-SoundBible.com-151138312.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FB91E09EE7D004F4A33 /* Applause-SoundBible.com-151138312.mp3 */; };
+		E3481FC01E09EE7D004F4A33 /* Computer_Magic-Microsift-1901299923.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBA1E09EE7D004F4A33 /* Computer_Magic-Microsift-1901299923.mp3 */; };
+		E3481FC11E09EE7D004F4A33 /* Lion Roar-SoundBible.com-718441804.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBB1E09EE7D004F4A33 /* Lion Roar-SoundBible.com-718441804.mp3 */; };
+		E3481FC21E09EE7D004F4A33 /* Rooster Crow-SoundBible.com-1802551702.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBC1E09EE7D004F4A33 /* Rooster Crow-SoundBible.com-1802551702.mp3 */; };
+		E3481FC31E09EE7D004F4A33 /* Stadium Applause-SoundBible.com-1018949101.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBD1E09EE7D004F4A33 /* Stadium Applause-SoundBible.com-1018949101.mp3 */; };
+		E3481FC41E09EE7D004F4A33 /* Ta Da-SoundBible.com-1884170640.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBE1E09EE7D004F4A33 /* Ta Da-SoundBible.com-1884170640.mp3 */; };
+		E3481FC81E0A47E9004F4A33 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = E3481FC71E0A47E9004F4A33 /* play.png */; };
+		E3481FCA1E0A4900004F4A33 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = E3481FC91E0A4900004F4A33 /* pause.png */; };
+		E3481FCC1E0A4A02004F4A33 /* play2.png in Resources */ = {isa = PBXBuildFile; fileRef = E3481FCB1E0A4A02004F4A33 /* play2.png */; };
 		E39824E81DE5053100ACC5A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E39824E71DE5053100ACC5A7 /* main.m */; };
 		E39825011DE5053100ACC5A7 /* BingoNight_2_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825001DE5053100ACC5A7 /* BingoNight_2_2Tests.m */; };
 		E398250C1DE5053100ACC5A7 /* BingoNight_2_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E398250B1DE5053100ACC5A7 /* BingoNight_2_2UITests.m */; };
@@ -88,6 +97,15 @@
 		E3481FB01E09ADD3004F4A33 /* retrosoul.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = retrosoul.mp3; sourceTree = "<group>"; };
 		E3481FB51E09AE01004F4A33 /* rumble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rumble.mp3; sourceTree = "<group>"; };
 		E3481FB71E09AE0D004F4A33 /* jazzpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jazzpiano.mp3; sourceTree = "<group>"; };
+		E3481FB91E09EE7D004F4A33 /* Applause-SoundBible.com-151138312.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Applause-SoundBible.com-151138312.mp3"; sourceTree = "<group>"; };
+		E3481FBA1E09EE7D004F4A33 /* Computer_Magic-Microsift-1901299923.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Computer_Magic-Microsift-1901299923.mp3"; sourceTree = "<group>"; };
+		E3481FBB1E09EE7D004F4A33 /* Lion Roar-SoundBible.com-718441804.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lion Roar-SoundBible.com-718441804.mp3"; sourceTree = "<group>"; };
+		E3481FBC1E09EE7D004F4A33 /* Rooster Crow-SoundBible.com-1802551702.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Rooster Crow-SoundBible.com-1802551702.mp3"; sourceTree = "<group>"; };
+		E3481FBD1E09EE7D004F4A33 /* Stadium Applause-SoundBible.com-1018949101.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Stadium Applause-SoundBible.com-1018949101.mp3"; sourceTree = "<group>"; };
+		E3481FBE1E09EE7D004F4A33 /* Ta Da-SoundBible.com-1884170640.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Ta Da-SoundBible.com-1884170640.mp3"; sourceTree = "<group>"; };
+		E3481FC71E0A47E9004F4A33 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		E3481FC91E0A4900004F4A33 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		E3481FCB1E0A4A02004F4A33 /* play2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play2.png; sourceTree = "<group>"; };
 		E39824E31DE5053100ACC5A7 /* BingoNight 2.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BingoNight 2.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39824E71DE5053100ACC5A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E39824F71DE5053100ACC5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -176,6 +194,9 @@
 		E328E6011E0641B5004F10DA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E3481FC91E0A4900004F4A33 /* pause.png */,
+				E3481FC71E0A47E9004F4A33 /* play.png */,
+				E3481FCB1E0A4A02004F4A33 /* play2.png */,
 				E3F66C4B1DF3EBAA000B3D06 /* bingo.png */,
 				E3F66C491DF3EAB5000B3D06 /* card.jpg */,
 				E3F66C471DF3C1EC000B3D06 /* global.png */,
@@ -185,6 +206,15 @@
 			sourceTree = "<group>";
 		};
 		E328E6021E0641BE004F10DA /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				E3481FC61E09EE94004F4A33 /* Winner */,
+				E3481FC51E09EE88004F4A33 /* Checking */,
+			);
+			name = Songs;
+			sourceTree = "<group>";
+		};
+		E3481FC51E09EE88004F4A33 /* Checking */ = {
 			isa = PBXGroup;
 			children = (
 				E3481FA11E09AD0F004F4A33 /* brazilsamba.mp3 */,
@@ -202,7 +232,20 @@
 				E3481FB01E09ADD3004F4A33 /* retrosoul.mp3 */,
 				E3481FB51E09AE01004F4A33 /* rumble.mp3 */,
 			);
-			name = Songs;
+			name = Checking;
+			sourceTree = "<group>";
+		};
+		E3481FC61E09EE94004F4A33 /* Winner */ = {
+			isa = PBXGroup;
+			children = (
+				E3481FB91E09EE7D004F4A33 /* Applause-SoundBible.com-151138312.mp3 */,
+				E3481FBA1E09EE7D004F4A33 /* Computer_Magic-Microsift-1901299923.mp3 */,
+				E3481FBB1E09EE7D004F4A33 /* Lion Roar-SoundBible.com-718441804.mp3 */,
+				E3481FBC1E09EE7D004F4A33 /* Rooster Crow-SoundBible.com-1802551702.mp3 */,
+				E3481FBD1E09EE7D004F4A33 /* Stadium Applause-SoundBible.com-1018949101.mp3 */,
+				E3481FBE1E09EE7D004F4A33 /* Ta Da-SoundBible.com-1884170640.mp3 */,
+			);
+			name = Winner;
 			sourceTree = "<group>";
 		};
 		E39824DA1DE5053100ACC5A7 = {
@@ -413,9 +456,12 @@
 				E39825391DE5054B00ACC5A7 /* Assets.xcassets in Resources */,
 				E3481FB81E09AE0D004F4A33 /* jazzpiano.mp3 in Resources */,
 				E3481FA41E09AD42004F4A33 /* countryboy.mp3 in Resources */,
+				E3481FC31E09EE7D004F4A33 /* Stadium Applause-SoundBible.com-1018949101.mp3 in Resources */,
 				E3F66C4C1DF3EBAA000B3D06 /* bingo.png in Resources */,
 				E3481F961E08F160004F4A33 /* clearday.mp3 in Resources */,
+				E3481FC11E09EE7D004F4A33 /* Lion Roar-SoundBible.com-718441804.mp3 in Resources */,
 				E3F66C4A1DF3EAB6000B3D06 /* card.jpg in Resources */,
+				E3481FC41E09EE7D004F4A33 /* Ta Da-SoundBible.com-1884170640.mp3 in Resources */,
 				E3481F991E08F160004F4A33 /* dubstep.mp3 in Resources */,
 				E3481FB21E09ADD3004F4A33 /* moose.mp3 in Resources */,
 				E3481FA61E09AD4D004F4A33 /* dance.mp3 in Resources */,
@@ -423,12 +469,18 @@
 				E39825491DE5054B00ACC5A7 /* LocalSettingsTrash.txt in Resources */,
 				E398254B1DE5054B00ACC5A7 /* LaunchScreen.storyboard in Resources */,
 				E398254A1DE5054B00ACC5A7 /* GamePlayTrash.txt in Resources */,
+				E3481FC21E09EE7D004F4A33 /* Rooster Crow-SoundBible.com-1802551702.mp3 in Resources */,
+				E3481FC01E09EE7D004F4A33 /* Computer_Magic-Microsift-1901299923.mp3 in Resources */,
 				E3F66C461DF3C136000B3D06 /* global icon.png in Resources */,
 				E3481FB31E09ADD3004F4A33 /* popdance.mp3 in Resources */,
+				E3481FC81E0A47E9004F4A33 /* play.png in Resources */,
 				E3481FB61E09AE01004F4A33 /* rumble.mp3 in Resources */,
 				E3481F9C1E08F160004F4A33 /* happyrock.mp3 in Resources */,
+				E3481FBF1E09EE7D004F4A33 /* Applause-SoundBible.com-151138312.mp3 in Resources */,
 				E3481FA21E09AD0F004F4A33 /* brazilsamba.mp3 in Resources */,
 				E3481FAC1E09AD9A004F4A33 /* groovyhiphop.mp3 in Resources */,
+				E3481FCC1E0A4A02004F4A33 /* play2.png in Resources */,
+				E3481FCA1E0A4900004F4A33 /* pause.png in Resources */,
 				E398253A1DE5054B00ACC5A7 /* Main.storyboard in Resources */,
 				E3481FB41E09ADD3004F4A33 /* retrosoul.mp3 in Resources */,
 				E3F66C481DF3C1EC000B3D06 /* global.png in Resources */,

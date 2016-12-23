@@ -9,6 +9,8 @@
 #import "CheckingSetUpViewController.h"
 #import "DefaultsDataManager.h"
 
+#warning Credit BenMusic and SoundBible
+
 
 @interface CheckingSetUpViewController ()
 {AVAudioPlayer *avPlayer;
@@ -22,9 +24,11 @@
     
     _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
     _keyForCoordinatesSongs = @"keyForCoordinatesSongs";
-   
+    _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
+
     _arrayCoordinatesCheckingPatterns = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingPatterns]];
     _arrayCoordinatesSongs = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesSongs]];
+    _arrayCoordinatesWinnerSounds = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesWinnerSounds]];
     
     [self makeArrays];
     
@@ -94,7 +98,7 @@
                 default:
                     break;
             }
-           
+            [avPlayer stop];
                 [_arrayCoordinatesSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
             break;
            
@@ -122,6 +126,10 @@
             case 2:
                 rows = _arraySongs.count;
                 break;
+            case 3:
+                rows = _arrayWinnerSounds.count;
+                break;
+                
             default:
                 break;
         }
@@ -132,7 +140,7 @@
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
-    return 3;
+    return 4;
 }
 
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
@@ -147,6 +155,9 @@
             break;
         case 2:
             title = _arraySongs[row];
+            break;
+        case 3:
+            title = _arrayWinnerSounds[row];
             break;
             
         default:
@@ -195,27 +206,46 @@
                    
                    nil];
     
+    
+    _arrayWinnerSounds = [[NSMutableArray alloc] initWithObjects :
+                                @"Applause",
+                                @"Chimes",
+                                @"Cheer",
+                                @"Lion",
+                                @"Rooster",
+                                @"TaDa",
+                                nil];
+    
+    
+    
     if (!(_arrayCoordinatesCheckingPatterns.count)) {
         
         _arrayCoordinatesCheckingPatterns = [[NSMutableArray alloc] init];
         for (int n=0; n<12; n++) {
             [_arrayCoordinatesCheckingPatterns addObject:@0];
         }
-        if (!(_arrayCoordinatesSongs.count)) {
+    }
+    if (!(_arrayCoordinatesSongs.count)) {
             
             _arrayCoordinatesSongs = [[NSMutableArray alloc] init];
             for (int n=0; n<12; n++) {
                 [_arrayCoordinatesSongs addObject:@0];
             }
+        }
+        
+    if (!(_arrayCoordinatesWinnerSounds.count)) {
+        
+        _arrayCoordinatesWinnerSounds = [[NSMutableArray alloc] init];
+        for (int n=0; n<12; n++) {
+            [_arrayCoordinatesWinnerSounds addObject:@0];
+        }
+    }
     
-    
-    
-}
         [DefaultsDataManager saveData:_arrayCoordinatesSongs forKey:_keyForCoordinatesSongs];
         [DefaultsDataManager saveData:_arrayCoordinatesCheckingPatterns forKey:_keyForCoordinatesCheckingPatterns];
-        
+        [DefaultsDataManager saveData:_arrayCoordinatesWinnerSounds forKey:_keyForCoordinatesWinnerSounds];
     
-    }
+    
 }
 
 
@@ -516,7 +546,15 @@
 
 
 
-- (IBAction)btnPlay:(id)sender {
+- (IBAction)btnPlay:(UIButton *)sender {
+   
+    if (sender == _btnPlayChecking){
+        NSLog(@"Hit checking play");
+    }
+    
+    
+    
+    
     NSString *song;
     NSString *songPath;
     

@@ -20,13 +20,19 @@
 @property (strong, nonatomic) NSMutableArray *arrayCheckingPatterns;
 @property (strong, nonatomic) NSMutableArray *arraySongs;
 @property (strong, nonatomic) NSMutableArray *arrayGameNumbers;
+@property (strong, nonatomic) NSMutableArray *arrayWinnerSounds;
 
 
 @property (strong, nonatomic) NSMutableArray *arrayCoordinatesCheckingPatterns;
 @property (strong, nonatomic) NSMutableArray *arrayCoordinatesSongs;
+@property (strong, nonatomic) NSMutableArray *arrayCoordinatesWinnerSounds;
+
 
 @property (strong, nonatomic) NSString *keyForCoordinatesCheckingPatterns;
 @property (strong, nonatomic) NSString *keyForCoordinatesSongs;
+@property (strong, nonatomic) NSString *keyForCoordinatesWinnerSounds;
+
+@property (strong, nonatomic) IBOutlet UIButton *btnPlayChecking;
 
 @property NSInteger gameNumber;
 
