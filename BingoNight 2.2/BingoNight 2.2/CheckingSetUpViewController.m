@@ -8,6 +8,8 @@
 
 #import "CheckingSetUpViewController.h"
 #import "DefaultsDataManager.h"
+#import "checkingPatterns.h"
+
 
 #warning Credit BenMusic (for checking) and SoundBible (for winner)
 
@@ -22,7 +24,8 @@
 
 - (void)viewDidLoad {
     
- 
+    [self createPreviewFrameTest];
+    
     
     _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
     _keyForCoordinatesCheckingSongs = @"keyForCoordinateCheckingSongs";
@@ -90,7 +93,7 @@
             
             switch (row) {
                 case 0:
-                    [self showPreview1];
+                    [self createPreviewFrameTest];
                     break;
                 case 1:
                     [self showPreview2];
@@ -608,4 +611,24 @@
     [avPlayer stop];
     
 }
+
+
+-(void)createPreviewFrameTest{
+    
+    
+    CGFloat height = [UIScreen mainScreen].bounds.size.height ;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width ;
+    
+    
+
+    checkingPatterns *myView = [checkingPatterns frameWithPattern:1 frameX:10 frameY:height/2-10 width:width/2 height:height/2];
+    
+   
+    [self.view addSubview:myView];
+    [myView runAnimation];
+    
+}
+
+
+
 @end

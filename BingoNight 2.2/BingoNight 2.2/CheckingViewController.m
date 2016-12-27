@@ -8,6 +8,8 @@
 
 #import "CheckingViewController.h"
 #import "DefaultsDataManager.h"
+#import "checkingPatterns.h"
+
 
 
 @interface CheckingViewController ()
@@ -31,13 +33,13 @@
     
    _arrayCalledNumbers = [DefaultsDataManager getDataForKey:_keyForCalledNumbers];
     
-/*  //FOR TESTING
+  //FOR TESTING
     _arrayCalledNumbers = [[NSMutableArray alloc] init];
     for (int z=1; z<=75; z++) {
         [_arrayCalledNumbers addObject:@(z)];
         
     }
-    //END TESTING*/
+    //END TESTING
     
     
     _arrayCalledNumbersSorted = [_arrayCalledNumbers sortedArrayUsingSelector:@selector(compare:)];
@@ -82,16 +84,17 @@
     
     
     if (_arrayCalledNumbersSorted.count>0) {
-        _textViewCalledNumbers.frame =CGRectMake(0, 0, ballSize*1, _height);
+        _widthOfCalledDisplay = ballSize*1;
     }
     
     if (_arrayCalledNumbersSorted.count>25) {
-        _textViewCalledNumbers.frame =CGRectMake(0, 0, ballSize*2, _height);
+        _widthOfCalledDisplay = ballSize*2;
     }
     if (_arrayCalledNumbersSorted.count>50) {
-        _textViewCalledNumbers.frame =CGRectMake(0, 0, ballSize*3, _height);
+        _widthOfCalledDisplay = ballSize*3;
     }
 
+    _textViewCalledNumbers.frame =CGRectMake(0, 0, _widthOfCalledDisplay, _height);
     
     _textViewCalledNumbers.backgroundColor = [UIColor lightGrayColor];
     _textViewCalledNumbers.font = [UIFont fontWithName:@"Helvetica" size:28];
@@ -180,6 +183,8 @@
 -(void)AnimationSelector {
     
      int checkingNumber = +arc4random_uniform(7)+1;
+    checkingNumber = 1;
+    
     
     switch (checkingNumber) {
         
@@ -220,82 +225,13 @@
 
 -(void)checkingAnimation1  {
     
-        UIView *checkingTopView = [[UIView alloc] initWithFrame:CGRectMake(100, 50, 100, 100)];
-        checkingTopView.layer.cornerRadius = 50;
-        checkingTopView.clipsToBounds = YES;
-        
-        
-        checkingTopView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-        checkingTopView.layer.borderWidth = 2;
-        
-        
-        UIView *checkingBottomView = [[UIView alloc] initWithFrame:CGRectMake(_width - 100, _height-100, 100, 100)];
+    CGFloat navHeight = self.navigationController.navigationBar.frame.size.height;
     
-        checkingBottomView.layer.cornerRadius = 50;
-        checkingBottomView.clipsToBounds = YES;
-        
-        
-        checkingBottomView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
-        checkingBottomView.layer.borderWidth = 2;
-        
-        [self.view addSubview:checkingTopView];
-        [self.view addSubview:checkingBottomView];
-        
-        
-        UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, _width-75, _height)];
-        labelBackground.text = @"Hold Cards";
-        labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
-        labelBackground.numberOfLines = 0;
-        labelBackground.textColor = [UIColor yellowColor];
-        labelBackground.textAlignment = NSTextAlignmentCenter;
-        
-        
-        
-        
-        [self.view addSubview: labelBackground];
-        
-        
-        CABasicAnimation *spinning = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
-        //for backward text
-        spinning.toValue = [NSNumber numberWithFloat:2*M_PI];
-        //only forward text
-        //spinning.toValue = [NSNumber numberWithFloat:.5*M_PI];
-        
-        spinning.autoreverses = YES;
-        spinning.duration = 2;
-        spinning.repeatCount = HUGE_VALF;
-        
-        CABasicAnimation *colorAnimation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-        UIColor *fromColor = [UIColor redColor];
-        UIColor *toColor = [UIColor greenColor];
-        
-        colorAnimation.duration = 2.0;
-        colorAnimation.fromValue = (id)fromColor.CGColor;
-        colorAnimation.toValue = (id)toColor.CGColor;
-        colorAnimation.repeatCount = HUGE_VALF;
-        colorAnimation.autoreverses = YES;
-        
-        
-        CABasicAnimation *colorAnimation2 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-        UIColor *fromColor2 = [UIColor greenColor];
-        UIColor *toColor2 = [UIColor redColor];
-        
-        colorAnimation2.duration = 2.0;
-        colorAnimation2.fromValue = (id)fromColor2.CGColor;
-        colorAnimation2.toValue = (id)toColor2.CGColor;
-        colorAnimation2.repeatCount = HUGE_VALF;
-        colorAnimation2.autoreverses = YES;
-        
-        
-        [checkingTopView.layer addAnimation:spinning forKey:nil];
-        [checkingTopView.layer addAnimation:colorAnimation forKey:nil];
-        
-        [checkingBottomView.layer addAnimation:spinning forKey:nil];
-        [checkingBottomView.layer addAnimation:colorAnimation2 forKey:nil];
-        
-        
-
+   checkingPatterns *myView = [checkingPatterns frameWithPattern:1 frameX:_widthOfCalledDisplay frameY:navHeight width:_width-_widthOfCalledDisplay height:_height-navHeight];
+    [self.view addSubview:myView];
+    [myView runAnimation];
 }
+
 
 -(void)checkingAnimation2 {
     

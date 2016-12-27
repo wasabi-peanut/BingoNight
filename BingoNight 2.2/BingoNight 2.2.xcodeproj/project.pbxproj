@@ -55,6 +55,7 @@
 		E3DD22D31E104E74002041C3 /* play1.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22D11E104E74002041C3 /* play1.png */; };
 		E3DD22D51E10621B002041C3 /* jazzpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22D41E10621B002041C3 /* jazzpiano.mp3 */; };
 		E3DD22D71E106222002041C3 /* retrosoul.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22D61E106222002041C3 /* retrosoul.mp3 */; };
+		E3E6F3721E1212F4003E3732 /* checkingPatterns.m in Sources */ = {isa = PBXBuildFile; fileRef = E3E6F3711E1212F4003E3732 /* checkingPatterns.m */; };
 		E3F66C461DF3C136000B3D06 /* global icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C451DF3C136000B3D06 /* global icon.png */; };
 		E3F66C481DF3C1EC000B3D06 /* global.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C471DF3C1EC000B3D06 /* global.png */; };
 		E3F66C4A1DF3EAB6000B3D06 /* card.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C491DF3EAB5000B3D06 /* card.jpg */; };
@@ -149,6 +150,8 @@
 		E3DD22D11E104E74002041C3 /* play1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play1.png; sourceTree = "<group>"; };
 		E3DD22D41E10621B002041C3 /* jazzpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jazzpiano.mp3; sourceTree = "<group>"; };
 		E3DD22D61E106222002041C3 /* retrosoul.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = retrosoul.mp3; sourceTree = "<group>"; };
+		E3E6F3701E1212F4003E3732 /* checkingPatterns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = checkingPatterns.h; path = ../checkingPatterns.h; sourceTree = "<group>"; };
+		E3E6F3711E1212F4003E3732 /* checkingPatterns.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = checkingPatterns.m; path = ../checkingPatterns.m; sourceTree = "<group>"; };
 		E3F66C451DF3C136000B3D06 /* global icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "global icon.png"; sourceTree = "<group>"; };
 		E3F66C471DF3C1EC000B3D06 /* global.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = global.png; sourceTree = "<group>"; };
 		E3F66C491DF3EAB5000B3D06 /* card.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = card.jpg; sourceTree = "<group>"; };
@@ -299,6 +302,8 @@
 				E398252A1DE5054B00ACC5A7 /* CreateCardArrays.m */,
 				E398252B1DE5054B00ACC5A7 /* BallColorView.h */,
 				E398252C1DE5054B00ACC5A7 /* BallColorView.m */,
+				E3E6F3701E1212F4003E3732 /* checkingPatterns.h */,
+				E3E6F3711E1212F4003E3732 /* checkingPatterns.m */,
 				E398252D1DE5054B00ACC5A7 /* CheckingViewController.h */,
 				E398252E1DE5054B00ACC5A7 /* CheckingViewController.m */,
 				589758581DFE5BBF0004D5AF /* CheckingSetUpViewController.h */,
@@ -514,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E6F3721E1212F4003E3732 /* checkingPatterns.m in Sources */,
 				E39825441DE5054B00ACC5A7 /* CheckingViewController.m in Sources */,
 				E39824E81DE5053100ACC5A7 /* main.m in Sources */,
 				E39825411DE5054B00ACC5A7 /* PDFRenderer.m in Sources */,

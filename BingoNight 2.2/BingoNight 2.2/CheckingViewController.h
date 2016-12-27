@@ -29,6 +29,8 @@
 @property UILabel *labelCircleC;
 @property UIView *viewCircleC;
 
+@property CGFloat widthOfCalledDisplay;
+
 
 
 @end
