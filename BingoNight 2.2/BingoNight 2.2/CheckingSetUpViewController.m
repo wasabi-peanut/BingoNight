@@ -9,7 +9,7 @@
 #import "CheckingSetUpViewController.h"
 #import "DefaultsDataManager.h"
 
-#warning Credit BenMusic and SoundBible
+#warning Credit BenMusic (for checking) and SoundBible (for winner)
 
 
 @interface CheckingSetUpViewController ()
@@ -22,25 +22,37 @@
 
 - (void)viewDidLoad {
     
+ 
+    
     _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
-    _keyForCoordinatesSongs = @"keyForCoordinatesSongs";
+    _keyForCoordinatesCheckingSongs = @"keyForCoordinateCheckingSongs";
     _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
 
     _arrayCoordinatesCheckingPatterns = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingPatterns]];
-    _arrayCoordinatesSongs = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesSongs]];
+    _arrayCoordinatesCheckingSongs = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingSongs]];
     _arrayCoordinatesWinnerSounds = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesWinnerSounds]];
     
     [self makeArrays];
     
-   NSInteger  currentChecking = [_arrayCoordinatesCheckingPatterns[0] integerValue];
-   NSInteger  currentSong =     [_arrayCoordinatesSongs[0] integerValue];
+    NSInteger  currentCheckingPattern = [_arrayCoordinatesCheckingPatterns[0] integerValue];
+    NSInteger  currentCheckingSong =     [_arrayCoordinatesCheckingSongs[0] integerValue];
+    NSInteger  currentWinnerSound = [_arrayWinnerSounds[0] integerValue];
     
-    [_pickerChecking selectRow:currentChecking inComponent:1 animated:YES];
-    [_pickerChecking selectRow:currentSong inComponent:2 animated:YES];
+    [_pickerChecking selectRow:currentCheckingPattern inComponent:1 animated:YES];
+    [_pickerChecking selectRow:currentCheckingSong inComponent:2 animated:YES];
+    [_pickerChecking selectRow:currentWinnerSound inComponent:3 animated:YES];
+    
+    
+    
+    [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[0] integerValue] inComponent:1];
+    [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[0] integerValue] inComponent:2];
+    [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[0] integerValue] inComponent:3];
+
+    
     
     _gameNumber = 0;
     
-   
+    
    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -66,9 +78,11 @@
             [_pickerChecking selectRow:[_arrayCoordinatesCheckingPatterns[row] integerValue] inComponent:1 animated:YES];
             [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[row] integerValue] inComponent:1];
             
-            [_pickerChecking selectRow:[_arrayCoordinatesSongs[row] integerValue] inComponent:2 animated:YES];
-            [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesSongs[row] integerValue] inComponent:2];
+            [_pickerChecking selectRow:[_arrayCoordinatesCheckingSongs[row] integerValue] inComponent:2 animated:YES];
+            [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[row] integerValue] inComponent:2];
             
+            [_pickerChecking selectRow:[_arrayCoordinatesWinnerSounds[row] integerValue] inComponent:3 animated:YES];
+            [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[row] integerValue] inComponent:3];
             
             break;
         case 1:
@@ -89,27 +103,43 @@
         case 2:
             switch (row) {
                 case 0:
-                    _songTitle = @"rumble";
+                    _checkingSongTitle = @"rumble";
                     break;
                 case 1:
-                    _songTitle = @"jazzpiano";
+                    _checkingSongTitle = @"jazzpiano";
                     break;
                     
                 default:
                     break;
             }
             [avPlayer stop];
-                [_arrayCoordinatesSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
+                [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
             break;
            
-            
+        case 3:
+            switch (row) {
+                case 0:
+                    _winnerSoundTitle = @"applause";
+                    break;
+                case 1:
+                    _winnerSoundTitle = @"computer";
+                    break;
+                    
+                default:
+                    break;
+            }
+            [avPlayer stop];
+            [_arrayCoordinatesWinnerSounds replaceObjectAtIndex:_gameNumber withObject:@(row)];
+            break;
         default:
             break;
     }
     
     
     [DefaultsDataManager saveData:_arrayCoordinatesCheckingPatterns forKey:_keyForCoordinatesCheckingPatterns];
-    [DefaultsDataManager saveData:_arrayCoordinatesSongs forKey:_keyForCoordinatesSongs];
+    [DefaultsDataManager saveData:_arrayCoordinatesCheckingSongs forKey:_keyForCoordinatesCheckingSongs];
+    [DefaultsDataManager saveData:_arrayCoordinatesWinnerSounds forKey:_keyForCoordinatesWinnerSounds];
+    
    
 }
 
@@ -124,7 +154,7 @@
                 rows = _arrayCheckingPatterns.count;
                 break;
             case 2:
-                rows = _arraySongs.count;
+                rows = _arrayCheckingSongs.count;
                 break;
             case 3:
                 rows = _arrayWinnerSounds.count;
@@ -154,7 +184,7 @@
             title = _arrayCheckingPatterns[row];
             break;
         case 2:
-            title = _arraySongs[row];
+            title = _arrayCheckingSongs[row];
             break;
         case 3:
             title = _arrayWinnerSounds[row];
@@ -187,7 +217,7 @@
                               @"Shaking",
                               nil];
     
-    _arraySongs = [[NSMutableArray alloc] initWithObjects:
+    _arrayCheckingSongs = [[NSMutableArray alloc] initWithObjects:
                    
                    
                                 @"Country Boy",
@@ -225,11 +255,11 @@
             [_arrayCoordinatesCheckingPatterns addObject:@0];
         }
     }
-    if (!(_arrayCoordinatesSongs.count)) {
+    if (!(_arrayCoordinatesCheckingSongs.count)) {
             
-            _arrayCoordinatesSongs = [[NSMutableArray alloc] init];
+            _arrayCoordinatesCheckingSongs = [[NSMutableArray alloc] init];
             for (int n=0; n<12; n++) {
-                [_arrayCoordinatesSongs addObject:@0];
+                [_arrayCoordinatesCheckingSongs addObject:@0];
             }
         }
         
@@ -241,7 +271,7 @@
         }
     }
     
-        [DefaultsDataManager saveData:_arrayCoordinatesSongs forKey:_keyForCoordinatesSongs];
+        [DefaultsDataManager saveData:_arrayCoordinatesCheckingSongs forKey:_keyForCoordinatesCheckingSongs];
         [DefaultsDataManager saveData:_arrayCoordinatesCheckingPatterns forKey:_keyForCoordinatesCheckingPatterns];
         [DefaultsDataManager saveData:_arrayCoordinatesWinnerSounds forKey:_keyForCoordinatesWinnerSounds];
     
@@ -254,6 +284,8 @@
 #pragma mark PREVIEW METHODS
 
 -(void)createFrame{
+    [_viewPreviewWindow removeFromSuperview];
+    
     CGFloat height = [UIScreen mainScreen].bounds.size.height ;
     CGFloat width = [UIScreen mainScreen].bounds.size.width ;
     
@@ -549,17 +581,17 @@
 - (IBAction)btnPlay:(UIButton *)sender {
    
     if (sender == _btnPlayChecking){
-        NSLog(@"Hit checking play");
+        _songTitle = _checkingSongTitle;    }
+    
+    if (sender == _btnPlayWinner) {
+        _songTitle = _winnerSoundTitle;
     }
     
-    
-    
-    
-    NSString *song;
+
+
     NSString *songPath;
-    
-    song = _songTitle;
-    songPath =[[NSBundle mainBundle]pathForResource:song ofType:@"mp3"];
+  
+    songPath =[[NSBundle mainBundle]pathForResource:_songTitle ofType:@"mp3"];
     NSURL *url = [NSURL fileURLWithPath:songPath];
     
     NSError *error;
