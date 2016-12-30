@@ -27,9 +27,18 @@
 }
 
 -(void)runAnimation {
-    if(_patternNumber == 1) {
-        [self pattern1];
+    switch (_patternNumber) {
+        case 1:
+            [self pattern1];
+            break;
+        case 2:
+            [self pattern2];
+            break;
+            
+        default:
+            break;
     }
+    
 }
 
 
@@ -118,7 +127,102 @@
 
 
 
+-(void)pattern2 {
+    
+    self.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.layer.borderWidth = 2;
+    self.backgroundColor = [UIColor yellowColor];
+    
+    
+    CABasicAnimation *shake = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+    
+    shake.toValue = [NSNumber numberWithFloat:10];
+    shake.autoreverses = YES;
+    shake.duration = 0.1;
+    shake.repeatCount = HUGE_VALF;
+    
+    
+    for (int c= 0; c<9; c++) {
+        
+        UILabel *letter = [[UILabel alloc]init];
+        letter.font = [UIFont fontWithName:@"Courier" size:_h*.2];
+        letter.textAlignment = NSTextAlignmentCenter;
+        float letterWidth = _w/10;
+        if (c%2) {
+            letter.frame = CGRectMake(letterWidth*c, _h/2, _w/5, _w/5);
+        }
+        else{
+            letter.frame = CGRectMake(letterWidth*c, _h/2+50, _w/5, _w/5);
+            
+        }
+        
+        letter.layer.cornerRadius = _w/5/2;
+        letter.clipsToBounds = YES;
+        
+        switch (c) {
+            case 0:
+                letter.text = @"C";
+                letter.backgroundColor = [UIColor whiteColor];
+                break;
+            case 1:
+                letter.text = @"H";
+                letter.backgroundColor = [UIColor redColor];
+                break;
+            case 2:
+                letter.text = @"E";
+                letter.backgroundColor = [UIColor greenColor];
+                break;
+            case 3:
+                letter.text = @"C";
+                letter.backgroundColor = [UIColor orangeColor];
+                break;
+            case 4:
+                letter.text = @"K";
+                letter.backgroundColor = [UIColor magentaColor];
+                break;
+            case 5:
+                letter.text = @"I";
+                letter.backgroundColor = [UIColor cyanColor];
+                break;
+            case 6:
+                letter.text = @"N";
+                letter.backgroundColor = [UIColor brownColor];
+                break;
+            case 7:
+                letter.text = @"G";
+                letter.backgroundColor = [UIColor lightGrayColor];
+                break;
+            case 8:
+                letter.text = @"HOLD CARDS";
+                letter.backgroundColor = [UIColor grayColor];
+                letter.textColor = [UIColor redColor];
+                letter.font = [UIFont fontWithName:@"Courier" size:_h*.2];
+                letter.frame = CGRectMake(25, 25, _w*.9 ,_h/2);
+                letter.textAlignment = NSTextAlignmentCenter;
+                letter.numberOfLines = 0;
+                
+                
+                
+                break;
+                
+            default:
+                break;
+        }
+        
+        
+        
+        [self addSubview:letter];
+        
+        [letter.layer addAnimation:shake forKey:nil];
+        [self sendSubviewToBack:letter];
+        
+        
+        
+        
+    }
+    
 
+}
 
 
 

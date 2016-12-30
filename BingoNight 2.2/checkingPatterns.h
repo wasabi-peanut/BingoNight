@@ -16,6 +16,6 @@
 @property NSInteger patternNumber;
 @property CGFloat w;
 @property CGFloat h;
--(void)runAnimation;
+-(void) runAnimation;
 +(checkingPatterns *) frameWithPattern:(NSInteger) patternSelected frameX:(CGFloat) x frameY: (CGFloat) y width: (CGFloat) w height: (CGFloat) h;
 @end

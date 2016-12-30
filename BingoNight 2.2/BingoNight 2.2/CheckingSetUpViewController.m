@@ -621,7 +621,7 @@
     
     
 
-    checkingPatterns *myView = [checkingPatterns frameWithPattern:1 frameX:10 frameY:height/2-10 width:width/2 height:height/2];
+    checkingPatterns *myView = [checkingPatterns frameWithPattern:2 frameX:0 frameY:height/2 width:width/2 height:height/2];
     
    
     [self.view addSubview:myView];
