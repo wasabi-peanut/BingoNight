@@ -24,11 +24,21 @@
 
 - (void)viewDidLoad {
     
-    [self createPreviewFrameTest];
+    //GET NUMBER OF GAMES
+    _keyForNumberOfGames = @"keyForNumberOfGames";
+    _numberOfGames = [[DefaultsDataManager getDataForKey:_keyForNumberOfGames] integerValue];
+    if (_numberOfGames ==0) {
+        _numberOfGames = 8;
+    }
+
+    
+    //Set up preview Window
+    
+    
     
     
     _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
-    _keyForCoordinatesCheckingSongs = @"keyForCoordinateCheckingSongs";
+    _keyForCoordinatesCheckingSongs = @"keyForCoordinatesCheckingSongs";
     _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
 
     _arrayCoordinatesCheckingPatterns = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingPatterns]];
@@ -37,16 +47,16 @@
     
     [self makeArrays];
     
-    NSInteger  currentCheckingPattern = [_arrayCoordinatesCheckingPatterns[0] integerValue];
+    NSInteger  currentCheckingPattern =  [_arrayCoordinatesCheckingPatterns[0] integerValue];
     NSInteger  currentCheckingSong =     [_arrayCoordinatesCheckingSongs[0] integerValue];
-    NSInteger  currentWinnerSound = [_arrayWinnerSounds[0] integerValue];
+    NSInteger  currentWinnerSound =      [_arrayCoordinatesWinnerSounds[0] integerValue];
     
     [_pickerChecking selectRow:currentCheckingPattern inComponent:1 animated:YES];
     [_pickerChecking selectRow:currentCheckingSong inComponent:2 animated:YES];
     [_pickerChecking selectRow:currentWinnerSound inComponent:3 animated:YES];
     
     
-    
+    [self pickerView:_pickerChecking didSelectRow:0 inComponent:0];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[0] integerValue] inComponent:1];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[0] integerValue] inComponent:2];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[0] integerValue] inComponent:3];
@@ -78,6 +88,9 @@
             //change game
             _gameNumber = row;
             
+            
+
+            
             [_pickerChecking selectRow:[_arrayCoordinatesCheckingPatterns[row] integerValue] inComponent:1 animated:YES];
             [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[row] integerValue] inComponent:1];
             
@@ -85,41 +98,78 @@
             [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[row] integerValue] inComponent:2];
             
             [_pickerChecking selectRow:[_arrayCoordinatesWinnerSounds[row] integerValue] inComponent:3 animated:YES];
-            [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[row] integerValue] inComponent:3];
+           [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[row] integerValue] inComponent:3];
+            
+            
             
             break;
         case 1:
             //choose checking
-            
-            switch (row) {
-                case 0:
-                    [self createPreviewFrameTest];
-                    break;
-                case 1:
-                    [self showPreview2];
-                    break;
-                default:
-                    break;
-            }
-                [_arrayCoordinatesCheckingPatterns replaceObjectAtIndex:_gameNumber withObject:@(row)];
+            _patternSelected = row;
+            [_arrayCoordinatesCheckingPatterns replaceObjectAtIndex:_gameNumber withObject:@(row)];
+            [_myView removeFromSuperview];
+            [self runPreview];
+            break;
             
         case 2:
+            //choose checkingSong
             switch (row) {
+                    
                 case 0:
-                    _checkingSongTitle = @"rumble";
+                    _checkingSongTitle = @"countryboy";
                     break;
                 case 1:
+                    _checkingSongTitle = @"dance";
+                    break;
+                case 2:
+                    _checkingSongTitle = @"dubstep";
+                    break;
+                case 3:
+                    _checkingSongTitle = @"epic";
+                    break;
+                case 4:
+                    _checkingSongTitle = @"groovy";
+                    break;
+                case 5:
+                    _checkingSongTitle = @"happyrock";
+                    break;
+                case 6:
                     _checkingSongTitle = @"jazzpiano";
+                    break;
+                case 7:
+                    _checkingSongTitle = @"love";
+                    break;
+                case 8:
+                    _checkingSongTitle = @"moose";
+                    break;
+                case 9:
+                    _checkingSongTitle = @"popdance";
+                    break;
+                case 10:
+                    _checkingSongTitle = @"retrosoul";
+                    break;
+                case 11:
+                    _checkingSongTitle = @"rumble";
+                    break;
+                case 12:
+                    _checkingSongTitle = @"samba";
                     break;
                     
                 default:
                     break;
             }
             [avPlayer stop];
-                [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
-            break;
+            [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
+            
+    
+                      break;
+            
+    
+           
+            
            
         case 3:
+            //choose Winner Sound
             switch (row) {
                 case 0:
                     _winnerSoundTitle = @"applause";
@@ -127,13 +177,28 @@
                 case 1:
                     _winnerSoundTitle = @"computer";
                     break;
+                case 2:
+                    _winnerSoundTitle = @"lion";
+                    break;
+                case 3:
+                    _winnerSoundTitle = @"rooster";
+                    break;
+                case 4:
+                    _winnerSoundTitle = @"stadium";
+                    break;
+                case 5:
+                    _winnerSoundTitle = @"tada";
+                    break;
                     
                 default:
                     break;
             }
             [avPlayer stop];
-            [_arrayCoordinatesWinnerSounds replaceObjectAtIndex:_gameNumber withObject:@(row)];
+                [_arrayCoordinatesWinnerSounds replaceObjectAtIndex:_gameNumber withObject:@(row)];
             break;
+            
+            
+            
         default:
             break;
     }
@@ -144,6 +209,7 @@
     [DefaultsDataManager saveData:_arrayCoordinatesWinnerSounds forKey:_keyForCoordinatesWinnerSounds];
     
    
+
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
@@ -209,15 +275,74 @@
 -(void)makeArrays{
     
     
-    _arrayGameNumbers = [[NSMutableArray alloc] initWithObjects:
-                         @"Game One",
-                         @"Game Two",
-                         nil];
+    _arrayGameNumbers = [[NSMutableArray alloc] init ];
+                         
+    NSString *arrayItem;
+          
+          for (int z=1; z<=_numberOfGames; z++) {
+          switch (z) {
+          case 1:
+          arrayItem = @"One";
+          break;
+          case 2:
+          arrayItem = @"Two";
+          break;
+          case 3:
+          arrayItem = @"Three";
+          break;
+          case 4:
+          arrayItem = @"Four";
+          break;
+          case 5:
+          arrayItem = @"Five";
+          break;
+          case 6:
+          arrayItem = @"Six";
+          break;
+          case 7:
+          arrayItem = @"Seven";
+          break;
+          case 8:
+          arrayItem = @"Eight";
+          break;
+          case 9:
+          arrayItem = @"Nine";
+          break;
+          case 10:
+          arrayItem = @"Ten";
+          break;
+          case 11:
+          arrayItem = @"Eleven";
+          break;
+          case 12:
+          arrayItem = @"Twelve";
+          break;
+          
+          default:
+          break;
+          }
+          
+          [_arrayGameNumbers addObject:arrayItem];
+          
+          }
+          
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+    
     
     
     _arrayCheckingPatterns = [[NSMutableArray alloc] initWithObjects:
-                              @"Bouncing",
-                              @"Shaking",
+                              @"Pattern 1",
+                              @"Pattern 2",
+                              @"Pattern 3",
+                              @"Pattern 4",
+                              @"Pattern 5",
+                              @"Pattern 6",
                               nil];
     
     _arrayCheckingSongs = [[NSMutableArray alloc] initWithObjects:
@@ -243,9 +368,9 @@
     _arrayWinnerSounds = [[NSMutableArray alloc] initWithObjects :
                                 @"Applause",
                                 @"Chimes",
-                                @"Cheer",
                                 @"Lion",
                                 @"Rooster",
+                                @"Stadium",
                                 @"TaDa",
                                 nil];
     
@@ -286,6 +411,25 @@
 
 #pragma mark PREVIEW METHODS
 
+-(void)runPreview{
+    CGFloat height = [UIScreen mainScreen].bounds.size.height ;
+    CGFloat width = [UIScreen mainScreen].bounds.size.width ;
+    
+    _myView = [checkingPatterns frameX:0 frameY:height/2 width:width/2 height:height/2];
+    
+    
+    [self.view addSubview:_myView];
+    [_myView runAnimationWithPatternSelected:_patternSelected];
+    
+    
+
+    
+}
+
+
+
+
+/*
 -(void)createFrame{
     [_viewPreviewWindow removeFromSuperview];
     
@@ -575,7 +719,7 @@
     
     
 
-}
+}*/
 
 #pragma mark MUSIC SECTION
 
@@ -604,6 +748,9 @@
     [avPlayer setNumberOfLoops:-1];
     [avPlayer setVolume:5];
     [avPlayer play];
+    
+    NSLog(@"The sound playing is %@",_songTitle);
+    
 
 }
 
@@ -612,7 +759,7 @@
     
 }
 
-
+/*
 -(void)createPreviewFrameTest{
     
     
@@ -625,9 +772,9 @@
     
    
     [self.view addSubview:myView];
-    [myView runAnimation];
+   // [myView runAnimation];
     
-}
+}*/
 
 
 

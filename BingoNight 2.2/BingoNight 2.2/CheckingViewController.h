@@ -9,6 +9,8 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import "checkingPatterns.h"
+
 
 @interface CheckingViewController : UIViewController
 
@@ -30,6 +32,9 @@
 @property UIView *viewCircleC;
 
 @property CGFloat widthOfCalledDisplay;
+
+@property checkingPatterns *myView;
+
 
 
 

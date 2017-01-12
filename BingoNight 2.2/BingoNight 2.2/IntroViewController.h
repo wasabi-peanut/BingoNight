@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 AandA Development. All rights reserved.
 //
 
-//HI ALEX!!
+
 #import <UIKit/UIKit.h>
 
 @interface IntroViewController : UIViewController

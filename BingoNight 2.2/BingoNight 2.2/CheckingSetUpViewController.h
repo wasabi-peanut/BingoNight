@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "checkingPatterns.h"
+
 
 
 
@@ -31,6 +33,17 @@
 @property (strong, nonatomic) NSString *keyForCoordinatesCheckingPatterns;
 @property (strong, nonatomic) NSString *keyForCoordinatesCheckingSongs;
 @property (strong, nonatomic) NSString *keyForCoordinatesWinnerSounds;
+@property (strong, nonatomic) NSString *keyForNumberOfGames;
+
+@property  NSInteger numberOfGames;
+@property  NSInteger patternSelected;
+
+
+
+
+@property checkingPatterns *myView;
+
+
 
 @property (strong, nonatomic) IBOutlet UIButton *btnPlayChecking;
 @property (strong, nonatomic) IBOutlet UIButton *btnStopChecking;
