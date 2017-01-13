@@ -557,6 +557,22 @@
                           @"Twenty",
                           @"Twenty One",
                           @"Twenty Two",
+                          @"Twenty Three",
+                          @"Twenty Four",
+                          @"25",
+                          @"26",
+                          @"27",
+                          @"28",
+                          @"29",
+                          @"30",
+                          @"31",
+                          @"32",
+                          @"33",
+                          @"34",
+                          @"35",
+                          @"36",
+                          @"37"
+                          @"38",
                           
                           
                           nil];
@@ -1166,6 +1182,56 @@
             case 21:
                 markerText = @"\u2764";
                 break;
+            case 22:
+                markerText = @"\U0001F30D";
+                break;
+            case 23:
+                markerText = @"\U0001F600";
+                break;
+            case 24:
+                markerText = @"\U0001F60E";
+                break;
+            case 25:
+                markerText = @"\U0001F911";
+                break;
+            case 26:
+                markerText = @"\U0001F47B";
+                break;
+            case 27:
+                markerText = @"\U0001F4A5";
+                break;
+            case 28:
+                markerText = @"\U0001F435";
+                break;
+            case 29:
+                markerText = @"\U0001F436";
+                break;
+            case 30:
+                markerText = @"\U0001F98B";
+                break;
+            case 31:
+                markerText = @"\U0001F33C";
+                break;
+            case 32:
+                markerText = @"\U0001F340";
+                break;
+            case 33:
+                markerText = @"\U0001F6D1";
+                break;
+            case 34:
+                markerText = @"\U0001F308";
+                break;
+            case 35:
+                markerText = @"\u262E";
+                break;
+            case 36:
+                markerText = @"\U0001F534";
+                break;
+            case 37:
+                markerText = @"\U0001F535";
+                break;
+            
+            
             default:
                 break;
         }
