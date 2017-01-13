@@ -10,6 +10,8 @@
 #import "DefaultsDataManager.h"
 
 #import "BallColorView.h"
+#import "CheckingViewController.h"
+
 
 
 @interface GamePlayViewController ()
@@ -838,10 +840,25 @@
 
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ 
+    
+    
+    if ([segue.identifier isEqualToString:@"segueGameToChecking"]) {
+        CheckingViewController *viewChecking = [segue destinationViewController];
+        viewChecking.gameNumber = _incomingGameNumber;
+    }
+    
+
+    
+}
+
 -(void)checkingGame {
     
     if (_useSpecialChecking == YES) {
         [self performSegueWithIdentifier:@"segueGameToChecking" sender:self];
+        
+        
          }
    
     else {

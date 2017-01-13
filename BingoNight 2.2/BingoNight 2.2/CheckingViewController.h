@@ -19,6 +19,13 @@
 @property (strong,nonatomic) NSArray *arrayCalledNumbersSorted;
 @property (strong, nonatomic) NSString *keyForCalledNumbers;
 
+@property (strong, nonatomic) NSMutableArray *arrayCoordinatesCheckingPatterns;
+@property (strong, nonatomic) NSString *keyForCoordinatesCheckingPatterns;
+
+@property NSInteger gameNumber;
+
+
+
 
 @property (strong, nonatomic) IBOutlet UITextView *textViewCalledNumbers;
 

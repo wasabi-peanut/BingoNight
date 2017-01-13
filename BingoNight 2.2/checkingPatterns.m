@@ -60,18 +60,21 @@
             [self pattern6];
             break;
         case 7:
-            [self patternWithImage:@"fractal" frames:12 duration:0.5 widthMultiplier:1 heightMultiplier:1 xPosition:75 yPosition:0 ];
+            [self patternWithImage:@"fractal" frames:11 duration:4.0 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0 ];
             break;
         case 8:
-            [self patternWithImage:@"bird" frames:27 duration:1.0 widthMultiplier:.2 heightMultiplier:.2 xPosition:_width/2 yPosition:_height/2];
+            [self patternWithImage:@"bird" frames:27 duration:1.0 widthMultiplier:.2 heightMultiplier:.2 xPosition:_width*.4 yPosition:_height/2];
             break;
         case 9:
-            [self patternWithImage:@"handClap" frames:8 duration:0.5 widthMultiplier:.4  heightMultiplier: 0.4  xPosition:_width*.3 yPosition:_height*.3];
+            [self patternWithImage:@"cowboy" frames:2 duration:0.5 widthMultiplier:0.3  heightMultiplier: 0.3  xPosition:_width*.3 yPosition:_height*.5];
             break;
         case 10:
-            [self babyDance];
+            [self basketball];
             break;
         case 11:
+            [self newBaby];
+            break;
+        case 12:
             [self ballDrop];
             break;
         
@@ -86,11 +89,18 @@
 
 
 -(void) pattern0 {
+    //COMPLETE
+    
+    float discSizeMultiplier = 0.15;
+    float fontSizeMultiplier = 0.2;
+    
+    CGFloat sizeOfDisc = discSizeMultiplier*_width;
+    
     
     self.layer.borderColor = [[UIColor blueColor] CGColor];
     self.layer.borderWidth = 2;
     self.backgroundColor = [UIColor cyanColor];
-    CGFloat sizeOfDisc = .1*_width;
+    
     
     
     
@@ -117,7 +127,7 @@
     
     UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _width, _height)];
     labelBackground.text = @"Hold Cards";
-    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:.1*_width];
+    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:fontSizeMultiplier*_width];
     labelBackground.numberOfLines = 0;
     labelBackground.textColor = [UIColor yellowColor];
     labelBackground.textAlignment = NSTextAlignmentCenter;
@@ -170,6 +180,14 @@
 
 
 -(void)pattern1 {
+    //COMPLETE
+    
+    float letterDiscSize = _width/10;
+    
+    float textSize = _width/10;
+    float topRow = _height*.45;
+    float bottomRow = _height *.55;
+    
     
     self.layer.borderColor = [[UIColor blueColor] CGColor];
     self.layer.borderWidth = 2;
@@ -184,27 +202,26 @@
     shake.repeatCount = HUGE_VALF;
     
     
-    for (int c= 0; c<9; c++) {
+    for (int c= 0; c<8; c++) {
         
         UILabel *letter = [[UILabel alloc]init];
-        letter.font = [UIFont fontWithName:@"Courier" size:_height*.2];
+        letter.font = [UIFont fontWithName:@"Courier" size:textSize];
         letter.textAlignment = NSTextAlignmentCenter;
-        float letterWidth = _width/10;
-        if (c%2) {
-            letter.frame = CGRectMake(letterWidth*c, _height/2, _width/5, _width/5);
+                if (c%2) {
+            letter.frame = CGRectMake(letterDiscSize*c+letterDiscSize, bottomRow, letterDiscSize,letterDiscSize);
         }
         else{
-            letter.frame = CGRectMake(letterWidth*c, _height/2+50, _width/5, _width/5);
+            letter.frame = CGRectMake(letterDiscSize*c+letterDiscSize,topRow, letterDiscSize,letterDiscSize);
             
         }
         
-        letter.layer.cornerRadius = _width/5/2;
+        letter.layer.cornerRadius = letterDiscSize/2;
         letter.clipsToBounds = YES;
         
         switch (c) {
             case 0:
                 letter.text = @"C";
-                letter.backgroundColor = [UIColor whiteColor];
+                letter.backgroundColor = [UIColor grayColor];
                 break;
             case 1:
                 letter.text = @"H";
@@ -234,22 +251,12 @@
                 letter.text = @"G";
                 letter.backgroundColor = [UIColor lightGrayColor];
                 break;
-            case 8:
-                letter.text = @"HOLD CARDS";
-                letter.backgroundColor = [UIColor grayColor];
-                letter.textColor = [UIColor redColor];
-                letter.font = [UIFont fontWithName:@"Courier" size:_height*.2];
-                letter.frame = CGRectMake(25, 25, _width*.9 ,_height/2);
-                letter.textAlignment = NSTextAlignmentCenter;
-                letter.numberOfLines = 0;
-                
-                
-                
-                break;
                 
             default:
                 break;
         }
+        
+        
         
         
         
@@ -262,15 +269,40 @@
         
         
     }
+    UILabel *labelHold = [[UILabel alloc] initWithFrame:CGRectMake(_width*.1, _height*.1, _width*.8, _height*.2)];
+    labelHold.text = @"Hold Cards";
+    labelHold.backgroundColor = [UIColor whiteColor];
+    labelHold.textColor = [UIColor redColor];
+    labelHold.font = [UIFont fontWithName:@"Arial" size:_height*.2];
+    labelHold.layer.borderColor = [[UIColor redColor] CGColor];
+    labelHold.layer.borderWidth = 3;
+    labelHold.textAlignment =NSTextAlignmentCenter;
+    labelHold.numberOfLines = 0;
+    labelHold.layer.cornerRadius = _height*.2/5;
+    labelHold.clipsToBounds = YES;
     
+    [self addSubview:labelHold];
 
 }
 
 -(void)pattern2 {
+    //COMPLETE
+    float letterDiscSize = _width/10;
+    float topRow = _height*.0;
+    float bottomRow = _height *.05;
+    float letterWidth = _width/10;
+    float labelFontSize = _height*.2;
+    float diskFontSize = _height * .1;
+    float moveRange = _height*.8;
+    
+    
+    self.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.layer.borderWidth = 2;
+    self.backgroundColor = [UIColor yellowColor];
     
     CABasicAnimation *moveUpAndDown = [CABasicAnimation animationWithKeyPath:@"transform.translation.y" ];
     [moveUpAndDown setFromValue:[NSNumber numberWithFloat:0]];
-    [moveUpAndDown setByValue:[NSNumber numberWithFloat:_height-350]];
+    [moveUpAndDown setByValue:[NSNumber numberWithFloat:moveRange]];
     [moveUpAndDown setBeginTime:CACurrentMediaTime() ];
     [moveUpAndDown setDuration:2];
     moveUpAndDown.removedOnCompletion = NO;
@@ -278,34 +310,31 @@
     moveUpAndDown.fillMode = kCAFillModeForwards;
     moveUpAndDown.repeatCount =HUGE_VALF;
     
-    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, _width-75, _height)];
-    labelBackground.text = @"Hold Cards";
-    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
+    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(_width*.1, 0, _width*.8, _height)];
+    labelBackground.text = @"Hold Cards\nHold Cards\nHold Cards\nHold Cards";
+    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:labelFontSize];
     labelBackground.numberOfLines = 0;
-    labelBackground.textColor = [UIColor yellowColor];
+    labelBackground.textColor = [UIColor redColor];
     labelBackground.textAlignment = NSTextAlignmentCenter;
     
-    float letterWidth = _width/10;
-    
-    
     [self addSubview: labelBackground];
-    
+    [self bringSubviewToFront:labelBackground];
     
     
     for (int c= 0; c<8; c++) {
         
         UILabel *letter = [[UILabel alloc]init];
-        letter.font = [UIFont fontWithName:@"Courier" size:100];
+        letter.font = [UIFont fontWithName:@"Courier" size:diskFontSize];
         letter.textAlignment = NSTextAlignmentCenter;
         if (c%2) {
-            letter.frame = CGRectMake(letterWidth+letterWidth*c, 150, 200, 200);
+            letter.frame = CGRectMake(letterDiscSize+letterDiscSize*c, topRow, letterDiscSize, letterDiscSize);
         }
         else{
-            letter.frame = CGRectMake(letterWidth+letterWidth*c, 50, 200, 200);
+            letter.frame = CGRectMake(letterWidth+letterWidth*c, bottomRow, letterDiscSize, letterDiscSize);
             
         }
         
-        letter.layer.cornerRadius = 100;
+        letter.layer.cornerRadius = letterDiscSize/2;
         letter.clipsToBounds = YES;
         
         switch (c) {
@@ -358,9 +387,22 @@
 }
 
 -(void)pattern3{
-    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, _width-75, _height)];
-    labelBackground.text = @"Hold Cards";
-    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
+    //COMPLETE
+    float letterDiscSize = _width/10;
+    float topRow = _height*.0;
+   
+    float labelFontSize = _height*.2;
+    float diskFontSize = _height * .1;
+    float moveRange = _height*.85;
+    
+    
+    self.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.layer.borderWidth = 2;
+    self.backgroundColor = [UIColor whiteColor];
+    
+    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _width, _height)];
+    labelBackground.text = @"Hold Cards\nHold Cards\nHold Cards\nHold Cards";
+    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:labelFontSize];
     labelBackground.numberOfLines = 0;
     labelBackground.textColor = [UIColor yellowColor];
     labelBackground.textAlignment = NSTextAlignmentCenter;
@@ -372,7 +414,7 @@
     
     CABasicAnimation *moveDown = [CABasicAnimation animationWithKeyPath:@"transform.translation.y" ];
     [moveDown setFromValue:[NSNumber numberWithFloat:0]];
-    [moveDown setByValue:[NSNumber numberWithFloat:_height-200]];
+    [moveDown setByValue:[NSNumber numberWithFloat:moveRange]];
     [moveDown setBeginTime:CACurrentMediaTime()];
     [moveDown setDuration:2];
     moveDown.removedOnCompletion = NO;
@@ -380,21 +422,20 @@
     moveDown.fillMode = kCAFillModeForwards;
     moveDown.repeatCount =HUGE_VALF;
     
-    float letterWidth = _width/10;
     
     for (int c= 0; c<8; c++) {
         
         UILabel *letter = [[UILabel alloc]init];
-        letter.font = [UIFont fontWithName:@"Courier" size:100];
+        letter.font = [UIFont fontWithName:@"Courier" size:diskFontSize];
         letter.textAlignment = NSTextAlignmentCenter;
-        letter.frame = CGRectMake(letterWidth+letterWidth*c,0, 200, 200);
-        letter.layer.cornerRadius = 100;
+        letter.frame = CGRectMake(letterDiscSize+letterDiscSize*c,topRow, letterDiscSize, letterDiscSize);
+        letter.layer.cornerRadius = letterDiscSize/2;
         letter.clipsToBounds = YES;
         
         switch (c) {
             case 0:
                 letter.text = @"C";
-                letter.backgroundColor = [UIColor whiteColor];
+                letter.backgroundColor = [UIColor yellowColor];
                 [moveDown setBeginTime:CACurrentMediaTime()+c];
                 [letter.layer addAnimation:moveDown forKey:nil];
                 
@@ -461,9 +502,24 @@
 }
 
 -(void)pattern4 {
-    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, _width-75, _height)];
+    //COMPLETE
+    
+    UIColor *fromColor = [UIColor cyanColor];
+    UIColor *toColor = [UIColor blueColor];
+    float duration = 5;
+    float labelFontSize = _height*.35;
+    
+    
+    
+    self.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.layer.borderWidth = 2;
+    self.backgroundColor = [UIColor whiteColor];
+    
+    
+    
+    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(_width*.1, 0, _width*.8, _height)];
     labelBackground.text = @"Hold Cards";
-    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
+    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:labelFontSize];
     labelBackground.numberOfLines = 0;
     labelBackground.textColor = [UIColor redColor];
     labelBackground.textAlignment = NSTextAlignmentCenter;
@@ -471,10 +527,9 @@
     [self addSubview: labelBackground];
     
     CABasicAnimation *colorAnimation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-    UIColor *fromColor = [UIColor whiteColor];
-    UIColor *toColor = [UIColor blackColor];
     
-    colorAnimation.duration = 3;
+    
+    colorAnimation.duration = duration  ;
     colorAnimation.fromValue = (id)fromColor.CGColor;
     colorAnimation.toValue = (id)toColor.CGColor;
     colorAnimation.repeatCount = HUGE_VALF;
@@ -485,10 +540,21 @@
     }
 
 -(void)pattern5 {
-    UILabel *checkingTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, _width-100, _height/2)];
+    //COMPLETE
+    
+    float labelFontSize = _height*.2;
+    UIColor *fromColor = [UIColor redColor];
+    UIColor *toColor = [UIColor greenColor];
+    
+    
+    self.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.layer.borderWidth = 2;
+    self.backgroundColor = [UIColor cyanColor];
+    
+    
+    UILabel *checkingTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _width, _height/2)];
     checkingTopLabel.text = @"Checking";
-    checkingTopLabel.font = [UIFont fontWithName:@"Courier" size:100];
-    // spinLabel.backgroundColor = [UIColor yellowColor];
+    checkingTopLabel.font = [UIFont fontWithName:@"Courier" size:labelFontSize];
     checkingTopLabel.textAlignment = NSTextAlignmentCenter;
     checkingTopLabel.layer.cornerRadius = 25;
     checkingTopLabel.clipsToBounds = YES;
@@ -498,10 +564,11 @@
     checkingTopLabel.layer.borderWidth = 2;
     
     
-    UILabel *checkingBottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, _height/2, _width-100, _height/2)];
-    checkingBottomLabel.text = @"Hold Your Cards";
-    checkingBottomLabel.font = [UIFont fontWithName:@"Courier" size:100];
-    // spinLabel.backgroundColor = [UIColor yellowColor];
+    UILabel *checkingBottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _height/2, _width, _height/2)];
+    checkingBottomLabel.text = @"Hold\nYour Cards";
+    checkingBottomLabel.font = [UIFont fontWithName:@"Courier" size:labelFontSize];
+    checkingBottomLabel.numberOfLines = 0;
+    checkingBottomLabel.lineBreakMode = NSLineBreakByWordWrapping;
     checkingBottomLabel.textAlignment = NSTextAlignmentCenter;
     checkingBottomLabel.layer.cornerRadius = 25;
     checkingBottomLabel.clipsToBounds = YES;
@@ -514,17 +581,6 @@
     [self addSubview:checkingBottomLabel];
     
     
-    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, _width-75, _height)];
-    // labelBackground.text = @"Hold Cards";
-    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
-    labelBackground.numberOfLines = 0;
-    labelBackground.textColor = [UIColor yellowColor];
-    labelBackground.textAlignment = NSTextAlignmentCenter;
-    
-    
-    
-    
-    [self addSubview: labelBackground];
     
     
     CABasicAnimation *spinning = [CABasicAnimation animationWithKeyPath:@"transform.rotation.y"];
@@ -538,8 +594,7 @@
     spinning.repeatCount = HUGE_VALF;
     
     CABasicAnimation *colorAnimation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-    UIColor *fromColor = [UIColor redColor];
-    UIColor *toColor = [UIColor greenColor];
+   
     
     colorAnimation.duration = 2.0;
     colorAnimation.fromValue = (id)fromColor.CGColor;
@@ -570,27 +625,44 @@
 }
 
 -(void)pattern6 {
-    UILabel *checkingTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 0, _width-100, _height/2)];
+    //COMPLETE
+    
+    float labelFontSize = _height*.2;
+    float spinDuration = 1;
+    float colorDuration = 2;
+    UIColor *fromColor = [UIColor whiteColor];
+    UIColor *toColor = [UIColor blackColor];
+
+    UIColor *fromColor2 = [UIColor blackColor];
+    UIColor *toColor2 = [UIColor whiteColor];
+    
+    UIColor *labelTextColor = [UIColor redColor];
+
+    self.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.layer.borderWidth = 2;
+    self.backgroundColor = [UIColor lightGrayColor];
+    
+    UILabel *checkingTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _width, _height/2)];
     checkingTopLabel.text = @"Checking";
-    checkingTopLabel.font = [UIFont fontWithName:@"Courier" size:100];
+    checkingTopLabel.font = [UIFont fontWithName:@"Courier" size:labelFontSize];
+    checkingTopLabel.textColor = labelTextColor;
     
     checkingTopLabel.textAlignment = NSTextAlignmentCenter;
     checkingTopLabel.layer.cornerRadius = 25;
     checkingTopLabel.clipsToBounds = YES;
     
-    
     checkingTopLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     checkingTopLabel.layer.borderWidth = 2;
     
-    
-    UILabel *checkingBottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, _height/2, _width-100, _height/2)];
-    checkingBottomLabel.text = @"Hold Your Cards";
-    checkingBottomLabel.font = [UIFont fontWithName:@"Courier" size:100];
-    
+    UILabel *checkingBottomLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, _height/2, _width, _height/2)];
+    checkingBottomLabel.text = @"Hold\nYour Cards";
+    checkingBottomLabel.font = [UIFont fontWithName:@"Courier" size:labelFontSize];
+    checkingBottomLabel.textColor = labelTextColor;
+    checkingBottomLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    checkingBottomLabel.numberOfLines = 0;
     checkingBottomLabel.textAlignment = NSTextAlignmentCenter;
     checkingBottomLabel.layer.cornerRadius = 25;
     checkingBottomLabel.clipsToBounds = YES;
-    
     
     checkingBottomLabel.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     checkingBottomLabel.layer.borderWidth = 2;
@@ -599,34 +671,20 @@
     [self addSubview:checkingBottomLabel];
     
     
-    UILabel *labelBackground = [[UILabel alloc] initWithFrame:CGRectMake(75, 0, _width-75, _height)];
-    
-    labelBackground.font = [UIFont fontWithName:@"Helvetica" size:300];
-    labelBackground.numberOfLines = 0;
-    labelBackground.textColor = [UIColor yellowColor];
-    labelBackground.textAlignment = NSTextAlignmentCenter;
-    
-    
-    
-    
-    [self addSubview: labelBackground];
-    
-    
     CABasicAnimation *spinning = [CABasicAnimation animationWithKeyPath:@"transform.rotation.x"];
     //for backward text
-    spinning.toValue = [NSNumber numberWithFloat:2*M_PI];
+   // spinning.toValue = [NSNumber numberWithFloat:2*M_PI];
     //only forward text
-    //spinning.toValue = [NSNumber numberWithFloat:.5*M_PI];
+    spinning.toValue = [NSNumber numberWithFloat:.5*M_PI];
     
     spinning.autoreverses = YES;
-    spinning.duration = 4;
+    spinning.duration = spinDuration;
     spinning.repeatCount = HUGE_VALF;
     
     CABasicAnimation *colorAnimation = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-    UIColor *fromColor = [UIColor redColor];
-    UIColor *toColor = [UIColor greenColor];
     
-    colorAnimation.duration = 2.0;
+    
+    colorAnimation.duration = colorDuration;
     colorAnimation.fromValue = (id)fromColor.CGColor;
     colorAnimation.toValue = (id)toColor.CGColor;
     colorAnimation.repeatCount = HUGE_VALF;
@@ -634,10 +692,8 @@
     
     
     CABasicAnimation *colorAnimation2 = [CABasicAnimation animationWithKeyPath:@"backgroundColor"];
-    UIColor *fromColor2 = [UIColor greenColor];
-    UIColor *toColor2 = [UIColor redColor];
     
-    colorAnimation2.duration = 2.0;
+    colorAnimation2.duration = colorDuration;
     colorAnimation2.fromValue = (id)fromColor2.CGColor;
     colorAnimation2.toValue = (id)toColor2.CGColor;
     colorAnimation2.repeatCount = HUGE_VALF;
@@ -652,37 +708,150 @@
     
 }
 
--(void)patternWithImage: (NSString *)imageID frames:(NSInteger)frames duration:(NSInteger)duration widthMultiplier:(float)widthMult heightMultiplier: (float)heightMult xPosition: (float)xPos yPosition: (float)yPos{
+-(void)patternWithImage: (NSString *)imageID frames:(NSInteger)frames duration:(float)duration widthMultiplier:(float)widthMult heightMultiplier: (float)heightMult xPosition: (float)xPos yPosition: (float)yPos{
+    //COMPLETE
     
-  
-    NSString *imageName;
-    NSMutableArray *arrayImages = [[NSMutableArray alloc] init];
+    self.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.layer.borderWidth = 2;
+    self.backgroundColor = [UIColor cyanColor];
     
-    for (int x=1; x<frames; x++) {
-        imageName = [NSString stringWithFormat:@"%@%i.png",imageID,x];
-        [arrayImages addObject: [UIImage imageNamed:imageName]];
-        
-    }
+    UILabel *labelHold = [[UILabel alloc] initWithFrame:CGRectMake(_width*.1, _height*.1, _width*.8, _height*.2)];
+    labelHold.text = @"Hold Cards";
+    labelHold.backgroundColor = [UIColor whiteColor];
+    labelHold.textColor = [UIColor redColor];
+    labelHold.font = [UIFont fontWithName:@"Arial" size:_height*.2];
+    labelHold.layer.borderColor = [[UIColor redColor] CGColor];
+    labelHold.layer.borderWidth = 3;
+    labelHold.textAlignment =NSTextAlignmentCenter;
+    labelHold.numberOfLines = 0;
+    labelHold.layer.cornerRadius = _height*.2/5;
+    labelHold.clipsToBounds = YES;
+    
+    [self addSubview:labelHold];
+    [self bringSubviewToFront:labelHold];
+    
+    
    
     
+    NSString *imageName;
+    //NSMutableArray *arrayImages = [[NSMutableArray alloc] init];
+    NSMutableArray *arrayImages = [NSMutableArray array];
+    
+    for (int x=1; x<=frames; x++) {
+        imageName = [NSString stringWithFormat:@"%@%i.png",imageID,x];
+        
+     
+        [arrayImages addObject:[UIImage imageNamed:imageName]];
+        
+    }
+    
+   
     UIImageView *animationView = [[UIImageView alloc] initWithFrame:CGRectMake(xPos,yPos, _width*widthMult, _height*heightMult)];
     animationView.animationImages = arrayImages;
     animationView.animationDuration = duration;
     [self addSubview:animationView];
     [animationView startAnimating];
-     
+    
+    
+    [self bringSubviewToFront:labelHold];
+
      }
 
 
--(void)pattern8 {
+-(void)basketball {
+    
+    float xPos = 0;
+    float yPos = 0;
+    float widthMult = 1;
+    float heightMult = 1;
     
     
+    NSMutableArray *ballImages = [NSMutableArray array];
+    for (int x = 1; x<=177; x++) {
+        NSString *ballImageName = [NSString stringWithFormat:@"Basketball-Bingo%i",x];
+        [ballImages addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:ballImageName ofType:@"png"]]];
+        
+    }
+    
+    UIImageView *animationView = [[UIImageView alloc] initWithFrame:CGRectMake(xPos,yPos, _width*widthMult, _height*heightMult)];
+    animationView.animationImages = ballImages;
+    animationView.animationDuration = 15;
+    [self addSubview:animationView];
+    [animationView startAnimating];
+
     
     
     
 }
 
+
+-(void)newBaby{
+    
+    float babyWidth = _width/5;
+    float babyHeight = babyWidth;
+    float moveRange = _height*.2;
+    
+
+    
+    float XstartBaby1 = _width/2- babyWidth/2;
+    float YstartBaby1 = _height * .7;
+    
+    self.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.layer.borderWidth = 2;
+    self.backgroundColor = [UIColor cyanColor];
+    
+    CABasicAnimation *moveUpAndDown = [CABasicAnimation animationWithKeyPath:@"transform.translation.y" ];
+    [moveUpAndDown setFromValue:[NSNumber numberWithFloat:0]];
+    [moveUpAndDown setByValue:[NSNumber numberWithFloat:moveRange]];
+    [moveUpAndDown setBeginTime:CACurrentMediaTime() ];
+    [moveUpAndDown setDuration:2];
+    moveUpAndDown.removedOnCompletion = NO;
+    moveUpAndDown.autoreverses = YES;
+    moveUpAndDown.fillMode = kCAFillModeForwards;
+    moveUpAndDown.repeatCount =HUGE_VALF;
+    
+    
+    
+    
+    UIGraphicsBeginImageContext(self.frame.size);
+    [[UIImage imageNamed:@"stageBaby.png"] drawInRect:self.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+
+    _baby1Images = [NSMutableArray array];
+    
+    
+    for (int i= 1; i<15; i++) {
+        NSString *objectName = [NSString stringWithFormat:@"baby%d",i];
+        [_baby1Images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:objectName ofType:@"png"]]];
+        
+        //Using imageWithContentsOfFile instead of imageNamed to allow memory usage to clear
+        
+    }
+ 
+    _baby1Frame = [[UIImageView alloc] initWithFrame:CGRectMake(XstartBaby1, YstartBaby1, babyWidth, babyHeight)];
+    _baby1Frame.animationImages = _baby1Images;
+    _baby1Frame.animationDuration = 3;
+    [_baby1Frame startAnimating];
+    
+    
+    [self addSubview:_baby1Frame];
+    [_baby1Frame.layer addAnimation:moveUpAndDown forKey:nil];
+    
+    
+    
+}
+
+
 -(void)babyDance {
+    
+    
+    self.layer.borderColor = [[UIColor blueColor] CGColor];
+    self.layer.borderWidth = 2;
+    self.backgroundColor = [UIColor cyanColor];
     
     UIGraphicsBeginImageContext(self.frame.size);
     [[UIImage imageNamed:@"stageBaby.png"] drawInRect:self.bounds];
@@ -706,9 +875,9 @@
         
     }
     
-    _baby1Frame = [[UIImageView alloc] initWithFrame:CGRectMake(150, 500, 100, 100)];
-    _baby2Frame = [[UIImageView alloc] initWithFrame:CGRectMake(450, 500, 100, 100)];
-    _baby3Frame = [[UIImageView alloc] initWithFrame:CGRectMake(750, 500, 100, 100)];
+    _baby1Frame = [[UIImageView alloc] initWithFrame:CGRectMake(_width*.25, _height*.7, 100, 100)];
+    _baby2Frame = [[UIImageView alloc] initWithFrame:CGRectMake(_width*.5, _height*.7, 100, 100)];
+    _baby3Frame = [[UIImageView alloc] initWithFrame:CGRectMake(_width*.75, _height*.7, 100, 100)];
     
     _baby1Frame.image = [UIImage imageNamed:@"baby7"];//seven works
     _baby3Frame.image = [UIImage imageNamed:@"baby7"];
@@ -717,18 +886,10 @@
     [self addSubview:_baby2Frame];
     [self addSubview:_baby3Frame];
     
-    
-    //   _baby1Frame.animationImages = _baby1Images;
-    //   _baby1Frame.animationDuration= 2;
-    //  [_baby1Frame startAnimating];
-    
     _baby2Frame.animationImages = _baby1Images;
     _baby2Frame.animationDuration= 2;
     [_baby2Frame startAnimating];
     
-    //   _baby3Frame.animationImages = _baby1Images;
-    //   _baby3Frame.animationDuration= 2;
-    // [_baby3Frame startAnimating];
     
     [UIView animateWithDuration:1 animations:^{
         
@@ -751,9 +912,9 @@
     
     [UIView animateWithDuration:5 animations:^{
         
-        _baby1Frame.frame = CGRectMake(150, 500, 100, 100);
-        _baby2Frame.frame = CGRectMake(450, 550, 200, 200);
-        _baby3Frame.frame = CGRectMake(750, 500, 100, 100);
+        _baby1Frame.frame = CGRectMake(_width*.25, _height*.5, 100, 100);
+        _baby2Frame.frame = CGRectMake(_width*.5, _height*.5, 200, 200);
+        _baby3Frame.frame = CGRectMake(_width*.75, _height*.5, 100, 100);
         
     } completion:^(BOOL finished) {
         
@@ -767,9 +928,9 @@
     
     [UIView animateWithDuration:5 animations:^{
         
-        _baby1Frame.frame = CGRectMake(150, 550, 200, 200);
-        _baby2Frame.frame = CGRectMake(450, 550, 200, 200);
-        _baby3Frame.frame = CGRectMake(750, 550, 200, 200);
+        _baby1Frame.frame = CGRectMake(_width*.25, _height*.6, 200, 200);
+        _baby2Frame.frame = CGRectMake(_width*.5, _height*.6, 200, 200);
+        _baby3Frame.frame = CGRectMake(_width*.75,_height*.6, 200, 200);
         
     } completion:^(BOOL finished) {
         [self Baby3];
@@ -984,6 +1145,7 @@
     
     
     //CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        float pegSize = _width/20;
     
     
     self.backgroundColor = [UIColor yellowColor];
@@ -1055,7 +1217,7 @@
         if (count<=6) {
             ylevel = _height*.3;
             xlevel = xstart + xgap *count;
-            if (count&2) {//was 1
+            if (count&2) {
                 _obstacleColor = [UIColor cyanColor];
             }
             else {_obstacleColor = [UIColor magentaColor];}
@@ -1092,7 +1254,7 @@
         
         
         
-        UIView *obstacles = [[UIView alloc] initWithFrame:CGRectMake(xlevel, ylevel, 50, 50)];
+        UIView *obstacles = [[UIView alloc] initWithFrame:CGRectMake(xlevel, ylevel, pegSize,pegSize)];
         
         CGAffineTransform affineTransform = CGAffineTransformMakeRotation(M_PI_4);
         obstacles.transform = affineTransform;
@@ -1113,7 +1275,7 @@
     _labelDads = [[UILabel alloc] initWithFrame:CGRectMake(0, boxYValue, _width/4, boxHeight)];
     _labelDads.backgroundColor =[UIColor blueColor];
     _labelDads.text = @"Blue";
-    _labelDads.font = [UIFont fontWithName:@"Chalkboard SE" size:32];
+    _labelDads.font = [UIFont fontWithName:@"Chalkboard SE" size:24];
     _labelDads.textColor = [UIColor whiteColor];
     _labelDads.textAlignment = NSTextAlignmentCenter;
     _labelDads.numberOfLines = 0;
@@ -1121,7 +1283,7 @@
     _labelLower = [[UILabel alloc] initWithFrame:CGRectMake(_width*.25, boxYValue, _width/4, boxHeight)];
     _labelLower.backgroundColor =[UIColor redColor];
     _labelLower.text = @"Red";
-    _labelLower.font = [UIFont fontWithName:@"Chalkboard SE" size:32];
+    _labelLower.font = [UIFont fontWithName:@"Chalkboard SE" size:24];
     _labelLower.textColor = [UIColor whiteColor];
     _labelLower.textAlignment = NSTextAlignmentCenter;
     _labelLower.numberOfLines = 0;
@@ -1129,7 +1291,7 @@
     _labelMiddle = [[UILabel alloc] initWithFrame:CGRectMake(_width*.5, boxYValue, _width/4, boxHeight)];
     _labelMiddle.backgroundColor =[UIColor greenColor];
     _labelMiddle.text = @"Green";
-    _labelMiddle.font = [UIFont fontWithName:@"Chalkboard SE" size:32];
+    _labelMiddle.font = [UIFont fontWithName:@"Chalkboard SE" size:24];
     _labelMiddle.textColor = [UIColor whiteColor];
     _labelMiddle.textAlignment = NSTextAlignmentCenter;
     _labelMiddle.numberOfLines = 0;
@@ -1137,7 +1299,7 @@
     _labelMoms = [[UILabel alloc] initWithFrame:CGRectMake(_width*.75, boxYValue, _width/4, boxHeight)];
     _labelMoms.backgroundColor =[UIColor orangeColor];
     _labelMoms.text = @"Orange";
-    _labelMoms.font = [UIFont fontWithName:@"Chalkboard SE" size:32];
+    _labelMoms.font = [UIFont fontWithName:@"Chalkboard SE" size:24];
     _labelMoms.textColor = [UIColor whiteColor];
     _labelMoms.textAlignment = NSTextAlignmentCenter;
     _labelMoms.numberOfLines = 0;
@@ -1166,7 +1328,7 @@
     //[_bounceBehaviorDense removeItem:_ball];
     _bounceBehavior.elasticity = 1;
     
-    float kballSize = _width/15;
+    float kballSize = _width/20;
     
     
     
@@ -1228,8 +1390,8 @@
         _banner.textColor = [UIColor whiteColor];
         
         [_banner sizeToFit];
-        [_banner setCenter:CGPointMake(self.center.x, 200)];
-        _ballReleasePointX = 800;
+        [_banner setCenter:CGPointMake(self.center.x, _height*.1)];
+    //    _ballReleasePointX = 800;
         
         [_ball removeFromSuperview];
         [ballTimer invalidate];
@@ -1253,10 +1415,10 @@
         _banner.textColor = [UIColor whiteColor];
         
         [_banner sizeToFit];
-        [_banner setCenter:CGPointMake(self.center.x, 200)];
+        [_banner setCenter:CGPointMake(self.center.x, _height*.1)];
         
         [_ball removeFromSuperview];
-        _ballReleasePointX = 600;
+       // _ballReleasePointX = 600;
         
         
         [_ball removeFromSuperview];
@@ -1280,8 +1442,8 @@
         _banner.textColor = [UIColor whiteColor];
         
         [_banner sizeToFit];
-        [_banner setCenter:CGPointMake(self.center.x, 200)];
-        _ballReleasePointX = 300;
+        [_banner setCenter:CGPointMake(self.center.x, _height*.1)];
+   //     _ballReleasePointX = 300;
         
         [_ball removeFromSuperview];
         [ballTimer invalidate];
@@ -1307,8 +1469,8 @@
         _banner.textColor = [UIColor whiteColor];
         
         [_banner sizeToFit];
-        [_banner setCenter:CGPointMake(self.center.x, 200)];
-        _ballReleasePointX = 200;
+        [_banner setCenter:CGPointMake(self.center.x, _height*.1)];
+     //   _ballReleasePointX = 200;
         
         [_ball removeFromSuperview];
         [ballTimer invalidate];

@@ -30,12 +30,17 @@
     _width = [UIScreen mainScreen].bounds.size.width;
     
     _keyForCalledNumbers = @"keyForCalledNumbers";
+    _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
     
-   _arrayCalledNumbers = [DefaultsDataManager getDataForKey:_keyForCalledNumbers];
+    _arrayCoordinatesCheckingPatterns = [DefaultsDataManager getDataForKey:_keyForCoordinatesCheckingPatterns];
+    _arrayCalledNumbers = [DefaultsDataManager getDataForKey:_keyForCalledNumbers];
+    
+    
+    
     
   //FOR TESTING
     _arrayCalledNumbers = [[NSMutableArray alloc] init];
-    for (int z=1; z<=25; z++) {
+    for (int z=1; z<=75; z++) {
         [_arrayCalledNumbers addObject:@(z)];
         
     }
@@ -184,14 +189,15 @@
 
 -(void)AnimationSelector {
     
-    NSInteger gameNumber;
-    gameNumber = 11;
+    NSInteger checkingPattern = [_arrayCoordinatesCheckingPatterns[_gameNumber-1] integerValue];
+    
+    
     
     CGFloat navHeight = self.navigationController.navigationBar.frame.size.height;
     
     _myView = [checkingPatterns frameX:_widthOfCalledDisplay frameY:navHeight width:_width-_widthOfCalledDisplay height:_height-navHeight];
     [self.view addSubview:_myView];
-    [_myView runAnimationWithPatternSelected:gameNumber];
+    [_myView runAnimationWithPatternSelected:checkingPattern];
     
     
     

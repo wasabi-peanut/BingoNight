@@ -343,6 +343,13 @@
                               @"Pattern 4",
                               @"Pattern 5",
                               @"Pattern 6",
+                              @"Pattern 7",
+                              @"Pattern 8",
+                              @"Pattern 9",
+                              @"Pattern 10",
+                              @"Pattern 11",
+                              @"Pattern 12",
+                              @"Pattern 13",
                               nil];
     
     _arrayCheckingSongs = [[NSMutableArray alloc] initWithObjects:

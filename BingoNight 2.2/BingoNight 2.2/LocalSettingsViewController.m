@@ -544,6 +544,21 @@
                           @"Sun 1",
                           @"Sun 2",
                           @"Diamond",
+                          @"Square 1",
+                          @"Square 2",
+                          @"Star 3",
+                          @"Thirteen",
+                          @"Fourteen",
+                          @"Fifteen",
+                          @"Sixteen",
+                          @"Seventeen",
+                          @"Eighteen",
+                          @"Nineteen",
+                          @"Twenty",
+                          @"Twenty One",
+                          @"Twenty Two",
+                          
+                          
                           nil];
     
     
@@ -1101,7 +1116,7 @@
                 markerText = @"\u25CF";
                 break;
             case 5:
-                markerText = @"\u272A";
+                markerText = @"\u2618";
                 break;
             case 6:
                 markerText = @"\u263c";
@@ -1111,6 +1126,45 @@
                 break;
             case 8:
                 markerText = @"\u2726";
+                break;
+            case 9:
+                markerText = @"\u25FE";
+                break;
+            case 10:
+                markerText = @"\u25FD";
+                break;
+            case 11:
+                markerText = @"\u2733";
+                break;
+            case 12:
+                markerText = @"\u2734";
+                break;
+            case 13:
+                markerText = @"\u2747";
+                break;
+            case 14:
+                markerText = @"\u274C";
+                break;
+            case 15:
+                markerText = @"\u2714";
+                break;
+            case 16:
+                markerText = @"\u271D";
+                break;
+            case 17:
+                markerText = @"\u2721";
+                break;
+            case 18:
+                markerText = @"\u26C4";
+                break;
+            case 19:
+                markerText = @"\u26A1";
+                break;
+            case 20:
+                markerText = @"\u2B50";
+                break;
+            case 21:
+                markerText = @"\u2764";
                 break;
             default:
                 break;
