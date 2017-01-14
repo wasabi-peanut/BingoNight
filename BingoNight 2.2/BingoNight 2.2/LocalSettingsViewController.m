@@ -29,10 +29,10 @@
     
     
     _protectedGrids = 3;
-    _protectedPresets = 7;
+    _protectedPresets = 8;
     
     
-   _height = [UIScreen mainScreen].bounds.size.height;
+    _height = [UIScreen mainScreen].bounds.size.height;
     _width = [UIScreen mainScreen].bounds.size.width;
    
    
@@ -423,13 +423,18 @@
     
     if (pickerView == _pickerMarkerColors) {
         
+
+        if (_presetSelected<_protectedPresets) {
+            [self colorChangeAlert];
+        }
+        else{
         _markerSelected = row;
         [_arrayGameColorSettings replaceObjectAtIndex:21 withObject:@(row)];
         
         [_arrayGameColorSettingsShell replaceObjectAtIndex: _presetSelected withObject:_arrayGameColorSettings];
         [DefaultsDataManager saveData:_arrayGameColorSettingsShell forKey:_keyForGameColorSettingsShell];
        
-      
+        }
 
     }
    
@@ -518,6 +523,7 @@
                                @"Autumn",
                                @"Fourth",
                                @"Midnight",
+                               @"News",
                                nil];
         
     }
@@ -533,46 +539,83 @@
     _arrayPickerGrids =[[NSMutableArray alloc]initWithObjects:@"Straight",@"X",@"Box",nil];
     
     }
-    
+    /*
+      @"\u26AA",
+      @"\u26AB",
+      @"\u272D",
+      @"\u272A",
+      @"\u25CF",
+      @"\u2618",
+      @"\u263c",
+      @"\u2600",
+      @"\u2726",
+      @"\u25FE",
+      @"\u25FD",
+      @"\u2733",
+      @"\u2734",
+     @"\u2747",
+     @"\u274C",
+     @"\u2714",
+     @"\u271D",
+     @"\u2721",
+     @"\u26C4",
+     @"\u26A1",
+     @"\u2B50",
+     @"\u2764",
+     @"\U0001F30D",
+     @"\U0001F600",
+     @"\U0001F60E",
+     @"\U0001F911",
+     @"\U0001F47B",
+     @"\U0001F4A5",
+     @"\U0001F435",
+     @"\U0001F436",
+     @"\U0001F33C",
+     @"\U0001F340",
+     @"\U0001F308",
+     @"\u262E",
+     @"\U0001F534",
+     @"\U0001F535",
+     
+     */
    _arrayPickerMarkers = [[NSMutableArray alloc] initWithObjects:
-                          @"White Discs",
-                          @"Black Disks",
-                          @"Star 1",
-                          @"Star 2",
-                          @"Circle",
-                          @"Circle With Star",
-                          @"Sun 1",
-                          @"Sun 2",
-                          @"Diamond",
-                          @"Square 1",
-                          @"Square 2",
-                          @"Star 3",
-                          @"Thirteen",
-                          @"Fourteen",
-                          @"Fifteen",
-                          @"Sixteen",
-                          @"Seventeen",
-                          @"Eighteen",
-                          @"Nineteen",
-                          @"Twenty",
-                          @"Twenty One",
-                          @"Twenty Two",
-                          @"Twenty Three",
-                          @"Twenty Four",
-                          @"25",
-                          @"26",
-                          @"27",
-                          @"28",
-                          @"29",
-                          @"30",
-                          @"31",
-                          @"32",
-                          @"33",
-                          @"34",
-                          @"35",
-                          @"36",
-                          @"37"
-                          @"38",
+                          
+                          @"\u26AA",
+                          @"\u26AB",
+                          @"\u272D",
+                          @"\u272A",
+                          @"\u25CF",
+                          @"\u2618",
+                          @"\u263c",
+                          @"\u2600",
+                          @"\u2726",
+                          @"\u25FE",
+                          @"\u25FD",
+                          @"\u2733",
+                          @"\u2734",
+                          @"\u2747",
+                          @"\u274C",
+                          @"\u2714",
+                          @"\u271D",
+                          @"\u2721",
+                          @"\u26C4",
+                          @"\u26A1",
+                          @"\u2B50",
+                          @"\u2764",
+                          @"\U0001F30D",
+                          @"\U0001F600",
+                          @"\U0001F60E",
+                          @"\U0001F911",
+                          @"\U0001F47B",
+                          @"\U0001F4A5",
+                          @"\U0001F435",
+                          @"\U0001F436",
+                          @"\U0001F33C",
+                          @"\U0001F340",
+                          @"\U0001F308",
+                          @"\u262E",
+                          @"\U0001F534",
+                          @"\U0001F535",
                           
                           
                           nil];
@@ -673,6 +716,16 @@
                                         @0,//marker
                                         nil];
         
+        NSMutableArray *NewsPreset = [[NSMutableArray alloc] initWithObjects:
+                                          @173,@179,@170, //background
+                                          @251,@255,@215, //box background
+                                          @0,@0,@0, //box letters
+                                          @225,@225,@225, //called background
+                                          @50,@50,@50, //called letters
+                                          @0,@0,@20, //Bingo letters
+                                          @0,@0,@255, //Game title color
+                                          @0,//marker
+                                          nil];
         
         
         
@@ -835,7 +888,7 @@
     if (_presetSelected<_protectedPresets) {
        
         
-        // [self applySetupDisplay];
+        
          [self colorChangeAlert];
         
     }
@@ -1109,13 +1162,14 @@
         button.layer.borderWidth = 1;
         button.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:button.frame.size.height*.95];
         button.titleLabel.adjustsFontSizeToFitWidth = YES;
-        button.backgroundColor = _gridBackgroundColor;
+    
+        button.backgroundColor = _boxBackgroundColor;
         _textFieldNameOfGame.textColor = _nameOfGameTextColor;
         _textFieldNameOfGame.backgroundColor = _screenBackgroundColor;
         
         NSString *markerText;
         
-        switch (_markerSelected) {
+         switch (_markerSelected) {
             case 0:
                 markerText = @"\u26AA";
                 break;
@@ -1207,27 +1261,21 @@
                 markerText = @"\U0001F436";
                 break;
             case 30:
-                markerText = @"\U0001F98B";
-                break;
-            case 31:
                 markerText = @"\U0001F33C";
                 break;
-            case 32:
+            case 31:
                 markerText = @"\U0001F340";
                 break;
-            case 33:
-                markerText = @"\U0001F6D1";
-                break;
-            case 34:
+            case 32:
                 markerText = @"\U0001F308";
                 break;
-            case 35:
+            case 33:
                 markerText = @"\u262E";
                 break;
-            case 36:
+            case 34:
                 markerText = @"\U0001F534";
                 break;
-            case 37:
+            case 35:
                 markerText = @"\U0001F535";
                 break;
             

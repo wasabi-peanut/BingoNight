@@ -302,6 +302,26 @@
 		E3F66C4C1DF3EBAA000B3D06 /* bingo.png in Resources */ = {isa = PBXBuildFile; fileRef = E3F66C4B1DF3EBAA000B3D06 /* bingo.png */; };
 		E3F66C4F1DF67A7D000B3D06 /* InstructionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F66C4E1DF67A7D000B3D06 /* InstructionsTableViewController.m */; };
 		E3F66C911DF9000D000B3D06 /* TextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F66C901DF9000D000B3D06 /* TextViewController.m */; };
+		E3FDF50D1E296AAC001A9111 /* fireworks1.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF4F91E296AAC001A9111 /* fireworks1.png */; };
+		E3FDF50E1E296AAC001A9111 /* fireworks2.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF4FA1E296AAC001A9111 /* fireworks2.png */; };
+		E3FDF50F1E296AAC001A9111 /* fireworks3.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF4FB1E296AAC001A9111 /* fireworks3.png */; };
+		E3FDF5101E296AAC001A9111 /* fireworks4.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF4FC1E296AAC001A9111 /* fireworks4.png */; };
+		E3FDF5111E296AAC001A9111 /* fireworks5.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF4FD1E296AAC001A9111 /* fireworks5.png */; };
+		E3FDF5121E296AAC001A9111 /* fireworks6.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF4FE1E296AAC001A9111 /* fireworks6.png */; };
+		E3FDF5131E296AAC001A9111 /* fireworks7.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF4FF1E296AAC001A9111 /* fireworks7.png */; };
+		E3FDF5141E296AAC001A9111 /* fireworks8.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5001E296AAC001A9111 /* fireworks8.png */; };
+		E3FDF5151E296AAC001A9111 /* fireworks9.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5011E296AAC001A9111 /* fireworks9.png */; };
+		E3FDF5161E296AAC001A9111 /* fireworks10.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5021E296AAC001A9111 /* fireworks10.png */; };
+		E3FDF5171E296AAC001A9111 /* fireworks11.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5031E296AAC001A9111 /* fireworks11.png */; };
+		E3FDF5181E296AAC001A9111 /* fireworks12.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5041E296AAC001A9111 /* fireworks12.png */; };
+		E3FDF5191E296AAC001A9111 /* fireworks13.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5051E296AAC001A9111 /* fireworks13.png */; };
+		E3FDF51A1E296AAC001A9111 /* fireworks14.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5061E296AAC001A9111 /* fireworks14.png */; };
+		E3FDF51B1E296AAC001A9111 /* fireworks15.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5071E296AAC001A9111 /* fireworks15.png */; };
+		E3FDF51C1E296AAC001A9111 /* fireworks16.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5081E296AAC001A9111 /* fireworks16.png */; };
+		E3FDF51D1E296AAC001A9111 /* fireworks17.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5091E296AAC001A9111 /* fireworks17.png */; };
+		E3FDF51E1E296AAC001A9111 /* fireworks18.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF50A1E296AAC001A9111 /* fireworks18.png */; };
+		E3FDF51F1E296AAC001A9111 /* fireworks19.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF50B1E296AAC001A9111 /* fireworks19.png */; };
+		E3FDF5201E296AAC001A9111 /* fireworks20.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF50C1E296AAC001A9111 /* fireworks20.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -640,6 +660,26 @@
 		E3F66C4E1DF67A7D000B3D06 /* InstructionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstructionsTableViewController.m; sourceTree = "<group>"; };
 		E3F66C8F1DF9000D000B3D06 /* TextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextViewController.h; sourceTree = "<group>"; };
 		E3F66C901DF9000D000B3D06 /* TextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextViewController.m; sourceTree = "<group>"; };
+		E3FDF4F91E296AAC001A9111 /* fireworks1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks1.png; sourceTree = "<group>"; };
+		E3FDF4FA1E296AAC001A9111 /* fireworks2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks2.png; sourceTree = "<group>"; };
+		E3FDF4FB1E296AAC001A9111 /* fireworks3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks3.png; sourceTree = "<group>"; };
+		E3FDF4FC1E296AAC001A9111 /* fireworks4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks4.png; sourceTree = "<group>"; };
+		E3FDF4FD1E296AAC001A9111 /* fireworks5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks5.png; sourceTree = "<group>"; };
+		E3FDF4FE1E296AAC001A9111 /* fireworks6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks6.png; sourceTree = "<group>"; };
+		E3FDF4FF1E296AAC001A9111 /* fireworks7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks7.png; sourceTree = "<group>"; };
+		E3FDF5001E296AAC001A9111 /* fireworks8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks8.png; sourceTree = "<group>"; };
+		E3FDF5011E296AAC001A9111 /* fireworks9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks9.png; sourceTree = "<group>"; };
+		E3FDF5021E296AAC001A9111 /* fireworks10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks10.png; sourceTree = "<group>"; };
+		E3FDF5031E296AAC001A9111 /* fireworks11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks11.png; sourceTree = "<group>"; };
+		E3FDF5041E296AAC001A9111 /* fireworks12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks12.png; sourceTree = "<group>"; };
+		E3FDF5051E296AAC001A9111 /* fireworks13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks13.png; sourceTree = "<group>"; };
+		E3FDF5061E296AAC001A9111 /* fireworks14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks14.png; sourceTree = "<group>"; };
+		E3FDF5071E296AAC001A9111 /* fireworks15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks15.png; sourceTree = "<group>"; };
+		E3FDF5081E296AAC001A9111 /* fireworks16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks16.png; sourceTree = "<group>"; };
+		E3FDF5091E296AAC001A9111 /* fireworks17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks17.png; sourceTree = "<group>"; };
+		E3FDF50A1E296AAC001A9111 /* fireworks18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks18.png; sourceTree = "<group>"; };
+		E3FDF50B1E296AAC001A9111 /* fireworks19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks19.png; sourceTree = "<group>"; };
+		E3FDF50C1E296AAC001A9111 /* fireworks20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks20.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -679,6 +719,7 @@
 		E328E6011E0641B5004F10DA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E3FDF4F81E296A6D001A9111 /* Fireworks */,
 				E3E6F5711E28AEA1003E3732 /* Cowboy */,
 				E3E6F5561E28AD1C003E3732 /* Other */,
 				E3E6F5371E2628C7003E3732 /* Baby */,
@@ -1128,6 +1169,33 @@
 			name = Cowboy;
 			sourceTree = "<group>";
 		};
+		E3FDF4F81E296A6D001A9111 /* Fireworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3FDF4F91E296AAC001A9111 /* fireworks1.png */,
+				E3FDF4FA1E296AAC001A9111 /* fireworks2.png */,
+				E3FDF4FB1E296AAC001A9111 /* fireworks3.png */,
+				E3FDF4FC1E296AAC001A9111 /* fireworks4.png */,
+				E3FDF4FD1E296AAC001A9111 /* fireworks5.png */,
+				E3FDF4FE1E296AAC001A9111 /* fireworks6.png */,
+				E3FDF4FF1E296AAC001A9111 /* fireworks7.png */,
+				E3FDF5001E296AAC001A9111 /* fireworks8.png */,
+				E3FDF5011E296AAC001A9111 /* fireworks9.png */,
+				E3FDF5021E296AAC001A9111 /* fireworks10.png */,
+				E3FDF5031E296AAC001A9111 /* fireworks11.png */,
+				E3FDF5041E296AAC001A9111 /* fireworks12.png */,
+				E3FDF5051E296AAC001A9111 /* fireworks13.png */,
+				E3FDF5061E296AAC001A9111 /* fireworks14.png */,
+				E3FDF5071E296AAC001A9111 /* fireworks15.png */,
+				E3FDF5081E296AAC001A9111 /* fireworks16.png */,
+				E3FDF5091E296AAC001A9111 /* fireworks17.png */,
+				E3FDF50A1E296AAC001A9111 /* fireworks18.png */,
+				E3FDF50B1E296AAC001A9111 /* fireworks19.png */,
+				E3FDF50C1E296AAC001A9111 /* fireworks20.png */,
+			);
+			name = Fireworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1246,6 +1314,7 @@
 				E3E6F4BD1E261FE8003E3732 /* Basketball-Bingo73.png in Resources */,
 				E3E6F5101E261FE8003E3732 /* Basketball-Bingo156.png in Resources */,
 				E3E6F47A1E261FE8003E3732 /* Basketball-Bingo6.png in Resources */,
+				E3FDF5141E296AAC001A9111 /* fireworks8.png in Resources */,
 				E3E6F4981E261FE8003E3732 /* Basketball-Bingo36.png in Resources */,
 				E3E6F3AD1E26144E003E3732 /* bird6.png in Resources */,
 				E3E6F3B81E26144E003E3732 /* bird17.png in Resources */,
@@ -1258,6 +1327,7 @@
 				E3E6F50E1E261FE8003E3732 /* Basketball-Bingo154.png in Resources */,
 				E3E6F5121E261FE8003E3732 /* Basketball-Bingo158.png in Resources */,
 				E3E6F3A81E26144E003E3732 /* bird1.png in Resources */,
+				E3FDF5171E296AAC001A9111 /* fireworks11.png in Resources */,
 				E3E6F4951E261FE8003E3732 /* Basketball-Bingo33.png in Resources */,
 				E3E6F4FE1E261FE8003E3732 /* Basketball-Bingo138.png in Resources */,
 				E3E6F4811E261FE8003E3732 /* Basketball-Bingo13.png in Resources */,
@@ -1266,12 +1336,14 @@
 				E3E6F4971E261FE8003E3732 /* Basketball-Bingo35.png in Resources */,
 				E3E6F4B41E261FE8003E3732 /* Basketball-Bingo64.png in Resources */,
 				E3E6F3AE1E26144E003E3732 /* bird7.png in Resources */,
+				E3FDF51D1E296AAC001A9111 /* fireworks17.png in Resources */,
 				E3E6F49A1E261FE8003E3732 /* Basketball-Bingo38.png in Resources */,
 				E3E6F5081E261FE8003E3732 /* Basketball-Bingo148.png in Resources */,
 				E3E6F5641E28AD42003E3732 /* fractal3.png in Resources */,
 				E3E6F48B1E261FE8003E3732 /* Basketball-Bingo23.png in Resources */,
 				E3E6F3B91E26144E003E3732 /* bird18.png in Resources */,
 				E3E6F4DD1E261FE8003E3732 /* Basketball-Bingo105.png in Resources */,
+				E3FDF51F1E296AAC001A9111 /* fireworks19.png in Resources */,
 				E3E6F4F51E261FE8003E3732 /* Basketball-Bingo129.png in Resources */,
 				E3E6F5051E261FE8003E3732 /* Basketball-Bingo145.png in Resources */,
 				E3E6F5001E261FE8003E3732 /* Basketball-Bingo140.png in Resources */,
@@ -1302,6 +1374,7 @@
 				E3E6F47C1E261FE8003E3732 /* Basketball-Bingo8.png in Resources */,
 				E3F66C4A1DF3EAB6000B3D06 /* card.jpg in Resources */,
 				E3E6F4D11E261FE8003E3732 /* Basketball-Bingo93.png in Resources */,
+				E3FDF5191E296AAC001A9111 /* fireworks13.png in Resources */,
 				E3E6F4C91E261FE8003E3732 /* Basketball-Bingo85.png in Resources */,
 				E3E6F5221E261FE8003E3732 /* Basketball-Bingo174.png in Resources */,
 				E3E6F4881E261FE8003E3732 /* Basketball-Bingo20.png in Resources */,
@@ -1328,6 +1401,7 @@
 				E3E6F4C01E261FE8003E3732 /* Basketball-Bingo76.png in Resources */,
 				E3481FB21E09ADD3004F4A33 /* moose.mp3 in Resources */,
 				E3E6F4DE1E261FE8003E3732 /* Basketball-Bingo106.png in Resources */,
+				E3FDF5121E296AAC001A9111 /* fireworks6.png in Resources */,
 				E3481FA61E09AD4D004F4A33 /* dance.mp3 in Resources */,
 				E39825481DE5054B00ACC5A7 /* LaunchScreen.xib in Resources */,
 				E3E6F4D41E261FE8003E3732 /* Basketball-Bingo96.png in Resources */,
@@ -1336,6 +1410,7 @@
 				E3E6F4ED1E261FE8003E3732 /* Basketball-Bingo121.png in Resources */,
 				E3E6F50C1E261FE8003E3732 /* Basketball-Bingo152.png in Resources */,
 				E3E6F5651E28AD42003E3732 /* fractal4.png in Resources */,
+				E3FDF50E1E296AAC001A9111 /* fireworks2.png in Resources */,
 				E39825491DE5054B00ACC5A7 /* LocalSettingsTrash.txt in Resources */,
 				E3E6F4F81E261FE8003E3732 /* Basketball-Bingo132.png in Resources */,
 				E3E6F56F1E28AE9B003E3732 /* cowboy1.png in Resources */,
@@ -1367,10 +1442,12 @@
 				E3E6F4CF1E261FE8003E3732 /* Basketball-Bingo91.png in Resources */,
 				E3E6F4E01E261FE8003E3732 /* Basketball-Bingo108.png in Resources */,
 				E3E6F4791E261FE8003E3732 /* Basketball-Bingo5.png in Resources */,
+				E3FDF5101E296AAC001A9111 /* fireworks4.png in Resources */,
 				E3E6F3B61E26144E003E3732 /* bird15.png in Resources */,
 				E3E6F4D61E261FE8003E3732 /* Basketball-Bingo98.png in Resources */,
 				E3E6F4BC1E261FE8003E3732 /* Basketball-Bingo72.png in Resources */,
 				E3E6F5251E261FE8003E3732 /* Basketball-Bingo177.png in Resources */,
+				E3FDF5181E296AAC001A9111 /* fireworks12.png in Resources */,
 				E398254A1DE5054B00ACC5A7 /* GamePlayTrash.txt in Resources */,
 				E3E6F4BB1E261FE8003E3732 /* Basketball-Bingo71.png in Resources */,
 				E3E6F5341E262765003E3732 /* handClap6.png in Resources */,
@@ -1392,11 +1469,13 @@
 				E3E6F4B11E261FE8003E3732 /* Basketball-Bingo61.png in Resources */,
 				E3E6F50D1E261FE8003E3732 /* Basketball-Bingo153.png in Resources */,
 				E3E6F49D1E261FE8003E3732 /* Basketball-Bingo41.png in Resources */,
+				E3FDF51E1E296AAC001A9111 /* fireworks18.png in Resources */,
 				E3481FB31E09ADD3004F4A33 /* popdance.mp3 in Resources */,
 				E3E6F4EC1E261FE8003E3732 /* Basketball-Bingo120.png in Resources */,
 				E3E6F4AE1E261FE8003E3732 /* Basketball-Bingo58.png in Resources */,
 				E3E6F5551E2628D4003E3732 /* baby14.png in Resources */,
 				E3E6F4751E261FE8003E3732 /* Basketball-Bingo1.png in Resources */,
+				E3FDF5131E296AAC001A9111 /* fireworks7.png in Resources */,
 				E3E6F4781E261FE8003E3732 /* Basketball-Bingo4.png in Resources */,
 				E3E6F48E1E261FE8003E3732 /* Basketball-Bingo26.png in Resources */,
 				E3E6F4C41E261FE8003E3732 /* Basketball-Bingo80.png in Resources */,
@@ -1409,6 +1488,7 @@
 				E3E6F5701E28AE9B003E3732 /* cowboy2.png in Resources */,
 				E3E6F5161E261FE8003E3732 /* Basketball-Bingo162.png in Resources */,
 				E3E6F4D81E261FE8003E3732 /* Basketball-Bingo100.png in Resources */,
+				E3FDF5151E296AAC001A9111 /* fireworks9.png in Resources */,
 				E3481FB61E09AE01004F4A33 /* rumble.mp3 in Resources */,
 				E3DD22D71E106222002041C3 /* retrosoul.mp3 in Resources */,
 				E3E6F4FB1E261FE8003E3732 /* Basketball-Bingo135.png in Resources */,
@@ -1433,7 +1513,9 @@
 				E3481FA21E09AD0F004F4A33 /* brazilsamba.mp3 in Resources */,
 				E3E6F4831E261FE8003E3732 /* Basketball-Bingo15.png in Resources */,
 				E3E6F4E61E261FE8003E3732 /* Basketball-Bingo114.png in Resources */,
+				E3FDF50D1E296AAC001A9111 /* fireworks1.png in Resources */,
 				E3E6F4841E261FE8003E3732 /* Basketball-Bingo16.png in Resources */,
+				E3FDF50F1E296AAC001A9111 /* fireworks3.png in Resources */,
 				E3E6F4961E261FE8003E3732 /* Basketball-Bingo34.png in Resources */,
 				E3E6F49E1E261FE8003E3732 /* Basketball-Bingo42.png in Resources */,
 				E3E6F5241E261FE8003E3732 /* Basketball-Bingo176.png in Resources */,
@@ -1444,6 +1526,7 @@
 				E3E6F4911E261FE8003E3732 /* Basketball-Bingo29.png in Resources */,
 				E3E6F5311E262765003E3732 /* handClap3.png in Resources */,
 				E3E6F5661E28AD42003E3732 /* fractal5.png in Resources */,
+				E3FDF5161E296AAC001A9111 /* fireworks10.png in Resources */,
 				E398253A1DE5054B00ACC5A7 /* Main.storyboard in Resources */,
 				E3E6F4F71E261FE8003E3732 /* Basketball-Bingo131.png in Resources */,
 				E3E6F56C1E28AD42003E3732 /* fractal11.png in Resources */,
@@ -1482,9 +1565,12 @@
 				E3E6F4BE1E261FE8003E3732 /* Basketball-Bingo74.png in Resources */,
 				E3E6F4CD1E261FE8003E3732 /* Basketball-Bingo89.png in Resources */,
 				E3DD22CB1E1046EE002041C3 /* stop2.png in Resources */,
+				E3FDF51C1E296AAC001A9111 /* fireworks16.png in Resources */,
 				E3E6F5151E261FE8003E3732 /* Basketball-Bingo161.png in Resources */,
 				E3E6F4801E261FE8003E3732 /* Basketball-Bingo12.png in Resources */,
+				E3FDF51A1E296AAC001A9111 /* fireworks14.png in Resources */,
 				E3E6F3C21E26144E003E3732 /* bird27.png in Resources */,
+				E3FDF5111E296AAC001A9111 /* fireworks5.png in Resources */,
 				E3E6F54D1E2628D4003E3732 /* baby6.png in Resources */,
 				E3E6F3C11E26144E003E3732 /* bird26.png in Resources */,
 				E3E6F4E51E261FE8003E3732 /* Basketball-Bingo113.png in Resources */,
@@ -1504,12 +1590,14 @@
 				E3E6F4F91E261FE8003E3732 /* Basketball-Bingo133.png in Resources */,
 				E3E6F4DB1E261FE8003E3732 /* Basketball-Bingo103.png in Resources */,
 				E3E6F54F1E2628D4003E3732 /* baby8.png in Resources */,
+				E3FDF51B1E296AAC001A9111 /* fireworks15.png in Resources */,
 				E3E6F3B11E26144E003E3732 /* bird10.png in Resources */,
 				E3E6F51C1E261FE8003E3732 /* Basketball-Bingo168.png in Resources */,
 				E3E6F3B41E26144E003E3732 /* bird13.png in Resources */,
 				E3E6F48F1E261FE8003E3732 /* Basketball-Bingo27.png in Resources */,
 				E3E6F4E11E261FE8003E3732 /* Basketball-Bingo109.png in Resources */,
 				E3DD22D31E104E74002041C3 /* play1.png in Resources */,
+				E3FDF5201E296AAC001A9111 /* fireworks20.png in Resources */,
 				E3E6F4B31E261FE8003E3732 /* Basketball-Bingo63.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,7 +34,10 @@
     float height = [UIScreen mainScreen].bounds.size.height;
     
     
-   
+    UIView *fireworks1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    
+    
+    
     UILabel *winnerLabel = [[UILabel alloc] initWithFrame:CGRectMake(.1*width, .2*height, .8*width, .6*height)];
     
     winnerLabel.text = @"WINNER";
