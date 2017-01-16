@@ -69,7 +69,8 @@
             [self patternWithImage:@"cowboy" frames:2 duration:0.5 widthMultiplier:0.3  heightMultiplier: 0.3  xPosition:_width*.3 yPosition:_height*.5];
             break;
         case 10:
-            [self basketball];
+            [self patternWithImage:@"Basketball-Bingo" frames:177 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
+            //[self basketball];
             break;
         case 11:
             [self newBaby];
@@ -738,10 +739,13 @@
     NSMutableArray *arrayImages = [NSMutableArray array];
     
     for (int x=1; x<=frames; x++) {
-        imageName = [NSString stringWithFormat:@"%@%i.png",imageID,x];
+        imageName = [NSString stringWithFormat:@"%@%i",imageID,x];
         
      
-        [arrayImages addObject:[UIImage imageNamed:imageName]];
+        //[arrayImages addObject:[UIImage imageNamed:imageName]];
+        
+        [arrayImages addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:imageName ofType:@"png"]]];
+        
         
     }
     
@@ -758,31 +762,6 @@
      }
 
 
--(void)basketball {
-    
-    float xPos = 0;
-    float yPos = 0;
-    float widthMult = 1;
-    float heightMult = 1;
-    
-    
-    NSMutableArray *ballImages = [NSMutableArray array];
-    for (int x = 1; x<=177; x++) {
-        NSString *ballImageName = [NSString stringWithFormat:@"Basketball-Bingo%i",x];
-        [ballImages addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:ballImageName ofType:@"png"]]];
-        
-    }
-    
-    UIImageView *animationView = [[UIImageView alloc] initWithFrame:CGRectMake(xPos,yPos, _width*widthMult, _height*heightMult)];
-    animationView.animationImages = ballImages;
-    animationView.animationDuration = 15;
-    [self addSubview:animationView];
-    [animationView startAnimating];
-
-    
-    
-    
-}
 
 
 -(void)newBaby{
@@ -1136,22 +1115,16 @@
 
 
 -(void) ballDrop {
-    [self createGrid];
     
-   // [self playMusic:self];
-}
-
--(void)createGrid{
+    _gameOver = 0;
     
-    
-    //CGFloat width = [UIScreen mainScreen].bounds.size.width;
         float pegSize = _width/20;
     
     
     self.backgroundColor = [UIColor yellowColor];
     
     _banner.alpha = 1;
-    _banner = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.origin.x,self.bounds.origin.y, _width, 100)];
+    _banner = [[UILabel alloc] initWithFrame:CGRectMake(_width*.25,_height*.05, _width*.5, _height*.2)];
     _banner.text = @"Pick The Color";
     _banner.textColor = [UIColor blueColor];
     _banner.font = [UIFont fontWithName:@"Chalkboard SE" size:52];
@@ -1160,8 +1133,6 @@
     [self addSubview:_banner];
     
     
-    //_height = [UIScreen mainScreen].bounds.size.height;
-  //  _width = [UIScreen mainScreen].bounds.size.width;
     
     _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self];
     
@@ -1270,12 +1241,13 @@
     //add the boxes,
     float boxHeight = _height*.15;
     float boxYValue = _height-boxHeight;
+    float fontSize = boxHeight * .4;
     
     
     _labelDads = [[UILabel alloc] initWithFrame:CGRectMake(0, boxYValue, _width/4, boxHeight)];
     _labelDads.backgroundColor =[UIColor blueColor];
     _labelDads.text = @"Blue";
-    _labelDads.font = [UIFont fontWithName:@"Chalkboard SE" size:24];
+    _labelDads.font = [UIFont fontWithName:@"Chalkboard SE" size:fontSize];
     _labelDads.textColor = [UIColor whiteColor];
     _labelDads.textAlignment = NSTextAlignmentCenter;
     _labelDads.numberOfLines = 0;
@@ -1283,7 +1255,7 @@
     _labelLower = [[UILabel alloc] initWithFrame:CGRectMake(_width*.25, boxYValue, _width/4, boxHeight)];
     _labelLower.backgroundColor =[UIColor redColor];
     _labelLower.text = @"Red";
-    _labelLower.font = [UIFont fontWithName:@"Chalkboard SE" size:24];
+    _labelLower.font = [UIFont fontWithName:@"Chalkboard SE" size:fontSize];
     _labelLower.textColor = [UIColor whiteColor];
     _labelLower.textAlignment = NSTextAlignmentCenter;
     _labelLower.numberOfLines = 0;
@@ -1291,7 +1263,7 @@
     _labelMiddle = [[UILabel alloc] initWithFrame:CGRectMake(_width*.5, boxYValue, _width/4, boxHeight)];
     _labelMiddle.backgroundColor =[UIColor greenColor];
     _labelMiddle.text = @"Green";
-    _labelMiddle.font = [UIFont fontWithName:@"Chalkboard SE" size:24];
+    _labelMiddle.font = [UIFont fontWithName:@"Chalkboard SE" size:fontSize];
     _labelMiddle.textColor = [UIColor whiteColor];
     _labelMiddle.textAlignment = NSTextAlignmentCenter;
     _labelMiddle.numberOfLines = 0;
@@ -1299,7 +1271,7 @@
     _labelMoms = [[UILabel alloc] initWithFrame:CGRectMake(_width*.75, boxYValue, _width/4, boxHeight)];
     _labelMoms.backgroundColor =[UIColor orangeColor];
     _labelMoms.text = @"Orange";
-    _labelMoms.font = [UIFont fontWithName:@"Chalkboard SE" size:24];
+    _labelMoms.font = [UIFont fontWithName:@"Chalkboard SE" size:fontSize];
     _labelMoms.textColor = [UIColor whiteColor];
     _labelMoms.textAlignment = NSTextAlignmentCenter;
     _labelMoms.numberOfLines = 0;
@@ -1317,8 +1289,11 @@
 
 -(void)releaseBall {
     
+   
+    
     int high = _width*.8;
     int low = _width*.2;
+    
     
     _ballReleasePointX = arc4random() % (high-low+1) + low;
     
@@ -1358,7 +1333,6 @@
     _collisionBehavior.collisionDelegate = self;
     
     
-    
 }
 
 
@@ -1377,7 +1351,7 @@
 
 
 -(void)checkPosition {
-    
+        
     
     if (_ball.frame.origin.y>_height*.75 && _ball.frame.origin.x<=_width*.25-_ball.frame.size.width/2) {
         _pointsDads = _pointsDads + 1;
@@ -1389,19 +1363,19 @@
         _banner.backgroundColor =[UIColor blueColor];
         _banner.textColor = [UIColor whiteColor];
         
-        [_banner sizeToFit];
-        [_banner setCenter:CGPointMake(self.center.x, _height*.1)];
-    //    _ballReleasePointX = 800;
-        
+    
         [_ball removeFromSuperview];
         [ballTimer invalidate];
         ballTimer = NULL;
-        [self releaseBall];
+        if (_pointsDads<5) {
+            [self releaseBall];
+        }
+        else {
+            _banner.text = @"Blue Wins";
+            _gameOver = 1;
+        }
         
-        
-        [UIView animateWithDuration:3 animations:^{
-            _banner.alpha = 0;
-        }];
+       
     }
     
     if (_ball.frame.origin.y>_height*.75 && _ball.frame.origin.x>_width*.25 && _ball.frame.origin.x <= _width*.5-_ball.frame.size.width/2) {
@@ -1414,21 +1388,23 @@
         _banner.backgroundColor =[UIColor redColor];
         _banner.textColor = [UIColor whiteColor];
         
-        [_banner sizeToFit];
-        [_banner setCenter:CGPointMake(self.center.x, _height*.1)];
-        
+
         [_ball removeFromSuperview];
-       // _ballReleasePointX = 600;
+      
         
         
         [_ball removeFromSuperview];
         [ballTimer invalidate];
         ballTimer = NULL;
-        [self releaseBall];
         
-        [UIView animateWithDuration:3 animations:^{
-            _banner.alpha = 0;
-        }];
+        if (_pointsLower<5) {
+            [self releaseBall];
+        }
+        else {
+            _banner.text = @"Red Wins";
+            _gameOver = 1;
+        }
+       
     }
     
     if (_ball.frame.origin.y>_height*.75 && _ball.frame.origin.x>_width*.5 && _ball.frame.origin.x <= _width*.75-_ball.frame.size.width/2) {
@@ -1441,20 +1417,21 @@
         _banner.backgroundColor =[UIColor greenColor];
         _banner.textColor = [UIColor whiteColor];
         
-        [_banner sizeToFit];
-        [_banner setCenter:CGPointMake(self.center.x, _height*.1)];
-   //     _ballReleasePointX = 300;
+    
         
         [_ball removeFromSuperview];
         [ballTimer invalidate];
         ballTimer = NULL;
-        [self releaseBall];
         
+        if (_pointsMiddle<5) {
+            [self releaseBall];
+        }
+        else {
+            _banner.text = @"Green Wins";
+            _gameOver = 1;
+        }
         
-        
-        [UIView animateWithDuration:3 animations:^{
-            _banner.alpha = 0;
-        }];
+       
         
         
     }
@@ -1467,22 +1444,27 @@
         _banner.text = @"Orange!";
         _banner.backgroundColor =[UIColor orangeColor];
         _banner.textColor = [UIColor whiteColor];
-        
-        [_banner sizeToFit];
-        [_banner setCenter:CGPointMake(self.center.x, _height*.1)];
-     //   _ballReleasePointX = 200;
+ 
         
         [_ball removeFromSuperview];
         [ballTimer invalidate];
         ballTimer = NULL;
-        [self releaseBall];
         
+        if (_pointsMoms<5) {
+            [self releaseBall];
+        }
+        else {
+            _banner.text = @"Orange Wins";
+            _gameOver =1;
+        }
         
+     
+    }
+    if (_gameOver == 0)  {
         [UIView animateWithDuration:3 animations:^{
             _banner.alpha = 0;
         }];
     }
-    
     
     
 }

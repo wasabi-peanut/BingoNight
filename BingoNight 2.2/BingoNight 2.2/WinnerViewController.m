@@ -34,8 +34,21 @@
     float height = [UIScreen mainScreen].bounds.size.height;
     
     
-    UIView *fireworks1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
     
+    NSMutableArray *fireworkImages = [NSMutableArray array];
+    
+    for (int x=1; x<=20; x++) {
+        NSString *imageName = [NSString stringWithFormat:@"fireworks%i",x];
+        
+        [fireworkImages addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle]pathForResource:imageName ofType:@"png"]]];
+              }
+    
+    UIImageView *fireworks1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, width, height)];
+    [self.view addSubview:fireworks1];
+    
+    fireworks1.animationImages = fireworkImages;
+    fireworks1.animationDuration = 3;
+    [fireworks1 startAnimating]; 
     
     
     UILabel *winnerLabel = [[UILabel alloc] initWithFrame:CGRectMake(.1*width, .2*height, .8*width, .6*height)];

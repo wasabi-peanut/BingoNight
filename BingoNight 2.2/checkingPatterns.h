@@ -42,6 +42,7 @@
 @property (nonatomic, strong) UIDynamicItemBehavior *bounceBehaviorDense;
 @property (nonatomic, strong) UIPushBehavior *pushBehavior;
 
+@property int gameOver;
 
 @property float ballReleasePointX;
 //@property float width;
