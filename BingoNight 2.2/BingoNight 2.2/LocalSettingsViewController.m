@@ -24,6 +24,9 @@
 
 - (void)viewDidLoad {
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"greystone.jpg"]];
+    
+    
     _textViewGameComments.layer.borderColor = [[UIColor blueColor] CGColor];
     _textViewGameComments.layer.borderWidth = 2;
     

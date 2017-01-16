@@ -26,6 +26,9 @@
 
 - (void)viewDidLoad {
     
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lilac.jpg"]];
+
+    
     //SET UP STEPPER
     _stepperRoll.maximumValue = 20;
     _stepperRoll.minimumValue = 1;
