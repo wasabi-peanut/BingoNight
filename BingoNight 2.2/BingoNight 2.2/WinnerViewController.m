@@ -22,7 +22,9 @@
     
     _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
     _arrayCoordinatesWinnerSounds = [DefaultsDataManager getArrayForKey:_keyForCoordinatesWinnerSounds];
-    _winnerSoundNumber = [_arrayCoordinatesWinnerSounds[_gameNumber] integerValue];
+    _winnerSoundNumber = [_arrayCoordinatesWinnerSounds[_gameNumber-1] integerValue];
+    
+    NSLog(@"This is the winner array %@",_arrayCoordinatesWinnerSounds);
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -62,6 +64,7 @@
             break;
     }
     
+    NSLog(@"The song to play is %@",_winnerSound);
     
     
     
