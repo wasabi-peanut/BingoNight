@@ -326,6 +326,7 @@
 		E3FDF5411E2D8867001A9111 /* greystone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5401E2D8867001A9111 /* greystone.jpg */; };
 		E3FDF5431E2D88F6001A9111 /* blue34.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5421E2D88F6001A9111 /* blue34.jpg */; };
 		E3FDF5451E2D89B3001A9111 /* lilac.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5441E2D89B3001A9111 /* lilac.jpg */; };
+		E3FDF5471E2D8F49001A9111 /* floral.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5461E2D8F49001A9111 /* floral.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -688,6 +689,7 @@
 		E3FDF5401E2D8867001A9111 /* greystone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = greystone.jpg; sourceTree = "<group>"; };
 		E3FDF5421E2D88F6001A9111 /* blue34.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue34.jpg; sourceTree = "<group>"; };
 		E3FDF5441E2D89B3001A9111 /* lilac.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lilac.jpg; sourceTree = "<group>"; };
+		E3FDF5461E2D8F49001A9111 /* floral.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floral.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1209,6 +1211,7 @@
 			isa = PBXGroup;
 			children = (
 				E3FDF5441E2D89B3001A9111 /* lilac.jpg */,
+				E3FDF5461E2D8F49001A9111 /* floral.jpg */,
 				E3FDF5421E2D88F6001A9111 /* blue34.jpg */,
 				E3FDF5401E2D8867001A9111 /* greystone.jpg */,
 				E3FDF53E1E2D87E0001A9111 /* steel1.jpg */,
@@ -1336,6 +1339,7 @@
 				E3E6F5101E261FE8003E3732 /* Basketball-Bingo156.png in Resources */,
 				E3E6F47A1E261FE8003E3732 /* Basketball-Bingo6.png in Resources */,
 				E3FDF5141E296AAC001A9111 /* fireworks8.png in Resources */,
+				E3FDF5471E2D8F49001A9111 /* floral.jpg in Resources */,
 				E3E6F4981E261FE8003E3732 /* Basketball-Bingo36.png in Resources */,
 				E3E6F3AD1E26144E003E3732 /* bird6.png in Resources */,
 				E3E6F3B81E26144E003E3732 /* bird17.png in Resources */,

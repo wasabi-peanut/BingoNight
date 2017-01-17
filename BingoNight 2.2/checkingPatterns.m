@@ -287,6 +287,10 @@
 }
 
 -(void)pattern2 {
+    
+    
+    
+    
     //COMPLETE
     float letterDiscSize = _width/10;
     float topRow = _height*.0;
@@ -543,6 +547,8 @@
 -(void)pattern5 {
     //COMPLETE
     
+    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"floral.jpg"]];
+    
     float labelFontSize = _height*.2;
     UIColor *fromColor = [UIColor redColor];
     UIColor *toColor = [UIColor greenColor];
@@ -550,7 +556,7 @@
     
     self.layer.borderColor = [[UIColor blueColor] CGColor];
     self.layer.borderWidth = 2;
-    self.backgroundColor = [UIColor cyanColor];
+    //self.backgroundColor = [UIColor cyanColor];
     
     
     UILabel *checkingTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _width, _height/2)];
@@ -628,6 +634,8 @@
 -(void)pattern6 {
     //COMPLETE
     
+    self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"steel1.jpg"]];
+    
     float labelFontSize = _height*.2;
     float spinDuration = 1;
     float colorDuration = 2;
@@ -641,7 +649,7 @@
 
     self.layer.borderColor = [[UIColor blueColor] CGColor];
     self.layer.borderWidth = 2;
-    self.backgroundColor = [UIColor lightGrayColor];
+ //   self.backgroundColor = [UIColor lightGrayColor];
     
     UILabel *checkingTopLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, _width, _height/2)];
     checkingTopLabel.text = @"Checking";

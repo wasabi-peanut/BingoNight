@@ -9,11 +9,14 @@
 #import "CheckingViewController.h"
 #import "DefaultsDataManager.h"
 #import "checkingPatterns.h"
+#import "WinnerViewController.h"
+
 
 
 
 @interface CheckingViewController ()
-
+{AVAudioPlayer *avPlayer;
+}
 @end
 
 @implementation CheckingViewController
@@ -31,21 +34,23 @@
     
     _keyForCalledNumbers = @"keyForCalledNumbers";
     _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
+    _keyForCoordinatesCheckingSongs = @"keyForCoordinatesCheckingSongs";
     
     _arrayCoordinatesCheckingPatterns = [DefaultsDataManager getDataForKey:_keyForCoordinatesCheckingPatterns];
     _arrayCalledNumbers = [DefaultsDataManager getDataForKey:_keyForCalledNumbers];
+    _arrayCoordinatesCheckingSongs = [DefaultsDataManager getDataForKey:_keyForCoordinatesCheckingSongs];
     
     
     
     
-  //FOR TESTING
+/*  //FOR TESTING
     _arrayCalledNumbers = [[NSMutableArray alloc] init];
     for (int z=1; z<=75; z++) {
         [_arrayCalledNumbers addObject:@(z)];
         
     }
     //END TESTING
-    
+  */
     
     _arrayCalledNumbersSorted = [_arrayCalledNumbers sortedArrayUsingSelector:@selector(compare:)];
     
@@ -77,6 +82,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [avPlayer stop];
 }
 
 -(void)createCalledDisplay{
@@ -200,8 +209,83 @@
     [_myView runAnimationWithPatternSelected:checkingPattern];
     
     
+    NSInteger songToPlay = [_arrayCoordinatesCheckingSongs[_gameNumber-1] integerValue];
+    switch (songToPlay) {
+        case 0:
+            _checkingSongTitle = @"brazilsamba";
+            break;
+        case 1:
+            _checkingSongTitle = @"clearday";
+            break;
+        case 2:
+            _checkingSongTitle = @"countryboy";
+            break;
+        case 3:
+            _checkingSongTitle = @"dance";
+            break;
+        case 4:
+            _checkingSongTitle = @"dubstep";
+            break;
+        case 5:
+            _checkingSongTitle = @"epic";
+            break;
+        case 6:
+            _checkingSongTitle = @"groovyhiphop";
+            break;
+        case 7:
+            _checkingSongTitle = @"happyrock";
+            break;
+        case 8:
+            _checkingSongTitle = @"jazzpiano";
+            break;
+        case 9:
+            _checkingSongTitle = @"love";
+            break;
+        case 10:
+            _checkingSongTitle = @"moose";
+            break;
+        case 11:
+            _checkingSongTitle = @"popdance";
+            break;
+        case 12:
+            _checkingSongTitle = @"retrosoul";
+            break;
+        case 13:
+            _checkingSongTitle = @"rumble";
+            break;
+            
+            
+        default:
+            break;
+    }
+    NSString *songPath;
+    
+    songPath =[[NSBundle mainBundle]pathForResource:_checkingSongTitle ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:songPath];
+    
+    NSError *error;
+    
+    avPlayer= [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
+    
+    [avPlayer setNumberOfLoops:-1];
+    [avPlayer setVolume:5];
+    [avPlayer play];
     
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    
+    
+    if ([segue.identifier isEqualToString:@"segueCheckingToWinner"]) {
+        WinnerViewController *viewChecking = [segue destinationViewController];
+        viewChecking.gameNumber = _gameNumber;
+    }
+    
+    
+    
+}
+
 
 
 @end

@@ -9,6 +9,9 @@
 #import "WinnerViewController.h"
 
 @interface WinnerViewController ()
+{AVAudioPlayer *avPlayer;
+}
+
 
 @end
 
@@ -16,6 +19,10 @@
 
 - (void)viewDidLoad {
      [self.navigationController setNavigationBarHidden:YES];
+    
+    _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
+    _arrayCoordinatesWinnerSounds = [DefaultsDataManager getArrayForKey:_keyForCoordinatesWinnerSounds];
+    _winnerSoundNumber = [_arrayCoordinatesWinnerSounds[_gameNumber] integerValue];
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -29,6 +36,47 @@
 }
 
 -(void)displayWinnerLogo{
+    
+    switch (_winnerSoundNumber) {
+        case 0:
+            _winnerSound = @"applause";
+            break;
+        case 1:
+            _winnerSound = @"computer";
+            break;
+        case 2:
+            _winnerSound = @"lion";
+            break;
+        case 3:
+            _winnerSound = @"rooster";
+            break;
+        case 4:
+            _winnerSound = @"stadium";
+            break;
+        case 5:
+            _winnerSound = @"tada";
+            break;
+    }
+    
+    
+    
+    
+    NSString *songPath;
+    
+    songPath =[[NSBundle mainBundle]pathForResource:_winnerSound ofType:@"mp3"];
+    NSURL *url = [NSURL fileURLWithPath:songPath];
+    
+    NSError *error;
+    
+    avPlayer= [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
+    
+    [avPlayer setNumberOfLoops:-1];
+    [avPlayer setVolume:5];
+    [avPlayer play];
+
+    
+    
+    
     
     float width = [UIScreen mainScreen].bounds.size.width;
     float height = [UIScreen mainScreen].bounds.size.height;
@@ -99,6 +147,7 @@
     }];
     
                             
+    
     
     
     

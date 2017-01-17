@@ -116,44 +116,48 @@
             switch (row) {
                     
                 case 0:
-                    _checkingSongTitle = @"countryboy";
+                    _checkingSongTitle = @"brazilsamba";
                     break;
                 case 1:
-                    _checkingSongTitle = @"dance";
+                    _checkingSongTitle = @"clearday";
                     break;
                 case 2:
-                    _checkingSongTitle = @"dubstep";
+                    _checkingSongTitle = @"countryboy";
                     break;
                 case 3:
-                    _checkingSongTitle = @"epic";
+                    _checkingSongTitle = @"dance";
                     break;
                 case 4:
-                    _checkingSongTitle = @"groovy";
+                    _checkingSongTitle = @"dubstep";
                     break;
                 case 5:
-                    _checkingSongTitle = @"happyrock";
+                    _checkingSongTitle = @"epic";
                     break;
                 case 6:
-                    _checkingSongTitle = @"jazzpiano";
+                    _checkingSongTitle = @"groovyhiphop";
                     break;
                 case 7:
-                    _checkingSongTitle = @"love";
+                    _checkingSongTitle = @"happyrock";
                     break;
                 case 8:
-                    _checkingSongTitle = @"moose";
+                    _checkingSongTitle = @"jazzpiano";
                     break;
                 case 9:
-                    _checkingSongTitle = @"popdance";
+                    _checkingSongTitle = @"love";
                     break;
                 case 10:
-                    _checkingSongTitle = @"retrosoul";
+                    _checkingSongTitle = @"moose";
                     break;
                 case 11:
-                    _checkingSongTitle = @"rumble";
+                    _checkingSongTitle = @"popdance";
                     break;
                 case 12:
-                    _checkingSongTitle = @"samba";
+                    _checkingSongTitle = @"retrosoul";
                     break;
+                case 13:
+                    _checkingSongTitle = @"rumble";
+                    break;
+                
                     
                 default:
                     break;
@@ -354,7 +358,8 @@
     
     _arrayCheckingSongs = [[NSMutableArray alloc] initWithObjects:
                    
-                   
+                                @"Brazil Samba",
+                                @"Clear Day",
                                 @"Country Boy",
                                 @"Dance",
                                 @"Dubstep",
@@ -367,7 +372,6 @@
                                 @"Pop Dance",
                                 @"Retro Soul",
                                 @"Rumble",
-                                @"Samba",
                    
                    nil];
     

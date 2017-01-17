@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import "checkingPatterns.h"
+#import <AVFoundation/AVFoundation.h>
+
 
 
 @interface CheckingViewController : UIViewController
@@ -21,6 +23,11 @@
 
 @property (strong, nonatomic) NSMutableArray *arrayCoordinatesCheckingPatterns;
 @property (strong, nonatomic) NSString *keyForCoordinatesCheckingPatterns;
+
+@property (strong, nonatomic) NSMutableArray *arrayCoordinatesCheckingSongs;
+@property (strong, nonatomic) NSString *keyForCoordinatesCheckingSongs;
+
+@property (strong, nonatomic) NSString *checkingSongTitle;
 
 @property NSInteger gameNumber;
 

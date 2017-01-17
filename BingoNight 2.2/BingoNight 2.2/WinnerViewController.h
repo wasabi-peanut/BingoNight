@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
+#import "DefaultsDataManager.h"
+
+
 
 @interface WinnerViewController : UIViewController
+
+@property (strong, nonatomic) NSMutableArray *arrayCoordinatesWinnerSounds;
+@property (strong, nonatomic) NSString *keyForCoordinatesWinnerSounds;
+
+@property NSInteger gameNumber;
+@property NSInteger winnerSoundNumber;
+@property (strong, nonatomic) NSString *winnerSound;
+
+
 
 @end
