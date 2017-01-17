@@ -35,6 +35,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidDisappear:(BOOL)animated{
+    [avPlayer stop];
+}
+
 -(void)displayWinnerLogo{
     
     switch (_winnerSoundNumber) {

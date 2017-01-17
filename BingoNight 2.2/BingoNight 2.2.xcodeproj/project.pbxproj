@@ -308,25 +308,25 @@
 		E3FDF51E1E296AAC001A9111 /* fireworks18.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF50A1E296AAC001A9111 /* fireworks18.png */; };
 		E3FDF51F1E296AAC001A9111 /* fireworks19.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF50B1E296AAC001A9111 /* fireworks19.png */; };
 		E3FDF5201E296AAC001A9111 /* fireworks20.png in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF50C1E296AAC001A9111 /* fireworks20.png */; };
-		E3FDF52F1E2D8672001A9111 /* brazilsamba.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5211E2D8672001A9111 /* brazilsamba.mp3 */; };
-		E3FDF5301E2D8672001A9111 /* clearday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5221E2D8672001A9111 /* clearday.mp3 */; };
-		E3FDF5311E2D8672001A9111 /* countryboy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5231E2D8672001A9111 /* countryboy.mp3 */; };
-		E3FDF5321E2D8672001A9111 /* dance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5241E2D8672001A9111 /* dance.mp3 */; };
-		E3FDF5331E2D8672001A9111 /* dubstep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5251E2D8672001A9111 /* dubstep.mp3 */; };
-		E3FDF5341E2D8672001A9111 /* epic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5261E2D8672001A9111 /* epic.mp3 */; };
-		E3FDF5351E2D8672001A9111 /* groovyhiphop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5271E2D8672001A9111 /* groovyhiphop.mp3 */; };
-		E3FDF5361E2D8672001A9111 /* happyrock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5281E2D8672001A9111 /* happyrock.mp3 */; };
-		E3FDF5371E2D8672001A9111 /* jazzpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5291E2D8672001A9111 /* jazzpiano.mp3 */; };
-		E3FDF5381E2D8672001A9111 /* love.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF52A1E2D8672001A9111 /* love.mp3 */; };
-		E3FDF5391E2D8673001A9111 /* moose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF52B1E2D8672001A9111 /* moose.mp3 */; };
-		E3FDF53A1E2D8673001A9111 /* popdance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF52C1E2D8672001A9111 /* popdance.mp3 */; };
-		E3FDF53B1E2D8673001A9111 /* retrosoul.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF52D1E2D8672001A9111 /* retrosoul.mp3 */; };
-		E3FDF53C1E2D8673001A9111 /* rumble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF52E1E2D8672001A9111 /* rumble.mp3 */; };
 		E3FDF53F1E2D87E0001A9111 /* steel1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF53E1E2D87E0001A9111 /* steel1.jpg */; };
 		E3FDF5411E2D8867001A9111 /* greystone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5401E2D8867001A9111 /* greystone.jpg */; };
 		E3FDF5431E2D88F6001A9111 /* blue34.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5421E2D88F6001A9111 /* blue34.jpg */; };
 		E3FDF5451E2D89B3001A9111 /* lilac.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5441E2D89B3001A9111 /* lilac.jpg */; };
 		E3FDF5471E2D8F49001A9111 /* floral.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5461E2D8F49001A9111 /* floral.jpg */; };
+		E3FDF5561E2DD58A001A9111 /* brazilsamba.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5481E2DD58A001A9111 /* brazilsamba.mp3 */; };
+		E3FDF5571E2DD58A001A9111 /* clearday.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5491E2DD58A001A9111 /* clearday.mp3 */; };
+		E3FDF5581E2DD58A001A9111 /* countryboy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF54A1E2DD58A001A9111 /* countryboy.mp3 */; };
+		E3FDF5591E2DD58A001A9111 /* dance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF54B1E2DD58A001A9111 /* dance.mp3 */; };
+		E3FDF55A1E2DD58A001A9111 /* dubstep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF54C1E2DD58A001A9111 /* dubstep.mp3 */; };
+		E3FDF55B1E2DD58A001A9111 /* epic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF54D1E2DD58A001A9111 /* epic.mp3 */; };
+		E3FDF55C1E2DD58A001A9111 /* groovyhiphop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF54E1E2DD58A001A9111 /* groovyhiphop.mp3 */; };
+		E3FDF55D1E2DD58A001A9111 /* happyrock.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF54F1E2DD58A001A9111 /* happyrock.mp3 */; };
+		E3FDF55E1E2DD58A001A9111 /* jazzpiano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5501E2DD58A001A9111 /* jazzpiano.mp3 */; };
+		E3FDF55F1E2DD58A001A9111 /* love.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5511E2DD58A001A9111 /* love.mp3 */; };
+		E3FDF5601E2DD58A001A9111 /* moose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5521E2DD58A001A9111 /* moose.mp3 */; };
+		E3FDF5611E2DD58A001A9111 /* popdance.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5531E2DD58A001A9111 /* popdance.mp3 */; };
+		E3FDF5621E2DD58A001A9111 /* retrosoul.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5541E2DD58A001A9111 /* retrosoul.mp3 */; };
+		E3FDF5631E2DD58A001A9111 /* rumble.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3FDF5551E2DD58A001A9111 /* rumble.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -671,25 +671,25 @@
 		E3FDF50A1E296AAC001A9111 /* fireworks18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks18.png; sourceTree = "<group>"; };
 		E3FDF50B1E296AAC001A9111 /* fireworks19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks19.png; sourceTree = "<group>"; };
 		E3FDF50C1E296AAC001A9111 /* fireworks20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fireworks20.png; sourceTree = "<group>"; };
-		E3FDF5211E2D8672001A9111 /* brazilsamba.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = brazilsamba.mp3; sourceTree = "<group>"; };
-		E3FDF5221E2D8672001A9111 /* clearday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clearday.mp3; sourceTree = "<group>"; };
-		E3FDF5231E2D8672001A9111 /* countryboy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countryboy.mp3; sourceTree = "<group>"; };
-		E3FDF5241E2D8672001A9111 /* dance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dance.mp3; sourceTree = "<group>"; };
-		E3FDF5251E2D8672001A9111 /* dubstep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dubstep.mp3; sourceTree = "<group>"; };
-		E3FDF5261E2D8672001A9111 /* epic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = epic.mp3; sourceTree = "<group>"; };
-		E3FDF5271E2D8672001A9111 /* groovyhiphop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = groovyhiphop.mp3; sourceTree = "<group>"; };
-		E3FDF5281E2D8672001A9111 /* happyrock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happyrock.mp3; sourceTree = "<group>"; };
-		E3FDF5291E2D8672001A9111 /* jazzpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jazzpiano.mp3; sourceTree = "<group>"; };
-		E3FDF52A1E2D8672001A9111 /* love.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = love.mp3; sourceTree = "<group>"; };
-		E3FDF52B1E2D8672001A9111 /* moose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = moose.mp3; sourceTree = "<group>"; };
-		E3FDF52C1E2D8672001A9111 /* popdance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popdance.mp3; sourceTree = "<group>"; };
-		E3FDF52D1E2D8672001A9111 /* retrosoul.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = retrosoul.mp3; sourceTree = "<group>"; };
-		E3FDF52E1E2D8672001A9111 /* rumble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rumble.mp3; sourceTree = "<group>"; };
 		E3FDF53E1E2D87E0001A9111 /* steel1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = steel1.jpg; sourceTree = "<group>"; };
 		E3FDF5401E2D8867001A9111 /* greystone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = greystone.jpg; sourceTree = "<group>"; };
 		E3FDF5421E2D88F6001A9111 /* blue34.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blue34.jpg; sourceTree = "<group>"; };
 		E3FDF5441E2D89B3001A9111 /* lilac.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lilac.jpg; sourceTree = "<group>"; };
 		E3FDF5461E2D8F49001A9111 /* floral.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = floral.jpg; sourceTree = "<group>"; };
+		E3FDF5481E2DD58A001A9111 /* brazilsamba.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = brazilsamba.mp3; sourceTree = "<group>"; };
+		E3FDF5491E2DD58A001A9111 /* clearday.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = clearday.mp3; sourceTree = "<group>"; };
+		E3FDF54A1E2DD58A001A9111 /* countryboy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = countryboy.mp3; sourceTree = "<group>"; };
+		E3FDF54B1E2DD58A001A9111 /* dance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dance.mp3; sourceTree = "<group>"; };
+		E3FDF54C1E2DD58A001A9111 /* dubstep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dubstep.mp3; sourceTree = "<group>"; };
+		E3FDF54D1E2DD58A001A9111 /* epic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = epic.mp3; sourceTree = "<group>"; };
+		E3FDF54E1E2DD58A001A9111 /* groovyhiphop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = groovyhiphop.mp3; sourceTree = "<group>"; };
+		E3FDF54F1E2DD58A001A9111 /* happyrock.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = happyrock.mp3; sourceTree = "<group>"; };
+		E3FDF5501E2DD58A001A9111 /* jazzpiano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jazzpiano.mp3; sourceTree = "<group>"; };
+		E3FDF5511E2DD58A001A9111 /* love.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = love.mp3; sourceTree = "<group>"; };
+		E3FDF5521E2DD58A001A9111 /* moose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = moose.mp3; sourceTree = "<group>"; };
+		E3FDF5531E2DD58A001A9111 /* popdance.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popdance.mp3; sourceTree = "<group>"; };
+		E3FDF5541E2DD58A001A9111 /* retrosoul.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = retrosoul.mp3; sourceTree = "<group>"; };
+		E3FDF5551E2DD58A001A9111 /* rumble.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = rumble.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -754,20 +754,20 @@
 		E3481FC51E09EE88004F4A33 /* Checking */ = {
 			isa = PBXGroup;
 			children = (
-				E3FDF5211E2D8672001A9111 /* brazilsamba.mp3 */,
-				E3FDF5221E2D8672001A9111 /* clearday.mp3 */,
-				E3FDF5231E2D8672001A9111 /* countryboy.mp3 */,
-				E3FDF5241E2D8672001A9111 /* dance.mp3 */,
-				E3FDF5251E2D8672001A9111 /* dubstep.mp3 */,
-				E3FDF5261E2D8672001A9111 /* epic.mp3 */,
-				E3FDF5271E2D8672001A9111 /* groovyhiphop.mp3 */,
-				E3FDF5281E2D8672001A9111 /* happyrock.mp3 */,
-				E3FDF5291E2D8672001A9111 /* jazzpiano.mp3 */,
-				E3FDF52A1E2D8672001A9111 /* love.mp3 */,
-				E3FDF52B1E2D8672001A9111 /* moose.mp3 */,
-				E3FDF52C1E2D8672001A9111 /* popdance.mp3 */,
-				E3FDF52D1E2D8672001A9111 /* retrosoul.mp3 */,
-				E3FDF52E1E2D8672001A9111 /* rumble.mp3 */,
+				E3FDF5481E2DD58A001A9111 /* brazilsamba.mp3 */,
+				E3FDF5491E2DD58A001A9111 /* clearday.mp3 */,
+				E3FDF54A1E2DD58A001A9111 /* countryboy.mp3 */,
+				E3FDF54B1E2DD58A001A9111 /* dance.mp3 */,
+				E3FDF54C1E2DD58A001A9111 /* dubstep.mp3 */,
+				E3FDF54D1E2DD58A001A9111 /* epic.mp3 */,
+				E3FDF54E1E2DD58A001A9111 /* groovyhiphop.mp3 */,
+				E3FDF54F1E2DD58A001A9111 /* happyrock.mp3 */,
+				E3FDF5501E2DD58A001A9111 /* jazzpiano.mp3 */,
+				E3FDF5511E2DD58A001A9111 /* love.mp3 */,
+				E3FDF5521E2DD58A001A9111 /* moose.mp3 */,
+				E3FDF5531E2DD58A001A9111 /* popdance.mp3 */,
+				E3FDF5541E2DD58A001A9111 /* retrosoul.mp3 */,
+				E3FDF5551E2DD58A001A9111 /* rumble.mp3 */,
 			);
 			name = Checking;
 			sourceTree = "<group>";
@@ -1334,10 +1334,12 @@
 				E39825391DE5054B00ACC5A7 /* Assets.xcassets in Resources */,
 				E3FDF5411E2D8867001A9111 /* greystone.jpg in Resources */,
 				E3E6F51B1E261FE8003E3732 /* Basketball-Bingo167.png in Resources */,
+				E3FDF55A1E2DD58A001A9111 /* dubstep.mp3 in Resources */,
 				E3E6F4E71E261FE8003E3732 /* Basketball-Bingo115.png in Resources */,
 				E3E6F4BD1E261FE8003E3732 /* Basketball-Bingo73.png in Resources */,
 				E3E6F5101E261FE8003E3732 /* Basketball-Bingo156.png in Resources */,
 				E3E6F47A1E261FE8003E3732 /* Basketball-Bingo6.png in Resources */,
+				E3FDF5581E2DD58A001A9111 /* countryboy.mp3 in Resources */,
 				E3FDF5141E296AAC001A9111 /* fireworks8.png in Resources */,
 				E3FDF5471E2D8F49001A9111 /* floral.jpg in Resources */,
 				E3E6F4981E261FE8003E3732 /* Basketball-Bingo36.png in Resources */,
@@ -1363,6 +1365,7 @@
 				E3E6F3AE1E26144E003E3732 /* bird7.png in Resources */,
 				E3FDF51D1E296AAC001A9111 /* fireworks17.png in Resources */,
 				E3E6F49A1E261FE8003E3732 /* Basketball-Bingo38.png in Resources */,
+				E3FDF5631E2DD58A001A9111 /* rumble.mp3 in Resources */,
 				E3E6F5081E261FE8003E3732 /* Basketball-Bingo148.png in Resources */,
 				E3E6F5641E28AD42003E3732 /* fractal3.png in Resources */,
 				E3E6F48B1E261FE8003E3732 /* Basketball-Bingo23.png in Resources */,
@@ -1390,12 +1393,10 @@
 				E3481FC11E09EE7D004F4A33 /* lion.mp3 in Resources */,
 				E3E6F4771E261FE8003E3732 /* Basketball-Bingo3.png in Resources */,
 				E3E6F4EE1E261FE8003E3732 /* Basketball-Bingo122.png in Resources */,
-				E3FDF5361E2D8672001A9111 /* happyrock.mp3 in Resources */,
 				E3E6F5541E2628D4003E3732 /* baby13.png in Resources */,
 				E3E6F50A1E261FE8003E3732 /* Basketball-Bingo150.png in Resources */,
 				E3E6F5181E261FE8003E3732 /* Basketball-Bingo164.png in Resources */,
 				E3E6F47B1E261FE8003E3732 /* Basketball-Bingo7.png in Resources */,
-				E3FDF53B1E2D8673001A9111 /* retrosoul.mp3 in Resources */,
 				E3E6F47C1E261FE8003E3732 /* Basketball-Bingo8.png in Resources */,
 				E3F66C4A1DF3EAB6000B3D06 /* card.jpg in Resources */,
 				E3E6F4D11E261FE8003E3732 /* Basketball-Bingo93.png in Resources */,
@@ -1413,7 +1414,6 @@
 				E3E6F4C61E261FE8003E3732 /* Basketball-Bingo82.png in Resources */,
 				E3E6F4D21E261FE8003E3732 /* Basketball-Bingo94.png in Resources */,
 				E3E6F4A21E261FE8003E3732 /* Basketball-Bingo46.png in Resources */,
-				E3FDF5331E2D8672001A9111 /* dubstep.mp3 in Resources */,
 				E3E6F4EF1E261FE8003E3732 /* Basketball-Bingo123.png in Resources */,
 				E3E6F54A1E2628D4003E3732 /* baby3.png in Resources */,
 				E3E6F5361E262765003E3732 /* handClap8.png in Resources */,
@@ -1427,7 +1427,6 @@
 				E3FDF5121E296AAC001A9111 /* fireworks6.png in Resources */,
 				E39825481DE5054B00ACC5A7 /* LaunchScreen.xib in Resources */,
 				E3E6F4D41E261FE8003E3732 /* Basketball-Bingo96.png in Resources */,
-				E3FDF53C1E2D8673001A9111 /* rumble.mp3 in Resources */,
 				E3E6F5041E261FE8003E3732 /* Basketball-Bingo144.png in Resources */,
 				E3E6F4B81E261FE8003E3732 /* Basketball-Bingo68.png in Resources */,
 				E3E6F4ED1E261FE8003E3732 /* Basketball-Bingo121.png in Resources */,
@@ -1436,6 +1435,7 @@
 				E3FDF50E1E296AAC001A9111 /* fireworks2.png in Resources */,
 				E39825491DE5054B00ACC5A7 /* LocalSettingsTrash.txt in Resources */,
 				E3E6F4F81E261FE8003E3732 /* Basketball-Bingo132.png in Resources */,
+				E3FDF5601E2DD58A001A9111 /* moose.mp3 in Resources */,
 				E3E6F56F1E28AE9B003E3732 /* cowboy1.png in Resources */,
 				E3E6F4CC1E261FE8003E3732 /* Basketball-Bingo88.png in Resources */,
 				E3E6F4CA1E261FE8003E3732 /* Basketball-Bingo86.png in Resources */,
@@ -1449,6 +1449,7 @@
 				E3E6F48D1E261FE8003E3732 /* Basketball-Bingo25.png in Resources */,
 				E3E6F4B71E261FE8003E3732 /* Basketball-Bingo67.png in Resources */,
 				E3E6F4FC1E261FE8003E3732 /* Basketball-Bingo136.png in Resources */,
+				E3FDF55B1E2DD58A001A9111 /* epic.mp3 in Resources */,
 				E3E6F4871E261FE8003E3732 /* Basketball-Bingo19.png in Resources */,
 				E3E6F4C21E261FE8003E3732 /* Basketball-Bingo78.png in Resources */,
 				E398254B1DE5054B00ACC5A7 /* LaunchScreen.storyboard in Resources */,
@@ -1469,7 +1470,6 @@
 				E3FDF5101E296AAC001A9111 /* fireworks4.png in Resources */,
 				E3E6F3B61E26144E003E3732 /* bird15.png in Resources */,
 				E3E6F4D61E261FE8003E3732 /* Basketball-Bingo98.png in Resources */,
-				E3FDF5381E2D8672001A9111 /* love.mp3 in Resources */,
 				E3E6F4BC1E261FE8003E3732 /* Basketball-Bingo72.png in Resources */,
 				E3E6F5251E261FE8003E3732 /* Basketball-Bingo177.png in Resources */,
 				E3FDF5181E296AAC001A9111 /* fireworks12.png in Resources */,
@@ -1501,10 +1501,12 @@
 				E3E6F4751E261FE8003E3732 /* Basketball-Bingo1.png in Resources */,
 				E3FDF5131E296AAC001A9111 /* fireworks7.png in Resources */,
 				E3E6F4781E261FE8003E3732 /* Basketball-Bingo4.png in Resources */,
+				E3FDF5591E2DD58A001A9111 /* dance.mp3 in Resources */,
 				E3E6F48E1E261FE8003E3732 /* Basketball-Bingo26.png in Resources */,
 				E3E6F4C41E261FE8003E3732 /* Basketball-Bingo80.png in Resources */,
 				E3E6F3BC1E26144E003E3732 /* bird21.png in Resources */,
 				E3E6F4B01E261FE8003E3732 /* Basketball-Bingo60.png in Resources */,
+				E3FDF55F1E2DD58A001A9111 /* love.mp3 in Resources */,
 				E3E6F5511E2628D4003E3732 /* baby10.png in Resources */,
 				E3E6F4CE1E261FE8003E3732 /* Basketball-Bingo90.png in Resources */,
 				E3FDF5431E2D88F6001A9111 /* blue34.jpg in Resources */,
@@ -1513,9 +1515,8 @@
 				E3E6F5701E28AE9B003E3732 /* cowboy2.png in Resources */,
 				E3E6F5161E261FE8003E3732 /* Basketball-Bingo162.png in Resources */,
 				E3E6F4D81E261FE8003E3732 /* Basketball-Bingo100.png in Resources */,
-				E3FDF5391E2D8673001A9111 /* moose.mp3 in Resources */,
+				E3FDF55C1E2DD58A001A9111 /* groovyhiphop.mp3 in Resources */,
 				E3FDF5151E296AAC001A9111 /* fireworks9.png in Resources */,
-				E3FDF5301E2D8672001A9111 /* clearday.mp3 in Resources */,
 				E3E6F4FB1E261FE8003E3732 /* Basketball-Bingo135.png in Resources */,
 				E3E6F4931E261FE8003E3732 /* Basketball-Bingo31.png in Resources */,
 				E3E6F4D01E261FE8003E3732 /* Basketball-Bingo92.png in Resources */,
@@ -1536,10 +1537,10 @@
 				E3481FBF1E09EE7D004F4A33 /* applause.mp3 in Resources */,
 				E3E6F4831E261FE8003E3732 /* Basketball-Bingo15.png in Resources */,
 				E3E6F4E61E261FE8003E3732 /* Basketball-Bingo114.png in Resources */,
+				E3FDF55D1E2DD58A001A9111 /* happyrock.mp3 in Resources */,
 				E3FDF50D1E296AAC001A9111 /* fireworks1.png in Resources */,
 				E3E6F4841E261FE8003E3732 /* Basketball-Bingo16.png in Resources */,
 				E3FDF50F1E296AAC001A9111 /* fireworks3.png in Resources */,
-				E3FDF5351E2D8672001A9111 /* groovyhiphop.mp3 in Resources */,
 				E3FDF5451E2D89B3001A9111 /* lilac.jpg in Resources */,
 				E3E6F4961E261FE8003E3732 /* Basketball-Bingo34.png in Resources */,
 				E3E6F49E1E261FE8003E3732 /* Basketball-Bingo42.png in Resources */,
@@ -1570,11 +1571,10 @@
 				E3E6F5351E262765003E3732 /* handClap7.png in Resources */,
 				E3E6F4AD1E261FE8003E3732 /* Basketball-Bingo57.png in Resources */,
 				E3DD22CD1E1046F6002041C3 /* play2.png in Resources */,
+				E3FDF5621E2DD58A001A9111 /* retrosoul.mp3 in Resources */,
 				E3E6F5021E261FE8003E3732 /* Basketball-Bingo142.png in Resources */,
 				E3E6F56A1E28AD42003E3732 /* fractal9.png in Resources */,
-				E3FDF5311E2D8672001A9111 /* countryboy.mp3 in Resources */,
 				E3E6F49C1E261FE8003E3732 /* Basketball-Bingo40.png in Resources */,
-				E3FDF5321E2D8672001A9111 /* dance.mp3 in Resources */,
 				E3E6F4D31E261FE8003E3732 /* Basketball-Bingo95.png in Resources */,
 				E3E6F4941E261FE8003E3732 /* Basketball-Bingo32.png in Resources */,
 				E3E6F4AF1E261FE8003E3732 /* Basketball-Bingo59.png in Resources */,
@@ -1583,9 +1583,7 @@
 				E3E6F54C1E2628D4003E3732 /* baby5.png in Resources */,
 				E3E6F4AA1E261FE8003E3732 /* Basketball-Bingo54.png in Resources */,
 				E3E6F4B61E261FE8003E3732 /* Basketball-Bingo66.png in Resources */,
-				E3FDF53A1E2D8673001A9111 /* popdance.mp3 in Resources */,
 				E3E6F5681E28AD42003E3732 /* fractal7.png in Resources */,
-				E3FDF5341E2D8672001A9111 /* epic.mp3 in Resources */,
 				E3E6F5211E261FE8003E3732 /* Basketball-Bingo173.png in Resources */,
 				E3E6F4CB1E261FE8003E3732 /* Basketball-Bingo87.png in Resources */,
 				E3E6F4F41E261FE8003E3732 /* Basketball-Bingo128.png in Resources */,
@@ -1600,23 +1598,24 @@
 				E3FDF5111E296AAC001A9111 /* fireworks5.png in Resources */,
 				E3E6F54D1E2628D4003E3732 /* baby6.png in Resources */,
 				E3E6F3C11E26144E003E3732 /* bird26.png in Resources */,
+				E3FDF5611E2DD58A001A9111 /* popdance.mp3 in Resources */,
 				E3E6F4E51E261FE8003E3732 /* Basketball-Bingo113.png in Resources */,
-				E3FDF5371E2D8672001A9111 /* jazzpiano.mp3 in Resources */,
 				E3E6F3B51E26144E003E3732 /* bird14.png in Resources */,
 				E3E6F4A31E261FE8003E3732 /* Basketball-Bingo47.png in Resources */,
 				E3E6F4DA1E261FE8003E3732 /* Basketball-Bingo102.png in Resources */,
 				E3E6F5671E28AD42003E3732 /* fractal6.png in Resources */,
 				E3E6F3A91E26144E003E3732 /* bird2.png in Resources */,
-				E3FDF52F1E2D8672001A9111 /* brazilsamba.mp3 in Resources */,
 				E3E6F4E31E261FE8003E3732 /* Basketball-Bingo111.png in Resources */,
 				E3E6F5521E2628D4003E3732 /* baby11.png in Resources */,
 				E3E6F48A1E261FE8003E3732 /* Basketball-Bingo22.png in Resources */,
 				E3E6F4A11E261FE8003E3732 /* Basketball-Bingo45.png in Resources */,
 				E3E6F5061E261FE8003E3732 /* Basketball-Bingo146.png in Resources */,
+				E3FDF55E1E2DD58A001A9111 /* jazzpiano.mp3 in Resources */,
 				E3E6F4F21E261FE8003E3732 /* Basketball-Bingo126.png in Resources */,
 				E3E6F4A71E261FE8003E3732 /* Basketball-Bingo51.png in Resources */,
 				E3E6F4F91E261FE8003E3732 /* Basketball-Bingo133.png in Resources */,
 				E3E6F4DB1E261FE8003E3732 /* Basketball-Bingo103.png in Resources */,
+				E3FDF5561E2DD58A001A9111 /* brazilsamba.mp3 in Resources */,
 				E3E6F54F1E2628D4003E3732 /* baby8.png in Resources */,
 				E3FDF51B1E296AAC001A9111 /* fireworks15.png in Resources */,
 				E3E6F3B11E26144E003E3732 /* bird10.png in Resources */,
@@ -1626,6 +1625,7 @@
 				E3E6F4E11E261FE8003E3732 /* Basketball-Bingo109.png in Resources */,
 				E3DD22D31E104E74002041C3 /* play1.png in Resources */,
 				E3FDF5201E296AAC001A9111 /* fireworks20.png in Resources */,
+				E3FDF5571E2DD58A001A9111 /* clearday.mp3 in Resources */,
 				E3E6F4B31E261FE8003E3732 /* Basketball-Bingo63.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
