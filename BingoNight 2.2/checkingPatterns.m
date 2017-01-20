@@ -69,7 +69,11 @@
             [self patternWithImage:@"cowboy" frames:2 duration:0.5 widthMultiplier:0.3  heightMultiplier: 0.3  xPosition:_width*.3 yPosition:_height*.5];
             break;
         case 10:
-            [self patternWithImage:@"Basketball-Bingo" frames:177 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
+            [self patternWithImage:@"Shark-Bingo" frames:140 duration:20 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
+
+        //    [self patternWithImage:@"Google" frames:120 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
+            
+          //  [self patternWithImage:@"Basketball-Bingo" frames:177 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
             //[self basketball];
             break;
         case 11:
@@ -724,9 +728,9 @@
     self.layer.borderWidth = 2;
     self.backgroundColor = [UIColor cyanColor];
     
-    UILabel *labelHold = [[UILabel alloc] initWithFrame:CGRectMake(_width*.1, _height*.1, _width*.8, _height*.2)];
+    UILabel *labelHold = [[UILabel alloc] initWithFrame:CGRectMake(_width*.1, _height*.8, _width*.8, _height*.2)];
     labelHold.text = @"Hold Cards";
-    labelHold.backgroundColor = [UIColor whiteColor];
+    labelHold.backgroundColor = [UIColor clearColor];
     labelHold.textColor = [UIColor redColor];
     labelHold.font = [UIFont fontWithName:@"Arial" size:_height*.2];
     labelHold.layer.borderColor = [[UIColor redColor] CGColor];
@@ -746,6 +750,7 @@
     //NSMutableArray *arrayImages = [[NSMutableArray alloc] init];
     NSMutableArray *arrayImages = [NSMutableArray array];
     
+   
     for (int x=1; x<=frames; x++) {
         imageName = [NSString stringWithFormat:@"%@%i",imageID,x];
         
