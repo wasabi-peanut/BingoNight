@@ -527,6 +527,7 @@
                                @"Fourth",
                                @"Midnight",
                                @"News",
+                               @"Winter",
                                nil];
         
     }
@@ -730,6 +731,18 @@
                                           @0,//marker
                                           nil];
         
+        NSMutableArray *WinterPreset = [[NSMutableArray alloc] initWithObjects:
+                                         @0,@92,@255, //background
+                                         @255,@255,@255, //box background
+                                         @0,@0,@255, //box letters
+                                         @198,@32,@219, //called background
+                                         @50,@255,@255, //called letters
+                                         @0,@0,@0, //Bingo letters
+                                         @0,@0,@255, //Game title color
+                                         @0,//marker
+                                         nil];
+                                        
+        
         
         
         _arrayGameColorSettings = [[NSMutableArray alloc] initWithObjects:
@@ -739,7 +752,7 @@
                               @0,@0,@255,@0,@0,
                               @255,@0,
                               nil];
-        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects:RedPreset,BluePreset,GreenPreset, HolidayPreset,AutumnPreset,FourthPreset,MidnightPreset,nil];
+        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects:RedPreset,BluePreset,GreenPreset, HolidayPreset,AutumnPreset,FourthPreset,MidnightPreset,NewsPreset,WinterPreset,nil];
        
     }
     

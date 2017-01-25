@@ -781,28 +781,24 @@
     
     float babyWidth = _width/5;
     float babyHeight = babyWidth;
-    float moveRange = _height*.2;
+    float moveRange = _height*0;
     
 
     
     float XstartBaby1 = _width/2- babyWidth/2;
-    float YstartBaby1 = _height * .7;
+    float YstartBaby1 = _height * .6;
     
     self.layer.borderColor = [[UIColor blueColor] CGColor];
     self.layer.borderWidth = 2;
     self.backgroundColor = [UIColor cyanColor];
     
-    CABasicAnimation *moveUpAndDown = [CABasicAnimation animationWithKeyPath:@"transform.translation.y" ];
-    [moveUpAndDown setFromValue:[NSNumber numberWithFloat:0]];
-    [moveUpAndDown setByValue:[NSNumber numberWithFloat:moveRange]];
-    [moveUpAndDown setBeginTime:CACurrentMediaTime() ];
-    [moveUpAndDown setDuration:2];
-    moveUpAndDown.removedOnCompletion = NO;
-    moveUpAndDown.autoreverses = YES;
-    moveUpAndDown.fillMode = kCAFillModeForwards;
-    moveUpAndDown.repeatCount =HUGE_VALF;
+    [CATransaction begin];
     
+    [CATransaction setCompletionBlock:^{
+        [_baby1Frame stopAnimating];
+        NSLog(@"I'm here");
     
+    }];
     
     
     UIGraphicsBeginImageContext(self.frame.size);
@@ -811,6 +807,86 @@
     UIGraphicsEndImageContext();
     
     self.backgroundColor = [UIColor colorWithPatternImage:image];
+
+    CABasicAnimation *fadeIn = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeIn.duration = 0.1f;
+    fadeIn.fromValue = [NSNumber numberWithFloat:0.0f];
+    fadeIn.toValue = [NSNumber numberWithFloat:1.0f];
+    [fadeIn setBeginTime:CACurrentMediaTime()+2];
+    fadeIn.removedOnCompletion = YES;
+    fadeIn.fillMode = kCAFillModeForwards;
+    
+    
+    CABasicAnimation *fadeOut = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    fadeOut.duration = 5.0f;
+    fadeOut.fromValue = [NSNumber numberWithFloat:1.0f];
+    fadeOut.toValue = [NSNumber numberWithFloat:0.0f];
+    [fadeOut setBeginTime:CACurrentMediaTime()+5];
+    fadeOut.removedOnCompletion = YES;
+    fadeOut.fillMode = kCAFillModeForwards;
+   
+    
+    
+    CABasicAnimation *moveUpAndDown = [CABasicAnimation animationWithKeyPath:@"transform.translation.y" ];
+    [moveUpAndDown setFromValue:[NSNumber numberWithFloat:0]];
+    [moveUpAndDown setByValue:[NSNumber numberWithFloat:moveRange+20]];
+   // [moveUpAndDown setBeginTime:CACurrentMediaTime()+2 ];
+  //  [moveUpAndDown setDuration:2];
+    moveUpAndDown.removedOnCompletion = NO;
+    moveUpAndDown.autoreverses = NO;
+    moveUpAndDown.fillMode = kCAFillModeForwards;
+    //moveUpAndDown.repeatCount =HUGE_VALF;
+    
+    CABasicAnimation *makeSmaller = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    [makeSmaller setFromValue:[NSNumber numberWithFloat:1.0f]];
+    [makeSmaller setToValue:[NSNumber numberWithFloat:0.5f]];
+   // [makeSmaller setBeginTime:CACurrentMediaTime()+2 ];
+    [makeSmaller setDuration:4];
+ //   makeSmaller.repeatCount = HUGE_VALF;
+  //  makeSmaller.autoreverses = YES;
+      makeSmaller.fillMode = kCAFillModeForwards;
+      makeSmaller.removedOnCompletion = NO;
+    
+    
+    
+    CABasicAnimation *moveLeft = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
+ //   [moveLeft setFromValue:[NSNumber numberWithFloat:0]];
+    [moveLeft setByValue:[NSNumber numberWithFloat:moveRange-200]];
+  //  [moveLeft setBeginTime:CACurrentMediaTime()+4];
+  //  [moveLeft setDuration:2];
+    moveLeft.autoreverses = NO;
+    moveLeft.fillMode = kCAFillModeForwards;
+    moveLeft.removedOnCompletion = NO;
+    
+    CABasicAnimation *moveRight = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
+  //  [moveRight setFromValue:[NSNumber numberWithFloat:0]];
+    [moveRight setByValue:[NSNumber numberWithFloat:moveRange+200]];
+    //  [moveLeft setBeginTime:CACurrentMediaTime()+4];
+   // [moveRight setDuration:2];
+    moveRight.autoreverses = NO;
+    moveRight.fillMode = kCAFillModeForwards;
+    moveRight.removedOnCompletion = NO;
+
+    
+    CAKeyframeAnimation *rotation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation"];
+    rotation.values = @[@0,@(M_PI*4)];
+   // rotation.duration = 3;
+    rotation.autoreverses = YES;
+    rotation.repeatCount = 0;
+    rotation.fillMode = kCAFillModeForwards;
+    rotation.removedOnCompletion = NO;
+    //rotation.timingFunction = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    
+    CAKeyframeAnimation *leftAndRight = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
+    leftAndRight.values = @[@0,@-200,@0,@200,@0,@-200];
+    leftAndRight.keyTimes = @[@0,@.2,@.4,@0.6,@.8,@1];
+    leftAndRight.duration = 6.0;
+    leftAndRight.additive = YES;
+    leftAndRight.fillMode = kCAFillModeForwards;
+    leftAndRight.removedOnCompletion = NO;
+   // leftAndRight.beginTime = CACurrentMediaTime() + 2;
+    
+    
     
 
     _baby1Images = [NSMutableArray array];
@@ -831,9 +907,53 @@
     
     
     [self addSubview:_baby1Frame];
-    [_baby1Frame.layer addAnimation:moveUpAndDown forKey:nil];
+     // [_baby1Frame.layer addAnimation:moveUpAndDown forKey:nil];
+//      [_baby1Frame.layer addAnimation:makeSmaller forKey:nil];
+     // [_baby1Frame.layer addAnimation:moveLeft forKey:@"moveLeft"];
+     // [_baby1Frame.layer addAnimation:fadeOut forKey:nil];
+ 
+   // [_baby1Frame.layer addAnimation:rotation forKey:nil];
+    
+ //   [_baby1Frame.layer addAnimation:fadeIn forKey:nil];
+   // [_baby1Frame.layer addAnimation:fadeOut forKey:nil];
+//    [_baby1Frame.layer addAnimation:rotation forKey:nil];
+
+ //   [_baby1Frame.layer addAnimation:leftAndRight forKey:nil];
+    
+   
+    CAAnimationGroup *group = [[CAAnimationGroup alloc] init];
+    [group setAnimations: [NSArray arrayWithObjects: rotation, makeSmaller, nil]];
+    [group setDuration:5.0];
+    [group setBeginTime:CACurrentMediaTime()+1];
+    group.fillMode = kCAFillModeForwards;
+    group.removedOnCompletion = NO;
     
     
+    
+    
+    CAAnimationGroup *group2 = [[CAAnimationGroup alloc] init];
+    [group2 setAnimations:[NSArray arrayWithObjects:moveLeft,nil]];
+    [group2 setDuration:2.0];
+    [group2 setBeginTime:CACurrentMediaTime()+7];
+    group2.fillMode = kCAFillModeForwards;
+    group2.removedOnCompletion = NO;
+    
+    
+    CAAnimationGroup *group3 = [[CAAnimationGroup alloc] init];
+    [group3 setAnimations:[NSArray arrayWithObjects:leftAndRight,nil]];
+    [group3 setDuration:6.0];
+   [group3 setBeginTime:CACurrentMediaTime()+1];
+    group3.fillMode = kCAFillModeForwards;
+    group3.removedOnCompletion = NO;
+
+    
+   [_baby1Frame.layer addAnimation:group forKey:nil];
+   // [_baby1Frame.layer addAnimation:group2 forKey:nil];
+   
+    [_baby1Frame.layer addAnimation:group3 forKey:nil];
+
+   
+    [CATransaction commit];
     
 }
 
