@@ -566,4 +566,8 @@
     
      [_labelNumberOfPages setKeyboardType:UIKeyboardTypeNumberPad];
 }
+- (IBAction)switchRaffleValueChange:(id)sender {
+}
+- (IBAction)btnSetUpRaffleSelected:(id)sender {
+}
 @end

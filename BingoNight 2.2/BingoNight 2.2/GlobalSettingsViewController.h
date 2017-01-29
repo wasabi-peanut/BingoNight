@@ -91,6 +91,12 @@
 
 - (IBAction)NumberPageBeginEdit:(id)sender;
 
+//RAFFLE
 
+@property (strong, nonatomic) IBOutlet UISwitch *switchRaffle;
+- (IBAction)switchRaffleValueChange:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *btnSetUpRaffle;
+- (IBAction)btnSetUpRaffleSelected:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *txtRaffleSetUp;
 
 @end

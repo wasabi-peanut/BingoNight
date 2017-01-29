@@ -781,25 +781,24 @@
     
     float babyWidth = _width/5;
     float babyHeight = babyWidth;
-    float moveRange = _height*0;
+    float moveUpRange = _height*0.05;
+    float moveDownRange = _height*-.05;
+    float moveRightRange = 100.0f;
+    float moveLeftRange =  -100.0f;
     
+    float startTime = 5;
 
     
     float XstartBaby1 = _width/2- babyWidth/2;
-    float YstartBaby1 = _height * .6;
+    float XstartBaby2 = _width/4- babyWidth/2;
+    float XstartBaby3 = _width*3/4- babyWidth/2;
+    float YstartBaby1 = _height * .7;
     
     self.layer.borderColor = [[UIColor blueColor] CGColor];
     self.layer.borderWidth = 2;
     self.backgroundColor = [UIColor cyanColor];
     
-    [CATransaction begin];
-    
-    [CATransaction setCompletionBlock:^{
-        [_baby1Frame stopAnimating];
-        NSLog(@"I'm here");
-    
-    }];
-    
+   
     
     UIGraphicsBeginImageContext(self.frame.size);
     [[UIImage imageNamed:@"stageBaby.png"] drawInRect:self.bounds];
@@ -808,6 +807,8 @@
     
     self.backgroundColor = [UIColor colorWithPatternImage:image];
 
+  
+    
     CABasicAnimation *fadeIn = [CABasicAnimation animationWithKeyPath:@"opacity"];
     fadeIn.duration = 0.1f;
     fadeIn.fromValue = [NSNumber numberWithFloat:0.0f];
@@ -827,422 +828,165 @@
    
     
     
-    CABasicAnimation *moveUpAndDown = [CABasicAnimation animationWithKeyPath:@"transform.translation.y" ];
-    [moveUpAndDown setFromValue:[NSNumber numberWithFloat:0]];
-    [moveUpAndDown setByValue:[NSNumber numberWithFloat:moveRange+20]];
-   // [moveUpAndDown setBeginTime:CACurrentMediaTime()+2 ];
-  //  [moveUpAndDown setDuration:2];
-    moveUpAndDown.removedOnCompletion = NO;
-    moveUpAndDown.autoreverses = NO;
-    moveUpAndDown.fillMode = kCAFillModeForwards;
-    //moveUpAndDown.repeatCount =HUGE_VALF;
+    CABasicAnimation *moveUp = [CABasicAnimation animationWithKeyPath:@"transform.translation.y" ];
+    [moveUp setByValue:[NSNumber numberWithFloat:moveUpRange]];
+    moveUp.removedOnCompletion = NO;
     
-    CABasicAnimation *makeSmaller = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    [makeSmaller setFromValue:[NSNumber numberWithFloat:1.0f]];
-    [makeSmaller setToValue:[NSNumber numberWithFloat:0.5f]];
-   // [makeSmaller setBeginTime:CACurrentMediaTime()+2 ];
-    [makeSmaller setDuration:4];
- //   makeSmaller.repeatCount = HUGE_VALF;
-  //  makeSmaller.autoreverses = YES;
-      makeSmaller.fillMode = kCAFillModeForwards;
-      makeSmaller.removedOnCompletion = NO;
+    CABasicAnimation *moveDown = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
+    [moveUp setByValue:[NSNumber numberWithFloat:moveDownRange]];
+    moveDown.removedOnCompletion = NO;
     
+    
+    
+    CAKeyframeAnimation *shrink = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    shrink.values =@[@1,@.75];
+    shrink.autoreverses = NO;
+    
+    CAKeyframeAnimation *enlarge = [CAKeyframeAnimation animationWithKeyPath:@"transform.scale"];
+    enlarge.values = @[@1,@1.25];
+    enlarge.autoreverses = NO;
     
     
     CABasicAnimation *moveLeft = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
- //   [moveLeft setFromValue:[NSNumber numberWithFloat:0]];
-    [moveLeft setByValue:[NSNumber numberWithFloat:moveRange-200]];
-  //  [moveLeft setBeginTime:CACurrentMediaTime()+4];
-  //  [moveLeft setDuration:2];
+    [moveLeft setByValue:[NSNumber numberWithFloat:moveLeftRange]];
     moveLeft.autoreverses = NO;
-    moveLeft.fillMode = kCAFillModeForwards;
-    moveLeft.removedOnCompletion = NO;
-    
+  
     CABasicAnimation *moveRight = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
-  //  [moveRight setFromValue:[NSNumber numberWithFloat:0]];
-    [moveRight setByValue:[NSNumber numberWithFloat:moveRange+200]];
-    //  [moveLeft setBeginTime:CACurrentMediaTime()+4];
-   // [moveRight setDuration:2];
+    [moveRight setByValue:[NSNumber numberWithFloat:moveRightRange]];
     moveRight.autoreverses = NO;
-    moveRight.fillMode = kCAFillModeForwards;
-    moveRight.removedOnCompletion = NO;
+ 
 
     
     CAKeyframeAnimation *rotation = [CAKeyframeAnimation animationWithKeyPath:@"transform.rotation"];
     rotation.values = @[@0,@(M_PI*4)];
-   // rotation.duration = 3;
     rotation.autoreverses = YES;
     rotation.repeatCount = 0;
-    rotation.fillMode = kCAFillModeForwards;
-    rotation.removedOnCompletion = NO;
-    //rotation.timingFunction = @[[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut],[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     
-    CAKeyframeAnimation *leftAndRight = [CAKeyframeAnimation animationWithKeyPath:@"position.x"];
-    leftAndRight.values = @[@0,@-200,@0,@200,@0,@-200];
-    leftAndRight.keyTimes = @[@0,@.2,@.4,@0.6,@.8,@1];
-    leftAndRight.duration = 6.0;
-    leftAndRight.additive = YES;
-    leftAndRight.fillMode = kCAFillModeForwards;
-    leftAndRight.removedOnCompletion = NO;
-   // leftAndRight.beginTime = CACurrentMediaTime() + 2;
-    
-    
-    
-
-    _baby1Images = [NSMutableArray array];
+    _babyImages = [NSMutableArray array];
     
     
     for (int i= 1; i<15; i++) {
         NSString *objectName = [NSString stringWithFormat:@"baby%d",i];
-        [_baby1Images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:objectName ofType:@"png"]]];
+        [_babyImages addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:objectName ofType:@"png"]]];
         
         //Using imageWithContentsOfFile instead of imageNamed to allow memory usage to clear
         
     }
  
     _baby1Frame = [[UIImageView alloc] initWithFrame:CGRectMake(XstartBaby1, YstartBaby1, babyWidth, babyHeight)];
-    _baby1Frame.animationImages = _baby1Images;
+    _baby1Frame.animationImages = _babyImages;
     _baby1Frame.animationDuration = 3;
     [_baby1Frame startAnimating];
     
+    _baby2Frame = [[UIImageView alloc] initWithFrame:CGRectMake(XstartBaby2, YstartBaby1, babyWidth, babyHeight)];
+    _baby2Frame.animationImages = _babyImages;
+    _baby2Frame.animationDuration = 3;
+    [_baby2Frame startAnimating];
+    
+    _baby3Frame = [[UIImageView alloc] initWithFrame:CGRectMake(XstartBaby3, YstartBaby1, babyWidth, babyHeight)];
+    _baby3Frame.animationImages = _babyImages;
+    _baby3Frame.animationDuration = 3;
+    [_baby3Frame startAnimating];
     
     [self addSubview:_baby1Frame];
-     // [_baby1Frame.layer addAnimation:moveUpAndDown forKey:nil];
-//      [_baby1Frame.layer addAnimation:makeSmaller forKey:nil];
-     // [_baby1Frame.layer addAnimation:moveLeft forKey:@"moveLeft"];
-     // [_baby1Frame.layer addAnimation:fadeOut forKey:nil];
+    [self addSubview:_baby2Frame];
+    [self addSubview:_baby3Frame];
  
-   // [_baby1Frame.layer addAnimation:rotation forKey:nil];
-    
- //   [_baby1Frame.layer addAnimation:fadeIn forKey:nil];
-   // [_baby1Frame.layer addAnimation:fadeOut forKey:nil];
-//    [_baby1Frame.layer addAnimation:rotation forKey:nil];
-
- //   [_baby1Frame.layer addAnimation:leftAndRight forKey:nil];
-    
-   
-    CAAnimationGroup *group = [[CAAnimationGroup alloc] init];
-    [group setAnimations: [NSArray arrayWithObjects: rotation, makeSmaller, nil]];
-    [group setDuration:5.0];
-    [group setBeginTime:CACurrentMediaTime()+1];
-    group.fillMode = kCAFillModeForwards;
-    group.removedOnCompletion = NO;
-    
-    
-    
-    
-    CAAnimationGroup *group2 = [[CAAnimationGroup alloc] init];
-    [group2 setAnimations:[NSArray arrayWithObjects:moveLeft,nil]];
-    [group2 setDuration:2.0];
-    [group2 setBeginTime:CACurrentMediaTime()+7];
+  
+    CAAnimationGroup *group1 = [[CAAnimationGroup alloc] init];
+    [group1 setAnimations: [NSArray arrayWithObjects: moveLeft, nil]];
+    [group1 setDuration:3.0];
+    [group1 setBeginTime:CACurrentMediaTime()+1+startTime];
+    group1.fillMode = kCAFillModeForwards;
+    group1.removedOnCompletion = NO;
+  
+   CAAnimationGroup *group2 = [[CAAnimationGroup alloc] init];
+    [group2 setAnimations:[NSArray arrayWithObjects:moveRight,nil]];
+    [group2 setDuration:3.0];
+    [group2 setBeginTime:CACurrentMediaTime()+4+startTime];
     group2.fillMode = kCAFillModeForwards;
     group2.removedOnCompletion = NO;
     
     
     CAAnimationGroup *group3 = [[CAAnimationGroup alloc] init];
-    [group3 setAnimations:[NSArray arrayWithObjects:leftAndRight,nil]];
-    [group3 setDuration:6.0];
-   [group3 setBeginTime:CACurrentMediaTime()+1];
+    [group3 setAnimations:[NSArray arrayWithObjects:moveRight,nil]];
+    [group3 setDuration:3.0];
+   [group3 setBeginTime:CACurrentMediaTime()+7+startTime];
     group3.fillMode = kCAFillModeForwards;
     group3.removedOnCompletion = NO;
+    
+    CAAnimationGroup *group4 = [[CAAnimationGroup alloc] init];
+    [group4 setAnimations:[NSArray arrayWithObjects:moveLeft,nil]];
+    [group4 setDuration:3.0];
+    [group4 setBeginTime:CACurrentMediaTime()+10+startTime];
+    group4.fillMode = kCAFillModeForwards;
+    group4.removedOnCompletion = NO;
+
+    CAAnimationGroup *group5 = [[CAAnimationGroup alloc]init];
+    [group5 setAnimations:[NSArray arrayWithObjects:shrink,moveUp,nil]];
+    [group5 setDuration:3.0];
+    [group5 setBeginTime:CACurrentMediaTime()+13+startTime];
+    group5.fillMode = kCAFillModeForwards;
+    group5.removedOnCompletion = NO;
+    
+    CAAnimationGroup *group6 = [[CAAnimationGroup alloc]init];
+    [group6 setAnimations:[NSArray arrayWithObjects:moveLeft,nil]];
+    [group6 setDuration:2.0];
+    [group6 setBeginTime:CACurrentMediaTime()+16+startTime];
+     group6.fillMode = kCAFillModeForwards;
+     group6.removedOnCompletion = NO;
+    
+    CAAnimationGroup *group7 = [[CAAnimationGroup alloc]init];
+    [group7 setAnimations:[NSArray arrayWithObjects:moveRight,nil]];
+    [group7 setDuration:2.0];
+    [group7 setBeginTime:CACurrentMediaTime()+19+startTime];
+    group7.fillMode = kCAFillModeForwards;
+    group7.removedOnCompletion = NO;
 
     
-   [_baby1Frame.layer addAnimation:group forKey:nil];
-   // [_baby1Frame.layer addAnimation:group2 forKey:nil];
+    CAAnimationGroup *group8 = [[CAAnimationGroup alloc]init];
+    [group8 setAnimations:[NSArray arrayWithObjects:moveRight,nil]];
+    [group8 setDuration:2.0];
+    [group8 setBeginTime:CACurrentMediaTime()+21+startTime];
+    group8.fillMode = kCAFillModeForwards;
+    group8.removedOnCompletion = NO;
    
-    [_baby1Frame.layer addAnimation:group3 forKey:nil];
+    
+    CAAnimationGroup *group9 = [[CAAnimationGroup alloc]init];
+    [group9 setAnimations:[NSArray arrayWithObjects:moveLeft,nil]];
+    [group9 setDuration:2.0];
+    [group9 setBeginTime:CACurrentMediaTime()+23+startTime];
+    group9.fillMode = kCAFillModeForwards;
+    group9.removedOnCompletion = NO;
 
-   
-    [CATransaction commit];
     
-}
+   [_baby1Frame.layer addAnimation:group1 forKey:nil];
+   [_baby1Frame.layer addAnimation:group2 forKey:nil];
+   [_baby1Frame.layer addAnimation:group3 forKey:nil];
+   [_baby1Frame.layer addAnimation:group4 forKey:nil];
+   [_baby1Frame.layer addAnimation:group5 forKey:nil];
+   [_baby1Frame.layer addAnimation:group6 forKey:nil];
+   [_baby1Frame.layer addAnimation:group7 forKey:nil];
+   [_baby1Frame.layer addAnimation:group8 forKey:nil];
+   [_baby1Frame.layer addAnimation:group9 forKey:nil];
+ 
 
+    [_baby2Frame.layer addAnimation:group1 forKey:nil];
+    [_baby2Frame.layer addAnimation:group2 forKey:nil];
+    [_baby2Frame.layer addAnimation:group3 forKey:nil];
+    [_baby2Frame.layer addAnimation:group4 forKey:nil];
+    [_baby2Frame.layer addAnimation:group5 forKey:nil];
 
--(void)babyDance {
     
-    
-    self.layer.borderColor = [[UIColor blueColor] CGColor];
-    self.layer.borderWidth = 2;
-    self.backgroundColor = [UIColor cyanColor];
-    
-    UIGraphicsBeginImageContext(self.frame.size);
-    [[UIImage imageNamed:@"stageBaby.png"] drawInRect:self.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    self.backgroundColor = [UIColor colorWithPatternImage:image];
-    
-    
-   // [self playMusic:self];
-    
-    
-    _baby1Images = [NSMutableArray array];
-    
-    
-    for (int i= 1; i<15; i++) {
-        NSString *objectName = [NSString stringWithFormat:@"baby%d",i];
-        [_baby1Images addObject:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:objectName ofType:@"png"]]];
-        
-        //Using imageWithContentsOfFile instead of imageNamed to allow memory usage to clear
-        
-    }
-    
-    _baby1Frame = [[UIImageView alloc] initWithFrame:CGRectMake(_width*.25, _height*.7, 100, 100)];
-    _baby2Frame = [[UIImageView alloc] initWithFrame:CGRectMake(_width*.5, _height*.7, 100, 100)];
-    _baby3Frame = [[UIImageView alloc] initWithFrame:CGRectMake(_width*.75, _height*.7, 100, 100)];
-    
-    _baby1Frame.image = [UIImage imageNamed:@"baby7"];//seven works
-    _baby3Frame.image = [UIImage imageNamed:@"baby7"];
-    
-    [self addSubview:_baby1Frame];
-    [self addSubview:_baby2Frame];
-    [self addSubview:_baby3Frame];
-    
-    _baby2Frame.animationImages = _baby1Images;
-    _baby2Frame.animationDuration= 2;
-    [_baby2Frame startAnimating];
-    
-    
-    [UIView animateWithDuration:1 animations:^{
-        
-        _baby2Frame.alpha = 0.95;
-    } completion:^(BOOL finished) {
-        _baby2Frame.alpha = 1;
-        _baby1Frame.animationImages = _baby1Images;
-        _baby1Frame.animationDuration= 2;
-        [_baby1Frame startAnimating];
-        _baby3Frame.animationImages = _baby1Images;
-        _baby3Frame.animationDuration= 2;
-        [_baby3Frame startAnimating];
-    }];
-    
-    
-    [self Baby1];
-}
-
--(void)Baby1{
-    
-    [UIView animateWithDuration:5 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(_width*.25, _height*.5, 100, 100);
-        _baby2Frame.frame = CGRectMake(_width*.5, _height*.5, 200, 200);
-        _baby3Frame.frame = CGRectMake(_width*.75, _height*.5, 100, 100);
-        
-    } completion:^(BOOL finished) {
-        
-        [self Baby2];
-    }];
-    
-}
-
--(void)Baby2 {
-    
-    
-    [UIView animateWithDuration:5 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(_width*.25, _height*.6, 200, 200);
-        _baby2Frame.frame = CGRectMake(_width*.5, _height*.6, 200, 200);
-        _baby3Frame.frame = CGRectMake(_width*.75,_height*.6, 200, 200);
-        
-    } completion:^(BOOL finished) {
-        [self Baby3];
-    }];
-    
-}
-
--(void)Baby3 {
-    
-    
-    [UIView animateWithDuration:1.5 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(0, 550, 200, 200);
-        _baby2Frame.frame = CGRectMake(300, 550, 200, 200);
-        _baby3Frame.frame = CGRectMake(600, 550, 200, 200);
-    } completion:^(BOOL finished) {
-        [self Baby4];
-    }];
-    
-    
-    
-}
-
--(void)Baby4{
-    
-    [UIView animateWithDuration:3 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(300, 550, 200, 200);
-        _baby2Frame.frame = CGRectMake(600, 550, 200, 200);
-        _baby3Frame.frame = CGRectMake(900, 550, 200, 200);
-    } completion:^(BOOL finished) {
-        [self Baby5];
-    }];
-    
-    
-    
-    
-    
-}
-
-
--(void)Baby5 {
-    [UIView animateWithDuration:3 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(150, 550, 200, 200);
-        _baby2Frame.frame = CGRectMake(450, 550, 200, 200);
-        _baby3Frame.frame = CGRectMake(750, 550, 200, 200);
-        
-        
-    } completion:^(BOOL finished) {
-        [self Baby6];
-    }];
-}
-
--(void)Baby6 {
-    
-    _baby4Frame = [[UIImageView alloc] initWithFrame:CGRectMake(-200, 550, 200, 200)];
-    _baby5Frame = [[UIImageView alloc] initWithFrame:CGRectMake(1224, 550, 200, 200)];
-    
-    [self addSubview:_baby4Frame];
-    [self addSubview:_baby5Frame];
-    
-    _baby4Frame.animationImages = _baby1Images;
-    _baby4Frame.animationDuration= 2;
-    [_baby4Frame startAnimating];
-    
-    _baby5Frame.animationImages = _baby1Images;
-    _baby5Frame.animationDuration= 2;
-    [_baby5Frame startAnimating];
-    
-    
-    
-    [UIView animateWithDuration:5 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(150, 500, 100, 100);
-        _baby2Frame.frame = CGRectMake(450, 500, 100, 100);
-        _baby3Frame.frame = CGRectMake(750, 500, 100, 100);
-        _baby4Frame.frame = CGRectMake(300, 550, 200, 200);
-        _baby5Frame.frame = CGRectMake(600, 550, 200, 200);
-        
-    } completion:^(BOOL finished) {
-        [self Baby7];
-    }];
-}
-
--(void)Baby7 {
-    [UIView animateWithDuration:1 animations:^{
-        CGAffineTransform affineTransform = CGAffineTransformMakeRotation(M_PI);
-        _baby4Frame.image = [UIImage imageNamed:@"baby14.png"];
-        _baby5Frame.image = [UIImage imageNamed:@"baby9.png"];
-        _baby4Frame.transform = affineTransform;
-        _baby4Frame.frame = CGRectMake(450, 550, 200, 200);
-        _baby5Frame.transform = affineTransform;
-        _baby5Frame.frame = CGRectMake(450, 550, 200, 200);
-        
-        
-        
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:1 animations:^{
-            CGAffineTransform affineTransform = CGAffineTransformMakeRotation(0);
-            _baby4Frame.transform = affineTransform;
-            _baby4Frame.frame = CGRectMake(600, 550, 200, 200);
-            
-            _baby5Frame.transform = affineTransform;
-            _baby5Frame.frame = CGRectMake(300, 550, 200, 200);
-            
-            
-        } completion:^(BOOL finished) {
-            
-            _baby4Frame.image = [UIImage imageNamed:@"baby1.png"];
-            _baby5Frame.image = [UIImage imageNamed:@"baby1.png"];
-            
-            [self Baby8];
-            
-            
-        }];
-        
-        
-        
-    }];
-    
-    
-    
-    
-}
-
--(void)Baby8 {
-    
-    [UIView animateWithDuration:5 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(150, 500, 100, 100);
-        _baby2Frame.frame = CGRectMake(450, 500, 100, 100);
-        _baby3Frame.frame = CGRectMake(750, 500, 100, 100);
-        _baby4Frame.frame = CGRectMake(300, 500, 100, 100);
-        _baby5Frame.frame = CGRectMake(600, 500, 100, 100);
-        
-        
-    } completion:^(BOOL finished) {
-        [self Baby9];
-    }];
-    
-}
+    [_baby3Frame.layer addAnimation:group1 forKey:nil];
+    [_baby3Frame.layer addAnimation:group2 forKey:nil];
+    [_baby3Frame.layer addAnimation:group3 forKey:nil];
+    [_baby3Frame.layer addAnimation:group4 forKey:nil];
+    [_baby3Frame.layer addAnimation:group5 forKey:nil];
+  }
 
 
 
--(void)Baby9{
-    [UIView animateWithDuration:5 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(150, 550, 200, 200);
-        _baby2Frame.frame = CGRectMake(450, 550, 200, 200);
-        _baby3Frame.frame = CGRectMake(750, 550, 200, 200);
-        _baby4Frame.frame = CGRectMake(300, 550, 200, 200);
-        _baby5Frame.frame = CGRectMake(600, 550, 200, 200);
-        
-        
-    } completion:^(BOOL finished) {
-        [self Baby10];
-    }];
-    
-    
-    
-    
-}
-
--(void)Baby10{
-    [UIView animateWithDuration:5 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(150, 550, 200, 200);
-        _baby2Frame.frame = CGRectMake(450, 550, 200, 200);
-        _baby3Frame.frame = CGRectMake(750, 550, 200, 200);
-        _baby4Frame.frame = CGRectMake(300, 500, 100, 100);
-        _baby5Frame.frame = CGRectMake(600, 500, 100, 100);
-        
-        
-    } completion:^(BOOL finished) {
-        [self Baby11];
-    }];
-    
-    
-    
-}
-
--(void)Baby11{
-    [UIView animateWithDuration:5 animations:^{
-        
-        _baby1Frame.frame = CGRectMake(150, 550, 200, 200);
-        _baby2Frame.frame = CGRectMake(450, 550, 200, 200);
-        _baby3Frame.frame = CGRectMake(750, 550, 200, 200);
-        _baby4Frame.frame = CGRectMake(300, 550, 200, 200);
-        _baby5Frame.frame = CGRectMake(600, 550, 200, 200);
-        
-        
-    } completion:^(BOOL finished) {
-        
-        
-        [self Baby8];
-        
-        
-    }];
-}
 
 #pragma mark BALL CODES
 
@@ -1622,6 +1366,8 @@
     
     
 }
+
+
 
 
 

@@ -26,7 +26,7 @@
 
 +(checkingPatterns *) frameX:(CGFloat) x frameY: (CGFloat) y width: (CGFloat) w height: (CGFloat) h;
 
-@property (strong,nonatomic) NSMutableArray *baby1Images;
+@property (strong,nonatomic) NSMutableArray *babyImages;
 @property (strong,nonatomic) UIImageView *baby1Frame;
 @property (strong,nonatomic) UIImageView *baby2Frame;
 @property (strong,nonatomic) UIImageView *baby3Frame;
