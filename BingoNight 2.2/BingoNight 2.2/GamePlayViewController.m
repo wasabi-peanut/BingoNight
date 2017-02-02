@@ -37,7 +37,8 @@
     //[[UIApplication sharedApplication] setStatusBarHidden:YES];
     
     _keyForCalledNumbers = @"keyForCalledNumbers";
-    _useSpecialChecking = YES;
+   // _useSpecialChecking = NO;
+    
     
     _ready = YES;
     _winnerCycle = NO;
@@ -46,6 +47,9 @@
   
     _arrayCalledBalls = [[NSMutableArray alloc] init];
     _arrayCalledBallsLabels = [[NSMutableArray alloc]init];
+    
+    _arrayMarkers = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getDataForKey:@"keyForArrayPickerMarkers"]];
+    
     
     
 }
@@ -175,12 +179,14 @@
     if (![_arrayGameColorSettingsShell count]) {
         
         _arrayGameColorSettings = [[NSMutableArray alloc] initWithObjects:
-                                   @255,@255,@255,@255,@0,
-                                   @0,@0,@0,@255,@255,
-                                   @100,@165,@130,@130,@130,
-                                   @0,@0,@255,@0,@0,
-                                   @255,@0,
-                                   nil];
+                                   @255,@255,@255,
+                                   @255,@0,@0,
+                                   @0,@0,@255,
+                                   @255,@100,@165,
+                                   @130,@130,@130,
+                                   @0,@0,@255,
+                                   @0,@0,@255,
+                                   @0,nil];
         for (int x = 0; x<12; x++) {
             [_arrayGameColorSettingsShell addObject:_arrayGameColorSettings];
              }
@@ -198,6 +204,7 @@
                                 @1, //11 is row number for size;
                                 @2,@2,@2, //12,13,14 is delay in seconds for roll, display and drop;
                                 @1, //15 is use Smart Selector;
+                                @1, //16 is use Special Checking
                                 nil];
         
     }
@@ -206,7 +213,7 @@
             _arrayGridPatterns = [[NSMutableArray alloc] initWithObjects:
                                   @"Straight",
                                   @1,@0,@0,@0,@0,
-                                  @1,@1,@1,@0,@0,
+                                  @1,@1,@0,@0,@0,
                                   @1,@0,@1,@0,@0,
                                   @1,@0,@0,@1,@0,
                                   @1,@1,@1,@1,@1,
@@ -245,6 +252,74 @@
             [_arrayGameComments insertObject:@" " atIndex:n];
         }
     }
+    
+    if (![_arrayMarkers count]) {
+       _arrayMarkers = [[NSMutableArray alloc] initWithObjects:
+         
+         @"\u26AA",//White Disk            0
+         @"\u26AB",//Black Disk            1
+         @"\U0001F534",//Red Disk          2
+         @"\U0001F535",//Blue Disk         3
+         
+         @"\u2666",//Red Diamond           4
+         @"\U0001F536",//Gold Diamond      5
+         @"\U0001F537",//Blue Diamond      6
+         
+         @"\u25FE",//Black Square          7
+         @"\u25FD",//White Square          8
+         @"\U0001F3FF",//Brown Square      9
+         
+         @"\u2B50",//Yellow Star           10
+         @"\u2764",//Red Heart             11
+         @"\u272D",//Blue Star             12
+         @"\u272A",//White Star, Blue Background           13
+         @"\u2733",//White Asterisk, Green Background      14
+         @"\u2734",//White Asterisk, Orange Background     15
+         @"\u2747",//White Star, Green Background          16
+         
+         
+         @"\u274C",//Red X                 17
+         @"\u2714",//Black Check           18
+         
+         
+         @"\u25CF",//Blue Dot              19
+         
+         
+         
+         @"\u2618",//Clover                20
+         @"\U0001F340",//Big Clover        21
+         @"\U0001F322",//Tree              22
+         @"\U0001F384",//Christmas Tree    23
+         @"\u263c",//Snow Flake Lines      24
+         @"\u26C4",//Snowman               25
+         @"\u26A1",//Lightning Bolt        26
+         @"\u2600",//Bright Yellow Sun     27
+         @"\U0001F33C",//Flower            28
+         @"\U0001F308",//Rainbow           29
+         
+         
+         
+         
+         @"\u271D",//White Cross, Purple Background        30
+         @"\u2721",//White Star of D, Purple Background    31
+         @"\u262E",//Peace Sign with Purple Back           32
+         
+         
+         
+         @"\U0001F30D",//Globe                 33
+         
+         @"\U0001F600",//Smiley Face           34
+         @"\U0001F60E",//Smile with Shades     35
+         @"\U0001F911",//Smile with $$ Eyes    36
+         
+         @"\U0001F47B",//Ghost                 37
+         @"\U0001F4A5",//Explosion             38
+         @"\U0001F435",//Monkey                39
+         @"\U0001F436",//Dog                   40
+         
+         
+         nil];
+    }
   
     
     
@@ -259,6 +334,8 @@
     
     _useSelector = [[_arrayGlobalSettings objectAtIndex:0] intValue];
     _useSmartSelector = [_arrayGlobalSettings[15] intValue];
+    _useSpecialChecking = [_arrayGlobalSettings[16]intValue];
+    
     
 
 
@@ -272,7 +349,7 @@
     
     _arrayButtonsCreated = [[NSMutableArray alloc] init];
     
-       
+    
     //Colors from arrays here
     
     _screenBackgroundColor = [UIColor colorWithRed:[[_arrayGameColorSettings objectAtIndex:0] floatValue]/255.0f green:[[_arrayGameColorSettings objectAtIndex:1] floatValue]/255.0F blue:[[_arrayGameColorSettings objectAtIndex:2] floatValue]/255.0f alpha:1];
@@ -519,120 +596,9 @@
                 
             case 1:
                 
-                switch ([_arrayGameColorSettings[21] integerValue]) {
-                    case 0:
-                        markerText = @"\u26AA";
-                        break;
-                    case 1:
-                        markerText = @"\u26AB";
-                        break;
-                    case 2:
-                        markerText = @"\u272D";
-                        break;
-                    case 3:
-                        markerText = @"\u272A";
-                        break;
-                    case 4:
-                        markerText = @"\u25CF";
-                        break;
-                    case 5:
-                        markerText = @"\u2618";
-                        break;
-                    case 6:
-                        markerText = @"\u263c";
-                        break;
-                    case 7:
-                        markerText = @"\u2600";
-                        break;
-                    case 8:
-                        markerText = @"\u2726";
-                        break;
-                    case 9:
-                        markerText = @"\u25FE";
-                        break;
-                    case 10:
-                        markerText = @"\u25FD";
-                        break;
-                    case 11:
-                        markerText = @"\u2733";
-                        break;
-                    case 12:
-                        markerText = @"\u2734";
-                        break;
-                    case 13:
-                        markerText = @"\u2747";
-                        break;
-                    case 14:
-                        markerText = @"\u274C";
-                        break;
-                    case 15:
-                        markerText = @"\u2714";
-                        break;
-                    case 16:
-                        markerText = @"\u271D";
-                        break;
-                    case 17:
-                        markerText = @"\u2721";
-                        break;
-                    case 18:
-                        markerText = @"\u26C4";
-                        break;
-                    case 19:
-                        markerText = @"\u26A1";
-                        break;
-                    case 20:
-                        markerText = @"\u2B50";
-                        break;
-                    case 21:
-                        markerText = @"\u2764";
-                        break;
-                    case 22:
-                        markerText = @"\U0001F30D";
-                        break;
-                    case 23:
-                        markerText = @"\U0001F600";
-                        break;
-                    case 24:
-                        markerText = @"\U0001F60E";
-                        break;
-                    case 25:
-                        markerText = @"\U0001F911";
-                        break;
-                    case 26:
-                        markerText = @"\U0001F47B";
-                        break;
-                    case 27:
-                        markerText = @"\U0001F4A5";
-                        break;
-                    case 28:
-                        markerText = @"\U0001F435";
-                        break;
-                    case 29:
-                        markerText = @"\U0001F436";
-                        break;
-                    case 30:
-                        markerText = @"\U0001F33C";
-                        break;
-                    case 31:
-                        markerText = @"\U0001F340";
-                        break;
-                    case 32:
-                        markerText = @"\U0001F308";
-                        break;
-                    case 33:
-                        markerText = @"\u262E";
-                        break;
-                    case 34:
-                        markerText = @"\U0001F534";
-                        break;
-                    case 35:
-                        markerText = @"\U0001F535";
-                        break;
-                    default:
-                        break;
-                }
-
+                markerText = _arrayMarkers[[_arrayGameColorSettings[21]integerValue]];
                 
+            
                 squares.text = markerText;
                 squares.textAlignment = NSTextAlignmentCenter;
                 squares.textColor = fontColor;
@@ -942,7 +908,7 @@
          }
    
     else {
-    _checking = [[UILabel alloc] initWithFrame:CGRectMake (400, 650, 515, 100)];
+    _checking = [[UILabel alloc] initWithFrame:CGRectMake (.1*_width, .8*_height, _width*.8, _height*.1)];
     _checking.text = @"Hold Your Cards";
     _checking.backgroundColor = _boxBackgroundColor;
     _checking.textColor = _boxLetterColor;

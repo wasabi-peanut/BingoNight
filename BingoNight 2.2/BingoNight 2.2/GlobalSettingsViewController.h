@@ -36,7 +36,17 @@
 - (IBAction)changeSwitchUseSelector:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UILabel *labelUseSelector;
-;
+
+//SPECIAL CHECKING
+
+@property (strong, nonatomic) IBOutlet UISwitch *switchUseSpecialChecking;
+- (IBAction)switchSpecialCheckingMoved:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIButton *btnSetUpChecking;
+
+
+
+
 //OTHER
 
 @property (strong, nonatomic) UITextView *nameOfEvent;

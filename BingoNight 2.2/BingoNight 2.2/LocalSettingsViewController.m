@@ -31,8 +31,8 @@
     _textViewGameComments.layer.borderWidth = 2;
     
     
-    _protectedGrids = 3;
-    _protectedPresets = 8;
+    _protectedGrids = 6;
+    _protectedPresets = 9;
     
     
     _height = [UIScreen mainScreen].bounds.size.height;
@@ -137,6 +137,8 @@
    [self pickerView:_pickerGameSettings didSelectRow:0 inComponent:0];
     
    [self pickerView:_pickerPresets didSelectRow:0 inComponent:0];
+    
+    
     
   //  [self gridButtons];
     
@@ -386,6 +388,7 @@
                 [_pickerPresets selectRow:[_arrayCoordinatesGrids  [row] integerValue] inComponent:2 animated:YES];
                 [_pickerMarkerColors selectRow:[_arrayGameColorSettings[21] integerValue] inComponent:0 animated:YES];
                     
+                    
                       
                 _presetSelected = [_arrayCoordinatesColors[row] integerValue];
                 _gridSelected = [_arrayCoordinatesGrids   [row] integerValue];
@@ -447,6 +450,7 @@
     _arrayGridPatterns = [[NSMutableArray alloc] initWithArray:_arrayGridsShell[_gridSelected]];
     
      _markerSelected = [_arrayGameColorSettings[21] integerValue];
+    NSLog(@"The marker selected is %li",_markerSelected);
     
     [self theProcess];
     
@@ -540,89 +544,78 @@
     
     if (![_arrayPickerGrids count]) {
     
-    _arrayPickerGrids =[[NSMutableArray alloc]initWithObjects:@"Straight",@"X",@"Box",nil];
+    _arrayPickerGrids =[[NSMutableArray alloc]initWithObjects:@"Straight",@"X",@"Perimeter",@"Four Corner",@"Black Out",@"Loser's Bingo",nil];
     
     }
-    /*
-      @"\u26AA",
-      @"\u26AB",
-      @"\u272D",
-      @"\u272A",
-      @"\u25CF",
-      @"\u2618",
-      @"\u263c",
-      @"\u2600",
-      @"\u2726",
-      @"\u25FE",
-      @"\u25FD",
-      @"\u2733",
-      @"\u2734",
-     @"\u2747",
-     @"\u274C",
-     @"\u2714",
-     @"\u271D",
-     @"\u2721",
-     @"\u26C4",
-     @"\u26A1",
-     @"\u2B50",
-     @"\u2764",
-     @"\U0001F30D",
-     @"\U0001F600",
-     @"\U0001F60E",
-     @"\U0001F911",
-     @"\U0001F47B",
-     @"\U0001F4A5",
-     @"\U0001F435",
-     @"\U0001F436",
-     @"\U0001F33C",
-     @"\U0001F340",
-     @"\U0001F308",
-     @"\u262E",
-     @"\U0001F534",
-     @"\U0001F535",
-     
-     */
+   
    _arrayPickerMarkers = [[NSMutableArray alloc] initWithObjects:
                           
-                          @"\u26AA",
-                          @"\u26AB",
-                          @"\u272D",
-                          @"\u272A",
-                          @"\u25CF",
-                          @"\u2618",
-                          @"\u263c",
-                          @"\u2600",
-                          @"\u2726",
-                          @"\u25FE",
-                          @"\u25FD",
-                          @"\u2733",
-                          @"\u2734",
-                          @"\u2747",
-                          @"\u274C",
-                          @"\u2714",
-                          @"\u271D",
-                          @"\u2721",
-                          @"\u26C4",
-                          @"\u26A1",
-                          @"\u2B50",
-                          @"\u2764",
-                          @"\U0001F30D",
-                          @"\U0001F600",
-                          @"\U0001F60E",
-                          @"\U0001F911",
-                          @"\U0001F47B",
-                          @"\U0001F4A5",
-                          @"\U0001F435",
-                          @"\U0001F436",
-                          @"\U0001F33C",
-                          @"\U0001F340",
-                          @"\U0001F308",
-                          @"\u262E",
-                          @"\U0001F534",
-                          @"\U0001F535",
+                          @"\u26AA",//White Disk            0
+                          @"\u26AB",//Black Disk            1
+                          @"\U0001F534",//Red Disk          2
+                          @"\U0001F535",//Blue Disk         3
                           
+                          @"\u2666",//Red Diamond           4
+                          @"\U0001F536",//Gold Diamond      5
+                          @"\U0001F537",//Blue Diamond      6
+                          
+                          @"\u25FE",//Black Square          7
+                          @"\u25FD",//White Square          8
+                          @"\U0001F3FF",//Brown Square      9
+                          
+                          @"\u2B50",//Yellow Star           10
+                          @"\u2764",//Red Heart             11
+                          @"\u272D",//Blue Star             12
+                          @"\u272A",//White Star, Blue Background           13
+                          @"\u2733",//White Asterisk, Green Background      14
+                          @"\u2734",//White Asterisk, Orange Background     15
+                          @"\u2747",//White Star, Green Background          16
+                          
+                          
+                          @"\u274C",//Red X                 17
+                          @"\u2714",//Black Check           18
+                          
+                          
+                          @"\u25CF",//Blue Dot              19
+                        
+                          
+                          
+                          @"\u2618",//Clover                20
+                          @"\U0001F340",//Big Clover        21
+                          @"\U0001F322",//Tree              22
+                          @"\U0001F384",//Christmas Tree    23
+                          @"\u263c",//Snow Flake Lines      24
+                          @"\u26C4",//Snowman               25
+                          @"\u26A1",//Lightning Bolt        26
+                          @"\u2600",//Bright Yellow Sun     27
+                          @"\U0001F33C",//Flower            28
+                          @"\U0001F308",//Rainbow           29
+                          
+                          
+                         
+                          
+                          @"\u271D",//White Cross, Purple Background        30
+                          @"\u2721",//White Star of D, Purple Background    31
+                          @"\u262E",//Peace Sign with Purple Back           32
+
+                          
+                          
+                          @"\U0001F30D",//Globe                 33
+                          
+                          @"\U0001F600",//Smiley Face           34
+                          @"\U0001F60E",//Smile with Shades     35
+                          @"\U0001F911",//Smile with $$ Eyes    36
+                          
+                          @"\U0001F47B",//Ghost                 37
+                          @"\U0001F4A5",//Explosion             38
+                          @"\U0001F435",//Monkey                39
+                          @"\U0001F436",//Dog                   40
+                
                           
                           nil];
+    
+    
+    [DefaultsDataManager saveData:_arrayPickerMarkers forKey:@"keyForArrayPickerMarkers"];
     
     
 }
@@ -655,25 +648,34 @@
     if (![_arrayGameColorSettingsShell count]) {
         
         NSMutableArray *RedPreset = [[NSMutableArray alloc] initWithObjects:
-                                     @255,@0,@0,@255,@0,
-                                     @0,@0,@0,@255,@255,
-                                     @100,@165,@130,@130,@130,
-                                     @0,@0,@255,@0,@0,
-                                     @255,@0,
+                                     @255,@0,@0,
+                                     @255,@255,@255,
+                                     @0,@0,@255,
+                                     @255,@100,@165,
+                                     @130,@130,@130,
+                                     @0,@0,@255,
+                                     @0,@0,@255,
+                                     @3,
                                      nil];
         NSMutableArray *BluePreset = [[NSMutableArray alloc] initWithObjects:
-                                     @0,@0,@255,@255,@0,
-                                     @0,@0,@0,@255,@255,
-                                     @100,@165,@130,@130,@130,
-                                     @0,@0,@255,@0,@0,
-                                     @255,@0,
+                                      @0,@0,@255,//background
+                                     @255,@0,@0,//box background
+                                     @0,@0,@255,//box letters
+                                     @255,@100,@165,
+                                     @130,@130,@130,
+                                     @255,@255,@255,
+                                     @255,@255,@255,
+                                     @6,
                                      nil];
         NSMutableArray *GreenPreset = [[NSMutableArray alloc] initWithObjects:
-                                     @0,@255,@0,@255,@0,
-                                     @0,@0,@0,@255,@255,
-                                     @100,@165,@130,@130,@130,
-                                     @0,@0,@255,@0,@0,
-                                     @255,@0,
+                                     @0,@255,@0,
+                                     @255,@0,@0,
+                                     @0,@0,@255,
+                                     @255,@100,@165,
+                                     @130,@130,@130,
+                                     @0,@0,@255,
+                                     @0,@0,@255,
+                                     @0,
                                      nil];
         
         NSMutableArray *HolidayPreset = [[NSMutableArray alloc] initWithObjects:
@@ -682,9 +684,9 @@
                                          @0,@0,@255, //box letters
                                          @255,@100,@165, //called background
                                          @130,@130,@130, //called letters
-                                         @0,@0,@255, //Bingo letters
-                                         @0,@0,@255, //Game title color
-                                         @0,//marker
+                                         @255,@255,@255, //Bingo letters
+                                         @255,@255,@255, //Game title color
+                                         @25,//marker
                                          nil];
        
         NSMutableArray *AutumnPreset = [[NSMutableArray alloc] initWithObjects:
@@ -694,8 +696,8 @@
                                          @255,@143,@112, //called background
                                          @197,@106,@92, //called letters
                                          @255,@58,@255, //Bingo letters
-                                         @0,@0,@255, //Game title color
-                                         @0,//marker
+                                         @255,@58,@255, //Game title color
+                                         @21,//marker
                                          nil];
         
         NSMutableArray *FourthPreset = [[NSMutableArray alloc] initWithObjects:
@@ -706,7 +708,7 @@
                                         @0,@0,@175, //called letters
                                         @0,@0,@255, //Bingo letters
                                         @0,@0,@255, //Game title color
-                                        @0,//marker
+                                        @3,//marker
                                         nil];
         
         NSMutableArray *MidnightPreset = [[NSMutableArray alloc] initWithObjects:
@@ -716,8 +718,8 @@
                                         @37,@4,@3, //called background
                                         @54,@0,@121, //called letters
                                         @83,@0,@255, //Bingo letters
-                                        @0,@0,@255, //Game title color
-                                        @0,//marker
+                                        @83,@0,@255, //Game title color
+                                        @12,//marker
                                         nil];
         
         NSMutableArray *NewsPreset = [[NSMutableArray alloc] initWithObjects:
@@ -727,7 +729,7 @@
                                           @225,@225,@225, //called background
                                           @50,@50,@50, //called letters
                                           @0,@0,@20, //Bingo letters
-                                          @0,@0,@255, //Game title color
+                                          @0,@0,@20, //Game title color
                                           @0,//marker
                                           nil];
         
@@ -738,8 +740,8 @@
                                          @198,@32,@219, //called background
                                          @50,@255,@255, //called letters
                                          @0,@0,@0, //Bingo letters
-                                         @0,@0,@255, //Game title color
-                                         @0,//marker
+                                         @0,@0,@0, //Game title color
+                                         @24,//marker
                                          nil];
                                         
         
@@ -788,10 +790,10 @@
        
         NSMutableArray *StraightGrid = [[NSMutableArray alloc] initWithObjects:
                                         @"Straight",
-                                        @1,@0,@0,@0,@0,
-                                        @1,@1,@0,@0,@0,
-                                        @1,@0,@1,@0,@0,
+                                        @1,@0,@0,@0,@1,
                                         @1,@0,@0,@1,@0,
+                                        @1,@0,@1,@0,@0,
+                                        @1,@1,@0,@0,@0,
                                         @1,@1,@1,@1,@1,
                                         nil];
         NSMutableArray *XGrid = [[NSMutableArray alloc] initWithObjects:
@@ -803,13 +805,40 @@
                                         @1,@0,@0,@0,@1,
                                         nil];
         NSMutableArray *BoxGrid = [[NSMutableArray alloc] initWithObjects:
-                                        @"Box",
+                                        @"Perimeter",
                                         @1,@1,@1,@1,@1,
                                         @1,@0,@0,@0,@1,
                                         @1,@0,@0,@0,@1,
                                         @1,@0,@0,@0,@1,
                                         @1,@1,@1,@1,@1,
                                         nil];
+        NSMutableArray *FourCorner = [[NSMutableArray alloc] initWithObjects:
+                                   @"Four Corner",
+                                   @1,@0,@0,@0,@1,
+                                   @0,@0,@0,@0,@0,
+                                   @0,@0,@0,@0,@0,
+                                   @0,@0,@0,@0,@0,
+                                   @1,@0,@0,@0,@1,
+                                   nil];
+        
+        NSMutableArray *BlackOut = [[NSMutableArray alloc] initWithObjects:
+                                      @"Blackout",
+                                      @1,@1,@1,@1,@1,
+                                      @1,@1,@1,@1,@1,
+                                      @1,@1,@1,@1,@1,
+                                      @1,@1,@1,@1,@1,
+                                      @1,@1,@1,@1,@1,
+                                      nil];
+       
+        NSMutableArray *None = [[NSMutableArray alloc] initWithObjects:
+                                    @"Loser Bingo",
+                                    @0,@0,@0,@0,@0,
+                                    @0,@0,@0,@0,@0,
+                                    @0,@0,@0,@0,@0,
+                                    @0,@0,@0,@0,@0,
+                                    @0,@0,@0,@0,@0,
+                                    nil];
+        
         
         
         _arrayGridPatterns = [[NSMutableArray alloc] initWithObjects:
@@ -821,7 +850,7 @@
                               @1,@1,@1,@1,@1,
                               nil];
         
-        _arrayGridsShell = [[NSMutableArray alloc] initWithObjects:StraightGrid,XGrid,BoxGrid, nil];
+        _arrayGridsShell = [[NSMutableArray alloc] initWithObjects:StraightGrid,XGrid,BoxGrid,FourCorner,BlackOut,None, nil];
     }
         
     
@@ -1185,121 +1214,9 @@
         
         NSString *markerText;
         
-         switch (_markerSelected) {
-            case 0:
-                markerText = @"\u26AA";
-                break;
-            case 1:
-                markerText = @"\u26AB";
-                break;
-            case 2:
-                markerText = @"\u272D";
-                break;
-            case 3:
-                markerText = @"\u272A";
-                break;
-            case 4:
-                markerText = @"\u25CF";
-                break;
-            case 5:
-                markerText = @"\u2618";
-                break;
-            case 6:
-                markerText = @"\u263c";
-                break;
-            case 7:
-                markerText = @"\u2600";
-                break;
-            case 8:
-                markerText = @"\u2726";
-                break;
-            case 9:
-                markerText = @"\u25FE";
-                break;
-            case 10:
-                markerText = @"\u25FD";
-                break;
-            case 11:
-                markerText = @"\u2733";
-                break;
-            case 12:
-                markerText = @"\u2734";
-                break;
-            case 13:
-                markerText = @"\u2747";
-                break;
-            case 14:
-                markerText = @"\u274C";
-                break;
-            case 15:
-                markerText = @"\u2714";
-                break;
-            case 16:
-                markerText = @"\u271D";
-                break;
-            case 17:
-                markerText = @"\u2721";
-                break;
-            case 18:
-                markerText = @"\u26C4";
-                break;
-            case 19:
-                markerText = @"\u26A1";
-                break;
-            case 20:
-                markerText = @"\u2B50";
-                break;
-            case 21:
-                markerText = @"\u2764";
-                break;
-            case 22:
-                markerText = @"\U0001F30D";
-                break;
-            case 23:
-                markerText = @"\U0001F600";
-                break;
-            case 24:
-                markerText = @"\U0001F60E";
-                break;
-            case 25:
-                markerText = @"\U0001F911";
-                break;
-            case 26:
-                markerText = @"\U0001F47B";
-                break;
-            case 27:
-                markerText = @"\U0001F4A5";
-                break;
-            case 28:
-                markerText = @"\U0001F435";
-                break;
-            case 29:
-                markerText = @"\U0001F436";
-                break;
-            case 30:
-                markerText = @"\U0001F33C";
-                break;
-            case 31:
-                markerText = @"\U0001F340";
-                break;
-            case 32:
-                markerText = @"\U0001F308";
-                break;
-            case 33:
-                markerText = @"\u262E";
-                break;
-            case 34:
-                markerText = @"\U0001F534";
-                break;
-            case 35:
-                markerText = @"\U0001F535";
-                break;
-            
-            
-            default:
-                break;
-        }
+        markerText =_arrayPickerMarkers[_markerSelected];
         
+    
         
         if ([[_arrayGridPatterns objectAtIndex:button.tag] intValue] == 0) {
             

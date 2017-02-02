@@ -163,5 +163,8 @@
 @property (strong, nonatomic) NSMutableArray *arrayCoordinatesNameOfGame;
 @property (strong, nonatomic) NSMutableArray *arrayGameComments;
 
+@property (strong,nonatomic)  NSMutableArray *arrayMarkers;
+
+
 
 @end

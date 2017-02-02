@@ -7,6 +7,8 @@
 //
 
 #import "RaffleSetUpViewController.h"
+#import "DefaultsDataManager.h"
+
 
 @interface RaffleSetUpViewController ()
 
@@ -16,14 +18,23 @@
 
 - (void)viewDidLoad {
     
-    _numberOfItems = 1; //Use defaults to load this later
+    _numberOfItems = 8; //Use defaults to load this later
     
     _stepperNumberOfItems.minimumValue = 1;
     _stepperNumberOfItems.maximumValue = 100;
     _stepperNumberOfItems.value = _numberOfItems;
     _labelNumberOfItems.text = [NSString stringWithFormat:@"%ld",(long)_numberOfItems];
     
-    [self createStepperArray];
+    
+    _keyForArrayRaffleNames = @"keyForArrayRaffleNames";
+    _keyForNumberOfItems = @"keyForNumberOfItems";
+    _keyForArrayRaffleDescriptions = @"keyForArrayRaffleDescriptions";
+    _keyForCoordinatesForRaffleList = @"keyForCoordinatesForRaffleList";
+    
+    
+    _arrayRaffleNames = [[NSMutableArray alloc]initWithObjects:@"House",@"Boat",@"Vacation", nil];
+    _arrayItemNumbers = [[NSMutableArray alloc] init];
+    [self setUpPicker];
     
     [super viewDidLoad];
     
@@ -46,7 +57,7 @@
     _numberOfItems = _stepperNumberOfItems.value ;
     _labelNumberOfItems.text = [NSString stringWithFormat:@"%ld",_numberOfItems];
     
-    [self createStepperArray];
+ //   [self createStepperArray];
     
    
     
@@ -58,36 +69,75 @@
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    NSInteger rows = _arrayGameNumbers.count;
+    NSInteger rows;
+    switch (component) {
+        case 0:
+            rows = _arrayItemNumbers.count;
+            break;
+        case 1:
+            rows = _arrayRaffleNames.count;
+        default:
+            break;
+    }
+    
     return rows;
+    
     
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 1;
+    return 2;
     
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     NSString *title;
-    title = [NSString stringWithFormat:@"%@",_arrayGameNumbers[row]];
     
-    
+    switch (component) {
+        case 0:
+        title = [NSString stringWithFormat:@"%@",_arrayItemNumbers[row]];
+            break;
+        case 1:
+            title = _arrayRaffleNames[row];
+            break;
+            
+        default:
+            break;
+    }
+    NSLog(@"This is the array %@",_arrayItemNumbers);
     return title;
     
 }
 
--(void)createStepperArray {
+
+-(void)setUpPicker{
+    //set up first array of item numbers
+
     NSString *itemNumber;
-    _arrayGameNumbers = [[NSMutableArray alloc] init];
     
-    for (int x=1; x==_numberOfItems; x++) {
-        itemNumber = [NSString stringWithFormat:@"Game %i",x];
-        [_arrayGameNumbers addObject:itemNumber];
+    for (int x = 1; x<=_arrayRaffleNames.count; x++) {
+        itemNumber = [NSString stringWithFormat:@"Item %i",x];
+        [_arrayItemNumbers addObject:itemNumber];
+        
     }
     
-     [_pickerRaffleItem reloadAllComponents];
+    [_pickerRaffleItem reloadComponent:0];
+    
+    //set up array of Raffle Names
+    
+ //   _arrayRaffleNames = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getDataForKey:_keyForArrayRaffleNames]];
     
     
+    
+    
+}
+- (IBAction)btnAddItem:(id)sender {
+    
+}
+
+- (IBAction)btnEditItem:(id)sender {
+}
+
+- (IBAction)btnDeleteItem:(id)sender {
 }
 @end

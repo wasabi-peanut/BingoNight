@@ -16,17 +16,30 @@
 
 - (IBAction)stepperItemsChanged:(id)sender;
 @property NSInteger numberOfItems;
+@property (strong, nonatomic) IBOutlet UITextView *textViewItemDescription;
+@property (strong, nonatomic) IBOutlet UITextField *textFieldNameOfItem;
 
-
-@property (strong, nonatomic) IBOutlet UITextView *TextViewDescription;
-@property (strong, nonatomic) IBOutlet UITextField *txtNameOfItem;
-
-@property (strong, nonatomic) NSMutableArray *raffleNames;
-@property (strong, nonatomic) NSMutableArray *raffleDescription;
+@property (strong, nonatomic) NSMutableArray *arrayRaffleNames;
+@property (strong, nonatomic) NSMutableArray *arrayRaffleDescription;
+@property (strong, nonatomic) NSMutableArray *arrayItemNumbers;
 
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerRaffleItem;
 
-@property (strong, nonatomic) NSMutableArray *arrayGameNumbers;
+@property (strong, nonatomic) NSString *keyForArrayRaffleNames;
+@property (strong, nonatomic) NSString *keyForArrayRaffleDescriptions;
+@property (strong, nonatomic) NSString *keyForNumberOfItems;
+@property (strong, nonatomic) NSString *keyForCoordinatesForRaffleList;
 
+@property (strong, nonatomic) NSMutableArray *coordinatesForRaffleList;
+
+
+
+
+
+
+
+- (IBAction)btnAddItem:(id)sender;
+- (IBAction)btnEditItem:(id)sender;
+- (IBAction)btnDeleteItem:(id)sender;
 
 @end

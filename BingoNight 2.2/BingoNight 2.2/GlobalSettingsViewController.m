@@ -107,6 +107,18 @@
         
     }
     
+    if ([[_arrayGlobalSettings objectAtIndex:16] isEqual:@YES]) {
+        [_switchUseSpecialChecking setOn:YES];
+        _btnSetUpChecking.enabled = YES;
+        
+    }
+    
+    else {
+        [_switchUseSpecialChecking setOn:NO];
+        _btnSetUpChecking.enabled = NO;
+        
+    }
+    
     [self loadPickerArrays];
     
     _stepperRoll.value = [[_arrayGlobalSettings objectAtIndex:12] floatValue];
@@ -179,8 +191,9 @@
                                 @"Arial",@64, //font and size 8,9
                                 @5, //10 is row number for font;
                                 @13, //11 is row number for size;
-                                @4,@3,@2, //12,13,14 is ball roll, display and drop seconds;
+                                @1,@1,@1, //12,13,14 is ball roll, display and drop seconds;
                                 @1, //15 is smart selector on (i.e. value of one)
+                                @1, //16 use Special Checking is on
                                 nil];
         
            }
@@ -296,6 +309,19 @@
     [self saveSettings];
     
   
+}
+
+- (IBAction)switchSpecialCheckingMoved:(id)sender {
+    if (_switchUseSpecialChecking.isOn == YES) {
+        [_arrayGlobalSettings replaceObjectAtIndex:16 withObject:@1];
+        _btnSetUpChecking.enabled = YES;
+    }
+    else {
+        [_arrayGlobalSettings replaceObjectAtIndex:16 withObject:@0];
+        _btnSetUpChecking.enabled = NO;
+        
+    }
+    NSLog(@"I swith checking to %@",_arrayGlobalSettings[16]);
 }
 
 - (IBAction)sliderChanged:(id)sender {
@@ -570,4 +596,5 @@
 }
 - (IBAction)btnSetUpRaffleSelected:(id)sender {
 }
+
 @end
