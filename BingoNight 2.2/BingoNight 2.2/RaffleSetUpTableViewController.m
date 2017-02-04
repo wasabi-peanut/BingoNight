@@ -1,23 +1,26 @@
 //
-//  InstructionsTableViewController.m
+//  RaffleSetUpTableViewController.m
 //  BingoNight 2.2
 //
-//  Created by Adam Schor on 12/5/16.
-//  Copyright © 2016 AandA Development. All rights reserved.
+//  Created by Adam Schor on 2/2/17.
+//  Copyright © 2017 AandA Development. All rights reserved.
 //
 
-#import "InstructionsTableViewController.h"
-#import "TextViewController.h"
+#import "RaffleSetUpTableViewController.h"
 
-@interface InstructionsTableViewController ()
+
+
+@interface RaffleSetUpTableViewController ()
 
 @end
 
-@implementation InstructionsTableViewController
+@implementation RaffleSetUpTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-     [self.navigationController setNavigationBarHidden:NO];
+    
+    _test = [[NSMutableArray alloc] initWithObjects:@"Adam",@"Marcia",@"William",@"Alex",@"Julia",nil];
+    
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -31,102 +34,58 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)prefersStatusBarHidden{
-    return YES;
+-(void)viewWillDisappear:(BOOL)animated{
+    NSLog(@"Bye Bye");
+    
 }
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
-}
-
--(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-     NSString *sectionName;
-    
-    switch (section) {
-        case 0:
-            sectionName = @"Section One";
-            break;
-        case 1:
-            sectionName = @"Section Two";
-            break;
-        default:
-            break;
-    }
-   
-    
-    return sectionName;
-    
+    return _test.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
-
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
-    }
     
-    cell.textLabel.text = @"Hello";
-    cell.detailTextLabel.text = @"Worked. Blah blah blah  Blah blah blah  Blah blah blah  Blah blah blah  Blah blah blah";
-    cell.detailTextLabel.font = [UIFont fontWithName:@"Courier" size:24];
-    cell.detailTextLabel.numberOfLines = 0;
-    cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.text = [NSString stringWithFormat:@"Item %li: %@",indexPath.row+1,_test[indexPath.row]];
     
+    cell.detailTextLabel.text = @"Please Work";
     
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
-}
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    _rowSelected = indexPath.row;
-    _sectionSelected = indexPath.section;
-    
-    NSLog(@"The row selected is %li and section selected is %li",(long)_rowSelected,(long)_sectionSelected);
-    
-    
-    [self performSegueWithIdentifier:@"segueInstructionsToText" sender:self];
-}
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString: @"segueInstructionsToText"]){
-        TextViewController *view = [segue destinationViewController];
-        view.sendingRow = _rowSelected ;
-        view.sendingSection = _sectionSelected;
-             
-        
-        
-    }
-    
-}
 
-/*
+
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+
 
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+          [_test removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+     
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        
+        
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
@@ -135,7 +94,19 @@
 
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    
+    NSUInteger fromIndex = fromIndexPath.row;
+    NSUInteger toIndex = toIndexPath.row;
+    
+    if (fromIndex != toIndex) {
+        NSString *item = [_test objectAtIndex:fromIndex];
+        [_test removeObject:item];
+        [_test insertObject:item atIndex:toIndex];
+    }
+    [self.tableView reloadData];
+    NSLog(@"The new array is %@",_test);
 }
+
 
 
 
@@ -155,5 +126,20 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"Picked this item: %@",_test[indexPath.row]);
+    
+          
+}
+
+
+- (IBAction)addItemPressed:(id)sender {
+    [_test insertObject:@"Hello" atIndex:0];
+    [self.tableView reloadData];
+    [self performSegueWithIdentifier:@"segueRaffleSetUpToRaffleDetail" sender:self];
+}
+
+
 
 @end

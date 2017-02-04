@@ -63,13 +63,13 @@
                                 </connections>
                             </slider>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="9wz-on-hQN">
-                                <rect key="frame" x="30" y="717" width="94" height="29"/>
+                                <rect key="frame" x="30" y="717.5" width="94" height="29"/>
                                 <connections>
                                     <action selector="stepperNumberOfGamesPress:" destination="6sT-4d-91V" eventType="valueChanged" id="uwb-1i-BF7"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X Games" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7b-Nb-iv2">
-                                <rect key="frame" x="30" y="691" width="80" height="21"/>
+                                <rect key="frame" x="30" y="691.5" width="80" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="850-8f-4ZD"/>
                                 </constraints>
@@ -98,7 +98,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Gj-px-TVV" userLabel="Delete Scheme">
-                                <rect key="frame" x="287" y="708" width="30" height="48"/>
+                                <rect key="frame" x="287" y="708.5" width="30" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="smh-0c-Yqu"/>
                                     <constraint firstAttribute="height" constant="30" id="xCg-68-kYb"/>
@@ -116,7 +116,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sxs-eG-Tmg" userLabel="Add Grid">
-                                <rect key="frame" x="337" y="708" width="30" height="47"/>
+                                <rect key="frame" x="337" y="708.5" width="30" height="47"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -126,7 +126,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SL0-tn-lN4" userLabel="Delete Grid">
-                                <rect key="frame" x="387" y="708" width="30" height="47"/>
+                                <rect key="frame" x="387" y="708.5" width="30" height="47"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="30"/>
                                 <state key="normal" title="-"/>
                                 <connections>
@@ -186,7 +186,7 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Maw-se-pwL">
-                                <rect key="frame" x="458" y="722" width="450" height="20"/>
+                                <rect key="frame" x="458" y="722.5" width="450" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="450" id="5dg-if-0ea"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="RgC-WV-8to"/>
@@ -232,175 +232,175 @@
                                 <rect key="frame" x="922.5" y="114" width="398.5" height="398.5"/>
                                 <subviews>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbm-ot-rIa" userLabel="Button1">
-                                        <rect key="frame" x="0.0" y="0.0" width="80" height="79.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="HI3-Ps-Jfo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hh6-WN-dJq" userLabel="Button2">
-                                        <rect key="frame" x="80" y="0.0" width="79.5" height="79.5"/>
+                                        <rect key="frame" x="80" y="0.0" width="79" height="80.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="267-rO-sc0"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SFk-1K-LsA" userLabel="Button3">
-                                        <rect key="frame" x="159.5" y="0.0" width="80" height="79.5"/>
+                                        <rect key="frame" x="159" y="0.0" width="80" height="80.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="5Gg-Nw-k3Y"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUO-Oe-QLq" userLabel="Button4">
-                                        <rect key="frame" x="239.5" y="0.0" width="79" height="79.5"/>
+                                        <rect key="frame" x="239" y="0.0" width="79.5" height="80.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="qcQ-67-VdE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zYW-bM-GdY" userLabel="Button5">
-                                        <rect key="frame" x="318.5" y="0.0" width="80" height="79.5"/>
+                                        <rect key="frame" x="318.5" y="0.0" width="80" height="80.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="Aab-RR-XAo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oi-32-w55" userLabel="Button6">
-                                        <rect key="frame" x="0.0" y="79.5" width="79.5" height="79"/>
+                                        <rect key="frame" x="0.0" y="80.5" width="79.5" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="hQd-WR-Lt8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzG-jg-4u6" userLabel="Button7">
-                                        <rect key="frame" x="79.5" y="79.5" width="78.5" height="79"/>
+                                        <rect key="frame" x="79.5" y="80.5" width="79" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="FLu-Vi-usC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2e6-qb-qUB" userLabel="Button8">
-                                        <rect key="frame" x="158" y="79.5" width="79.5" height="79"/>
+                                        <rect key="frame" x="158.5" y="80.5" width="79.5" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="Qwu-R2-Prn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZb-er-6OZ" userLabel="Button9">
-                                        <rect key="frame" x="237.5" y="79.5" width="79" height="79"/>
+                                        <rect key="frame" x="238" y="80.5" width="78.5" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="UFD-0P-1We"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Pz-6X-K9C" userLabel="Button10">
-                                        <rect key="frame" x="316.5" y="79.5" width="79.5" height="79"/>
+                                        <rect key="frame" x="316.5" y="80.5" width="79.5" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="Tqm-B1-iMl"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJp-Mc-Kcx" userLabel="Button11">
-                                        <rect key="frame" x="0.0" y="158.5" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="160" width="80" height="80"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="01M-sI-5BN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsd-P6-gNU" userLabel="Button12">
-                                        <rect key="frame" x="80" y="157.5" width="79.5" height="80.5"/>
+                                        <rect key="frame" x="80" y="159" width="79" height="80.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="EaO-dn-eJY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwx-pd-UBZ" userLabel="Button13">
-                                        <rect key="frame" x="159.5" y="157.5" width="80.5" height="80.5"/>
+                                        <rect key="frame" x="159" y="159" width="79.5" height="80.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="DkS-M0-tOg"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="14" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GD9-1B-XZC" userLabel="Button14">
-                                        <rect key="frame" x="240" y="157.5" width="80" height="80.5"/>
+                                        <rect key="frame" x="238.5" y="159" width="78.5" height="80.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="4tm-N9-FCh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="15" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sQY-gh-8r3" userLabel="Button15">
-                                        <rect key="frame" x="320" y="157.5" width="80.5" height="80.5"/>
+                                        <rect key="frame" x="317" y="159" width="79.5" height="80.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="Chx-XL-0ek"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="16" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLi-ex-fPZ" userLabel="Button16">
-                                        <rect key="frame" x="0.0" y="238.5" width="80" height="79.5"/>
+                                        <rect key="frame" x="0.0" y="240" width="80" height="79"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="16Z-aN-wLb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="17" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGj-5N-sGe" userLabel="Button17">
-                                        <rect key="frame" x="80" y="238" width="79" height="79.5"/>
+                                        <rect key="frame" x="80" y="239.5" width="79.5" height="79"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="xOU-G6-cc7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="18" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h4W-qz-2rB" userLabel="Button18">
-                                        <rect key="frame" x="159" y="238" width="80" height="79.5"/>
+                                        <rect key="frame" x="159.5" y="239.5" width="80" height="79"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="dWX-EW-iTn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="19" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4D6-kF-PPK" userLabel="Button19">
-                                        <rect key="frame" x="239" y="238" width="79.5" height="79.5"/>
+                                        <rect key="frame" x="239.5" y="239.5" width="79" height="79"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="rx7-ZQ-RmR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeq-7X-xBO" userLabel="Button20">
-                                        <rect key="frame" x="318.5" y="238" width="80" height="79.5"/>
+                                        <rect key="frame" x="318.5" y="239.5" width="80" height="79"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="b7k-7n-7d6"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="21" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiF-Sz-OGH" userLabel="Button21">
-                                        <rect key="frame" x="0.0" y="318" width="80" height="80.5"/>
+                                        <rect key="frame" x="0.0" y="319" width="80" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="eYx-XH-ygN"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="22" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtK-1S-FvC" userLabel="Button22">
-                                        <rect key="frame" x="80" y="318" width="79" height="80.5"/>
+                                        <rect key="frame" x="80" y="319" width="79.5" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="W9w-dO-qwV"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="23" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mwo-9s-BD0" userLabel="Button23">
-                                        <rect key="frame" x="159" y="318" width="80" height="80.5"/>
+                                        <rect key="frame" x="159.5" y="319" width="80" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="tsi-F7-oMe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="24" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SB9-XE-NrS" userLabel="Button24">
-                                        <rect key="frame" x="239" y="318" width="79.5" height="80.5"/>
+                                        <rect key="frame" x="239.5" y="319" width="79" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="RFH-xF-lxq"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="25" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C7T-FW-mUs" userLabel="Button25">
-                                        <rect key="frame" x="318.5" y="318" width="80" height="80.5"/>
+                                        <rect key="frame" x="318.5" y="319" width="80" height="79.5"/>
                                         <state key="normal" title="Button"/>
                                         <connections>
                                             <action selector="btnGridPressed:" destination="6sT-4d-91V" eventType="touchUpInside" id="XL0-wt-W4o"/>
@@ -540,19 +540,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iR-wm-Ca7" userLabel="Label1">
-                                        <rect key="frame" x="178.5" y="30" width="147.5" height="154.5"/>
+                                        <rect key="frame" x="178.5" y="30" width="148" height="154.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFD-rS-FsA" userLabel="Label2">
-                                        <rect key="frame" x="336" y="30" width="148.5" height="154.5"/>
+                                        <rect key="frame" x="336.5" y="30" width="148.5" height="154.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pmm-3b-5AH" userLabel="Label3">
-                                        <rect key="frame" x="494.5" y="30" width="148" height="154.5"/>
+                                        <rect key="frame" x="495" y="30" width="147.5" height="154.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -564,19 +564,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jG9-cL-CmB" userLabel="Label16">
-                                        <rect key="frame" x="178" y="214.5" width="147.5" height="154"/>
+                                        <rect key="frame" x="178" y="214.5" width="148" height="154"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4rP-Ei-CBl" userLabel="Label17">
-                                        <rect key="frame" x="336" y="214.5" width="148.5" height="154"/>
+                                        <rect key="frame" x="336.5" y="214.5" width="148.5" height="154"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWb-Y7-Ppf" userLabel="Label18">
-                                        <rect key="frame" x="494" y="214.5" width="147.5" height="154"/>
+                                        <rect key="frame" x="494.5" y="214.5" width="148" height="154"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -620,7 +620,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q6Y-dP-Jd6" userLabel="GameComment">
-                                <rect key="frame" x="869.5" y="722" width="450" height="20"/>
+                                <rect key="frame" x="869.5" y="722.5" width="450" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="450" id="lGb-dp-4Ix"/>
                                     <constraint firstAttribute="width" constant="450" id="yhr-SP-qz4"/>
@@ -815,7 +815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Se7-au-hvf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807" y="-1719"/>
+            <point key="canvasLocation" x="1841" y="-1795"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="GKJ-yN-rAM">
@@ -1128,7 +1128,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQZ-05-QpK" userLabel="Switch Skip Columns">
-                                <rect key="frame" x="379.5" y="907" width="52" height="31"/>
+                                <rect key="frame" x="379" y="907" width="52" height="31"/>
                                 <connections>
                                     <action selector="switchUnmarkedColumnsChanged:" destination="YIq-qZ-unX" eventType="valueChanged" id="aUY-R2-ib0"/>
                                 </connections>
@@ -1186,6 +1186,7 @@
                                 <state key="normal" title="Set Up"/>
                                 <connections>
                                     <action selector="btnSetUpRaffleSelected:" destination="YIq-qZ-unX" eventType="touchUpInside" id="Bta-ga-D8H"/>
+                                    <segue destination="AZc-zw-iT5" kind="show" id="1mw-tC-ZVU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1496,7 +1497,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bgs-0w-igI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006.7349926793557" y="1473.6328125"/>
+            <point key="canvasLocation" x="1007" y="1423"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="gBS-Js-08r">
@@ -1516,136 +1517,57 @@
             </objects>
             <point key="canvasLocation" x="1693" y="736"/>
         </scene>
-        <!--Raffle Set Up View Controller-->
-        <scene sceneID="biK-Tu-3r3">
+        <!--Raffle Set Up Table View Controller-->
+        <scene sceneID="ttE-4y-qo9">
             <objects>
-                <viewController id="w2b-4Y-SsI" customClass="RaffleSetUpViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wL6-ZM-ww4"/>
-                        <viewControllerLayoutGuide type="bottom" id="CTR-yr-7FT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wtg-tH-reC">
+                <tableViewController id="AZc-zw-iT5" customClass="RaffleSetUpTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sqN-le-sYa">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="ULb-ci-5Pl">
-                                <rect key="frame" x="0.0" y="84" width="94" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="7iU-Hd-4VT"/>
-                                    <constraint firstAttribute="width" constant="100" id="Py8-Qt-2SS"/>
-                                </constraints>
-                                <connections>
-                                    <action selector="stepperItemsChanged:" destination="w2b-4Y-SsI" eventType="valueChanged" id="fIg-ZJ-b1x"/>
-                                </connections>
-                            </stepper>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gX1-N6-hyT">
-                                <rect key="frame" x="483" y="164" width="400" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="QpZ-xd-bmX"/>
-                                    <constraint firstAttribute="width" constant="400" id="mq0-ZZ-Esn"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="w2b-4Y-SsI" id="7pc-6q-wod"/>
-                                    <outlet property="delegate" destination="w2b-4Y-SsI" id="FuJ-Bv-9Xa"/>
-                                </connections>
-                            </pickerView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="cec-23-p3c">
-                                <rect key="frame" x="220" y="611" width="926" height="314"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mfc-7h-0wd">
-                                <rect key="frame" x="583" y="462" width="200" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="lIk-RS-Xlp"/>
-                                    <constraint firstAttribute="width" constant="200" id="vMA-uQ-An5"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Mj-x2-Gue">
-                                <rect key="frame" x="110" y="84" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Raffle Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ITo-n8-jbc">
-                                <rect key="frame" x="162" y="84" width="91" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8F7-18-beA">
-                                <rect key="frame" x="483" y="69" width="100" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1cl-HI-sw5"/>
-                                    <constraint firstAttribute="width" constant="100" id="UAY-Dq-RuW"/>
-                                </constraints>
-                                <state key="normal" title="Add Item"/>
-                                <connections>
-                                    <action selector="btnAddItem:" destination="w2b-4Y-SsI" eventType="touchUpInside" id="VWt-AM-RkU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9V-lb-hv7">
-                                <rect key="frame" x="633" y="69" width="100" height="50"/>
-                                <state key="normal" title="Edit Item"/>
-                                <connections>
-                                    <action selector="btnEditItem:" destination="w2b-4Y-SsI" eventType="touchUpInside" id="ke8-Tp-ftU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZS-Jx-A0L">
-                                <rect key="frame" x="783" y="69" width="100" height="50"/>
-                                <state key="normal" title="Delete Item"/>
-                                <connections>
-                                    <action selector="btnDeleteItem:" destination="w2b-4Y-SsI" eventType="touchUpInside" id="Cu1-Vf-q9Q"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="L9V-lb-hv7" firstAttribute="centerX" secondItem="gX1-N6-hyT" secondAttribute="centerX" id="0Pz-kl-l3U"/>
-                            <constraint firstItem="wZS-Jx-A0L" firstAttribute="top" secondItem="8F7-18-beA" secondAttribute="top" id="1g6-g0-ThI"/>
-                            <constraint firstItem="ULb-ci-5Pl" firstAttribute="top" secondItem="wL6-ZM-ww4" secondAttribute="bottom" constant="20" id="3NU-ax-1fp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cec-23-p3c" secondAttribute="trailing" constant="200" id="4ae-pW-uv3"/>
-                            <constraint firstItem="gX1-N6-hyT" firstAttribute="top" secondItem="wL6-ZM-ww4" secondAttribute="bottom" constant="100" id="M6Z-dZ-sO0"/>
-                            <constraint firstItem="0Mj-x2-Gue" firstAttribute="top" secondItem="ULb-ci-5Pl" secondAttribute="top" id="QPa-td-A1B"/>
-                            <constraint firstItem="ITo-n8-jbc" firstAttribute="height" secondItem="0Mj-x2-Gue" secondAttribute="height" id="RZR-Uk-X1I"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="ULb-ci-5Pl" secondAttribute="leading" constant="20" id="SOz-ys-y1B"/>
-                            <constraint firstItem="gX1-N6-hyT" firstAttribute="centerX" secondItem="wtg-tH-reC" secondAttribute="centerX" id="Whh-WI-OR2"/>
-                            <constraint firstItem="8F7-18-beA" firstAttribute="top" secondItem="wL6-ZM-ww4" secondAttribute="bottom" constant="5" id="YXg-CV-rMB"/>
-                            <constraint firstItem="cec-23-p3c" firstAttribute="centerX" secondItem="wtg-tH-reC" secondAttribute="centerX" id="aEc-C1-z2B"/>
-                            <constraint firstItem="L9V-lb-hv7" firstAttribute="height" secondItem="8F7-18-beA" secondAttribute="height" id="aK2-cd-WDy"/>
-                            <constraint firstItem="L9V-lb-hv7" firstAttribute="width" secondItem="8F7-18-beA" secondAttribute="width" id="b92-Qx-Xw6"/>
-                            <constraint firstItem="ITo-n8-jbc" firstAttribute="leading" secondItem="0Mj-x2-Gue" secondAttribute="trailing" constant="10" id="c2q-Nf-kI5"/>
-                            <constraint firstItem="8F7-18-beA" firstAttribute="leading" secondItem="gX1-N6-hyT" secondAttribute="leading" id="cPQ-He-NLx"/>
-                            <constraint firstItem="0Mj-x2-Gue" firstAttribute="leading" secondItem="ULb-ci-5Pl" secondAttribute="trailing" constant="10" id="eGC-H8-g7B"/>
-                            <constraint firstItem="L9V-lb-hv7" firstAttribute="top" secondItem="8F7-18-beA" secondAttribute="top" id="eQa-uV-vUb"/>
-                            <constraint firstItem="mfc-7h-0wd" firstAttribute="centerY" secondItem="wtg-tH-reC" secondAttribute="centerY" id="f3h-h1-ydM"/>
-                            <constraint firstItem="mfc-7h-0wd" firstAttribute="centerX" secondItem="wtg-tH-reC" secondAttribute="centerX" id="fiL-ZI-Zks"/>
-                            <constraint firstItem="ITo-n8-jbc" firstAttribute="top" secondItem="0Mj-x2-Gue" secondAttribute="top" id="l6F-xy-LGV"/>
-                            <constraint firstItem="cec-23-p3c" firstAttribute="centerY" secondItem="wtg-tH-reC" secondAttribute="centerY" multiplier="1.5" id="sIZ-Sz-BWg"/>
-                            <constraint firstItem="wZS-Jx-A0L" firstAttribute="trailing" secondItem="gX1-N6-hyT" secondAttribute="trailing" id="sxn-tf-E92"/>
-                            <constraint firstItem="CTR-yr-7FT" firstAttribute="top" secondItem="cec-23-p3c" secondAttribute="bottom" constant="50" id="vNE-hP-5YK"/>
-                            <constraint firstItem="wZS-Jx-A0L" firstAttribute="height" secondItem="L9V-lb-hv7" secondAttribute="height" id="yJz-Rf-3El"/>
-                            <constraint firstItem="wZS-Jx-A0L" firstAttribute="width" secondItem="L9V-lb-hv7" secondAttribute="width" id="z1N-VV-jiJ"/>
-                            <constraint firstItem="cec-23-p3c" firstAttribute="leading" secondItem="wtg-tH-reC" secondAttribute="leadingMargin" constant="200" id="zh8-TA-2zL"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="labelNumberOfItems" destination="0Mj-x2-Gue" id="j1K-Wh-gAG"/>
-                        <outlet property="pickerRaffleItem" destination="gX1-N6-hyT" id="qaW-Ka-AAV"/>
-                        <outlet property="stepperNumberOfItems" destination="ULb-ci-5Pl" id="Z04-5D-xXU"/>
-                        <outlet property="textFieldNameOfItem" destination="mfc-7h-0wd" id="OUE-63-hsS"/>
-                        <outlet property="textViewItemDescription" destination="cec-23-p3c" id="3Hk-F0-xTv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sq9-BD-ae1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="8tu-Be-Le6">
+                            <rect key="frame" x="0.0" y="72" width="1366" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="xhk-90-nHE" detailTextLabel="VXf-k2-rnH" style="IBUITableViewCellStyleSubtitle" id="Coa-np-gK6">
+                                <rect key="frame" x="0.0" y="28" width="1366" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Coa-np-gK6" id="X9s-r9-bAf">
+                                    <rect key="frame" x="0.0" y="0.0" width="1366" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xhk-90-nHE">
+                                            <rect key="frame" x="347" y="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VXf-k2-rnH">
+                                            <rect key="frame" x="347" y="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AZc-zw-iT5" id="3fg-Ah-KmE"/>
+                            <outlet property="delegate" destination="AZc-zw-iT5" id="d0n-AK-wbW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R18-PE-9oH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1634" y="1474"/>
+            <point key="canvasLocation" x="1621" y="1422"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="i4m-vX-BlL">
@@ -1718,12 +1640,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="T27-5v-WSZ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="EhY-dj-6pi" detailTextLabel="y0n-tU-wCV" style="IBUITableViewCellStyleSubtitle" id="T27-5v-WSZ">
                                 <rect key="frame" x="0.0" y="28" width="1366" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T27-5v-WSZ" id="J5X-Ky-F9L">
-                                    <rect key="frame" x="0.0" y="0.0" width="1366" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1366" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EhY-dj-6pi">
+                                            <rect key="frame" x="347" y="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y0n-tU-wCV">
+                                            <rect key="frame" x="347" y="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

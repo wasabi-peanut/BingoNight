@@ -32,7 +32,7 @@
     
     
     _protectedGrids = 6;
-    _protectedPresets = 9;
+    _protectedPresets = 14;
     
     
     _height = [UIScreen mainScreen].bounds.size.height;
@@ -532,6 +532,11 @@
                                @"Midnight",
                                @"News",
                                @"Winter",
+                               @"The Sea",
+                               @"PJs",
+                               @"Disco",
+                               @"Party",
+                               @"Viva",
                                nil];
         
     }
@@ -582,7 +587,7 @@
                           
                           @"\u2618",//Clover                20
                           @"\U0001F340",//Big Clover        21
-                          @"\U0001F322",//Tree              22
+                          @"\U0001F335",//Cactus            22
                           @"\U0001F384",//Christmas Tree    23
                           @"\u263c",//Snow Flake Lines      24
                           @"\u26C4",//Snowman               25
@@ -744,7 +749,60 @@
                                          @24,//marker
                                          nil];
                                         
+        NSMutableArray *UnderTheSea = [[NSMutableArray alloc] initWithObjects:
+                                        @78,@78,@255, //background
+                                        @255,@0,@0, //box background
+                                        @0,@0,@255, //box letters
+                                        @0,@222,@0, //called background
+                                        @255,@0,@0, //called letters
+                                        @255,@255,@255, //Bingo letters
+                                        @255,@255,@255, //Game title color
+                                        @5,//marker
+                                        nil];
         
+        NSMutableArray *PJs = [[NSMutableArray alloc] initWithObjects:
+                                       @255,@0,@255, //background
+                                       @0,@255,@0, //box background
+                                       @0,@0,@255, //box letters
+                                       @0,@0,@255, //called background
+                                       @54,@255,@121, //called letters
+                                       @255,@255,@255, //Bingo letters
+                                       @255,@255,@255, //Game title color
+                                       @29,//marker
+                                       nil];
+        
+        NSMutableArray *Disco = [[NSMutableArray alloc] initWithObjects:
+                               @156,@193,@218, //background
+                               @255,@0,@0, //box background
+                               @0,@255,@255, //box letters
+                               @0,@4,@0, //called background
+                               @255,@0,@255, //called letters
+                               @255,@255,@255, //Bingo letters
+                               @255,@255,@255, //Game title color
+                               @0,//marker
+                               nil];
+        
+        NSMutableArray *Party = [[NSMutableArray alloc] initWithObjects:
+                                 @255,@144,@218, //background
+                                 @255,@0,@121, //box background
+                                 @0,@255,@255, //box letters
+                                 @8,@184,@193, //called background
+                                 @255,@0,@255, //called letters
+                                 @255,@255,@255, //Bingo letters
+                                 @255,@255,@255, //Game title color
+                                 @10,//marker
+                                 nil];
+        
+        NSMutableArray *Viva = [[NSMutableArray alloc] initWithObjects:
+                                 @180,@0,@0, //background
+                                 @194,@255,@0, //box background
+                                 @255,@255,@255, //box letters
+                                 @0,@187,@0, //called background
+                                 @176,@176,@176, //called letters
+                                 @255,@255,@250, //Bingo letters
+                                 @255,@255,@250, //Game title color
+                                 @22,//marker
+                                 nil];
         
         
         _arrayGameColorSettings = [[NSMutableArray alloc] initWithObjects:
@@ -754,7 +812,7 @@
                               @0,@0,@255,@0,@0,
                               @255,@0,
                               nil];
-        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects:RedPreset,BluePreset,GreenPreset, HolidayPreset,AutumnPreset,FourthPreset,MidnightPreset,NewsPreset,WinterPreset,nil];
+        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects:RedPreset,BluePreset,GreenPreset, HolidayPreset,AutumnPreset,FourthPreset,MidnightPreset,NewsPreset,WinterPreset,UnderTheSea,PJs,Disco,Party,Viva,nil];
        
     }
     
