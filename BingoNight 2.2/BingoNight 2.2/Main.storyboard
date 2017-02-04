@@ -9,6 +9,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1517,25 +1518,28 @@
             </objects>
             <point key="canvasLocation" x="1693" y="736"/>
         </scene>
-        <!--Raffle Set Up Table View Controller-->
+        <!--Title-->
         <scene sceneID="ttE-4y-qo9">
             <objects>
                 <tableViewController id="AZc-zw-iT5" customClass="RaffleSetUpTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="sqN-le-sYa">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="27" sectionFooterHeight="28" id="sqN-le-sYa">
                         <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" id="8tu-Be-Le6">
-                            <rect key="frame" x="0.0" y="72" width="1366" height="44"/>
+                            <rect key="frame" x="0.0" y="71" width="1366" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            <connections>
+                                <outlet property="delegate" destination="AZc-zw-iT5" id="sPb-wv-adp"/>
+                            </connections>
                         </textView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="xhk-90-nHE" detailTextLabel="VXf-k2-rnH" style="IBUITableViewCellStyleSubtitle" id="Coa-np-gK6">
-                                <rect key="frame" x="0.0" y="28" width="1366" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cell" textLabel="xhk-90-nHE" detailTextLabel="VXf-k2-rnH" style="IBUITableViewCellStyleSubtitle" id="Coa-np-gK6">
+                                <rect key="frame" x="0.0" y="27" width="1366" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Coa-np-gK6" id="X9s-r9-bAf">
                                     <rect key="frame" x="0.0" y="0.0" width="1366" height="43"/>
@@ -1564,6 +1568,21 @@
                             <outlet property="delegate" destination="AZc-zw-iT5" id="d0n-AK-wbW"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="MID-C2-QPb">
+                        <leftBarButtonItems>
+                            <barButtonItem title="&lt; Back" id="Xg7-lC-h7c"/>
+                            <barButtonItem systemItem="add" id="8r6-iv-ARa">
+                                <connections>
+                                    <action selector="addItemPressed:" destination="AZc-zw-iT5" id="OFf-eI-uTm"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="textViewItemDetail" destination="8tu-Be-Le6" id="ivg-9I-w7C"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R18-PE-9oH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

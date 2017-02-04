@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RaffleSetUpTableViewController : UITableViewController
+@interface RaffleSetUpTableViewController : UITableViewController <UITextViewDelegate>
+
+
+
 @property (strong,nonatomic) NSMutableArray *test;
 - (IBAction)addItemPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextView *textViewItemDetail;
+@property NSInteger activeRow;
+
+@property NSString *action;
+
+
 @end

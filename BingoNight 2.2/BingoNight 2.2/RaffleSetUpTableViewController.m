@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _textViewItemDetail.alpha = 0;
     _test = [[NSMutableArray alloc] initWithObjects:@"Adam",@"Marcia",@"William",@"Alex",@"Julia",nil];
     
     
@@ -77,12 +77,14 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    _textViewItemDetail.alpha = 0;
+    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
           [_test removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
      
-        
+        NSLog(@"The deleted array is %@",_test);
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         
         
@@ -100,14 +102,33 @@
     
     if (fromIndex != toIndex) {
         NSString *item = [_test objectAtIndex:fromIndex];
-        [_test removeObject:item];
+        [_test removeObjectAtIndex:fromIndex];
         [_test insertObject:item atIndex:toIndex];
     }
     [self.tableView reloadData];
     NSLog(@"The new array is %@",_test);
 }
 
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated {
+    
+    _textViewItemDetail.alpha = 0;
+    [super setEditing:editing animated:animated];
+}
 
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    
+    if ([_action isEqualToString:@"Change"]) {
+        
+        [_test replaceObjectAtIndex:_activeRow withObject:_textViewItemDetail.text];}
+    
+    if ([_action isEqualToString:@"Add"]) {
+        
+        [_test addObject:_textViewItemDetail.text];
+    }
+    
+    [self.tableView reloadData];
+    _textViewItemDetail.alpha = 0;
+}
 
 
 // Override to support conditional rearranging of the table view.
@@ -128,16 +149,31 @@
 */
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"Picked this item: %@",_test[indexPath.row]);
+    _textViewItemDetail.alpha = 1;
+    _textViewItemDetail.layer.borderColor = [[UIColor blackColor] CGColor];
+    _textViewItemDetail.layer.borderWidth = 2;
+    
+
+    
+    _textViewItemDetail.text = _test[indexPath.row];
+    _activeRow = indexPath.row;
+    _action = @"Change";
     
           
 }
 
 
 - (IBAction)addItemPressed:(id)sender {
-    [_test insertObject:@"Hello" atIndex:0];
-    [self.tableView reloadData];
-    [self performSegueWithIdentifier:@"segueRaffleSetUpToRaffleDetail" sender:self];
+    
+    [self setEditing:NO];
+   _action = @"Add";
+    _textViewItemDetail.layer.borderColor = [[UIColor greenColor] CGColor];
+    _textViewItemDetail.layer.borderWidth = 2;
+    
+    _textViewItemDetail.alpha = 1;
+    _textViewItemDetail.text = @"Add item";
+    
+   
 }
 
 
