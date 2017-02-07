@@ -331,29 +331,23 @@
           }
           
                          
-                         
-                         
-                         
-                         
-                         
-                         
-    
-    
+       
     
     _arrayCheckingPatterns = [[NSMutableArray alloc] initWithObjects:
-                              @"Pattern 1",
-                              @"Pattern 2",
-                              @"Pattern 3",
-                              @"Pattern 4",
-                              @"Pattern 5",
-                              @"Pattern 6",
-                              @"Pattern 7",
-                              @"Pattern 8",
-                              @"Pattern 9",
-                              @"Pattern 10",
-                              @"Pattern 11",
-                              @"Pattern 12",
-                              @"Pattern 13",
+                              @"Spin",
+                              @"Shake",
+                              @"Bounce",
+                              @"Drop",
+                              @"Fade",
+                              @"Flop",
+                              @"Rotate",
+                              @"Wow",
+                              @"Birdie",
+                              @"Cowboy",
+                              @"Shark",
+                              @"Basketball",
+                              @"Babies",
+                              @"Game",
                               nil];
     
     _arrayCheckingSongs = [[NSMutableArray alloc] initWithObjects:
@@ -467,7 +461,7 @@
     [avPlayer setVolume:5];
     [avPlayer play];
     
-    NSLog(@"The sound playing is %@",_songTitle);
+    
     
 
 }

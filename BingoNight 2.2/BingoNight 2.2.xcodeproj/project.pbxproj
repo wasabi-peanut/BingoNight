@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		5897585A1DFE5BBF0004D5AF /* CheckingSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589758591DFE5BBF0004D5AF /* CheckingSetUpViewController.m */; };
 		E30283691E3EEA8C0058D5C8 /* RaffleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30283681E3EEA8C0058D5C8 /* RaffleViewController.m */; };
-		E3100E411E3B832800CF2299 /* OldRaffleSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3100E401E3B832800CF2299 /* OldRaffleSetUpViewController.m */; };
 		E328E6001E063BCC004F10DA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E328E5FF1E063BCC004F10DA /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		E3481FBF1E09EE7D004F4A33 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FB91E09EE7D004F4A33 /* applause.mp3 */; };
 		E3481FC01E09EE7D004F4A33 /* computer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBA1E09EE7D004F4A33 /* computer.mp3 */; };
@@ -614,8 +613,6 @@
 		589758591DFE5BBF0004D5AF /* CheckingSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckingSetUpViewController.m; sourceTree = "<group>"; };
 		E30283671E3EEA8C0058D5C8 /* RaffleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleViewController.h; sourceTree = "<group>"; };
 		E30283681E3EEA8C0058D5C8 /* RaffleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleViewController.m; sourceTree = "<group>"; };
-		E3100E3F1E3B832800CF2299 /* OldRaffleSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OldRaffleSetUpViewController.h; sourceTree = "<group>"; };
-		E3100E401E3B832800CF2299 /* OldRaffleSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OldRaffleSetUpViewController.m; sourceTree = "<group>"; };
 		E328E5FF1E063BCC004F10DA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E3481FB91E09EE7D004F4A33 /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
 		E3481FBA1E09EE7D004F4A33 /* computer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = computer.mp3; sourceTree = "<group>"; };
@@ -1648,8 +1645,6 @@
 				E398252E1DE5054B00ACC5A7 /* CheckingViewController.m */,
 				589758581DFE5BBF0004D5AF /* CheckingSetUpViewController.h */,
 				589758591DFE5BBF0004D5AF /* CheckingSetUpViewController.m */,
-				E3100E3F1E3B832800CF2299 /* OldRaffleSetUpViewController.h */,
-				E3100E401E3B832800CF2299 /* OldRaffleSetUpViewController.m */,
 				E398252F1DE5054B00ACC5A7 /* WinnerViewController.h */,
 				E39825301DE5054B00ACC5A7 /* WinnerViewController.m */,
 				E39825311DE5054B00ACC5A7 /* DefaultsDataManager.h */,
@@ -2734,7 +2729,6 @@
 				E398253F1DE5054B00ACC5A7 /* GamePlayViewController.m in Sources */,
 				E398253E1DE5054B00ACC5A7 /* StartViewController.m in Sources */,
 				E398253D1DE5054B00ACC5A7 /* GlobalSettingsViewController.m in Sources */,
-				E3100E411E3B832800CF2299 /* OldRaffleSetUpViewController.m in Sources */,
 				E39825401DE5054B00ACC5A7 /* PDFViewController.m in Sources */,
 				E398253C1DE5054B00ACC5A7 /* LocalSettingsViewController.m in Sources */,
 				E39825421DE5054B00ACC5A7 /* CreateCardArrays.m in Sources */,

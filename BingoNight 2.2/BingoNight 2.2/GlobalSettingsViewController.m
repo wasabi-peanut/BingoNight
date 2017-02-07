@@ -321,7 +321,7 @@
         _btnSetUpChecking.enabled = NO;
         
     }
-    NSLog(@"I swith checking to %@",_arrayGlobalSettings[16]);
+
 }
 
 - (IBAction)sliderChanged:(id)sender {

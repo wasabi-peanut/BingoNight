@@ -12,12 +12,19 @@
 
 
 
-@property (strong,nonatomic) NSMutableArray *test;
+@property (strong,nonatomic) NSMutableArray *arrayRaffleItems;
+@property NSString *keyForArrayRaffleItems;
 - (IBAction)addItemPressed:(id)sender;
-@property (strong, nonatomic) IBOutlet UITextView *textViewItemDetail;
-@property NSInteger activeRow;
 
+@property NSInteger activeRow;
+@property NSInteger rowHeight;
 @property NSString *action;
+
+@property float height;
+@property float width;
+
+@property (strong,nonatomic) UITextView *textViewDetail;
+- (IBAction)btnFinishAdd:(id)sender;
 
 
 @end

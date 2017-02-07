@@ -450,7 +450,6 @@
     _arrayGridPatterns = [[NSMutableArray alloc] initWithArray:_arrayGridsShell[_gridSelected]];
     
      _markerSelected = [_arrayGameColorSettings[21] integerValue];
-    NSLog(@"The marker selected is %li",_markerSelected);
     
     [self theProcess];
     

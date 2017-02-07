@@ -73,13 +73,13 @@
 
         //    [self patternWithImage:@"Google" frames:120 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
             
-          //  [self patternWithImage:@"Basketball-Bingo" frames:177 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
-            //[self basketball];
-            break;
-        case 11:
-            [self newBaby];
+        [self patternWithImage:@"Basketball-Bingo" frames:177 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
+           
             break;
         case 12:
+            [self newBaby];
+            break;
+        case 13:
             [self ballDrop];
             break;
         

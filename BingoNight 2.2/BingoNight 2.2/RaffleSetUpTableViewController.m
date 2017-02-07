@@ -7,8 +7,7 @@
 //
 
 #import "RaffleSetUpTableViewController.h"
-
-
+#import "DefaultsDataManager.h"
 
 @interface RaffleSetUpTableViewController ()
 
@@ -18,8 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _textViewItemDetail.alpha = 0;
-    _test = [[NSMutableArray alloc] initWithObjects:@"Adam",@"Marcia",@"William",@"Alex",@"Julia",nil];
+   
+    _height = [UIScreen mainScreen].bounds.size.height;
+    _width = [UIScreen mainScreen].bounds.size.width;
+    
+    _keyForArrayRaffleItems = @"keyForArrayRaffleItems";
+    _rowHeight = 50;
+    _arrayRaffleItems = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getDataForKey:_keyForArrayRaffleItems]];
+    
+    if (_arrayRaffleItems.count ==0) {
+        
+        _arrayRaffleItems = [[NSMutableArray alloc] initWithObjects:@"Boat",@"Car",@"Vacation",@"Golf Club",@"Microwage", nil];
+        
+        
+    }
+    
     
     
     // Uncomment the following line to preserve selection between presentations.
@@ -27,6 +39,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
      self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    NSLog(@"The items array is %@",_arrayRaffleItems);
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,11 +49,20 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)viewWillDisappear:(BOOL)animated{
-    NSLog(@"Bye Bye");
+
+
+-(void)reloadTable{
+    
+     [self.tableView reloadData];
+    [DefaultsDataManager saveData:_arrayRaffleItems forKey:_keyForArrayRaffleItems];
+   
     
 }
 
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return _rowHeight;
+}
 
 #pragma mark - Table view data source
 
@@ -47,7 +71,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return _test.count;
+    return _arrayRaffleItems.count;
 }
 
 
@@ -55,16 +79,12 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Item %li: %@",indexPath.row+1,_test[indexPath.row]];
+    cell.textLabel.text = [NSString stringWithFormat:@"Item %li:",indexPath.row+1];
     
-    cell.detailTextLabel.text = @"Please Work";
+    cell.detailTextLabel.text = _arrayRaffleItems[indexPath.row];
     
     return cell;
 }
-
-
-
-
 
 
 // Override to support conditional editing of the table view.
@@ -77,14 +97,14 @@
 
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    _textViewItemDetail.alpha = 0;
-    
+   
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-          [_test removeObjectAtIndex:indexPath.row];
+          [_arrayRaffleItems removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+         [DefaultsDataManager saveData:_arrayRaffleItems forKey:_keyForArrayRaffleItems];
      
-        NSLog(@"The deleted array is %@",_test);
+       
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         
         
@@ -101,34 +121,21 @@
     NSUInteger toIndex = toIndexPath.row;
     
     if (fromIndex != toIndex) {
-        NSString *item = [_test objectAtIndex:fromIndex];
-        [_test removeObjectAtIndex:fromIndex];
-        [_test insertObject:item atIndex:toIndex];
+        NSString *item = [_arrayRaffleItems objectAtIndex:fromIndex];
+        [_arrayRaffleItems removeObjectAtIndex:fromIndex];
+        [_arrayRaffleItems insertObject:item atIndex:toIndex];
     }
-    [self.tableView reloadData];
-    NSLog(@"The new array is %@",_test);
+     [DefaultsDataManager saveData:_arrayRaffleItems forKey:_keyForArrayRaffleItems];
+     [self.tableView reloadData];
+  
 }
 
 - (void)setEditing:(BOOL)editing animated:(BOOL)animated {
     
-    _textViewItemDetail.alpha = 0;
+    [_textViewDetail removeFromSuperview];
     [super setEditing:editing animated:animated];
 }
 
--(void)textViewDidEndEditing:(UITextView *)textView{
-    
-    if ([_action isEqualToString:@"Change"]) {
-        
-        [_test replaceObjectAtIndex:_activeRow withObject:_textViewItemDetail.text];}
-    
-    if ([_action isEqualToString:@"Add"]) {
-        
-        [_test addObject:_textViewItemDetail.text];
-    }
-    
-    [self.tableView reloadData];
-    _textViewItemDetail.alpha = 0;
-}
 
 
 // Override to support conditional rearranging of the table view.
@@ -138,44 +145,73 @@
 }
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    _textViewItemDetail.alpha = 1;
-    _textViewItemDetail.layer.borderColor = [[UIColor blackColor] CGColor];
-    _textViewItemDetail.layer.borderWidth = 2;
     
-
-    
-    _textViewItemDetail.text = _test[indexPath.row];
     _activeRow = indexPath.row;
     _action = @"Change";
-    
-          
-}
+    [_textViewDetail removeFromSuperview];
+    [self openTableViewWithRow:_activeRow action:_action];
+ 
+  }
 
+
+
+    
 
 - (IBAction)addItemPressed:(id)sender {
     
-    [self setEditing:NO];
-   _action = @"Add";
-    _textViewItemDetail.layer.borderColor = [[UIColor greenColor] CGColor];
-    _textViewItemDetail.layer.borderWidth = 2;
-    
-    _textViewItemDetail.alpha = 1;
-    _textViewItemDetail.text = @"Add item";
-    
    
+     _action = @"Add";
+    [_arrayRaffleItems addObject:@""];
+    _activeRow = _arrayRaffleItems.count-1;
+    [self reloadTable];
+    [self openTableViewWithRow:_activeRow action:_action];
 }
 
+-(void)openTableViewWithRow:(NSInteger) row action:(NSString *) action  {
+    
+    [self setEditing:NO];
+        float currentX = self.tableView.bounds.origin.x;
+        float currentY = self.tableView.bounds.origin.y;
+        
+        _textViewDetail = [[UITextView alloc] initWithFrame:CGRectMake(currentX+_width*.1, currentY+_height*.1, _width*.8, _height*.2)];
+        _textViewDetail.layer.borderWidth = 3;
+        _textViewDetail.font = [UIFont fontWithName:@"Helvetica" size:14];
+    
+        _textViewDetail.delegate = self;
+    
+        [self.view addSubview:_textViewDetail];
+    
+    
+    if ([action isEqualToString:@"Add"]) {
+        _textViewDetail.layer.borderColor = [[UIColor greenColor] CGColor];
+        
+    
+    }
+    if ([action isEqualToString:@"Change"]) {
+        _textViewDetail.layer.borderColor = [[UIColor redColor] CGColor];
+        
+    }
+    _textViewDetail.text = _arrayRaffleItems[row];
+    
+}
 
+-(void)textViewDidChange:(UITextView *)textView{
+    
+        [_arrayRaffleItems replaceObjectAtIndex:_activeRow withObject:_textViewDetail.text];
 
+        [self reloadTable];
+    
+}
+
+-(void)doneWithTextView{
+    [_textViewDetail removeFromSuperview];
+    
+}
+
+- (IBAction)btnFinishAdd:(id)sender {
+    [_textViewDetail removeFromSuperview];
+}
 @end

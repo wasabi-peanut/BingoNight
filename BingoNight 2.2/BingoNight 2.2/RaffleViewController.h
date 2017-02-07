@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RaffleViewController : UIViewController
+@interface RaffleViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (strong,nonatomic) UISegmentedControl *segmentedControlRaffle;
+@property (strong, nonatomic) IBOutlet UIPickerView *pickerViewRaffleItem;
+
 @property (strong,nonatomic) NSMutableArray *arrayRaffleItems;
-@property NSInteger segmentSelected;
+
+@property (strong,nonatomic) NSString *keyForArrayRaffleItems;
+@property (strong, nonatomic) IBOutlet UITextView *textViewRaffleItems;
+@property NSInteger lastNumber;
 
 @end

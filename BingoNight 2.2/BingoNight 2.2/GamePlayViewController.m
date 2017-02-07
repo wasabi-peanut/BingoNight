@@ -975,7 +975,7 @@
 
 -(void)deselectButton {
     if (_ballCount>0&_arrayCalledNumbers.count>0) {
-       // NSLog(@"This is the array called numbers %@ and this is ball count %i",_arrayCalledNumbers,_ballCount);
+       
         
     _numberCalled = [_arrayCalledNumbers[_ballCount-1] integerValue];
     _ballCount = _ballCount - 1;
@@ -1143,7 +1143,8 @@
         [self createBar];
         if (_useSelector) {
             for (UIButton *myButton in _arrayButtonsCreated) {
-               // NSLog(@"My tag is %i and number called is %i",myButton.tag,_numberCalled);
+               
+                
                 if (myButton.tag == _numberCalled){
                     myButton.backgroundColor = _usedBoxBackgroundColor;
                     myButton.tintColor = _usedBoxLetterColor;

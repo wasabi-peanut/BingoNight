@@ -75,18 +75,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
-    cell.textLabel.text = @"Hello";
-    cell.detailTextLabel.text = @"Worked. Blah blah blah  Blah blah blah  Blah blah blah  Blah blah blah  Blah blah blah";
-    cell.detailTextLabel.font = [UIFont fontWithName:@"Courier" size:24];
-    cell.detailTextLabel.numberOfLines = 0;
-    cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.textLabel.text = @"Topic";
+    
+    
     
     
     return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 200;
+    return 50;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,7 +92,6 @@
     _rowSelected = indexPath.row;
     _sectionSelected = indexPath.section;
     
-    NSLog(@"The row selected is %li and section selected is %li",(long)_rowSelected,(long)_sectionSelected);
     
     
     [self performSegueWithIdentifier:@"segueInstructionsToText" sender:self];
