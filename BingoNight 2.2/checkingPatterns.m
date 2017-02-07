@@ -70,11 +70,9 @@
             break;
         case 10:
             [self patternWithImage:@"Shark-Bingo" frames:140 duration:20 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
-
-        //    [self patternWithImage:@"Google" frames:120 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
-            
-        [self patternWithImage:@"Basketball-Bingo" frames:177 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
-           
+            break;
+        case 11:
+            [self patternWithImage:@"Basketball-Bingo" frames:177 duration:15 widthMultiplier:1 heightMultiplier:1 xPosition:0 yPosition:0];
             break;
         case 12:
             [self newBaby];
@@ -1004,7 +1002,7 @@
     _banner = [[UILabel alloc] initWithFrame:CGRectMake(_width*.25,_height*.05, _width*.5, _height*.2)];
     _banner.text = @"Pick The Color";
     _banner.textColor = [UIColor blueColor];
-    _banner.font = [UIFont fontWithName:@"Chalkboard SE" size:52];
+    _banner.font = [UIFont fontWithName:@"Chalkboard SE" size:_height*.1];
     _banner.textAlignment = NSTextAlignmentCenter;
     
     [self addSubview:_banner];

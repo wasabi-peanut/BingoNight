@@ -32,7 +32,7 @@
     
     
     _protectedGrids = 6;
-    _protectedPresets = 14;
+    _protectedPresets = 18;
     
     
     _height = [UIScreen mainScreen].bounds.size.height;
@@ -525,6 +525,10 @@
                                @"Red",
                                @"Blue",
                                @"Green",
+                               @"Orange",
+                               @"Yellow",
+                               @"Black",
+                               @"Pink",
                                @"Holiday",
                                @"Autumn",
                                @"Fourth",
@@ -682,6 +686,51 @@
                                      @0,
                                      nil];
         
+        
+        NSMutableArray *OrangePreset = [[NSMutableArray alloc] initWithObjects:
+                                       @255,@134,@0,
+                                       @255,@255,@255,
+                                       @0,@0,@255,
+                                       @224,@221,@162,
+                                       @130,@130,@130,
+                                       @0,@0,@255,
+                                       @0,@0,@255,
+                                       @5,
+                                       nil];
+
+        NSMutableArray *YellowPreset = [[NSMutableArray alloc] initWithObjects:
+                                        @255,@255,@0,
+                                        @255,@255,@255,
+                                        @255,@0,@0,
+                                        @224,@221,@162,
+                                        @130,@130,@130,
+                                        @255,@0,@0,
+                                        @255,@0,@0,
+                                        @17,
+                                        nil];
+        
+        NSMutableArray *BlackPreset = [[NSMutableArray alloc] initWithObjects:
+                                        @255,@255,@255,
+                                        @0,@0,@0,
+                                        @255,@255,@255,
+                                        @99,@105,@92,
+                                        @130,@171,@130,
+                                        @0,@0,@0,
+                                        @0,@0,@0,
+                                        @2,
+                                        nil];
+        
+        NSMutableArray *PinkPreset = [[NSMutableArray alloc] initWithObjects:
+                                       @255,@0,@213,
+                                       @0,@203,@255,
+                                       @255,@255,@255,
+                                       @124,@146,@179,
+                                       @130,@81,@130,
+                                       @255,@255,@97,
+                                       @255,@255,@97,
+                                       @28,
+                                       nil];
+        
         NSMutableArray *HolidayPreset = [[NSMutableArray alloc] initWithObjects:
                                          @0,@197,@0, //background
                                          @255,@0,@0, //box background
@@ -811,7 +860,7 @@
                               @0,@0,@255,@0,@0,
                               @255,@0,
                               nil];
-        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects:RedPreset,BluePreset,GreenPreset, HolidayPreset,AutumnPreset,FourthPreset,MidnightPreset,NewsPreset,WinterPreset,UnderTheSea,PJs,Disco,Party,Viva,nil];
+        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects:RedPreset,BluePreset,GreenPreset,OrangePreset,YellowPreset, BlackPreset, PinkPreset, HolidayPreset,AutumnPreset,FourthPreset,MidnightPreset,NewsPreset,WinterPreset,UnderTheSea,PJs,Disco,Party,Viva,nil];
        
     }
     

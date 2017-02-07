@@ -27,7 +27,7 @@
     
     if (_arrayRaffleItems.count ==0) {
         
-        _arrayRaffleItems = [[NSMutableArray alloc] initWithObjects:@"Boat",@"Car",@"Vacation",@"Golf Club",@"Microwage", nil];
+        _arrayRaffleItems = [[NSMutableArray alloc] initWithObjects:@"Boat",@"Car",@"Vacation",@"Golf Club",@"Television", nil];
         
         
     }
