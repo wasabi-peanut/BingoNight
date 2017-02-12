@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hd6-mG-GVq">
+                                <rect key="frame" x="101.5" y="318" width="48" height="30"/>
+                                <state key="normal" title="Gallery"/>
+                                <connections>
+                                    <action selector="btnGallery:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UkV-fU-xEg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jO3-fP-zqb">
+                                <rect key="frame" x="222.5" y="318" width="54" height="30"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="btnCamera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wBB-2g-ncm"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QMQ-zn-HhM">
+                                <rect key="frame" x="36" y="33.5" width="303" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Bxd-pE-36V"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjv-HO-Ppg">
+                                <rect key="frame" x="109" y="400" width="34" height="30"/>
+                                <state key="normal" title="View"/>
+                                <connections>
+                                    <action selector="getImageView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C1G-UW-g4f"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hd6-mG-GVq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.67" id="5ek-s8-8x8"/>
+                            <constraint firstItem="hd6-mG-GVq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="5wy-WW-Yz2"/>
+                            <constraint firstItem="rjv-HO-Ppg" firstAttribute="top" secondItem="hd6-mG-GVq" secondAttribute="bottom" constant="52" id="ACC-Nd-uUs"/>
+                            <constraint firstItem="QMQ-zn-HhM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="D4K-AT-M8S"/>
+                            <constraint firstItem="QMQ-zn-HhM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.4" id="Q4U-jY-DHx"/>
+                            <constraint firstItem="jO3-fP-zqb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QvF-FO-in2"/>
+                            <constraint firstItem="rjv-HO-Ppg" firstAttribute="centerX" secondItem="hd6-mG-GVq" secondAttribute="centerX" id="S2Z-ke-Q6w"/>
+                            <constraint firstItem="jO3-fP-zqb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.33" id="lrx-jF-wNX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QMQ-zn-HhM" secondAttribute="trailing" constant="20" id="mzc-7G-wv5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnCamera" destination="jO3-fP-zqb" id="n8R-PI-Wxh"/>
+                        <outlet property="btnGallery" destination="hd6-mG-GVq" id="pBv-jJ-qMR"/>
+                        <outlet property="ivPickedImage" destination="QMQ-zn-HhM" id="gpZ-aL-WpF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

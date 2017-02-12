@@ -1,0 +1,551 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E31968191E4AA64D004AC122 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E31968181E4AA64D004AC122 /* main.m */; };
+		E319681C1E4AA64D004AC122 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E319681B1E4AA64D004AC122 /* AppDelegate.m */; };
+		E319681F1E4AA64D004AC122 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E319681E1E4AA64D004AC122 /* ViewController.m */; };
+		E31968221E4AA64D004AC122 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31968201E4AA64D004AC122 /* Main.storyboard */; };
+		E31968241E4AA64D004AC122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E31968231E4AA64D004AC122 /* Assets.xcassets */; };
+		E31968271E4AA64D004AC122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E31968251E4AA64D004AC122 /* LaunchScreen.storyboard */; };
+		E31968321E4AA64D004AC122 /* mpMediaPickerTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E31968311E4AA64D004AC122 /* mpMediaPickerTestTests.m */; };
+		E319683D1E4AA64D004AC122 /* mpMediaPickerTestUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E319683C1E4AA64D004AC122 /* mpMediaPickerTestUITests.m */; };
+		E319684C1E4AA699004AC122 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E319684B1E4AA699004AC122 /* MediaPlayer.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E319682E1E4AA64D004AC122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E319680C1E4AA64D004AC122 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E31968131E4AA64D004AC122;
+			remoteInfo = mpMediaPickerTest;
+		};
+		E31968391E4AA64D004AC122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E319680C1E4AA64D004AC122 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E31968131E4AA64D004AC122;
+			remoteInfo = mpMediaPickerTest;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E31968141E4AA64D004AC122 /* mpMediaPickerTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mpMediaPickerTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E31968181E4AA64D004AC122 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E319681A1E4AA64D004AC122 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E319681B1E4AA64D004AC122 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E319681D1E4AA64D004AC122 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E319681E1E4AA64D004AC122 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E31968211E4AA64D004AC122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E31968231E4AA64D004AC122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E31968261E4AA64D004AC122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E31968281E4AA64D004AC122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E319682D1E4AA64D004AC122 /* mpMediaPickerTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mpMediaPickerTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E31968311E4AA64D004AC122 /* mpMediaPickerTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mpMediaPickerTestTests.m; sourceTree = "<group>"; };
+		E31968331E4AA64D004AC122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E31968381E4AA64D004AC122 /* mpMediaPickerTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mpMediaPickerTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E319683C1E4AA64D004AC122 /* mpMediaPickerTestUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mpMediaPickerTestUITests.m; sourceTree = "<group>"; };
+		E319683E1E4AA64D004AC122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E319684B1E4AA699004AC122 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E31968111E4AA64D004AC122 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E319684C1E4AA699004AC122 /* MediaPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E319682A1E4AA64D004AC122 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E31968351E4AA64D004AC122 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E319680B1E4AA64D004AC122 = {
+			isa = PBXGroup;
+			children = (
+				E31968161E4AA64D004AC122 /* mpMediaPickerTest */,
+				E31968301E4AA64D004AC122 /* mpMediaPickerTestTests */,
+				E319683B1E4AA64D004AC122 /* mpMediaPickerTestUITests */,
+				E31968151E4AA64D004AC122 /* Products */,
+				E319684A1E4AA699004AC122 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E31968151E4AA64D004AC122 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E31968141E4AA64D004AC122 /* mpMediaPickerTest.app */,
+				E319682D1E4AA64D004AC122 /* mpMediaPickerTestTests.xctest */,
+				E31968381E4AA64D004AC122 /* mpMediaPickerTestUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E31968161E4AA64D004AC122 /* mpMediaPickerTest */ = {
+			isa = PBXGroup;
+			children = (
+				E319681A1E4AA64D004AC122 /* AppDelegate.h */,
+				E319681B1E4AA64D004AC122 /* AppDelegate.m */,
+				E319681D1E4AA64D004AC122 /* ViewController.h */,
+				E319681E1E4AA64D004AC122 /* ViewController.m */,
+				E31968201E4AA64D004AC122 /* Main.storyboard */,
+				E31968231E4AA64D004AC122 /* Assets.xcassets */,
+				E31968251E4AA64D004AC122 /* LaunchScreen.storyboard */,
+				E31968281E4AA64D004AC122 /* Info.plist */,
+				E31968171E4AA64D004AC122 /* Supporting Files */,
+			);
+			path = mpMediaPickerTest;
+			sourceTree = "<group>";
+		};
+		E31968171E4AA64D004AC122 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E31968181E4AA64D004AC122 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E31968301E4AA64D004AC122 /* mpMediaPickerTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				E31968311E4AA64D004AC122 /* mpMediaPickerTestTests.m */,
+				E31968331E4AA64D004AC122 /* Info.plist */,
+			);
+			path = mpMediaPickerTestTests;
+			sourceTree = "<group>";
+		};
+		E319683B1E4AA64D004AC122 /* mpMediaPickerTestUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E319683C1E4AA64D004AC122 /* mpMediaPickerTestUITests.m */,
+				E319683E1E4AA64D004AC122 /* Info.plist */,
+			);
+			path = mpMediaPickerTestUITests;
+			sourceTree = "<group>";
+		};
+		E319684A1E4AA699004AC122 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E319684B1E4AA699004AC122 /* MediaPlayer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E31968131E4AA64D004AC122 /* mpMediaPickerTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E31968411E4AA64D004AC122 /* Build configuration list for PBXNativeTarget "mpMediaPickerTest" */;
+			buildPhases = (
+				E31968101E4AA64D004AC122 /* Sources */,
+				E31968111E4AA64D004AC122 /* Frameworks */,
+				E31968121E4AA64D004AC122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mpMediaPickerTest;
+			productName = mpMediaPickerTest;
+			productReference = E31968141E4AA64D004AC122 /* mpMediaPickerTest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E319682C1E4AA64D004AC122 /* mpMediaPickerTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E31968441E4AA64D004AC122 /* Build configuration list for PBXNativeTarget "mpMediaPickerTestTests" */;
+			buildPhases = (
+				E31968291E4AA64D004AC122 /* Sources */,
+				E319682A1E4AA64D004AC122 /* Frameworks */,
+				E319682B1E4AA64D004AC122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E319682F1E4AA64D004AC122 /* PBXTargetDependency */,
+			);
+			name = mpMediaPickerTestTests;
+			productName = mpMediaPickerTestTests;
+			productReference = E319682D1E4AA64D004AC122 /* mpMediaPickerTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E31968371E4AA64D004AC122 /* mpMediaPickerTestUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E31968471E4AA64D004AC122 /* Build configuration list for PBXNativeTarget "mpMediaPickerTestUITests" */;
+			buildPhases = (
+				E31968341E4AA64D004AC122 /* Sources */,
+				E31968351E4AA64D004AC122 /* Frameworks */,
+				E31968361E4AA64D004AC122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E319683A1E4AA64D004AC122 /* PBXTargetDependency */,
+			);
+			name = mpMediaPickerTestUITests;
+			productName = mpMediaPickerTestUITests;
+			productReference = E31968381E4AA64D004AC122 /* mpMediaPickerTestUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E319680C1E4AA64D004AC122 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "AandA Development";
+				TargetAttributes = {
+					E31968131E4AA64D004AC122 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 46FKL82M3N;
+						ProvisioningStyle = Automatic;
+					};
+					E319682C1E4AA64D004AC122 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 46FKL82M3N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E31968131E4AA64D004AC122;
+					};
+					E31968371E4AA64D004AC122 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 46FKL82M3N;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E31968131E4AA64D004AC122;
+					};
+				};
+			};
+			buildConfigurationList = E319680F1E4AA64D004AC122 /* Build configuration list for PBXProject "mpMediaPickerTest" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E319680B1E4AA64D004AC122;
+			productRefGroup = E31968151E4AA64D004AC122 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E31968131E4AA64D004AC122 /* mpMediaPickerTest */,
+				E319682C1E4AA64D004AC122 /* mpMediaPickerTestTests */,
+				E31968371E4AA64D004AC122 /* mpMediaPickerTestUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E31968121E4AA64D004AC122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E31968271E4AA64D004AC122 /* LaunchScreen.storyboard in Resources */,
+				E31968241E4AA64D004AC122 /* Assets.xcassets in Resources */,
+				E31968221E4AA64D004AC122 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E319682B1E4AA64D004AC122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E31968361E4AA64D004AC122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E31968101E4AA64D004AC122 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E319681F1E4AA64D004AC122 /* ViewController.m in Sources */,
+				E319681C1E4AA64D004AC122 /* AppDelegate.m in Sources */,
+				E31968191E4AA64D004AC122 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E31968291E4AA64D004AC122 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E31968321E4AA64D004AC122 /* mpMediaPickerTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E31968341E4AA64D004AC122 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E319683D1E4AA64D004AC122 /* mpMediaPickerTestUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E319682F1E4AA64D004AC122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E31968131E4AA64D004AC122 /* mpMediaPickerTest */;
+			targetProxy = E319682E1E4AA64D004AC122 /* PBXContainerItemProxy */;
+		};
+		E319683A1E4AA64D004AC122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E31968131E4AA64D004AC122 /* mpMediaPickerTest */;
+			targetProxy = E31968391E4AA64D004AC122 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E31968201E4AA64D004AC122 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E31968211E4AA64D004AC122 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E31968251E4AA64D004AC122 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E31968261E4AA64D004AC122 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E319683F1E4AA64D004AC122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		E31968401E4AA64D004AC122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E31968421E4AA64D004AC122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = mpMediaPickerTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AandA.mpMediaPickerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E31968431E4AA64D004AC122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = mpMediaPickerTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AandA.mpMediaPickerTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E31968451E4AA64D004AC122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = mpMediaPickerTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AandA.mpMediaPickerTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mpMediaPickerTest.app/mpMediaPickerTest";
+			};
+			name = Debug;
+		};
+		E31968461E4AA64D004AC122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = mpMediaPickerTestTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AandA.mpMediaPickerTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mpMediaPickerTest.app/mpMediaPickerTest";
+			};
+			name = Release;
+		};
+		E31968481E4AA64D004AC122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = mpMediaPickerTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AandA.mpMediaPickerTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = mpMediaPickerTest;
+			};
+			name = Debug;
+		};
+		E31968491E4AA64D004AC122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 46FKL82M3N;
+				INFOPLIST_FILE = mpMediaPickerTestUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = AandA.mpMediaPickerTestUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = mpMediaPickerTest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E319680F1E4AA64D004AC122 /* Build configuration list for PBXProject "mpMediaPickerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E319683F1E4AA64D004AC122 /* Debug */,
+				E31968401E4AA64D004AC122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E31968411E4AA64D004AC122 /* Build configuration list for PBXNativeTarget "mpMediaPickerTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E31968421E4AA64D004AC122 /* Debug */,
+				E31968431E4AA64D004AC122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E31968441E4AA64D004AC122 /* Build configuration list for PBXNativeTarget "mpMediaPickerTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E31968451E4AA64D004AC122 /* Debug */,
+				E31968461E4AA64D004AC122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E31968471E4AA64D004AC122 /* Build configuration list for PBXNativeTarget "mpMediaPickerTestUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E31968481E4AA64D004AC122 /* Debug */,
+				E31968491E4AA64D004AC122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E319680C1E4AA64D004AC122 /* Project object */;
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="jLv-W1-ls1">
+                                <rect key="frame" x="85.5" y="537" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="AD6-1S-MIq"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderWidthChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="yAE-de-jfy"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ee3-M7-B80">
+                                <rect key="frame" x="85" y="462" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Ydu-42-OD6"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderWidthChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="g99-bC-3F7"/>
+                                </connections>
+                            </slider>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wCR-Mi-fRo">
+                                <rect key="frame" x="85.5" y="617" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Sp3-ZP-dAN"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderWidthChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="gNU-EA-k3C"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opf-Ns-Fou">
+                                <rect key="frame" x="16" y="607" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="leo-mz-RAO"/>
+                                </constraints>
+                                <state key="normal" title="Get Image"/>
+                                <connections>
+                                    <action selector="btnGetImagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IoR-DT-Prx"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="cog-LB-Hwk">
+                                <rect key="frame" x="85" y="408" width="204" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="gQ9-Hf-zaW"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderWidthChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="CDh-mO-kXx"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ee3-M7-B80" firstAttribute="top" secondItem="cog-LB-Hwk" secondAttribute="bottom" constant="24" id="3e4-4P-9j6"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wCR-Mi-fRo" secondAttribute="bottom" constant="20" id="6d1-kX-UY4"/>
+                            <constraint firstItem="cog-LB-Hwk" firstAttribute="leading" secondItem="ee3-M7-B80" secondAttribute="leading" id="D6O-qo-jNn"/>
+                            <constraint firstItem="jLv-W1-ls1" firstAttribute="top" secondItem="ee3-M7-B80" secondAttribute="bottom" constant="45" id="DOL-OM-DRz"/>
+                            <constraint firstItem="wCR-Mi-fRo" firstAttribute="top" secondItem="jLv-W1-ls1" secondAttribute="bottom" constant="50" id="Izn-cL-QBr"/>
+                            <constraint firstItem="jLv-W1-ls1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M4G-w3-KKb"/>
+                            <constraint firstItem="cog-LB-Hwk" firstAttribute="centerX" secondItem="ee3-M7-B80" secondAttribute="centerX" id="RTY-4w-tiF"/>
+                            <constraint firstItem="opf-Ns-Fou" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Tqn-YQ-nCV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="opf-Ns-Fou" secondAttribute="bottom" constant="30" id="dUb-Lh-0P3"/>
+                            <constraint firstItem="ee3-M7-B80" firstAttribute="leading" secondItem="jLv-W1-ls1" secondAttribute="leading" id="qSg-6C-VnC"/>
+                            <constraint firstItem="wCR-Mi-fRo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zhB-k5-Cpi"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnGetImage" destination="opf-Ns-Fou" id="mFt-Uf-iwA"/>
+                        <outlet property="sliderHeight" destination="jLv-W1-ls1" id="YKS-2R-bPf"/>
+                        <outlet property="sliderWidth" destination="wCR-Mi-fRo" id="Uwi-kb-AFY"/>
+                        <outlet property="sliderX" destination="cog-LB-Hwk" id="Mmm-ab-Q7G"/>
+                        <outlet property="sliderY" destination="ee3-M7-B80" id="mVA-jG-K39"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
