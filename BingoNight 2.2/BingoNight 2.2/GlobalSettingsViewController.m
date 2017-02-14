@@ -46,13 +46,32 @@
     _height = [UIScreen mainScreen].bounds.size.height;
     _width = [UIScreen mainScreen].bounds.size.width;
     
-  
+  //SET UP SLIDER
+    _totalWidth = [UIScreen mainScreen].bounds.size.width;
+    _totalHeight = [UIScreen mainScreen].bounds.size.height;
+    
+    
+    _sliderWidth.minimumValue = 0;
+    _sliderWidth.maximumValue = _totalWidth;
+    
+    _sliderHeight.minimumValue = 0;
+    _sliderHeight.maximumValue = _totalHeight*.5+50;
+    
+    _sliderX.minimumValue = 0;
+    _sliderX.maximumValue=_totalWidth;
+    
+    _sliderY.minimumValue = 50;
+    _sliderY.maximumValue = _totalHeight*.5;
+    
+    
     //OTHER
   //  _fontSize = [[UITextField alloc] initWithFrame:CGRectMake(875, 650, 50, 50)];
     
    // [_fontSize setDelegate:self];
    // [_fontSize addTarget:self action:@selector(fontSizeStartEdit:) forControlEvents:UIControlEventEditingDidBegin];
    // [_fontSize addTarget:self action:@selector(fontSizeEndEdit:) forControlEvents:UIControlEventEditingDidEnd];
+    
+    
     _fontSize.text = @"Size";
     _fontSize.backgroundColor = [UIColor whiteColor];
     _fontSize.layer.borderColor = [[UIColor blackColor] CGColor];
@@ -152,6 +171,7 @@
     
 }
 
+#pragma mark LOAD ARRAYS AND SETTINGS
 
 -(void)loadPickerArrays {
     
@@ -194,6 +214,11 @@
                                 @1,@1,@1, //12,13,14 is ball roll, display and drop seconds;
                                 @1, //15 is smart selector on (i.e. value of one)
                                 @1, //16 use Special Checking is on
+                                @1, //17 add image is ON.
+                                @10, //18 X coordinate of image
+                                @10, //19  Y coordinate of image
+                                @100, //20 width of image
+                                @100, //21 height of image
                                 nil];
         
            }
@@ -227,6 +252,15 @@
 }
 
 -(void)applySettings {
+    
+    if ([_arrayGlobalSettings[17] integerValue] == 1) {
+        _sliderX.value = [_arrayGlobalSettings[18] floatValue];
+        _sliderY.value = [_arrayGlobalSettings[19] floatValue];
+        _sliderWidth.value = [_arrayGlobalSettings[20] floatValue];
+        _sliderHeight.value = [_arrayGlobalSettings[21] floatValue];
+        [self setFrameOfUIImageView];
+    }
+    
     
     _nameOfEvent.textColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:2] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:3] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:4]floatValue]/255 alpha:1];
     
@@ -513,7 +547,7 @@
 //NOTE: this works because added delegate statement <UITextFieldDelegate> in h file
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    _changeHappened = YES;
+   // _changeHappened = YES;
     [textField resignFirstResponder];
     return YES;
 }
@@ -596,5 +630,101 @@
 }
 - (IBAction)btnSetUpRaffleSelected:(id)sender {
 }
+
+
+#pragma mark IMAGE HANDLING HERE
+
+-(void)setUpImageComponents {
+    
+    
+}
+/*
+Steps:
+ If useImage = 1,
+ Create Frame using positions from array
+ Populate Frame with photo
+ 
+ For adjust frame:
+ remove frame and redraw. Do not retrieve photo
+ 
+ For button press to choose image
+ remove frame
+ create frame using positions in array
+ Populate frame with photo
+ 
+*/
+- (IBAction)btnImagePressed:(id)sender {
+    _sliderWidth.value = 100;
+    _sliderHeight.value = 100;
+    [self setFrameOfUIImageView];
+    _ipc = [[UIImagePickerController alloc] init];
+    
+    _ipc.delegate = self;
+    _ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    //ipc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    
+    _popover = [[UIPopoverController alloc] initWithContentViewController:_ipc];
+    
+    [_popover presentPopoverFromRect:_btnImage.frame  inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+   
+}
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    [_popover dismissPopoverAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    _imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+   
+    [self saveImage];
+    
+    
+    
+}
+-(void)setFrameOfUIImageView{
+    
+    if (_sliderX.value>_totalWidth-_sliderWidth.value) {
+        _sliderX.value =_totalWidth-_sliderWidth.value;
+    }
+    
+    if (_sliderY.value > _totalHeight*.5+50 - _sliderHeight.value) {
+        _sliderY.value = _totalHeight*.5+50 - _sliderHeight.value;
+    }
+ 
+    
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(_sliderX.value, _sliderY.value, _sliderWidth.value, _sliderHeight.value)];
+    [self.view addSubview:_imageView];
+    _imageView.layer.borderWidth = 3;
+    
+    [self getImageView:self];
+    
+    
+    [self.view bringSubviewToFront:_imageView];
+    
+    
+    
+}
+
+- (IBAction)sliderImageChange:(id)sender {
+    
+    [_imageView removeFromSuperview];
+    [self setFrameOfUIImageView];
+    
+}
+
+-(void)saveImage{
+    NSData *data = UIImagePNGRepresentation(_imageView.image);
+    
+    [DefaultsDataManager saveData:data forKey:@"imageKey"];
+    
+}
+
+-(IBAction)getImageView:(id)sender {
+   
+ //   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+   // _imageView.image = [UIImage imageWithData:[defaults objectForKey:@"someKey"]];
+    _imageView.image = [UIImage imageWithData:[DefaultsDataManager getDataForKey:@"imageKey"]];
+    
+}
+
 
 @end

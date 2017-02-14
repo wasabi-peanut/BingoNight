@@ -1214,6 +1214,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="D4d-Nf-4Xb" userLabel="Horizontal Move Slider">
                                 <rect key="frame" x="208.5" y="434.5" width="197.5" height="31"/>
+                                <connections>
+                                    <action selector="sliderImageChange:" destination="YIq-qZ-unX" eventType="valueChanged" id="80F-fq-AcC"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Horizontal Adjust" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIA-Aj-xCt">
                                 <rect key="frame" x="210.5" y="434.5" width="193.5" height="30"/>
@@ -1266,6 +1269,9 @@
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1vW-nx-XqU" userLabel="Vertical Move Slider">
                                 <rect key="frame" x="413" y="434" width="198" height="31"/>
+                                <connections>
+                                    <action selector="sliderImageChange:" destination="YIq-qZ-unX" eventType="valueChanged" id="Kx3-Fn-R0G"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vertical Adjust" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dg-Vp-zT4">
                                 <rect key="frame" x="415" y="434.5" width="194" height="30"/>
@@ -1275,6 +1281,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="taz-Kf-hKj" userLabel="Width Slider">
                                 <rect key="frame" x="618" y="434" width="197.5" height="31"/>
+                                <connections>
+                                    <action selector="sliderImageChange:" destination="YIq-qZ-unX" eventType="valueChanged" id="DHZ-k0-p7u"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust Width" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fur-FM-vQv">
                                 <rect key="frame" x="620" y="434.5" width="193.5" height="30"/>
@@ -1284,6 +1293,9 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="19z-gF-g6j" userLabel="Height Slider">
                                 <rect key="frame" x="822.5" y="434" width="178.5" height="31"/>
+                                <connections>
+                                    <action selector="sliderImageChange:" destination="YIq-qZ-unX" eventType="valueChanged" id="bs2-QU-Vsu"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adjust Height" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DrD-cL-UZ1">
                                 <rect key="frame" x="824.5" y="434.5" width="174.5" height="30"/>
@@ -1294,6 +1306,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKv-xT-PCI">
                                 <rect key="frame" x="20" y="434" width="184.5" height="30"/>
                                 <state key="normal" title="Remove Image"/>
+                                <connections>
+                                    <action selector="btnImagePressed:" destination="YIq-qZ-unX" eventType="touchUpInside" id="Aua-Yo-MU4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 card each page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iT6-E8-Jop">
                                 <rect key="frame" x="153" y="488.5" width="134" height="21"/>
@@ -1445,6 +1460,7 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="20" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="btnImage" destination="DKv-xT-PCI" id="wy3-dy-tDF"/>
                         <outlet property="btnMakeCards" destination="8iM-Q4-XMj" id="F6Q-wP-akX"/>
                         <outlet property="btnSetUpChecking" destination="WFi-Bw-r52" id="oqL-vP-wNE"/>
                         <outlet property="btnSetUpRaffle" destination="uRb-Ov-aNY" id="abX-wZ-4N4"/>
@@ -1458,7 +1474,11 @@
                         <outlet property="segmentTextOrBackground" destination="grC-dF-rMO" id="77J-L2-xmO"/>
                         <outlet property="sliderBlue" destination="XQy-rL-Das" id="eFe-kD-IYd"/>
                         <outlet property="sliderGreen" destination="bQW-p6-f5k" id="gm5-jg-7h0"/>
+                        <outlet property="sliderHeight" destination="19z-gF-g6j" id="saT-54-AHg"/>
                         <outlet property="sliderRed" destination="AS6-wA-yB3" id="Ohf-Wf-yvJ"/>
+                        <outlet property="sliderWidth" destination="taz-Kf-hKj" id="kQr-zY-De5"/>
+                        <outlet property="sliderX" destination="D4d-Nf-4Xb" id="EhC-5x-YMG"/>
+                        <outlet property="sliderY" destination="1vW-nx-XqU" id="1wm-k4-OBt"/>
                         <outlet property="stepperDisplay" destination="aFo-TF-3z9" id="Ygf-lA-My5"/>
                         <outlet property="stepperDrop" destination="g2Q-Ad-1A7" id="MKj-Zr-G6H"/>
                         <outlet property="stepperRoll" destination="MdL-Lr-jU4" id="PVG-GX-HLZ"/>
@@ -1599,18 +1619,18 @@
                                 <rect key="frame" x="0.0" y="27" width="703" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Coa-np-gK6" id="X9s-r9-bAf">
-                                    <rect key="frame" x="0.0" y="0.0" width="703" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="703" height="43"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bOr-0h-6oj">
-                                            <rect key="frame" x="15.5" y="5" width="33.5" height="20.5"/>
+                                            <rect key="frame" x="15" y="4" width="34" height="21"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6kX-gx-gmk">
-                                            <rect key="frame" x="15.5" y="25.5" width="44" height="14.5"/>
+                                            <rect key="frame" x="15" y="25" width="44" height="15"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -1726,11 +1746,11 @@
                                 <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T27-5v-WSZ" id="J5X-Ky-F9L">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EhY-dj-6pi">
-                                            <rect key="frame" x="176" y="0.0" width="672" height="43.5"/>
+                                            <rect key="frame" x="176" y="0.0" width="672" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>

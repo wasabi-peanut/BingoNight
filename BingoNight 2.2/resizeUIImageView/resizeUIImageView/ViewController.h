@@ -16,20 +16,22 @@
 
 @property (weak, nonatomic) IBOutlet UISlider *sliderWidth;
 @property (weak, nonatomic) IBOutlet UISlider *sliderY;
-
 @property (weak, nonatomic) IBOutlet UISlider *sliderX;
+
 @property float totalWidth;
 @property float totalHeight;
 @property float frameWidth;
 @property float frameHeight;
+
 - (IBAction)sliderWidthChange:(id)sender;
 
 @property UIImageView *imageView;
-@property UITextView *textView;
+
 @property (weak, nonatomic) IBOutlet UIButton *btnGetImage;
 - (IBAction)btnGetImagePressed:(id)sender;
 
-@property UIPopoverController *popover;
 
+@property UIPopoverController *popover;
+@property UITextView *textView;
 @end
 

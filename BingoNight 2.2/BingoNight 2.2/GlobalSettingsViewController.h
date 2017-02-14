@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GlobalSettingsViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate>
+@interface GlobalSettingsViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate>
 
 
 //COLUMN SWITCH
@@ -108,5 +108,32 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnSetUpRaffle;
 - (IBAction)btnSetUpRaffleSelected:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *txtRaffleSetUp;
+
+
+//IMAGE HANDLING
+
+//@interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate>
+
+@property UIImagePickerController *ipc;
+
+@property (weak, nonatomic) IBOutlet UISlider *sliderHeight;
+@property (weak, nonatomic) IBOutlet UISlider *sliderWidth;
+@property (weak, nonatomic) IBOutlet UISlider *sliderY;
+@property (weak, nonatomic) IBOutlet UISlider *sliderX;
+
+@property float totalWidth;
+@property float totalHeight;
+@property float frameWidth;
+@property float frameHeight;
+
+- (IBAction)sliderImageChange:(id)sender;
+
+@property UIImageView *imageView;
+
+@property (weak, nonatomic) IBOutlet UIButton *btnImage;
+- (IBAction)btnImagePressed:(id)sender;
+
+
+@property UIPopoverController *popover;
 
 @end
