@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
-@interface GlobalSettingsViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate>
+
+
+@interface GlobalSettingsViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate, MPMediaPickerControllerDelegate>
+
 
 
 //COLUMN SWITCH
@@ -135,5 +139,19 @@
 
 
 @property UIPopoverController *popover;
+
+//THEME SONG
+
+@property (strong, nonatomic) IBOutlet UIButton *btnChoose;
+- (IBAction)btnChoosePressed:(UIButton *)sender;
+
+@property NSURL *targetURL;
+@property MPMusicPlayerController  *mediaPicker;
+@property MPMusicPlayerController *musicPlayer;
+@property MPMediaItem *item;
+@property MPMediaItemCollection *mediaItemCollection;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *labelSongData;
 
 @end

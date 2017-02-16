@@ -26,6 +26,9 @@
 
 - (void)viewDidLoad {
     
+    
+
+    
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lilac.jpg"]];
 
     
@@ -214,7 +217,7 @@
                                 @1,@1,@1, //12,13,14 is ball roll, display and drop seconds;
                                 @1, //15 is smart selector on (i.e. value of one)
                                 @1, //16 use Special Checking is on
-                                @1, //17 add image is ON.
+                                @0, //17 add image is Off.
                                 @10, //18 X coordinate of image
                                 @10, //19  Y coordinate of image
                                 @100, //20 width of image
@@ -245,6 +248,10 @@
     
     
     [self.view addSubview:_nameOfEvent];
+    if ([_arrayGlobalSettings[17] integerValue] == 1) {
+        [self yesImageExist];
+    }
+
     
     [self applySettings];
     
@@ -253,13 +260,6 @@
 
 -(void)applySettings {
     
-    if ([_arrayGlobalSettings[17] integerValue] == 1) {
-        _sliderX.value = [_arrayGlobalSettings[18] floatValue];
-        _sliderY.value = [_arrayGlobalSettings[19] floatValue];
-        _sliderWidth.value = [_arrayGlobalSettings[20] floatValue];
-        _sliderHeight.value = [_arrayGlobalSettings[21] floatValue];
-        [self setFrameOfUIImageView];
-    }
     
     
     _nameOfEvent.textColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:2] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:3] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:4]floatValue]/255 alpha:1];
@@ -287,7 +287,7 @@
     _nameOfEvent.font = [UIFont fontWithName:_font size:size];
     
     _fontSize.text = [NSString stringWithFormat:@"%@",[_arrayGlobalSettings objectAtIndex:9]];
-    
+   
     float startRow1 = [[_arrayGlobalSettings objectAtIndex:10] floatValue];
     float startRow2 =[[_arrayGlobalSettings objectAtIndex:11] floatValue];
 
@@ -392,13 +392,8 @@
 
 -(void)saveSettings {
     
-    
     [DefaultsDataManager saveData:_arrayGlobalSettings forKey:_keyForGlobalSettings];
-    
-   
-    
-   
-  
+
 }
 
 //PICKER CODE
@@ -634,50 +629,65 @@
 
 #pragma mark IMAGE HANDLING HERE
 
--(void)setUpImageComponents {
+-(void)yesImageExist {
     
+    [self makeFrame:[_arrayGlobalSettings[18] floatValue] yValue:[_arrayGlobalSettings[19] floatValue] width:[_arrayGlobalSettings[20] floatValue] height:[_arrayGlobalSettings[21] floatValue]];
+        [_btnImage setTitle:@"Remove Image" forState:UIControlStateNormal];
+    _sliderX.value = [_arrayGlobalSettings[18] floatValue];
+    _sliderY.value = [_arrayGlobalSettings[19] floatValue];
+    _sliderWidth.value = [_arrayGlobalSettings[20] floatValue];
+    _sliderHeight.value = [_arrayGlobalSettings[21] floatValue];
+}
+
+-(void)makeFrame: (float)xValue yValue: (float)yValue width: (float)width height:(float)height{
+    
+    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xValue, yValue, width, height)];
+    [self.view addSubview:_imageView];
+    [self.view bringSubviewToFront:_imageView];
+    
+
+   [self loadImage];
     
 }
-/*
-Steps:
- If useImage = 1,
- Create Frame using positions from array
- Populate Frame with photo
- 
- For adjust frame:
- remove frame and redraw. Do not retrieve photo
- 
- For button press to choose image
- remove frame
- create frame using positions in array
- Populate frame with photo
- 
-*/
-- (IBAction)btnImagePressed:(id)sender {
-    _sliderWidth.value = 100;
-    _sliderHeight.value = 100;
-    [self setFrameOfUIImageView];
-    _ipc = [[UIImagePickerController alloc] init];
+
+-(void)loadImage {
+    _imageView.image = [UIImage imageWithData:[DefaultsDataManager getDataForKey:@"imageKey"]];
     
-    _ipc.delegate = self;
-    _ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    //ipc.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
-    
-    _popover = [[UIPopoverController alloc] initWithContentViewController:_ipc];
-    
-    [_popover presentPopoverFromRect:_btnImage.frame  inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+}
+
+-(void)removeImage{
+    [_imageView removeFromSuperview];
    
 }
 
+- (IBAction)btnImagePressed:(id)sender {
+   if ([_arrayGlobalSettings[17] floatValue] == 1) {
+        [_imageView removeFromSuperview];
+        [_btnImage setTitle:@"Get Image" forState:UIControlStateNormal];
+        [_arrayGlobalSettings replaceObjectAtIndex:17 withObject:@0];
+         
+    }
+    
+    else {
+     [_arrayGlobalSettings replaceObjectAtIndex:17 withObject:@1];
+    _ipc = [[UIImagePickerController alloc] init];
+    _ipc.delegate = self;
+    _ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    _popover = [[UIPopoverController alloc] initWithContentViewController:_ipc];
+    
+    [_popover presentPopoverFromRect:_btnImage.frame  inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+    
+}
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
     [_popover dismissPopoverAnimated:YES];
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     _imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
-   
     [self saveImage];
-    
-    
+    [self yesImageExist];
     
 }
 -(void)setFrameOfUIImageView{
@@ -691,16 +701,13 @@ Steps:
     }
  
     
-    _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(_sliderX.value, _sliderY.value, _sliderWidth.value, _sliderHeight.value)];
-    [self.view addSubview:_imageView];
-    _imageView.layer.borderWidth = 3;
     
-    [self getImageView:self];
+    [_arrayGlobalSettings replaceObjectAtIndex:18 withObject:@(_sliderX.value)];
+    [_arrayGlobalSettings replaceObjectAtIndex:19 withObject:@(_sliderY.value)];
+    [_arrayGlobalSettings replaceObjectAtIndex:20 withObject:@(_sliderWidth.value)];
+    [_arrayGlobalSettings replaceObjectAtIndex:21 withObject:@(_sliderHeight.value)];
     
-    
-    [self.view bringSubviewToFront:_imageView];
-    
-    
+    [self yesImageExist];
     
 }
 
@@ -717,12 +724,36 @@ Steps:
     [DefaultsDataManager saveData:data forKey:@"imageKey"];
     
 }
+#pragma mark CHOOSE SONG
 
--(IBAction)getImageView:(id)sender {
+- (IBAction)btnChoosePressed:(id)sender {
+    
+    MPMediaPickerController *mediaPicker= [[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic];
+    mediaPicker.delegate = self;
+    mediaPicker.allowsPickingMultipleItems = NO;
+    [self presentViewController:mediaPicker animated:YES completion:nil];
+    NSLog(@"Chosen");
+    
+}
+
+-(void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker{
+    [self dismissViewControllerAnimated:mediaPicker completion:nil];
    
- //   NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-   // _imageView.image = [UIImage imageWithData:[defaults objectForKey:@"someKey"]];
-    _imageView.image = [UIImage imageWithData:[DefaultsDataManager getDataForKey:@"imageKey"]];
+}
+
+-(void)mediaPicker:(MPMediaPickerController *)mediaPicker didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection{
+    
+   [self dismissViewControllerAnimated:mediaPicker completion:nil];
+    
+    
+    _item = [[mediaItemCollection items] objectAtIndex:0];
+    
+    NSString *keyForData = @"keyThemeSong";
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:mediaItemCollection];
+    [DefaultsDataManager saveData:data forKey:keyForData];
+    
+    _labelSongData.text= [_item valueForProperty:MPMediaItemPropertyTitle];
+   
     
 }
 

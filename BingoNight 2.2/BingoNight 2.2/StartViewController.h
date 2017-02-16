@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
+
 
 @interface StartViewController : UIViewController
 
@@ -22,6 +24,8 @@
 @property CGFloat height;
 @property CGFloat width;
 
-
-
+//MUSIC
+@property MPMusicPlayerController *musicPlayer;
+- (IBAction)btnPlay:(id)sender;
+- (IBAction)btnStop:(id)sender;
 @end

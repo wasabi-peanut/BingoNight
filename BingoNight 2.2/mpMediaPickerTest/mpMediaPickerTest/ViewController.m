@@ -66,7 +66,7 @@
     _item = [[mediaItemCollection items] objectAtIndex:0];
     //_mediaItemCollection = mediaItemCollection;
     
-    NSString *keyForData;
+   NSString *keyForData;
     if (_buttonPressed == 1) {
         keyForData = @"keySongOne";
     }
@@ -90,7 +90,7 @@
     NSUserDefaults *defaults2 = [NSUserDefaults standardUserDefaults];
     [defaults2 setObject:label forKey:@"songText"];
     [defaults2 synchronize];
-
+    NSLog(@"Here");
     
     
 //    [_musicPlayer setQueueWithItemCollection:mediaItemCollection];

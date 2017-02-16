@@ -6,8 +6,12 @@
 	<string>en</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>$(PRODUCT_NAME)photo use</string>
+	<key>kTCCServiceMediaLibrary</key>
+	<string>$(PRODUCT_NAME)music use</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>$(PRODUCT_NAME)media use</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>

@@ -24,6 +24,7 @@
 
 
 - (void)viewDidLoad {
+    _musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
     
 
     _keyForNumberOfGames = @"keyForNumberOfGames";
@@ -78,16 +79,22 @@
     
     if (![_arrayGlobalSettings count]) {
         _arrayGlobalSettings = [[NSMutableArray alloc]initWithObjects:@(YES),@"Name of Event",//UseSelector and Name 0,1
-                                @100,@100,@100,//text color 2,3,4
+                                @0,@0,@0,//text color 2,3,4
                                 @0,@255,@0,//background to text 5,6,7
-                                @"Courier",@64, //font and size 8,9
-                                @1, //10 is row number for font;
-                                @1, //11 is row number for size;
-                                @4,@3,@2, //12-14 is delay seconds for Roll, Display and Drop;
+                                @"Arial",@64, //font and size 8,9
+                                @5, //10 is row number for font;
+                                @13, //11 is row number for size;
+                                @1,@1,@1, //12,13,14 is ball roll, display and drop seconds;
+                                @1, //15 is smart selector on (i.e. value of one)
+                                @0, //16 use Special Checking is ON
+                                @1, //17 add image is OFF.
+                                @10, //18 X coordinate of image
+                                @10, //19  Y coordinate of image
+                                @100, //20 width of image
+                                @100, //21 height of image
                                 nil];
         
     }
-
     
     
     _numberOfGames = [[DefaultsDataManager getDataForKey:_keyForNumberOfGames] integerValue];
@@ -208,10 +215,18 @@
     _nameOfEvent.editable = NO;
     _nameOfEvent.scrollEnabled =NO;
     
-    
     [self.view addSubview:_nameOfEvent];
     
-  
+    float xValue = [_arrayGlobalSettings[18] floatValue];
+    float yValue = [_arrayGlobalSettings[19] floatValue];
+    float width = [_arrayGlobalSettings[20] floatValue];
+    float height = [_arrayGlobalSettings[21] floatValue];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xValue, yValue, width, height)];
+    imageView.image = [UIImage imageWithData:[DefaultsDataManager getDataForKey:@"imageKey"]];
+    [self.view addSubview:imageView];
+    [self.view bringSubviewToFront:imageView];
+    
     
 
     
@@ -234,6 +249,16 @@
     }
 }
 
-//current
+#pragma mark PLAY SONG
+-(IBAction)btnPlay:(id)sender{
+    NSData *data = [DefaultsDataManager getDataForKey:@"keyThemeSong"];
+    MPMediaItemCollection *mediaItemCollection = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+    [_musicPlayer setQueueWithItemCollection:mediaItemCollection];
+    [_musicPlayer play];
+}
+
+-(IBAction)btnStop:(id)sender{
+    [_musicPlayer stop];
+}
 
 @end
