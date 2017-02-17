@@ -992,6 +992,9 @@
     [_arrayCalledBalls[0] removeFromSuperview];
     [_arrayCalledBalls removeObjectAtIndex:0];
     [_arrayCalledNumbers removeLastObject];
+    [_arrayCalledBallsLabels removeObjectAtIndex:0];
+        
+        
         
     [DefaultsDataManager saveData:_arrayCalledNumbers forKey:_keyForCalledNumbers];
     
@@ -1102,7 +1105,7 @@
     enlarge.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     enlarge.fromValue = [NSNumber numberWithFloat:1.0f];
     enlarge.toValue = [NSNumber numberWithFloat:4.0f];
-    enlarge.duration = _ballDisplayTime;
+    enlarge.duration = _ballDisplayTime/2;
     enlarge.removedOnCompletion = NO;
     [enlarge setBeginTime:CACurrentMediaTime()+_ballRollTime+1];
     enlarge.fillMode = kCAFillModeForwards;
@@ -1132,12 +1135,15 @@
     [CATransaction begin];
     
     [CATransaction setCompletionBlock:^{
-        if (_ballCount>5) {
-            [((BallColorView *)_arrayCalledBalls[5]) removeFromSuperview];
-            [_arrayCalledBalls removeObjectAtIndex:5];
-            [_arrayCalledBallsLabels removeObjectAtIndex:5];
+        //testing high number. Check memory. Was 6 and 5. 10 was ok. Trying bypassing this, saving all balls
+   /*     if (_arrayCalledBalls.count>10) {
+            [((BallColorView *)_arrayCalledBalls[9]) removeFromSuperview];
+            [_arrayCalledBalls removeObjectAtIndex:9];
+            [_arrayCalledBallsLabels removeObjectAtIndex:9];
+            NSLog(@"Point 1:ArrayBalls has %lu objects and arrayLabel has %lu objects",(unsigned long)_arrayCalledBalls.count,(unsigned long)_arrayCalledBallsLabels.count);
             
-        }
+        }*/
+        
         
             _ready = YES;
         [self createBar];
@@ -1151,9 +1157,6 @@
                 }
             }
             
-            //UIButton *currentButton = [_arrayButtonsCreated objectAtIndex:_ballCount-1];
-            //currentButton.backgroundColor = _usedBoxBackgroundColor;
-            //currentButton.tintColor = _usedBoxLetterColor;
         }
       
     }];
@@ -1165,7 +1168,7 @@
     shrink.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     shrink.fromValue  = [NSNumber numberWithFloat:4.0f];
     shrink.toValue =[NSNumber numberWithFloat:1.0f];
-    shrink.duration = 1;
+    shrink.duration = _ballDisplayTime/2;
     shrink.autoreverses = NO;
     shrink.fillMode = kCAFillModeForwards;
     shrink.removedOnCompletion = NO;
@@ -1266,25 +1269,27 @@
     [((UILabel *) _arrayCalledBallsLabels[0]).layer addAnimation:spin forKey:nil];
     [((BallColorView *)_arrayCalledBalls[0]).layer addAnimation:bounce forKey:nil];
     
-    if (_ballCount>1) {
+    if (_arrayCalledBalls.count>1) {
        [((BallColorView *)_arrayCalledBalls[1]).layer addAnimation:shiftRight1 forKey:nil];
         [((UILabel *) _arrayCalledBallsLabels[1]).layer addAnimation:spinToRight forKey:nil];
 
     }
-    if (_ballCount>2) {
+    if (_arrayCalledBalls.count>2) {
         [((BallColorView *)_arrayCalledBalls[2]).layer addAnimation:shiftRight2 forKey:nil];
         [((UILabel *) _arrayCalledBallsLabels[2]).layer addAnimation:spinToRight forKey:nil];
     }
-    if (_ballCount>3) {
+    if (_arrayCalledBalls.count>3) {
         [((BallColorView *)_arrayCalledBalls[3]).layer addAnimation:shiftRight3 forKey:nil];
         [((UILabel *) _arrayCalledBallsLabels[3]).layer addAnimation:spinToRight forKey:nil];
     }
-    if (_ballCount>4) {
+    if (_arrayCalledBalls.count>4) {
         [((BallColorView *)_arrayCalledBalls[4]).layer addAnimation:shiftRight4 forKey:nil];
         [((UILabel *) _arrayCalledBallsLabels[4]).layer addAnimation:spinToRight forKey:nil];
     }
 
-    if (_ballCount>5) {
+    if (_arrayCalledBalls.count>5) {
+       
+        
         [((BallColorView *)_arrayCalledBalls[5]).layer addAnimation:shiftRight5 forKey:nil];
         [((UILabel *) _arrayCalledBallsLabels[5]).layer addAnimation:spinToRight forKey:nil];
         
