@@ -234,7 +234,7 @@
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
-    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 50, width, height/2)];
+    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 45, width, height/2)];
     _nameOfEvent.layer.borderColor = [[UIColor blackColor] CGColor];
     _nameOfEvent.layer.borderWidth = 5;
     _nameOfEvent.font = [UIFont fontWithName:fontName size:fontSize];
