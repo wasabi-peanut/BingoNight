@@ -16,12 +16,9 @@
 
 
 //COLUMN SWITCH
-
 @property (strong, nonatomic) IBOutlet UISwitch *switchUnmarkedColumns;
 - (IBAction)switchUnmarkedColumnsChanged:(id)sender;
 @property BOOL skipUnmarkedColumns;
-
-
 
 
 @property (strong,nonatomic) NSMutableArray *arrayGlobalSettings;
@@ -52,13 +49,9 @@
 
 
 //OTHER
-
 @property (strong, nonatomic) UITextView *nameOfEvent;
-
 @property float height;
 @property float width;
-
-
 
 @property Boolean changeHappened;
 

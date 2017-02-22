@@ -23,8 +23,13 @@
 
 @property CGFloat height;
 @property CGFloat width;
+@property (strong, nonatomic) IBOutlet UIButton *btnRaffle;
 
 //MUSIC
+@property (strong, nonatomic) IBOutlet UIButton *btnPlay;
+@property (strong, nonatomic) IBOutlet UIButton *btnStop;
+
+
 @property MPMusicPlayerController *musicPlayer;
 - (IBAction)btnPlay:(id)sender;
 - (IBAction)btnStop:(id)sender;

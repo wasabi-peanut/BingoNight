@@ -643,8 +643,11 @@
     */
    
 #pragma mark SET UP GAME COMMENTS BOX
+    NSString *length = _arrayGameComments[_incomingGameNumber-1];
+    NSString *trimmed = [length stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSUInteger len = trimmed.length;
     
-    if ([_arrayGameComments[_incomingGameNumber-1] isEqualToString:@" "]) {
+    if (len == 0) {
         _labelGameComments.layer.borderColor = [_screenBackgroundColor CGColor];
         _labelGameComments.layer.borderWidth =0;
         _labelGameComments.backgroundColor = _screenBackgroundColor;
@@ -1105,7 +1108,7 @@
     enlarge.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     enlarge.fromValue = [NSNumber numberWithFloat:1.0f];
     enlarge.toValue = [NSNumber numberWithFloat:4.0f];
-    enlarge.duration = _ballDisplayTime/2;
+    enlarge.duration = _ballDisplayTime/4.0f;
     enlarge.removedOnCompletion = NO;
     [enlarge setBeginTime:CACurrentMediaTime()+_ballRollTime+1];
     enlarge.fillMode = kCAFillModeForwards;
@@ -1164,11 +1167,11 @@
  
     
     CABasicAnimation *shrink = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    shrink.beginTime = CACurrentMediaTime() + _ballDisplayTime;
+    shrink.beginTime = CACurrentMediaTime() + _ballDisplayTime/4.0f;
     shrink.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
     shrink.fromValue  = [NSNumber numberWithFloat:4.0f];
     shrink.toValue =[NSNumber numberWithFloat:1.0f];
-    shrink.duration = _ballDisplayTime/2;
+    shrink.duration = _ballDisplayTime/4.0f;
     shrink.autoreverses = NO;
     shrink.fillMode = kCAFillModeForwards;
     shrink.removedOnCompletion = NO;
@@ -1186,7 +1189,7 @@
     CABasicAnimation *moveDown = [CABasicAnimation animationWithKeyPath:@"transform.translation.y" ];
     [moveDown setFromValue:[NSNumber numberWithFloat:0]];
     [moveDown setByValue:[NSNumber numberWithFloat:_height-_ballStartY-_lastCalledHeight/2]];
-    [moveDown setBeginTime:CACurrentMediaTime() + 2 + _ballDisplayTime ];
+    [moveDown setBeginTime:CACurrentMediaTime() +  _ballDisplayTime/2.0f ];
     [moveDown setDuration:_ballDropTime];
     moveDown.removedOnCompletion = NO;
     moveDown.autoreverses = NO;
@@ -1196,7 +1199,7 @@
     spin.duration=_ballDropTime;
     spin.repeatCount=1;
     spin.autoreverses=NO;
-    [spin setBeginTime:CACurrentMediaTime() + _ballDisplayTime + 2];
+    [spin setBeginTime:CACurrentMediaTime() + _ballDisplayTime/2.0f];
     spin.fromValue=[NSNumber numberWithFloat:0];
     spin.toValue=[NSNumber numberWithFloat:2*M_PI];
     spin.removedOnCompletion = NO;
@@ -1205,7 +1208,7 @@
     CABasicAnimation *bounce = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
     [bounce setFromValue:[NSNumber numberWithFloat:_height-_ballStartY-_lastCalledHeight/2]];
     [bounce setByValue:[NSNumber numberWithFloat:-5]];
-    [bounce setBeginTime:CACurrentMediaTime() + 2+ _ballDisplayTime + _ballDropTime];
+    [bounce setBeginTime:CACurrentMediaTime() +  _ballDisplayTime/2.0f + _ballDropTime];
     [bounce setDuration:0.25];
     bounce.repeatCount = 2;
     bounce.autoreverses = YES;
@@ -1215,7 +1218,7 @@
     spinToRight.duration=1;
     spinToRight.repeatCount=0;
     spinToRight.autoreverses=NO;
-    [spinToRight setBeginTime:CACurrentMediaTime() + 2 + _ballDisplayTime];
+    [spinToRight setBeginTime:CACurrentMediaTime() + _ballDisplayTime/2.0f];
     spinToRight.fromValue=[NSNumber numberWithFloat:0];
     spinToRight.toValue=[NSNumber numberWithFloat:2*M_PI];
     spinToRight.removedOnCompletion = NO;
@@ -1224,7 +1227,7 @@
 
     CABasicAnimation *shiftRight1 = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
     [shiftRight1 setToValue:[NSNumber numberWithFloat:.45*_width + 100+ 1.5*_lastCalledWidth]];
-    [shiftRight1 setBeginTime:CACurrentMediaTime()+ 2 + _ballDisplayTime];
+    [shiftRight1 setBeginTime:CACurrentMediaTime() + _ballDisplayTime/2.0f];
     [shiftRight1 setDuration:1.0f];
     shiftRight1.autoreverses = NO;
     shiftRight1.removedOnCompletion = NO;
@@ -1232,7 +1235,7 @@
     
     CABasicAnimation *shiftRight2 = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
     [shiftRight2 setToValue:[NSNumber numberWithFloat:.45*_width + 100+ 2.5*_lastCalledWidth]];
-    [shiftRight2 setBeginTime:CACurrentMediaTime()+ 2 + _ballDisplayTime];
+    [shiftRight2 setBeginTime:CACurrentMediaTime() + _ballDisplayTime/2.0f];
     [shiftRight2 setDuration:1.0f];
     shiftRight2.autoreverses = NO;
     shiftRight2.removedOnCompletion = NO;
@@ -1240,7 +1243,7 @@
     
     CABasicAnimation *shiftRight3 = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
     [shiftRight3 setToValue:[NSNumber numberWithFloat:.45*_width + 100+ 3.5*_lastCalledWidth]];
-    [shiftRight3 setBeginTime:CACurrentMediaTime()+ 2 + _ballDisplayTime];
+    [shiftRight3 setBeginTime:CACurrentMediaTime() + _ballDisplayTime/2.0f];
     [shiftRight3 setDuration:1.0f];
     shiftRight3.autoreverses = NO;
     shiftRight3.removedOnCompletion = NO;
@@ -1248,7 +1251,7 @@
     
     CABasicAnimation *shiftRight4 = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
     [shiftRight4 setToValue:[NSNumber numberWithFloat:.45*_width + 100+ 4.5*_lastCalledWidth]];
-    [shiftRight4 setBeginTime:CACurrentMediaTime()+ 2 + _ballDisplayTime];
+    [shiftRight4 setBeginTime:CACurrentMediaTime() + _ballDisplayTime/2.0f];
     [shiftRight4 setDuration:1.0f];
     shiftRight4.autoreverses = NO;
     shiftRight4.removedOnCompletion = NO;
@@ -1256,7 +1259,7 @@
     
     CABasicAnimation *shiftRight5 = [CABasicAnimation animationWithKeyPath:@"transform.translation.x"];
     [shiftRight5 setToValue:[NSNumber numberWithFloat:.45*_width + 100+ 7.5*_lastCalledWidth]];
-    [shiftRight5 setBeginTime:CACurrentMediaTime()+ 2 + _ballDisplayTime];
+    [shiftRight5 setBeginTime:CACurrentMediaTime() + _ballDisplayTime/2.0f];
     [shiftRight5 setDuration:1.0f];
     shiftRight5.autoreverses = NO;
     shiftRight5.removedOnCompletion = NO;

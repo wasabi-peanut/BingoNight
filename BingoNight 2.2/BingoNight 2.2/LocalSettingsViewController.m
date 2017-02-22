@@ -363,12 +363,16 @@
                 UITextField *textField = [_arrayDisplayButtons objectAtIndex:9];
                 textField.enabled = YES;
                 _allowGridEdits = YES;
-               
+             _textFieldNameOfGame.layer.borderColor = [[UIColor yellowColor] CGColor];
+              _textFieldNameOfGame.layer.borderWidth = 8;
+                
                 
             }
         
            else {
                 UITextField *textField = [_arrayDisplayButtons objectAtIndex:9];
+               _textFieldNameOfGame.layer.borderColor = nil;
+               _textFieldNameOfGame.layer.borderWidth = 0;
                 textField.enabled = NO;
                _allowGridEdits = NO;
                

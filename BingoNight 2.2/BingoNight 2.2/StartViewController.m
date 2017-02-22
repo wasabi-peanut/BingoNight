@@ -40,14 +40,17 @@
     
     [self.navigationController setNavigationBarHidden:YES];
     
-    UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _width, _height)];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"baubles.jpg"]];
+    
+    
+ /*   UIView *background = [[UIView alloc] initWithFrame:CGRectMake(0, _height/2, _width, _height/2)];
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = background.bounds;
-    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor grayColor]CGColor],(id)[[UIColor lightGrayColor]CGColor],(id)[[UIColor whiteColor]CGColor], nil];
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor whiteColor]CGColor],(id)[[UIColor lightGrayColor]CGColor],(id)[[UIColor whiteColor]CGColor], nil];
     [background.layer insertSublayer:gradient atIndex:0];
     [self.view addSubview:background];
     [self.view sendSubviewToBack:background];
-    
+   */
     [super viewDidLoad];
     
     
@@ -72,9 +75,6 @@
 
 -(void)importSettings{
     
- 
-    
-    
     _arrayGlobalSettings = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getDataForKey:_keyForGlobalSettings]];
     
     if (![_arrayGlobalSettings count]) {
@@ -84,7 +84,7 @@
                                 @"Arial",@64, //font and size 8,9
                                 @5, //10 is row number for font;
                                 @13, //11 is row number for size;
-                                @1,@1,@1, //12,13,14 is ball roll, display and drop seconds;
+                                @1,@4,@1, //12,13,14 is ball roll, display and drop seconds;
                                 @1, //15 is smart selector on (i.e. value of one)
                                 @0, //16 use Special Checking is ON
                                 @1, //17 add image is OFF.
@@ -92,6 +92,8 @@
                                 @10, //19  Y coordinate of image
                                 @100, //20 width of image
                                 @100, //21 height of image
+                                @0,// 22 DON"T use Raffle
+                                @0,// 23 theme song NOT selected
                                 nil];
         
     }
@@ -128,11 +130,12 @@
         
         gameButton.frame = CGRectMake(startX + space * (i-1), startY, 100 - (4*_numberOfGames) , 100- (4*_numberOfGames));
         [gameButton setTitle:gamenumber forState:UIControlStateNormal];
-        gameButton.layer.borderColor = [[UIColor blueColor] CGColor];
-        gameButton.layer.borderWidth = 3;
+        gameButton.layer.borderColor = [[UIColor redColor] CGColor];
+        gameButton.layer.borderWidth = 5;
         gameButton.layer.cornerRadius = (100 - (4*_numberOfGames))/2;
         gameButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:44];
-        
+        gameButton.backgroundColor = [UIColor whiteColor];
+       
         
         [gameButton addTarget:self action:@selector(gameSelected:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -171,11 +174,12 @@
  
         
         [gameButton setTitle:gamenumber forState:UIControlStateNormal];
-        gameButton.layer.borderColor = [[UIColor blueColor] CGColor];
-        gameButton.layer.borderWidth = 3;
+        gameButton.layer.borderColor = [[UIColor redColor] CGColor];
+        gameButton.layer.borderWidth = 5;
         gameButton.layer.cornerRadius = (100 - (2*_numberOfGames))/2;
         gameButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:44];
-        
+        gameButton.backgroundColor = [UIColor whiteColor];
+
         
         [gameButton addTarget:self action:@selector(gameSelected:) forControlEvents:UIControlEventTouchUpInside];
         
@@ -197,12 +201,9 @@
     NSString *fontName = [_arrayGlobalSettings objectAtIndex:8];
     
     
-   
+  
     
-    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 50, _width, _height/2)];
-    
-    _nameOfEvent.layer.borderColor = [[UIColor blackColor] CGColor];
-    _nameOfEvent.layer.borderWidth = 5;
+    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 44, _width, _height/2)];
     _nameOfEvent.font = [UIFont fontWithName:fontName size:fontSize];
     _nameOfEvent.textAlignment = NSTextAlignmentCenter;
     _nameOfEvent.text = [_arrayGlobalSettings objectAtIndex:1];
@@ -228,8 +229,25 @@
     [self.view bringSubviewToFront:imageView];
     
     
-
+    if ([_arrayGlobalSettings[22] isEqual:@1]) {
+        _btnRaffle.alpha = 1;
+    }
+    else {
+        _btnRaffle.alpha = 0;
+    }
     
+    if ([_arrayGlobalSettings[23] isEqual:@1]) {
+        _btnPlay.alpha = 1;
+        _btnStop.alpha = 1;
+    }
+    else {
+        _btnPlay.alpha = 0;
+        _btnStop.alpha = 0;
+    }
+
+
+
+
 }
 
 -(IBAction)gameSelected:(UIButton*)sender {

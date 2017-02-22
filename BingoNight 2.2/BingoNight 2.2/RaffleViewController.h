@@ -15,7 +15,13 @@
 @property (strong,nonatomic) NSMutableArray *arrayRaffleItems;
 
 @property (strong,nonatomic) NSString *keyForArrayRaffleItems;
-@property (strong, nonatomic) IBOutlet UITextView *textViewRaffleItems;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewRaffleImage;
+
+
 @property NSInteger lastNumber;
+@property (strong, nonatomic) IBOutlet UILabel *labelRaffleItems;
+
+@property (strong, nonatomic) NSMutableArray *arrayItemsForPicker;
+
 
 @end

@@ -26,8 +26,12 @@
 
 - (void)viewDidLoad {
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
+    [self.view addGestureRecognizer:tapGesture];
     
-
+    _labelNumberOfPages.layer.borderColor = [[UIColor blackColor] CGColor];
+    _labelNumberOfPages.layer.borderWidth = 2;
+    
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"lilac.jpg"]];
 
@@ -58,12 +62,12 @@
     _sliderWidth.maximumValue = _totalWidth;
     
     _sliderHeight.minimumValue = 0;
-    _sliderHeight.maximumValue = _totalHeight*.5+50;
+    _sliderHeight.maximumValue = _totalHeight*.5;
     
     _sliderX.minimumValue = 0;
     _sliderX.maximumValue=_totalWidth;
     
-    _sliderY.minimumValue = 50;
+    _sliderY.minimumValue = 44;
     _sliderY.maximumValue = _totalHeight*.5;
     
     
@@ -140,6 +144,20 @@
         _btnSetUpChecking.enabled = NO;
         
     }
+   //
+    if ([[_arrayGlobalSettings objectAtIndex:22] isEqual:@YES]) {
+        [_switchRaffle setOn:YES];
+        _btnSetUpRaffle.enabled = YES;
+        
+    }
+    
+    else {
+        [_switchRaffle setOn:NO];
+        _btnSetUpRaffle.enabled = NO;
+        
+    }
+    
+    
     
     [self loadPickerArrays];
     
@@ -151,6 +169,9 @@
 
     _stepperDrop.value = [[_arrayGlobalSettings objectAtIndex:14] floatValue];
     _labelDropTime.text = [NSString stringWithFormat:@"%2.1f seconds",_stepperDrop.value];
+    
+    
+    
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -214,7 +235,7 @@
                                 @"Arial",@64, //font and size 8,9
                                 @5, //10 is row number for font;
                                 @13, //11 is row number for size;
-                                @1,@1,@1, //12,13,14 is ball roll, display and drop seconds;
+                                @1,@4,@1, //12,13,14 is ball roll, display and drop seconds;
                                 @1, //15 is smart selector on (i.e. value of one)
                                 @1, //16 use Special Checking is on
                                 @0, //17 add image is Off.
@@ -222,6 +243,8 @@
                                 @10, //19  Y coordinate of image
                                 @100, //20 width of image
                                 @100, //21 height of image
+                                @0,//22  DON"T use raffle
+                                @0,//23 Theme NOT selected
                                 nil];
         
            }
@@ -234,9 +257,9 @@
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
-    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 45, width, height/2)];
-    _nameOfEvent.layer.borderColor = [[UIColor blackColor] CGColor];
-    _nameOfEvent.layer.borderWidth = 5;
+    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 44, width, height/2)];
+   // _nameOfEvent.layer.borderColor = [[UIColor blackColor] CGColor];
+   // _nameOfEvent.layer.borderWidth = 5;
     _nameOfEvent.font = [UIFont fontWithName:fontName size:fontSize];
     _nameOfEvent.textAlignment = NSTextAlignmentCenter;
     
@@ -295,7 +318,22 @@
     [_pickerFonts selectRow:startRow2 inComponent:1 animated:YES];
     
     [self.view bringSubviewToFront:_fontSize];
+
+    NSString *songTitle = [NSString stringWithFormat:@"%@",[DefaultsDataManager getDataForKey:@"keySongName"]];
+  
+    if ([_arrayGlobalSettings[23] isEqual:@0]) {
     
+        _labelSongData.text = @"No Song Selected";
+        }
+    
+    else {
+        _labelSongData.text = songTitle;
+        [_arrayGlobalSettings replaceObjectAtIndex:23 withObject:@1];
+        
+    }
+    
+    _labelSongData.layer.borderWidth = 2;
+    _labelSongData.layer.borderColor = [[UIColor redColor] CGColor];
     
 }
 
@@ -464,7 +502,7 @@
   [self.view bringSubviewToFront:_fontSize];
     
 
-    _changeHappened = YES;
+   // _changeHappened = YES;
     
 }
 
@@ -531,8 +569,9 @@
 
     _nameOfEvent.font = [UIFont fontWithName:_font size:size];
     
+    [_fontSize resignFirstResponder];
     
-    _changeHappened = YES;
+   // _changeHappened = YES;
     
     
     
@@ -622,10 +661,25 @@
      [_labelNumberOfPages setKeyboardType:UIKeyboardTypeNumberPad];
 }
 - (IBAction)switchRaffleValueChange:(id)sender {
+    if ([_arrayGlobalSettings[22] isEqual:@1]) {
+        [_arrayGlobalSettings replaceObjectAtIndex:22 withObject:@0];
+        _btnSetUpRaffle.enabled = NO;
+        }
+    else {
+        [_arrayGlobalSettings replaceObjectAtIndex:22 withObject:@1];
+        _btnSetUpRaffle.enabled = YES;
+
+    }
 }
 - (IBAction)btnSetUpRaffleSelected:(id)sender {
 }
 
+-(void)closeKeyboard{
+    [_fontSize resignFirstResponder];
+    [_labelNumberOfPages resignFirstResponder];
+    
+    
+}
 
 #pragma mark IMAGE HANDLING HERE
 
@@ -696,8 +750,8 @@
         _sliderX.value =_totalWidth-_sliderWidth.value;
     }
     
-    if (_sliderY.value > _totalHeight*.5+50 - _sliderHeight.value) {
-        _sliderY.value = _totalHeight*.5+50 - _sliderHeight.value;
+    if (_sliderY.value > _totalHeight*.5+44 - _sliderHeight.value) {
+        _sliderY.value = _totalHeight*.5+44 - _sliderHeight.value;
     }
  
     
@@ -745,7 +799,6 @@
     
    [self dismissViewControllerAnimated:mediaPicker completion:nil];
     
-    
     _item = [[mediaItemCollection items] objectAtIndex:0];
     
     NSString *keyForData = @"keyThemeSong";
@@ -753,6 +806,10 @@
     [DefaultsDataManager saveData:data forKey:keyForData];
     
     _labelSongData.text= [_item valueForProperty:MPMediaItemPropertyTitle];
+    [DefaultsDataManager saveData:_labelSongData.text forKey:@"keySongName"];
+    
+    [_arrayGlobalSettings replaceObjectAtIndex:23 withObject:@1];
+    
    
     
 }

@@ -10,6 +10,11 @@
 		5897585A1DFE5BBF0004D5AF /* CheckingSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589758591DFE5BBF0004D5AF /* CheckingSetUpViewController.m */; };
 		E30283691E3EEA8C0058D5C8 /* RaffleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30283681E3EEA8C0058D5C8 /* RaffleViewController.m */; };
 		E328E6001E063BCC004F10DA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E328E5FF1E063BCC004F10DA /* AVFoundation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		E329E04A1E58C0E000B0971C /* baubles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E329E0481E58C0E000B0971C /* baubles.jpg */; };
+		E329E04B1E58C0E000B0971C /* redstars.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E329E0491E58C0E000B0971C /* redstars.jpg */; };
+		E329E04D1E58E0A000B0971C /* raffleTicket.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E329E04C1E58E0A000B0971C /* raffleTicket.jpg */; };
+		E329E04F1E58E40B00B0971C /* raffleTicket.png in Resources */ = {isa = PBXBuildFile; fileRef = E329E04E1E58E40B00B0971C /* raffleTicket.png */; };
+		E329E0511E59158C00B0971C /* spots.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E329E0501E59158C00B0971C /* spots.jpg */; };
 		E3481FBF1E09EE7D004F4A33 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FB91E09EE7D004F4A33 /* applause.mp3 */; };
 		E3481FC01E09EE7D004F4A33 /* computer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBA1E09EE7D004F4A33 /* computer.mp3 */; };
 		E3481FC11E09EE7D004F4A33 /* lion.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBB1E09EE7D004F4A33 /* lion.mp3 */; };
@@ -615,6 +620,11 @@
 		E30283671E3EEA8C0058D5C8 /* RaffleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleViewController.h; sourceTree = "<group>"; };
 		E30283681E3EEA8C0058D5C8 /* RaffleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleViewController.m; sourceTree = "<group>"; };
 		E328E5FF1E063BCC004F10DA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E329E0481E58C0E000B0971C /* baubles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = baubles.jpg; sourceTree = "<group>"; };
+		E329E0491E58C0E000B0971C /* redstars.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = redstars.jpg; sourceTree = "<group>"; };
+		E329E04C1E58E0A000B0971C /* raffleTicket.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = raffleTicket.jpg; sourceTree = "<group>"; };
+		E329E04E1E58E40B00B0971C /* raffleTicket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = raffleTicket.png; sourceTree = "<group>"; };
+		E329E0501E59158C00B0971C /* spots.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spots.jpg; sourceTree = "<group>"; };
 		E3481FB91E09EE7D004F4A33 /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = applause.mp3; sourceTree = "<group>"; };
 		E3481FBA1E09EE7D004F4A33 /* computer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = computer.mp3; sourceTree = "<group>"; };
 		E3481FBB1E09EE7D004F4A33 /* lion.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lion.mp3; sourceTree = "<group>"; };
@@ -1259,6 +1269,8 @@
 		E328E6011E0641B5004F10DA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E329E04E1E58E40B00B0971C /* raffleTicket.png */,
+				E329E0501E59158C00B0971C /* spots.jpg */,
 				E37B7DF11E31C77D00E59AC3 /* Google */,
 				E37B7DF01E31C76400E59AC3 /* Shark */,
 				E3FDF53D1E2D868A001A9111 /* Backgrounds */,
@@ -2020,6 +2032,9 @@
 		E3FDF53D1E2D868A001A9111 /* Backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				E329E0481E58C0E000B0971C /* baubles.jpg */,
+				E329E0491E58C0E000B0971C /* redstars.jpg */,
+				E329E04C1E58E0A000B0971C /* raffleTicket.jpg */,
 				E3FDF5441E2D89B3001A9111 /* lilac.jpg */,
 				E3FDF5461E2D8F49001A9111 /* floral.jpg */,
 				E3FDF5421E2D88F6001A9111 /* blue34.jpg */,
@@ -2277,6 +2292,7 @@
 				E3E6F54B1E2628D4003E3732 /* baby4.png in Resources */,
 				E3481FC41E09EE7D004F4A33 /* tada.mp3 in Resources */,
 				E3E6F4901E261FE8003E3732 /* Basketball-Bingo28.png in Resources */,
+				E329E04D1E58E0A000B0971C /* raffleTicket.jpg in Resources */,
 				E3E6F3BD1E26144E003E3732 /* bird22.png in Resources */,
 				E3E6F4BA1E261FE8003E3732 /* Basketball-Bingo70.png in Resources */,
 				E37B7FBD1E31CA9900E59AC3 /* Google103.png in Resources */,
@@ -2294,6 +2310,7 @@
 				E37B7FCD1E31CA9900E59AC3 /* Google119.png in Resources */,
 				E3DD22D21E104E74002041C3 /* stop1.png in Resources */,
 				E37B7FA01E31CA9900E59AC3 /* Google74.png in Resources */,
+				E329E0511E59158C00B0971C /* spots.jpg in Resources */,
 				E3E6F4A41E261FE8003E3732 /* Basketball-Bingo48.png in Resources */,
 				E37B7F911E31CA9900E59AC3 /* Google59.png in Resources */,
 				E37B7F791E31CA9800E59AC3 /* Google35.png in Resources */,
@@ -2378,6 +2395,7 @@
 				E3E6F52F1E262765003E3732 /* handClap1.png in Resources */,
 				E3E6F4C11E261FE8003E3732 /* Basketball-Bingo77.png in Resources */,
 				E3E6F3C01E26144E003E3732 /* bird25.png in Resources */,
+				E329E04F1E58E40B00B0971C /* raffleTicket.png in Resources */,
 				E37B7F941E31CA9900E59AC3 /* Google62.png in Resources */,
 				E37B7FCB1E31CA9900E59AC3 /* Google117.png in Resources */,
 				E3E6F4991E261FE8003E3732 /* Basketball-Bingo37.png in Resources */,
@@ -2498,6 +2516,7 @@
 				E37B7F6E1E31CA9800E59AC3 /* Google24.png in Resources */,
 				E37B7FAD1E31CA9900E59AC3 /* Google87.png in Resources */,
 				E3E6F3AA1E26144E003E3732 /* bird3.png in Resources */,
+				E329E04A1E58C0E000B0971C /* baubles.jpg in Resources */,
 				E37B80DD1E31D74D00E59AC3 /* Shark-Bingo110.png in Resources */,
 				E37B80DF1E31D74D00E59AC3 /* Shark-Bingo112.png in Resources */,
 				E37B7FA91E31CA9900E59AC3 /* Google83.png in Resources */,
@@ -2616,6 +2635,7 @@
 				E3E6F4F41E261FE8003E3732 /* Basketball-Bingo128.png in Resources */,
 				E3E6F4BE1E261FE8003E3732 /* Basketball-Bingo74.png in Resources */,
 				E37B809F1E31D74D00E59AC3 /* Shark-Bingo48.png in Resources */,
+				E329E04B1E58C0E000B0971C /* redstars.jpg in Resources */,
 				E3E6F4CD1E261FE8003E3732 /* Basketball-Bingo89.png in Resources */,
 				E3DD22CB1E1046EE002041C3 /* stop2.png in Resources */,
 				E3FDF51C1E296AAC001A9111 /* fireworks16.png in Resources */,
