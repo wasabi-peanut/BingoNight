@@ -644,7 +644,7 @@
    
 #pragma mark SET UP GAME COMMENTS BOX
     NSString *length = _arrayGameComments[_incomingGameNumber-1];
-    NSString *trimmed = [length stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString *trimmed = [length stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSUInteger len = trimmed.length;
     
     if (len == 0) {

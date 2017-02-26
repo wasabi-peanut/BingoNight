@@ -50,6 +50,7 @@
 
 //OTHER
 @property (strong, nonatomic) UITextView *nameOfEvent;
+@property (strong, nonatomic) UIView *viewNameOfEvent;
 @property float height;
 @property float width;
 
@@ -111,6 +112,13 @@
 
 //@interface ViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate>
 
+- (IBAction)segmentOverUnderChanged:(id)sender;
+
+
+@property (strong, nonatomic) IBOutlet UISegmentedControl *segmentOverUnder;
+
+@property NSInteger selectedOverUnderSegment;
+
 @property UIImagePickerController *ipc;
 
 @property (weak, nonatomic) IBOutlet UISlider *sliderHeight;
@@ -143,7 +151,9 @@
 @property MPMusicPlayerController *musicPlayer;
 @property MPMediaItem *item;
 @property MPMediaItemCollection *mediaItemCollection;
+@property (strong, nonatomic) IBOutlet UIButton *btnDeleteSong;
 
+- (IBAction)btnDeleteSongPress:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UILabel *labelSongData;
 

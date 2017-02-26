@@ -26,6 +26,8 @@
 
 - (void)viewDidLoad {
     
+    
+    
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
     [self.view addGestureRecognizer:tapGesture];
     
@@ -67,8 +69,9 @@
     _sliderX.minimumValue = 0;
     _sliderX.maximumValue=_totalWidth;
     
-    _sliderY.minimumValue = 44;
+    _sliderY.minimumValue = 0;
     _sliderY.maximumValue = _totalHeight*.5;
+    
     
     
     //OTHER
@@ -245,6 +248,7 @@
                                 @100, //21 height of image
                                 @0,//22  DON"T use raffle
                                 @0,//23 Theme NOT selected
+                                @0,//24 Image On Top
                                 nil];
         
            }
@@ -257,9 +261,11 @@
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
-    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 44, width, height/2)];
-   // _nameOfEvent.layer.borderColor = [[UIColor blackColor] CGColor];
-   // _nameOfEvent.layer.borderWidth = 5;
+  
+    _viewNameOfEvent = [[UIView alloc] initWithFrame:CGRectMake(0, 44, width, height/2)];
+    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, width, height/2)];
+    
+  
     _nameOfEvent.font = [UIFont fontWithName:fontName size:fontSize];
     _nameOfEvent.textAlignment = NSTextAlignmentCenter;
     
@@ -270,7 +276,11 @@
     [_nameOfEvent setDelegate:self];
     
     
-    [self.view addSubview:_nameOfEvent];
+    [self.view addSubview:_viewNameOfEvent];
+    [_viewNameOfEvent addSubview:_nameOfEvent];
+    
+    
+    
     if ([_arrayGlobalSettings[17] integerValue] == 1) {
         [self yesImageExist];
     }
@@ -283,12 +293,13 @@
 
 -(void)applySettings {
     
-    
-    
     _nameOfEvent.textColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:2] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:3] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:4]floatValue]/255 alpha:1];
     
-    _nameOfEvent.backgroundColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:5] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:6] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:7]floatValue]/255 alpha:1];
+    _viewNameOfEvent.backgroundColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:5] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:6] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:7]floatValue]/255 alpha:1];
     
+    _nameOfEvent.backgroundColor = [UIColor clearColor];
+    
+
     switch (_selectedSegment) {
         case 0:
             _sliderRed.value = [[_arrayGlobalSettings objectAtIndex:2] floatValue];
@@ -334,6 +345,18 @@
     
     _labelSongData.layer.borderWidth = 2;
     _labelSongData.layer.borderColor = [[UIColor redColor] CGColor];
+    
+    //SET UP SEGMENT
+   _segmentOverUnder.selectedSegmentIndex = [_arrayGlobalSettings[24] integerValue];
+    
+   //Photo Frame
+    if ([_arrayGlobalSettings[17] integerValue]==1) {
+        [_btnImage setTitle:@"Delete Image" forState:UIControlStateNormal];
+        [self yesImageExist];
+    }
+    else{
+        [_btnImage setTitle:@"Get Image" forState:UIControlStateNormal];
+    }
     
 }
 
@@ -431,6 +454,8 @@
 -(void)saveSettings {
     
     [DefaultsDataManager saveData:_arrayGlobalSettings forKey:_keyForGlobalSettings];
+    NSLog(@"the exiting over under setting is %li",[_arrayGlobalSettings[24] integerValue]);
+
 
 }
 
@@ -684,9 +709,10 @@
 #pragma mark IMAGE HANDLING HERE
 
 -(void)yesImageExist {
+    [_imageView removeFromSuperview];
     
     [self makeFrame:[_arrayGlobalSettings[18] floatValue] yValue:[_arrayGlobalSettings[19] floatValue] width:[_arrayGlobalSettings[20] floatValue] height:[_arrayGlobalSettings[21] floatValue]];
-        [_btnImage setTitle:@"Remove Image" forState:UIControlStateNormal];
+        [_btnImage setTitle:@"Delete Image" forState:UIControlStateNormal];
     _sliderX.value = [_arrayGlobalSettings[18] floatValue];
     _sliderY.value = [_arrayGlobalSettings[19] floatValue];
     _sliderWidth.value = [_arrayGlobalSettings[20] floatValue];
@@ -696,8 +722,15 @@
 -(void)makeFrame: (float)xValue yValue: (float)yValue width: (float)width height:(float)height{
     
     _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xValue, yValue, width, height)];
-    [self.view addSubview:_imageView];
-    [self.view bringSubviewToFront:_imageView];
+    [_nameOfEvent addSubview:_imageView];
+    
+    if ([_arrayGlobalSettings[24] integerValue]==0) {
+        [_nameOfEvent bringSubviewToFront:_imageView];
+        }
+    
+    if ([_arrayGlobalSettings[24] integerValue]==1) {
+        [_nameOfEvent sendSubviewToBack:_imageView];
+        }
     
 
    [self loadImage];
@@ -706,6 +739,8 @@
 
 -(void)loadImage {
     _imageView.image = [UIImage imageWithData:[DefaultsDataManager getDataForKey:@"imageKey"]];
+    NSLog(@"the image is %@",_imageView.image);
+    
     
 }
 
@@ -715,7 +750,7 @@
 }
 
 - (IBAction)btnImagePressed:(id)sender {
-   if ([_arrayGlobalSettings[17] floatValue] == 1) {
+    if ([_arrayGlobalSettings[17] floatValue] == 1) {
         [_imageView removeFromSuperview];
         [_btnImage setTitle:@"Get Image" forState:UIControlStateNormal];
         [_arrayGlobalSettings replaceObjectAtIndex:17 withObject:@0];
@@ -730,6 +765,8 @@
     _popover = [[UIPopoverController alloc] initWithContentViewController:_ipc];
     
     [_popover presentPopoverFromRect:_btnImage.frame  inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        
+        
     }
     
 }
@@ -743,6 +780,8 @@
     [self saveImage];
     [self yesImageExist];
     
+    
+    
 }
 -(void)setFrameOfUIImageView{
     
@@ -750,11 +789,9 @@
         _sliderX.value =_totalWidth-_sliderWidth.value;
     }
     
-    if (_sliderY.value > _totalHeight*.5+44 - _sliderHeight.value) {
-        _sliderY.value = _totalHeight*.5+44 - _sliderHeight.value;
+    if (_sliderY.value > _totalHeight*.5 - _sliderHeight.value) {
+        _sliderY.value = _totalHeight*.5 - _sliderHeight.value;
     }
- 
-    
     
     [_arrayGlobalSettings replaceObjectAtIndex:18 withObject:@(_sliderX.value)];
     [_arrayGlobalSettings replaceObjectAtIndex:19 withObject:@(_sliderY.value)];
@@ -768,9 +805,28 @@
 - (IBAction)sliderImageChange:(id)sender {
     
     [_imageView removeFromSuperview];
+
     [self setFrameOfUIImageView];
     
 }
+
+- (IBAction)segmentOverUnderChanged:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case 0:
+            [_nameOfEvent bringSubviewToFront:_imageView];
+            _selectedOverUnderSegment = 0;
+            [_arrayGlobalSettings replaceObjectAtIndex:24 withObject:@0];
+            break;
+        case 1:
+            [_nameOfEvent sendSubviewToBack:_imageView];
+            _selectedOverUnderSegment = 1;
+            [_arrayGlobalSettings replaceObjectAtIndex:24 withObject:@1];
+            break;
+        default:
+            break;
+    }
+    
+   }
 
 -(void)saveImage{
     NSData *data = UIImagePNGRepresentation(_imageView.image);
@@ -778,6 +834,8 @@
     [DefaultsDataManager saveData:data forKey:@"imageKey"];
     
 }
+
+
 #pragma mark CHOOSE SONG
 
 - (IBAction)btnChoosePressed:(id)sender {
@@ -814,5 +872,10 @@
     
 }
 
+
+- (IBAction)btnDeleteSongPress:(id)sender {
+    [_arrayGlobalSettings replaceObjectAtIndex:23 withObject:@0];
+    [self applySettings];
+}
 
 @end

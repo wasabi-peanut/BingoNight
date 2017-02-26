@@ -69,6 +69,14 @@
     _stepperNumberOfGames.minimumValue = 1;
     _labelNumberOfGames.text = [NSString stringWithFormat:@"%2.0f Games",_stepperNumberOfGames.value];
     
+    _stepperSchemes.maximumValue = 10;
+    _stepperSchemes.minimumValue = -10;
+    _stepperSchemes.value = 0;
+    
+    _stepperGrids.maximumValue = 10;
+    _stepperGrids.minimumValue = -10;
+    _stepperGrids.value = 0;
+    
     //GET NUMBER OF GAMES
     _keyForNumberOfGames = @"keyForNumberOfGames";
     _numberOfGames = [[DefaultsDataManager getDataForKey:_keyForNumberOfGames] integerValue];
@@ -1395,15 +1403,15 @@
 
 #pragma mark THIS IS THE ALERT THAT MATTERS
 
-- (IBAction)btnAddOrDelete:(UIButton *)sender {
-    
+- (void)btnAddOrDelete:(int)sentNumber {
+
     NSString *title;
     NSString *message;
     NSString *nameOfPreset = [NSString stringWithFormat:@"%@", _arrayPickerPresets[_presetSelected]];
     NSString *nameOfGrid = [NSString stringWithFormat:@"%@", _arrayPickerGrids[_gridSelected]];
     
     
-      switch (sender.tag) {
+      switch (sentNumber) {
         case 1:
             title = @"Add a new color scheme";
             message = @"Type the name of the new color scheme";
@@ -1446,7 +1454,7 @@
         //
     }];
     
-    if (sender.tag == 1 || sender.tag == 3) {
+    if (sentNumber == 1 || sentNumber == 3) {
         [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             
         }];
@@ -1455,7 +1463,7 @@
         UIAlertAction *AddPreset = [UIAlertAction actionWithTitle:@"Add It" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
         NSString *newPreset = alert.textFields.firstObject.text;
-            [self alertActionWithAlertNumber:sender.tag name:newPreset preset:0];
+            [self alertActionWithAlertNumber:sentNumber name:newPreset preset:0];
         
        }];
         [alert addAction:AddPreset];
@@ -1463,15 +1471,15 @@
     }
    
     
-    if (sender.tag == 2 || sender.tag == 4) {
+    if (sentNumber == 2 || sentNumber == 4) {
         
         UIAlertAction *DeletePreset = [UIAlertAction actionWithTitle:@"Delete It" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
-            if (sender.tag == 2) {
-                [self alertActionWithAlertNumber:sender.tag name:nil preset:_presetSelected];
+            if (sentNumber == 2) {
+                [self alertActionWithAlertNumber:sentNumber name:nil preset:_presetSelected];
             }
-            if (sender.tag == 4) {
-                [self alertActionWithAlertNumber:sender.tag name:nil preset:_gridSelected];
+            if (sentNumber == 4) {
+                [self alertActionWithAlertNumber:sentNumber name:nil preset:_gridSelected];
             }
         }];
         
@@ -1479,7 +1487,7 @@
             //
         }];
         
-        if ((_presetSelected<_protectedPresets && sender.tag == 2) || (_gridSelected<_protectedGrids && sender.tag == 4)) {
+        if ((_presetSelected<_protectedPresets && sentNumber == 2) || (_gridSelected<_protectedGrids && sentNumber == 4)) {
             [alert addAction:DoNotDeletePreset];
         }
         else{
@@ -1707,4 +1715,28 @@
 
 
 
+- (IBAction)stepperSchemesPressed:(id)sender {
+    
+    if (_stepperSchemes.value>0) {
+        [self btnAddOrDelete:1];
+    }
+    
+    if (_stepperSchemes.value<0) {
+        [self btnAddOrDelete:2];
+    }
+    
+    [_stepperSchemes setValue:0];
+}
+- (IBAction)stepperGridsPressed:(id)sender {
+    if (_stepperGrids.value>0) {
+        [self btnAddOrDelete:3];
+    }
+    
+    if (_stepperGrids.value<0) {
+        [self btnAddOrDelete:4];
+    }
+    
+    [_stepperGrids setValue:0];
+    
+}
 @end

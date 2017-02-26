@@ -8,6 +8,8 @@
 	<string>$(PRODUCT_NAME)photo use</string>
 	<key>kTCCServiceMediaLibrary</key>
 	<string>$(PRODUCT_NAME)music use</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME)camera use</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>NSAppleMusicUsageDescription</key>

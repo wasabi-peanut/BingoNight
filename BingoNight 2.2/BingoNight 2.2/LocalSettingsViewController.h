@@ -65,6 +65,13 @@
 - (IBAction)stepperNumberOfGamesPress:(id)sender;
 @property (strong, nonatomic) IBOutlet UILabel *labelNumberOfGames;
 @property NSInteger numberOfGames;
+@property (strong, nonatomic) IBOutlet UIStepper *stepperSchemes;
+- (IBAction)stepperSchemesPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIStepper *stepperGrids;
+
+- (IBAction)stepperGridsPressed:(id)sender;
+
+
 
 
 //PICKERS
@@ -92,7 +99,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *textFieldSavedSettingsName;
 
-- (IBAction)btnAddOrDelete:(id)sender;
+- (IBAction)btnAddOrDelete:(int)sentNumber;
 
 //SLIDERS
 @property (strong,nonatomic) NSMutableArray *arrayDisplayButtons;
