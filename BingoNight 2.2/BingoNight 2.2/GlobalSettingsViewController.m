@@ -454,9 +454,7 @@
 -(void)saveSettings {
     
     [DefaultsDataManager saveData:_arrayGlobalSettings forKey:_keyForGlobalSettings];
-    NSLog(@"the exiting over under setting is %li",[_arrayGlobalSettings[24] integerValue]);
-
-
+   
 }
 
 //PICKER CODE
@@ -518,7 +516,7 @@
     }
     
     _font = [_arrayGlobalSettings objectAtIndex:8];
-    size = [[_arrayGlobalSettings objectAtIndex:9] floatValue];
+     size = [[_arrayGlobalSettings objectAtIndex:9] floatValue];
     _nameOfEvent.font = [UIFont fontWithName:_font size:size];
     
   
@@ -739,8 +737,6 @@
 
 -(void)loadImage {
     _imageView.image = [UIImage imageWithData:[DefaultsDataManager getDataForKey:@"imageKey"]];
-    NSLog(@"the image is %@",_imageView.image);
-    
     
 }
 
@@ -758,6 +754,8 @@
     }
     
     else {
+        
+        [self yesImageExist];
      [_arrayGlobalSettings replaceObjectAtIndex:17 withObject:@1];
     _ipc = [[UIImagePickerController alloc] init];
     _ipc.delegate = self;
@@ -768,7 +766,7 @@
         
         
     }
-    
+   
 }
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -777,6 +775,8 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     _imageView.image = [info objectForKey:UIImagePickerControllerOriginalImage];
+   
+    
     [self saveImage];
     [self yesImageExist];
     
@@ -844,7 +844,7 @@
     mediaPicker.delegate = self;
     mediaPicker.allowsPickingMultipleItems = NO;
     [self presentViewController:mediaPicker animated:YES completion:nil];
-    NSLog(@"Chosen");
+    
     
 }
 

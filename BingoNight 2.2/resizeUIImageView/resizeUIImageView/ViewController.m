@@ -63,7 +63,7 @@
     _textView.layer.borderWidth = 3;
     _textView.layer.borderColor = [[UIColor redColor] CGColor];
     _textView.text = @"Hello World";
-    _textView.font = [UIFont fontWithName:@"Helvetica" size:250];
+    _textView.font = [UIFont fontWithName:@"Helvetica" size:150];
     _textView.textAlignment = NSTextAlignmentCenter;
     
     [self.view addSubview:_textView];

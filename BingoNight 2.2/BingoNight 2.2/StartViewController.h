@@ -18,6 +18,8 @@
 @property NSInteger gameSelected;
 
 @property (strong,nonatomic) UITextView *nameOfEvent;
+@property (strong, nonatomic) UIView *viewNameOfEvent;
+
 
 @property (strong,nonatomic) NSMutableArray *arrayGlobalSettings;
 

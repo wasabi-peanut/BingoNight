@@ -94,6 +94,7 @@
                                 @100, //21 height of image
                                 @0,// 22 DON"T use Raffle
                                 @0,// 23 theme song NOT selected
+                                @0,// 24 Image on TOP
                                 nil];
         
     }
@@ -201,9 +202,13 @@
     NSString *fontName = [_arrayGlobalSettings objectAtIndex:8];
     
     
-  
+    _viewNameOfEvent = [[UIView alloc] initWithFrame:CGRectMake(0, 44, _width, _height/2)];
+    _viewNameOfEvent.backgroundColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:5] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:6] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:7]floatValue]/255 alpha:1];
     
-    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 44, _width, _height/2)];
+    [self.view addSubview:_viewNameOfEvent];
+    
+    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, _width, _height/2)];
+    
     _nameOfEvent.font = [UIFont fontWithName:fontName size:fontSize];
     _nameOfEvent.textAlignment = NSTextAlignmentCenter;
     _nameOfEvent.text = [_arrayGlobalSettings objectAtIndex:1];
@@ -211,12 +216,13 @@
     
     _nameOfEvent.textColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:2] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:3] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:4]floatValue]/255 alpha:1];
     
-    _nameOfEvent.backgroundColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:5] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:6] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:7]floatValue]/255 alpha:1];
+    _nameOfEvent.backgroundColor = [UIColor clearColor];
     
+    _nameOfEvent.selectable = NO;
     _nameOfEvent.editable = NO;
     _nameOfEvent.scrollEnabled =NO;
     
-    [self.view addSubview:_nameOfEvent];
+    [_viewNameOfEvent addSubview:_nameOfEvent];
     
     float xValue = [_arrayGlobalSettings[18] floatValue];
     float yValue = [_arrayGlobalSettings[19] floatValue];
@@ -225,8 +231,19 @@
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xValue, yValue, width, height)];
     imageView.image = [UIImage imageWithData:[DefaultsDataManager getDataForKey:@"imageKey"]];
-    [self.view addSubview:imageView];
-    [self.view bringSubviewToFront:imageView];
+    
+    [_nameOfEvent addSubview:imageView];
+
+   
+    if ([_arrayGlobalSettings[24] integerValue]==0) {
+        [_nameOfEvent bringSubviewToFront:imageView];
+    }
+    
+    if ([_arrayGlobalSettings[24] integerValue]==1) {
+        [_nameOfEvent sendSubviewToBack:imageView];
+    }
+
+    
     
     
     if ([_arrayGlobalSettings[22] isEqual:@1]) {
