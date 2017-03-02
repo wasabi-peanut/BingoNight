@@ -70,6 +70,11 @@
    
     self.navigationItem.hidesBackButton = YES;
  
+   
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    _restoreMode = 0;
     
 }
 
@@ -667,15 +672,107 @@
     _labelGameComments.numberOfLines = 0;
     _labelGameComments.adjustsFontSizeToFitWidth = YES;
     
+    if (_restoreMode == 1) {
+        [self restoreGame];
+    }
+    
+}
+
+#pragma mark RESTORATION
+-(void)restoreGame {
+    
+    _arrayCalledNumbers = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getDataForKey:_keyForCalledNumbers]];
+    _ballCount = [[DefaultsDataManager getDataForKey:@"keyForBallCount"] integerValue];
+    _bingoArray =[[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:@"keyForBingoArray"]];
+    _arrayCalledBalls = [[NSMutableArray alloc] init];
+    _arrayCalledBallsLabels = [[NSMutableArray alloc] init];
+    
+   //Need to recreate objects of balls and labels in array
+    
+    for (int z=0; z<_arrayCalledNumbers.count;z++) {
+        
+        
+        NSLog(@"the called balls array is %li",_arrayCalledNumbers.count);
+    
+    UIView *shadow =[[UIView alloc] init];
+    shadow.layer.shadowColor = [[UIColor blackColor] CGColor];
+    shadow.layer.shadowOpacity = 0.5f;
+    
+    shadow.layer.shadowOffset = CGSizeMake(5.0f, 5.0f);
+    shadow.layer.shadowRadius = 5.0f;
+    shadow.layer.masksToBounds = NO;
+    
+    BallColorView *activeBall =[[BallColorView alloc] initWithFrame:CGRectMake(0, 0, _lastCalledWidth/1, _lastCalledHeight/1)];
+    activeBall =[[BallColorView alloc] initWithFrame:CGRectMake(0, 0, _lastCalledWidth/1, _lastCalledHeight/1)];
+    activeBall.layer.cornerRadius = activeBall.bounds.size.height/2;
+    activeBall.clipsToBounds = YES;
+    
+   // [self.view addSubview:activeBall];
+    
+    UILabel *number = [[UILabel alloc]initWithFrame:CGRectMake(0,0, _lastCalledWidth/1 , _lastCalledHeight/1)];
+    number.center = activeBall.center;
+    number.text =  _arrayCalledNumbers[z];
+        
+  /*
+    number.textColor = _ballTextColor;
+   // [number setTextAlignment:NSTextAlignmentCenter];
+   // number.font = [UIFont fontWithName:_ballTextFont size:_lastCalledHeight*.4];
+    
+    number.backgroundColor = [UIColor clearColor];
+    if (_useSelector == 1) {
+        number.alpha = 0;}
+    
+    number.layer.contentsScale = 8.0f;
+    
+    
+    [activeBall addSubview:number];
+    [shadow addSubview:activeBall];
+// [self.view addSubview:shadow];
+    
+    
+    activeBall.center = CGPointMake(-100, _ballStartY);*/
+    
+   
+    
+    
+    [_arrayCalledBallsLabels insertObject:number atIndex:0];
+    [_arrayCalledBalls insertObject:activeBall atIndex:0];
+    }
+    
+  
+    
+    
+    
+    //above here
+    
+   /* NSData *dataForCalledBalls = [DefaultsDataManager getDataForKey:@"keyForCalledBalls"];
+    _arrayCalledBalls = [[NSMutableArray alloc]initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:dataForCalledBalls]];
+    NSData *dataForCalledBallsLabels = [DefaultsDataManager getDataForKey:@"keyForCalledBallsLabels"];
+    _arrayCalledBalls = [[NSMutableArray alloc]initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:dataForCalledBallsLabels]];
+    */
+    
+    for (UIButton *myButton in _arrayButtonsCreated) {
+        if ([_arrayCalledNumbers containsObject:@(myButton.tag)]){
+            myButton.backgroundColor = _usedBoxBackgroundColor;
+            myButton.tintColor = _usedBoxLetterColor;
+            myButton.tag = 0;
+        }
+    }
     
     
 }
+
+
+
+
 #pragma mark BALL SELECTION STUFF
 -(void)numberPressed: (UIButton *) sender {
     
     if (_ready == YES && _useSelector == 0 && sender.tag != 0) {
         
         _ballCount = _ballCount + 1;
+        [DefaultsDataManager saveData:@(_ballCount) forKey:@"keyForBallCount"];
+        
     
         _stringCalled = [NSString alloc];
     
@@ -845,15 +942,17 @@
         
     }
     
+    [DefaultsDataManager saveData:_bingoArray forKey:@"keyForBingoArray"];
     
     
     
 }
 
 -(void)chooseBall {
+    
+    
     _ready = NO;
-   
-    if (_ballCount <_bingoArray.count) {
+       if (_ballCount <_bingoArray.count) {
         [self createBar];
    
     _stringCalled = [NSString alloc];
@@ -878,12 +977,13 @@
         }
     }
         
-        
         [self selectedBallAction];
         
         
         
         _ballCount = _ballCount + 1;
+         [DefaultsDataManager saveData:@(_ballCount) forKey:@"keyForBallCount"];
+        
     }
 
 
@@ -982,15 +1082,20 @@
         
     _numberCalled = [_arrayCalledNumbers[_ballCount-1] integerValue];
     _ballCount = _ballCount - 1;
+    [DefaultsDataManager saveData:@(_ballCount) forKey:@"keyForBallCount"];
+        
+
     
-    UIButton *activeButton = [[UIButton alloc] init];
+        
+        
+  UIButton *activeButton = [[UIButton alloc] init];
     activeButton = _arrayButtonsCreated[_numberCalled-1];
     
     activeButton.backgroundColor = _boxBackgroundColor;
     activeButton.tintColor = _boxLetterColor;
     activeButton.tag = [_arrayCalledNumbers[_ballCount] integerValue];
     
-       
+  
     
     [_arrayCalledBalls[0] removeFromSuperview];
     [_arrayCalledBalls removeObjectAtIndex:0];
@@ -1000,6 +1105,7 @@
         
         
     [DefaultsDataManager saveData:_arrayCalledNumbers forKey:_keyForCalledNumbers];
+        
     
     
     }
@@ -1013,6 +1119,8 @@
     
     [_arrayCalledNumbers addObject: @(_numberCalled)];
     [DefaultsDataManager saveData:_arrayCalledNumbers forKey:_keyForCalledNumbers];
+    
+  
     
     
     UIView *shadow =[[UIView alloc] init];
@@ -1057,13 +1165,18 @@
     [_arrayCalledBallsLabels insertObject:number atIndex:0];
     [_arrayCalledBalls insertObject:activeBall atIndex:0];
     
-    
+ /*   NSData *dataCalledBalls = [NSKeyedArchiver archivedDataWithRootObject:_arrayCalledBalls];
+    [DefaultsDataManager saveData:dataCalledBalls forKey:@"keyForCalledBalls"];
+    NSData *dataCalledBallsLabels = [NSKeyedArchiver archivedDataWithRootObject:_arrayCalledBallsLabels];
+    [DefaultsDataManager saveData:dataCalledBallsLabels forKey:@"keyForCalledBallsLabels"];
+*/
     
     
     
     [CATransaction begin];
     [CATransaction setCompletionBlock:^{
         
+       
         
         [self moveTwo];
         
@@ -1075,9 +1188,9 @@
     CABasicAnimation *move = [CABasicAnimation animationWithKeyPath:@"transform.translation.x" ];
     [move setFromValue:[NSNumber numberWithFloat:0.0f]];
     [move setByValue:[NSNumber numberWithFloat:_ballMoveDistance]];
-    [move setBeginTime:CACurrentMediaTime() + 1];
+    [move setBeginTime:CACurrentMediaTime()];
     [move setDuration:_ballRollTime];
-    move.removedOnCompletion = NO;
+     move.removedOnCompletion = NO;
     move.autoreverses = NO;
     move.fillMode = kCAFillModeForwards;
     
@@ -1088,7 +1201,7 @@
     [spin setDuration: 1];
     spin.repeatCount=_ballRollTime;
     spin.autoreverses=NO;
-    [spin setBeginTime:CACurrentMediaTime() + 1];
+    [spin setBeginTime:CACurrentMediaTime()];
     spin.fromValue=[NSNumber numberWithFloat:0];
     spin.toValue=[NSNumber numberWithFloat:2*M_PI];
     spin.removedOnCompletion = NO;
@@ -1098,7 +1211,7 @@
     CABasicAnimation *bounce = [CABasicAnimation animationWithKeyPath:@"transform.translation.y"];
     [bounce setFromValue:[NSNumber numberWithFloat:0.0f]];
     [bounce setByValue:[NSNumber numberWithFloat:-10]];
-    [bounce setBeginTime:CACurrentMediaTime() + 1];
+    [bounce setBeginTime:CACurrentMediaTime() ];
     [bounce setDuration:0.25f];
     bounce.repeatCount = _ballRollTime/0.25f/2;
     bounce.autoreverses = YES;
@@ -1110,7 +1223,7 @@
     enlarge.toValue = [NSNumber numberWithFloat:4.0f];
     enlarge.duration = _ballDisplayTime/4.0f;
     enlarge.removedOnCompletion = NO;
-    [enlarge setBeginTime:CACurrentMediaTime()+_ballRollTime+1];
+    [enlarge setBeginTime:CACurrentMediaTime()+_ballRollTime];
     enlarge.fillMode = kCAFillModeForwards;
     enlarge.autoreverses = NO;
     
@@ -1148,12 +1261,13 @@
         }*/
         
         
+        
+        
             _ready = YES;
         [self createBar];
         if (_useSelector) {
             for (UIButton *myButton in _arrayButtonsCreated) {
-               
-                
+        
                 if (myButton.tag == _numberCalled){
                     myButton.backgroundColor = _usedBoxBackgroundColor;
                     myButton.tintColor = _usedBoxLetterColor;
@@ -1162,7 +1276,12 @@
             
         }
       
-    }];
+       
+    
+    }
+     
+     
+     ];
     
  
     
@@ -1180,7 +1299,7 @@
     CABasicAnimation *move = [CABasicAnimation animationWithKeyPath:@"transform.translation.x" ];
     [move setFromValue:[NSNumber numberWithFloat:.5*_width+100]];
     [move setToValue:[NSNumber numberWithFloat:0.45f * _width+100+_lastCalledWidth/2]];
-    [move setBeginTime:CACurrentMediaTime() +_ballDisplayTime+1];
+    [move setBeginTime:CACurrentMediaTime() +_ballDisplayTime];
     [move setDuration:_ballDropTime];
     move.removedOnCompletion = NO;
     move.autoreverses = NO;

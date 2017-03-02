@@ -12,9 +12,14 @@
 
 @interface StartViewController : UIViewController
 
+@property NSInteger restoreMode;
+
+
 @property NSInteger numberOfGames;
 @property (strong,nonatomic) NSString *keyForNumberOfGames;
 @property (strong,nonatomic) NSString *keyForGlobalSettings;
+@property (strong, nonatomic)NSString *keyForLastGameSelected;
+
 @property NSInteger gameSelected;
 
 @property (strong,nonatomic) UITextView *nameOfEvent;

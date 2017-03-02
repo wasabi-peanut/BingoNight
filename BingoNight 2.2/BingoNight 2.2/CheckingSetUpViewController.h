@@ -38,7 +38,9 @@
 @property  NSInteger numberOfGames;
 @property  NSInteger patternSelected;
 
+@property (strong, nonatomic) IBOutlet UIButton *btnOwnSongs;
 
+- (IBAction)btnOwnSongsPressed:(id)sender;
 
 
 @property checkingPatterns *myView;

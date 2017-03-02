@@ -79,7 +79,7 @@
 //@property (strong, nonatomic) IBOutlet UIBarButtonItem *btnSelect;
 
 -(IBAction)selectBall:(id)sender;
-@property int ballCount;
+@property NSInteger ballCount;
 @property (strong, nonatomic) NSMutableArray *bingoArray;
 @property (strong,nonatomic) NSMutableArray *arrayCalledNumbers;
 @property NSInteger numberCalled;
@@ -132,6 +132,7 @@
 
 @property (strong, nonatomic) NSMutableArray *arrayButtonsCreated;
 
+@property NSInteger restoreMode;
 
 @property CAGradientLayer *gradient;
 
@@ -148,6 +149,7 @@
 @property (strong, nonatomic) NSString *keyForCoordinatesColors;
 @property (strong, nonatomic) NSString *keyForCoordinatesNameOfGame;
 @property (strong, nonatomic) NSString *keyForGameComments;
+@property (strong, nonatomic) NSString *keyForRestoredGame;
 
 
 

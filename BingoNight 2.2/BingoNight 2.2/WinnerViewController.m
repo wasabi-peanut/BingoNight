@@ -137,7 +137,7 @@
     colorAnimation.duration = .1;
     colorAnimation.fromValue = (id)fromColor.CGColor;
     colorAnimation.toValue = (id)toColor.CGColor;
-    colorAnimation.repeatCount = HUGE_VALF;
+    colorAnimation.repeatCount = 20;
     colorAnimation.autoreverses = YES;
     
     [frame.layer addAnimation:colorAnimation forKey:nil];
@@ -150,6 +150,7 @@
     [UIView animateWithDuration:2 delay:2 options:UIViewAnimationOptionTransitionNone animations:^{
         winnerLabel.alpha = 0;
     } completion:^(BOOL finished) {
+        [fireworks1 stopAnimating];
         [self performSegueWithIdentifier:@"segueWinnerToStart" sender:self];
     }];
     

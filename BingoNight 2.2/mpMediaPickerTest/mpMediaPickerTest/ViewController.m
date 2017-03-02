@@ -77,6 +77,7 @@
     
     
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:mediaItemCollection];
+  
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:data forKey:keyForData];
     [defaults synchronize];

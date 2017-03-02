@@ -305,6 +305,7 @@
 		E39825491DE5054B00ACC5A7 /* LocalSettingsTrash.txt in Resources */ = {isa = PBXBuildFile; fileRef = E39825361DE5054B00ACC5A7 /* LocalSettingsTrash.txt */; };
 		E398254A1DE5054B00ACC5A7 /* GamePlayTrash.txt in Resources */ = {isa = PBXBuildFile; fileRef = E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */; };
 		E398254B1DE5054B00ACC5A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */; };
+		E3C55F671E64C03500078604 /* OwnSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C55F661E64C03500078604 /* OwnSongsTableViewController.m */; };
 		E3DD22CB1E1046EE002041C3 /* stop2.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22CA1E1046EE002041C3 /* stop2.png */; };
 		E3DD22CD1E1046F6002041C3 /* play2.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22CC1E1046F6002041C3 /* play2.png */; };
 		E3DD22D21E104E74002041C3 /* stop1.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22D01E104E74002041C3 /* stop1.png */; };
@@ -935,6 +936,8 @@
 		E39825361DE5054B00ACC5A7 /* LocalSettingsTrash.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalSettingsTrash.txt; sourceTree = "<group>"; };
 		E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GamePlayTrash.txt; sourceTree = "<group>"; };
 		E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3C55F651E64C03500078604 /* OwnSongsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnSongsTableViewController.h; sourceTree = "<group>"; };
+		E3C55F661E64C03500078604 /* OwnSongsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnSongsTableViewController.m; sourceTree = "<group>"; };
 		E3DD22CA1E1046EE002041C3 /* stop2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop2.png; sourceTree = "<group>"; };
 		E3DD22CC1E1046F6002041C3 /* play2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play2.png; sourceTree = "<group>"; };
 		E3DD22D01E104E74002041C3 /* stop1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop1.png; sourceTree = "<group>"; };
@@ -1629,6 +1632,8 @@
 			children = (
 				E39825191DE5054B00ACC5A7 /* Assets.xcassets */,
 				E398251A1DE5054B00ACC5A7 /* Main.storyboard */,
+				E3C55F651E64C03500078604 /* OwnSongsTableViewController.h */,
+				E3C55F661E64C03500078604 /* OwnSongsTableViewController.m */,
 				E3749F801E43152700178ACD /* RaffleSetUpTableViewController.h */,
 				E3749F811E43152700178ACD /* RaffleSetUpTableViewController.m */,
 				E30283671E3EEA8C0058D5C8 /* RaffleViewController.h */,
@@ -2748,6 +2753,7 @@
 				E3F66C911DF9000D000B3D06 /* TextViewController.m in Sources */,
 				E39825461DE5054B00ACC5A7 /* DefaultsDataManager.m in Sources */,
 				E398253B1DE5054B00ACC5A7 /* IntroViewController.m in Sources */,
+				E3C55F671E64C03500078604 /* OwnSongsTableViewController.m in Sources */,
 				E39825431DE5054B00ACC5A7 /* BallColorView.m in Sources */,
 				E39825471DE5054B00ACC5A7 /* AppDelegate.m in Sources */,
 				E398253F1DE5054B00ACC5A7 /* GamePlayViewController.m in Sources */,

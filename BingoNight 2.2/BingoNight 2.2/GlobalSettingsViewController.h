@@ -146,9 +146,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnChoose;
 - (IBAction)btnChoosePressed:(UIButton *)sender;
 
-@property NSURL *targetURL;
-@property MPMusicPlayerController  *mediaPicker;
-@property MPMusicPlayerController *musicPlayer;
+//@property NSURL *targetURL;
+//@property MPMusicPlayerController  *mediaPicker;
+//@property MPMusicPlayerController *musicPlayer;
 @property MPMediaItem *item;
 @property MPMediaItemCollection *mediaItemCollection;
 @property (strong, nonatomic) IBOutlet UIButton *btnDeleteSong;

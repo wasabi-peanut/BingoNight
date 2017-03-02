@@ -7,6 +7,8 @@
 //
 
 #import "IntroViewController.h"
+#import "StartViewController.h"
+
 
 @interface IntroViewController ()
 
@@ -17,6 +19,8 @@
 - (void)viewDidLoad {
    
     [self.navigationController setNavigationBarHidden:YES];
+    
+    _restoreMode = 0;
     
 #pragma mark Set Up The Screen
    //Settings
@@ -106,7 +110,7 @@
     
     _btnInstructions = [[UIButton alloc] init];
     
-    _btnInstructions.frame = CGRectMake(0.4 * width,0.65 * height, .2*width, .05*width);
+    _btnInstructions.frame = CGRectMake(0.6 * width,0.65 * height, .2*width, .05*width);
     _btnInstructions.backgroundColor = [UIColor whiteColor];
     _btnInstructions.layer.cornerRadius = 10;
     [_btnInstructions setTitle:@"Instructions" forState:UIControlStateNormal];
@@ -114,12 +118,23 @@
     [_btnInstructions setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [_btnInstructions setBackgroundColor:[UIColor lightGrayColor]];
     
-    
-    
-    
     _btnInstructions.titleLabel.textColor = buttonTextColor;
     _btnInstructions.titleLabel.font = [UIFont fontWithName:buttonFontName size:.03 * width];
     [_btnInstructions addTarget:self action:@selector(pushInstructions) forControlEvents:UIControlEventTouchDown];
+    
+    _btnRestoreGame = [[UIButton alloc]init];
+    _btnRestoreGame.frame = CGRectMake(0.2 * width,0.65 * height, .2*width, .05*width);
+    _btnRestoreGame.backgroundColor = [UIColor whiteColor];
+    _btnRestoreGame.layer.cornerRadius = 10;
+    
+    [_btnRestoreGame setTitle:@"Restore" forState:UIControlStateNormal];
+    [_btnRestoreGame setTitleColor:buttonTextColor forState:UIControlStateNormal];
+    [_btnRestoreGame setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    [_btnRestoreGame setBackgroundColor:[UIColor lightGrayColor]];
+    
+    _btnRestoreGame.titleLabel.textColor = buttonTextColor;
+    _btnRestoreGame.titleLabel.font = [UIFont fontWithName:buttonFontName size:.03 * width];
+    [_btnRestoreGame addTarget:self action:@selector(restoreGame) forControlEvents:UIControlEventTouchDown];
     
     
     [self.view addSubview:_labelTitleBox];
@@ -129,6 +144,7 @@
     [self.view addSubview:_btnPlay];
     [self.view addSubview:_btnSetUp];
     [self.view addSubview:_btnInstructions];
+    [self.view addSubview:_btnRestoreGame];
     
     
     
@@ -149,7 +165,7 @@
 }
 
 -(void)pushPlay{
-    [self performSegueWithIdentifier:@"segueIntroToGamePlay" sender:self];
+    [self performSegueWithIdentifier:@"segueIntroToStart" sender:self];
     
 }
 -(void)pushSetUp{
@@ -161,6 +177,24 @@
     [self performSegueWithIdentifier:@"segueIntroToInstructions" sender:self];
     //Do something
     
+}
+
+-(void)restoreGame {
+    
+    _restoreMode = 1;
+    [self performSegueWithIdentifier:@"segueIntroToStart" sender:self];
+    
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString: @"segueIntroToStart" ]){
+        
+        StartViewController *introToStartViewController = [segue destinationViewController];
+        introToStartViewController.restoreMode = _restoreMode;
+        
+        _restoreMode = 0;
+    }
 }
 /*
 #pragma mark - Navigation

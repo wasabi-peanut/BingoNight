@@ -29,6 +29,8 @@
 
     _keyForNumberOfGames = @"keyForNumberOfGames";
     _keyForGlobalSettings = @"keyForGlobalSettings";
+    _keyForLastGameSelected = @"keyForLastGameSelected";
+    
     
     
     _width = [UIScreen mainScreen].bounds.size.width;
@@ -54,6 +56,7 @@
     [super viewDidLoad];
     
     
+  
     
     
     
@@ -115,9 +118,11 @@
 
 -(void)setUpGameButtons {
     
-    if (_numberOfGames < 7) {
-        
+    //GET LAST GAME SELECTED FOR RESTORE
+    NSInteger lastGameSelected = [[DefaultsDataManager getDataForKey:_keyForLastGameSelected] integerValue];
     
+    
+    if (_numberOfGames < 7) {
     
     //OLD WORKING WAY:
     NSInteger startX = _width/(_numberOfGames+1)-(100 + (4*_numberOfGames))/2;
@@ -184,6 +189,9 @@
         
         [gameButton addTarget:self action:@selector(gameSelected:) forControlEvents:UIControlEventTouchUpInside];
         
+        if (gameButton.tag != lastGameSelected && _restoreMode == 1) {
+            gameButton.enabled = NO;
+        }
         
         [self.view addSubview:gameButton];
 
@@ -280,7 +288,10 @@
         
         GamePlayViewController *viewStartToGamePlay = [segue destinationViewController];
         viewStartToGamePlay.incomingGameNumber = _gameSelected ;
+        viewStartToGamePlay.restoreMode = _restoreMode;
+        [DefaultsDataManager saveData: @(_gameSelected) forKey:_keyForLastGameSelected];
         
+        _restoreMode = 0;
     }
 }
 

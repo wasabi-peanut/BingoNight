@@ -18,6 +18,11 @@
 @property (strong, nonatomic) UIButton *btnPlay;
 @property (strong, nonatomic) UIButton *btnSetUp;
 @property (strong, nonatomic) UIButton *btnInstructions;
+@property (strong, nonatomic) UIButton *btnRestoreGame;
+
+@property NSInteger restoreMode;
+
+
 
 
 @end
