@@ -39,6 +39,7 @@
 
 -(void)viewDidDisappear:(BOOL)animated{
     [avPlayer stop];
+    
 }
 
 -(void)displayWinnerLogo{
@@ -151,8 +152,8 @@
         winnerLabel.alpha = 0;
     } completion:^(BOOL finished) {
         [fireworks1 stopAnimating];
-        [self performSegueWithIdentifier:@"segueWinnerToStart" sender:self];
-    }];
+               [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
+          }];
     
                             
     

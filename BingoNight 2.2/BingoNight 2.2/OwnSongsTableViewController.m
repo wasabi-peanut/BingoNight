@@ -40,6 +40,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    [self saveThePlaylist];
+    [_musicPlayer stop];
+}
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -88,16 +93,36 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        [_arrayOfSongNames removeObjectAtIndex:indexPath.row];
+        [_arrayOfSongsPicked removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
+    [self saveThePlaylist];
+    
 }
 
 
 
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+    NSUInteger fromIndex = fromIndexPath.row;
+    NSUInteger toIndex = toIndexPath.row;
+    
+    if (fromIndex != toIndex) {
+        NSString *name = [_arrayOfSongNames objectAtIndex:fromIndex];
+        [_arrayOfSongNames removeObjectAtIndex:fromIndex];
+        [_arrayOfSongNames insertObject:name atIndex:toIndex];
+        
+        NSString *location = [_arrayOfSongsPicked objectAtIndex:fromIndex];
+        [_arrayOfSongsPicked removeObjectAtIndex:fromIndex];
+        [_arrayOfSongsPicked insertObject:location atIndex:toIndex];
+        
+    }
+    [self.tableView reloadData];
+    [self saveThePlaylist];
+
 }
 
 
@@ -111,18 +136,17 @@
 -(void)loadThePlayList {
 
     
-    
-  /*  NSData *data = [DefaultsDataManager getDataForKey:_keyForArrayOfSongsPicked];
-     MPMediaItemCollection *mediaItemCollection = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    _arrayOfSongsPicked = [[NSMutableArray alloc] initWithArray:[mediaItemCollection items]];*/
-    
     _arrayOfSongNames = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongNames]];
     _arrayOfSongsPicked = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongsPicked]];
     
-       NSLog(@"The playlist is %@",_arrayOfSongNames);
-    NSLog(@"The playlist locations are %@",_arrayOfSongsPicked);
-    
+    [self.tableView reloadData];
    }
+
+-(void)saveThePlaylist{
+    [DefaultsDataManager saveData:_arrayOfSongsPicked forKey:_keyForArrayOfSongsPicked];
+    [DefaultsDataManager saveData:_arrayOfSongNames forKey:_keyForArrayOfSongNames];
+    
+}
 
 
 - (IBAction)btnSelectSongs:(id)sender {
@@ -154,12 +178,9 @@
     [DefaultsDataManager saveData:_arrayOfSongsPicked forKey:_keyForArrayOfSongsPicked];
     [DefaultsDataManager saveData:_arrayOfSongNames forKey:_keyForArrayOfSongNames];
     
- /*   [DefaultsDataManager saveData:_arrayOfSongNames forKey:_keyForArrayOfSongNames];
+    [self.tableView reloadData];
     
-    NSData *dataMediaItemCollection = [NSKeyedArchiver archivedDataWithRootObject:mediaItemCollection];
-    [DefaultsDataManager saveData:dataMediaItemCollection forKey:_keyForArrayOfSongsPicked];
-   */
-    [self playMusic];
+  //  [self playMusic];
    
 }
 

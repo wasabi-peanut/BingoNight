@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 #import "checkingPatterns.h"
 
 
@@ -61,6 +62,27 @@
 @property (strong, nonatomic) NSString *songTitle;
 @property (strong, nonatomic) NSString *checkingSongTitle;
 @property (strong, nonatomic) NSString *winnerSoundTitle;
+
+//OWN SONGS
+
+@property MPMediaItem *item;
+@property MPMediaItemCollection *mediaItemCollection;
+@property MPMediaPickerController *mediaPicker;
+
+@property (strong,nonatomic) NSString *nameOfSong;
+@property (strong, nonatomic) NSString *persistentID;
+
+@property NSInteger songRowSelected;
+
+
+@property (strong, nonatomic) NSMutableArray *arrayOfSongNames;
+@property (strong, nonatomic) NSMutableArray *arrayOfSongsPicked;
+
+@property (strong, nonatomic) NSString *keyForArrayOfSongNames;
+@property (strong, nonatomic) NSString *keyForArrayOfSongsPicked;
+
+- (IBAction)btnSelectSongs:(id)sender;
+@property MPMusicPlayerController *musicPlayer;
 
 
 @end

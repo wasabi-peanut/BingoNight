@@ -24,6 +24,10 @@
 
 - (void)viewDidLoad {
     
+    _musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
+    _keyForArrayOfSongNames = @"keyForArrayOfSongNames";
+    _keyForArrayOfSongsPicked = @"keyForArrayOfSongsPicked";
+    
     //GET NUMBER OF GAMES
     _keyForNumberOfGames = @"keyForNumberOfGames";
     _numberOfGames = [[DefaultsDataManager getDataForKey:_keyForNumberOfGames] integerValue];
@@ -61,6 +65,7 @@
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[0] integerValue] inComponent:2];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[0] integerValue] inComponent:3];
 
+    [self addToMusicArray];
     
     
     _gameNumber = 0;
@@ -113,6 +118,7 @@
             
         case 2:
             //choose checkingSong
+            _songRowSelected = row;
             switch (row) {
                     
                 case 0:
@@ -157,9 +163,8 @@
                 case 13:
                     _checkingSongTitle = @"rumble";
                     break;
-                
-                    
                 default:
+                    [self chooseOwnSong:row];
                     break;
             }
             [avPlayer stop];
@@ -167,10 +172,7 @@
             
     
                       break;
-            
-    
-           
-            
+          
            
         case 3:
             //choose Winner Sound
@@ -277,6 +279,10 @@
 #pragma mark MAKE ARRAYS
 
 -(void)makeArrays{
+    
+    _arrayOfSongsPicked = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongsPicked]];
+    
+    _arrayOfSongNames = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongNames]];
     
     
     _arrayGameNumbers = [[NSMutableArray alloc] init ];
@@ -438,15 +444,27 @@
 
 
 - (IBAction)btnPlay:(UIButton *)sender {
+    [_musicPlayer stop];
+    [avPlayer stop];
+    
    
     if (sender == _btnPlayChecking){
-        _songTitle = _checkingSongTitle;    }
-    
+        
+        if (_songRowSelected<14) {
+               _songTitle = _checkingSongTitle;
+            [self playAVPlayer];
+        }
+        else{
+            [self playOwnSong];
+        }
+    }
     if (sender == _btnPlayWinner) {
+        [self playAVPlayer];
         _songTitle = _winnerSoundTitle;
     }
-    
+}
 
+    -(void)playAVPlayer{
 
     NSString *songPath;
   
@@ -458,20 +476,57 @@
     avPlayer= [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
     
     [avPlayer setNumberOfLoops:-1];
-    [avPlayer setVolume:5];
+    [avPlayer setVolume:3];
     [avPlayer play];
-    
+    }
     
     
 
-}
+
 
 - (IBAction)btnStop:(id)sender {
+   
+    _songTitle = nil;
+    
     [avPlayer stop];
+    [_musicPlayer stop];
+    
     
 }
 
 
 - (IBAction)btnOwnSongsPressed:(id)sender {
 }
+
+
+-(void)addToMusicArray {
+    
+    [_arrayCheckingSongs addObjectsFromArray:_arrayOfSongNames];
+    [_pickerChecking reloadAllComponents];
+  
+}
+
+-(void)chooseOwnSong:(NSInteger)rowSelected {
+    MPMediaQuery *query = [MPMediaQuery songsQuery];
+    [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:_arrayOfSongsPicked[rowSelected-14] forProperty:MPMediaItemPropertyPersistentID]];
+    
+    
+    [_musicPlayer setQueueWithQuery:query];
+    
+   // [_musicPlayer play];
+}
+
+-(void)playOwnSong{
+    [_musicPlayer play];
+}
+
+
 @end
+
+
+//OWN MUSIC ADD TO ARRAY
+
+
+
+
+

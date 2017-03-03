@@ -677,10 +677,12 @@
     [UIView animateWithDuration:1 animations:^{
         [self.view setFrame:CGRectMake(0,-height*.25,width,height)];
     }];
-  
-    _labelNumberOfPages.frame = CGRectMake(200, 300, 50, 50);
-    [self.view bringSubviewToFront:_labelNumberOfPages];
+#warning HERE
     
+    
+    [UIView animateWithDuration:1 animations:^{
+        [self.view setFrame:CGRectMake(0,-height*.45,width,height)];
+    }];
      [_labelNumberOfPages setKeyboardType:UIKeyboardTypeNumberPad];
 }
 - (IBAction)switchRaffleValueChange:(id)sender {

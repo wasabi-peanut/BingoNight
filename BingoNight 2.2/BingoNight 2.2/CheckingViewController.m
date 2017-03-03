@@ -268,7 +268,7 @@
     avPlayer= [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
     
     [avPlayer setNumberOfLoops:-1];
-    [avPlayer setVolume:5];
+    [avPlayer setVolume:3];
     [avPlayer play];
     
 }
