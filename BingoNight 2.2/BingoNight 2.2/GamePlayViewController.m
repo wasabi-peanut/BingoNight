@@ -232,8 +232,9 @@
     if (![_arrayCoordinatesNameOfGame count]) {
         
         for (int n=0; n<12; n++) {
-            [_arrayCoordinatesNameOfGame insertObject:@"Name Is Here" atIndex:n];
-        }
+            NSString *nameOfGame = [NSString stringWithFormat:@"Game %i",n+1];
+            
+            [_arrayCoordinatesNameOfGame insertObject:nameOfGame atIndex:n];        }
         
     }
     if (![_arrayCoordinatesGrids count]) {

@@ -677,9 +677,8 @@
     [UIView animateWithDuration:1 animations:^{
         [self.view setFrame:CGRectMake(0,-height*.25,width,height)];
     }];
-#warning HERE
-    
-    
+
+        
     [UIView animateWithDuration:1 animations:^{
         [self.view setFrame:CGRectMake(0,-height*.45,width,height)];
     }];

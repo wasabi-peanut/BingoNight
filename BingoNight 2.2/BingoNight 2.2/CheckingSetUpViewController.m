@@ -24,6 +24,12 @@
 
 - (void)viewDidLoad {
     
+      self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"greystone.jpg"]];
+    
+    _height = [UIScreen mainScreen].bounds.size.height ;
+    _width = [UIScreen mainScreen].bounds.size.width ;
+
+    
     _musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
     _keyForArrayOfSongNames = @"keyForArrayOfSongNames";
     _keyForArrayOfSongsPicked = @"keyForArrayOfSongsPicked";
@@ -38,9 +44,7 @@
     
     //Set up preview Window
     
-    
-    
-    
+
     _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
     _keyForCoordinatesCheckingSongs = @"keyForCoordinatesCheckingSongs";
     _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
@@ -70,10 +74,21 @@
     
     _gameNumber = 0;
     
-    
+    [_pickerChecking selectRow:0 inComponent:0 animated:YES];
    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+-(void)viewDidAppear:(BOOL)animated{
+ 
+    [self makeArrays];
+    [self addToMusicArray];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [avPlayer stop];
+    [_musicPlayer stop];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,13 +103,12 @@
 
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    
     switch (component) {
         case 0:
             //change game
             _gameNumber = row;
-            
-            
-
             
             [_pickerChecking selectRow:[_arrayCoordinatesCheckingPatterns[row] integerValue] inComponent:1 animated:YES];
             [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[row] integerValue] inComponent:1];
@@ -104,9 +118,7 @@
             
             [_pickerChecking selectRow:[_arrayCoordinatesWinnerSounds[row] integerValue] inComponent:3 animated:YES];
            [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[row] integerValue] inComponent:3];
-            
-            
-            
+           
             break;
         case 1:
             //choose checking
@@ -168,11 +180,10 @@
                     break;
             }
             [avPlayer stop];
-            [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
             
-    
-                      break;
-          
+            [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:_gameNumber withObject:@(row)];
+            break;
+            
            
         case 3:
             //choose Winner Sound
@@ -199,14 +210,13 @@
                 default:
                     break;
             }
+            
             [avPlayer stop];
-                [_arrayCoordinatesWinnerSounds replaceObjectAtIndex:_gameNumber withObject:@(row)];
+            [_arrayCoordinatesWinnerSounds replaceObjectAtIndex:_gameNumber withObject:@(row)];
             break;
-            
-            
-            
+    
         default:
-            break;
+        break;
     }
     
     
@@ -214,7 +224,7 @@
     [DefaultsDataManager saveData:_arrayCoordinatesCheckingSongs forKey:_keyForCoordinatesCheckingSongs];
     [DefaultsDataManager saveData:_arrayCoordinatesWinnerSounds forKey:_keyForCoordinatesWinnerSounds];
     
-   
+    
 
 }
 
@@ -248,7 +258,7 @@
     return 4;
 }
 
--(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+/*-(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
     NSString *title;
     switch (component) {
@@ -270,11 +280,91 @@
     }
     
     return title;
-}
+}*/
+
 -(CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component{
     return 50;
 }
 
+-(CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    float width;
+    
+    switch (component) {
+        case 0:
+            width = _width*.15;
+            break;
+            
+        default:
+            width = _width*.65/3;
+            break;
+    }
+    return width;
+}
+
+-(UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view {
+    NSString *fontName = @"Helvetica";
+    float fontSize = 36;
+    
+    UILabel *tview = (UILabel *) view;
+    if (pickerView == _pickerChecking) {
+        switch (component) {
+            case 0:
+                
+                tview = [[UILabel alloc] init];
+                tview.backgroundColor = [UIColor lightGrayColor];
+                tview.textColor = [UIColor blueColor];
+                
+                tview.text = [_arrayGameNumbers objectAtIndex:row];
+                break;
+                
+            case 1:
+                    tview = [[UILabel alloc] init];
+                    tview.backgroundColor = [UIColor yellowColor];
+                    tview.textColor = [UIColor blueColor];
+                
+                
+                tview.text = [_arrayCheckingPatterns objectAtIndex:row];
+                break;
+                
+            case 2:
+                if (row<14) {
+                    
+                    tview = [[UILabel alloc] init];
+                    tview.backgroundColor = [UIColor yellowColor];
+                    tview.textColor = [UIColor blueColor];
+                }
+                if (row>=14) {
+                    
+                    tview = [[UILabel alloc] init];
+                    tview.backgroundColor = [UIColor greenColor];
+                    tview.textColor = [UIColor blueColor];
+                }
+                tview.adjustsFontSizeToFitWidth = YES;
+                tview.text = [_arrayCheckingSongs objectAtIndex:row];
+                break;
+            case 3:
+                tview = [[UILabel alloc] init];
+                tview.backgroundColor = [UIColor yellowColor];
+                tview.textColor = [UIColor blueColor];
+                tview.text = [_arrayWinnerSounds objectAtIndex:row];
+                break;
+                
+                
+            default:
+                //do something else
+                break;
+                
+        }
+        
+        
+    }
+    
+    tview.font = [UIFont fontWithName:fontName size:fontSize];
+    
+    return tview;
+    
+
+}
 
 #pragma mark MAKE ARRAYS
 
@@ -426,7 +516,7 @@
     CGFloat height = [UIScreen mainScreen].bounds.size.height ;
     CGFloat width = [UIScreen mainScreen].bounds.size.width ;
     
-    _myView = [checkingPatterns frameX:0 frameY:height/2 width:width/2 height:height/2];
+    _myView = [checkingPatterns frameX:width*.25 frameY:height/2 width:width/2 height:height/2];
     
     
     [self.view addSubview:_myView];
@@ -459,8 +549,8 @@
         }
     }
     if (sender == _btnPlayWinner) {
-        [self playAVPlayer];
-        _songTitle = _winnerSoundTitle;
+       _songTitle = _winnerSoundTitle;
+         [self playAVPlayer];
     }
 }
 
@@ -487,6 +577,8 @@
 - (IBAction)btnStop:(id)sender {
    
     _songTitle = nil;
+    _winnerSoundTitle = nil;
+    
     
     [avPlayer stop];
     [_musicPlayer stop];
@@ -497,6 +589,7 @@
 
 - (IBAction)btnOwnSongsPressed:(id)sender {
 }
+
 
 
 -(void)addToMusicArray {
@@ -513,7 +606,7 @@
     
     [_musicPlayer setQueueWithQuery:query];
     
-   // [_musicPlayer play];
+   
 }
 
 -(void)playOwnSong{

@@ -20,8 +20,11 @@
      _musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
     _keyForArrayOfSongNames = @"keyForArrayOfSongNames";
     _keyForArrayOfSongsPicked = @"keyForArrayOfSongsPicked";
-    
+    _keyForArrayOfSongArtists = @"keyForArrayOfSongArtists";
    
+    _keyForCoordinatesCheckingSongs = @"keyForCoordinatesCheckingSongs";
+    
+
     
     [super viewDidLoad];
     
@@ -63,8 +66,10 @@
     
     // Configure the cell...
     NSString *title = _arrayOfSongNames[indexPath.row];
-    
+    NSString *subTitle = _arrayOfSongArtists[indexPath.row];
     cell.textLabel.text = title;
+    cell.detailTextLabel.text = subTitle;
+    
     return cell;
 }
 
@@ -95,6 +100,16 @@
         // Delete the row from the data source
         [_arrayOfSongNames removeObjectAtIndex:indexPath.row];
         [_arrayOfSongsPicked removeObjectAtIndex:indexPath.row];
+        [_arrayOfSongArtists removeObjectAtIndex:indexPath.row];
+        
+        for (int x = 0; x<_arrayCoordinatesCheckingSongs.count; x++) {
+            if ([_arrayCoordinatesCheckingSongs[x] integerValue]==indexPath.row) {
+                [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:indexPath.row withObject:@(0)];
+            }
+        }
+        
+        
+        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -119,6 +134,10 @@
         [_arrayOfSongsPicked removeObjectAtIndex:fromIndex];
         [_arrayOfSongsPicked insertObject:location atIndex:toIndex];
         
+        NSString *artist = [_arrayOfSongArtists objectAtIndex:fromIndex];
+        [_arrayOfSongArtists removeObjectAtIndex:fromIndex];
+        [_arrayOfSongArtists insertObject:artist atIndex:toIndex];
+        
     }
     [self.tableView reloadData];
     [self saveThePlaylist];
@@ -138,6 +157,12 @@
     
     _arrayOfSongNames = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongNames]];
     _arrayOfSongsPicked = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongsPicked]];
+    _arrayOfSongArtists = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongArtists]];
+    
+    _arrayCoordinatesCheckingSongs = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingSongs]];
+    
+    
+    
     
     [self.tableView reloadData];
    }
@@ -145,6 +170,9 @@
 -(void)saveThePlaylist{
     [DefaultsDataManager saveData:_arrayOfSongsPicked forKey:_keyForArrayOfSongsPicked];
     [DefaultsDataManager saveData:_arrayOfSongNames forKey:_keyForArrayOfSongNames];
+    [DefaultsDataManager saveData:_arrayOfSongArtists forKey:_keyForArrayOfSongArtists];
+    [DefaultsDataManager saveData:_arrayCoordinatesCheckingSongs forKey:_keyForCoordinatesCheckingSongs];
+    
     
 }
 
@@ -175,12 +203,17 @@
         [_arrayOfSongsPicked addObject:_persistentID];
         
     }
-    [DefaultsDataManager saveData:_arrayOfSongsPicked forKey:_keyForArrayOfSongsPicked];
-    [DefaultsDataManager saveData:_arrayOfSongNames forKey:_keyForArrayOfSongNames];
     
+    for (_item in [mediaItemCollection items]){
+        _nameOfArtist = [_item valueForProperty:MPMediaItemPropertyArtist];
+        [_arrayOfSongArtists addObject:_nameOfArtist];
+        
+    }
+    
+    [self saveThePlaylist];
     [self.tableView reloadData];
     
-  //  [self playMusic];
+  
    
 }
 

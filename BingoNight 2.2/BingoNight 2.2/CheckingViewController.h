@@ -11,10 +11,13 @@
 #import <QuartzCore/QuartzCore.h>
 #import "checkingPatterns.h"
 #import <AVFoundation/AVFoundation.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 
 
 @interface CheckingViewController : UIViewController
+
+
 
 @property (strong,nonatomic) NSMutableArray *arrayCalledNumbers;
 
@@ -49,7 +52,23 @@
 
 @property checkingPatterns *myView;
 
+//OWN SONGS DATA
+@property MPMediaItem *item;
+@property MPMediaItemCollection *mediaItemCollection;
+@property MPMediaPickerController *mediaPicker;
 
+@property (strong,nonatomic) NSString *nameOfSong;
+@property (strong, nonatomic) NSString *persistentID;
+
+@property NSInteger songRowSelected;
+
+
+@property (strong, nonatomic) NSMutableArray *arrayOfSongNames;
+@property (strong, nonatomic) NSMutableArray *arrayOfSongsPicked;
+
+@property (strong, nonatomic) NSString *keyForArrayOfSongNames;
+@property (strong, nonatomic) NSString *keyForArrayOfSongsPicked;
+@property MPMusicPlayerController *musicPlayer;
 
 
 @end

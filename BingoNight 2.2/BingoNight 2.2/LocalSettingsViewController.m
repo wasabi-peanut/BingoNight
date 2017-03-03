@@ -39,9 +39,6 @@
     _width = [UIScreen mainScreen].bounds.size.width;
    
    
-   
-    
-    
     //SET UP SLIDERS
     
     self.sliderRed.value = 255;
@@ -145,7 +142,7 @@
    [self pickerView:_pickerGameSettings didSelectRow:0 inComponent:0];
     
    [self pickerView:_pickerPresets didSelectRow:0 inComponent:0];
-    
+ 
     
     
   //  [self gridButtons];
@@ -223,9 +220,6 @@
     NSString *fontName = @"Helvetica";
     float fontSize = 36;
     
-    
-    
-    
     UILabel *tview = (UILabel *) view;
     if (pickerView == _pickerPresets) {
         switch (component) {
@@ -244,15 +238,13 @@
                         tview = [[UILabel alloc] init];
                         tview.backgroundColor = [UIColor yellowColor];
                         tview.textColor = [UIColor blueColor];
-                    
-                    
+                   
                 }
                 if (row>=_protectedPresets) {
                     
                         tview = [[UILabel alloc] init];
                         tview.backgroundColor = [UIColor greenColor];
                         tview.textColor = [UIColor blueColor];
-                    
                     
                 }
                  tview.text = [_arrayPickerPresets objectAtIndex:row];
@@ -897,7 +889,9 @@
     if (![_arrayCoordinatesNameOfGame count]) {
         
         for (int n=0; n<12; n++) {
-            [_arrayCoordinatesNameOfGame insertObject:@"Name Goes Here" atIndex:n];
+            NSString *nameOfGame = [NSString stringWithFormat:@"Game %i",n+1];
+            
+            [_arrayCoordinatesNameOfGame insertObject:nameOfGame atIndex:n];
         }
         
     }
@@ -984,6 +978,7 @@
     [DefaultsDataManager saveData:_arrayCoordinatesGrids forKey:_keyForCoordinatesGrid];
     [DefaultsDataManager saveData:_arrayCoordinatesColors forKey:_keyForCoordinatesColors];
     [DefaultsDataManager saveData:_arrayGameComments forKey:_keyForGameComments];
+    [DefaultsDataManager saveData:_arrayCoordinatesNameOfGame forKey:_keyForCoordinatesNameOfGame];
     
        
 
@@ -1521,9 +1516,11 @@
         
         [_pickerPresets selectRow:newRow-1 inComponent:1 animated:YES];
         _presetSelected = newRow-1;
+
         
+        [_arrayCoordinatesColors replaceObjectAtIndex:_gameNumber withObject:@(newRow-1)];
         [DefaultsDataManager saveData:_arrayGameColorSettingsShell forKey:_keyForGameColorSettingsShell];
-        
+         [DefaultsDataManager saveData:_arrayCoordinatesColors forKey:_keyForCoordinatesColors];
         
     }
     
@@ -1563,8 +1560,10 @@
         [_pickerGameSettings selectRow:7 inComponent:0 animated:YES];
         _allowGridEdits = YES;
         
-        [DefaultsDataManager saveData:_arrayGridsShell forKey:_keyForGridsShell];
         
+        [_arrayCoordinatesGrids replaceObjectAtIndex:_gameNumber withObject:@(newRow-1)];
+        [DefaultsDataManager saveData:_arrayGridsShell forKey:_keyForGridsShell];
+        [DefaultsDataManager saveData:_arrayCoordinatesGrids forKey:_keyForCoordinatesGrid];
         
     }
     if (alertNumber == 4) {
@@ -1600,15 +1599,11 @@
 -(IBAction)editEndedTextFieldNameOfGame:(id)sender{
     [_arrayCoordinatesNameOfGame replaceObjectAtIndex:_gameNumber withObject:_textFieldNameOfGame.text];
     [DefaultsDataManager saveData:_arrayCoordinatesNameOfGame forKey:_keyForCoordinatesNameOfGame];
-    
-    
-
+   
 }
 
 
 -(IBAction)enteredTextFieldRedValue:(id)sender{
-    
-    
     
     if ([_textFieldRedValue.text integerValue] > 255) {
         _textFieldRedValue.text = @"255";
@@ -1708,11 +1703,8 @@
     [_arrayGameComments replaceObjectAtIndex:_gameNumber withObject:textView.text];
     [DefaultsDataManager saveData:_arrayGameComments forKey:_keyForGameComments];
     
-    
-    
    
 }
-
 
 
 - (IBAction)stepperSchemesPressed:(id)sender {

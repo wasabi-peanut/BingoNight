@@ -46,6 +46,8 @@
 
 @property checkingPatterns *myView;
 
+@property CGFloat width;
+@property CGFloat height;
 
 
 @property (strong, nonatomic) IBOutlet UIButton *btnPlayChecking;
@@ -80,9 +82,9 @@
 
 @property (strong, nonatomic) NSString *keyForArrayOfSongNames;
 @property (strong, nonatomic) NSString *keyForArrayOfSongsPicked;
-
-- (IBAction)btnSelectSongs:(id)sender;
 @property MPMusicPlayerController *musicPlayer;
+//- (IBAction)btnSelectSongs:(id)sender;
+
 
 
 @end

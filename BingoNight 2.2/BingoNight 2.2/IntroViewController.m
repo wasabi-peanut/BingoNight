@@ -16,10 +16,15 @@
 
 @implementation IntroViewController
 
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 - (void)viewDidLoad {
    
     [self.navigationController setNavigationBarHidden:YES];
-    
+ //   [self.navigationController prefersStatusBarHidden];
+  
     _restoreMode = 0;
     
 #pragma mark Set Up The Screen

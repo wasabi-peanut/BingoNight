@@ -156,11 +156,7 @@
   }
 
 
-
-    
-
 - (IBAction)addItemPressed:(id)sender {
-    
    
      _action = @"Add";
     [_arrayRaffleItems addObject:@""];
@@ -175,9 +171,11 @@
         float currentX = self.tableView.bounds.origin.x;
         float currentY = self.tableView.bounds.origin.y;
         
-        _textViewDetail = [[UITextView alloc] initWithFrame:CGRectMake(currentX+_width*.1, currentY+_height*.1, _width*.8, _height*.2)];
+        _textViewDetail = [[UITextView alloc] initWithFrame:CGRectMake(currentX+_width*.1, currentY+_height*.1, _width*.8, _height*.6)];
         _textViewDetail.layer.borderWidth = 3;
-        _textViewDetail.font = [UIFont fontWithName:@"Helvetica" size:14];
+        _textViewDetail.font = [UIFont fontWithName:@"Helvetica" size:72];
+        _textViewDetail.adjustsFontForContentSizeCategory = YES;
+        _textViewDetail.textColor = [UIColor redColor];
     
         _textViewDetail.delegate = self;
     

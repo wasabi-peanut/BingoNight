@@ -71,6 +71,10 @@
      [self nameOfGameSetUp];
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    [_musicPlayer stop];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -24,12 +24,16 @@
     _arrayCoordinatesWinnerSounds = [DefaultsDataManager getArrayForKey:_keyForCoordinatesWinnerSounds];
     _winnerSoundNumber = [_arrayCoordinatesWinnerSounds[_gameNumber-1] integerValue];
     
-  
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    }
+
+-(void)viewDidAppear:(BOOL)animated {
     [self displayWinnerLogo];
+    NSLog(@"The winner sound number is %li",_winnerSoundNumber);
+
 }
 
 - (void)didReceiveMemoryWarning {

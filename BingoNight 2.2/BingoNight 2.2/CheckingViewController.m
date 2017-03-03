@@ -29,6 +29,12 @@
 
 - (void)viewDidLoad {
     
+    _musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
+    _keyForArrayOfSongsPicked = @"keyForArrayOfSongsPicked";
+    
+    
+    
+    
     _height = [UIScreen mainScreen].bounds.size.height;
     _width = [UIScreen mainScreen].bounds.size.width;
     
@@ -39,6 +45,8 @@
     _arrayCoordinatesCheckingPatterns = [DefaultsDataManager getDataForKey:_keyForCoordinatesCheckingPatterns];
     _arrayCalledNumbers = [DefaultsDataManager getDataForKey:_keyForCalledNumbers];
     _arrayCoordinatesCheckingSongs = [DefaultsDataManager getDataForKey:_keyForCoordinatesCheckingSongs];
+    
+    _arrayOfSongsPicked = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongsPicked]];
     
     
     
@@ -86,6 +94,7 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     [avPlayer stop];
+    [_musicPlayer stop];
 }
 
 -(void)createCalledDisplay{
@@ -208,8 +217,8 @@
     [self.view addSubview:_myView];
     [_myView runAnimationWithPatternSelected:checkingPattern];
     
-    
     NSInteger songToPlay = [_arrayCoordinatesCheckingSongs[_gameNumber-1] integerValue];
+  //  _songRowSelected = songToPlay;
     switch (songToPlay) {
         case 0:
             _checkingSongTitle = @"brazilsamba";
@@ -253,11 +262,15 @@
         case 13:
             _checkingSongTitle = @"rumble";
             break;
-            
-            
         default:
+            [self playOwnSong:songToPlay];
             break;
     }
+    if (songToPlay<14) {
+        [self playSavedSong];
+    }
+}
+-(void)playSavedSong {
     NSString *songPath;
     
     songPath =[[NSBundle mainBundle]pathForResource:_checkingSongTitle ofType:@"mp3"];
@@ -268,8 +281,18 @@
     avPlayer= [[AVAudioPlayer alloc]initWithContentsOfURL:url error:&error];
     
     [avPlayer setNumberOfLoops:-1];
-    [avPlayer setVolume:3];
+    [avPlayer setVolume:1];
     [avPlayer play];
+    
+}
+
+-(void)playOwnSong: (NSInteger)rowSelected{
+    MPMediaQuery *query = [MPMediaQuery songsQuery];
+    [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:_arrayOfSongsPicked[rowSelected-14] forProperty:MPMediaItemPropertyPersistentID]];
+    
+    
+    [_musicPlayer setQueueWithQuery:query];
+    [_musicPlayer play];
     
 }
 
