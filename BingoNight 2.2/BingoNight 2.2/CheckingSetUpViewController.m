@@ -11,7 +11,6 @@
 #import "checkingPatterns.h"
 
 
-#warning Credit BenMusic (for checking) and SoundBible (for winner)
 
 
 @interface CheckingSetUpViewController ()
@@ -63,18 +62,18 @@
     [_pickerChecking selectRow:currentCheckingSong inComponent:2 animated:YES];
     [_pickerChecking selectRow:currentWinnerSound inComponent:3 animated:YES];
     
-    
-    [self pickerView:_pickerChecking didSelectRow:0 inComponent:0];
+   /* [self pickerView:_pickerChecking didSelectRow:0 inComponent:0];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[0] integerValue] inComponent:1];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[0] integerValue] inComponent:2];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[0] integerValue] inComponent:3];
+    */
 
     [self addToMusicArray];
     
     
     _gameNumber = 0;
     
-    [_pickerChecking selectRow:0 inComponent:0 animated:YES];
+  
    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -83,6 +82,11 @@
  
     [self makeArrays];
     [self addToMusicArray];
+    
+    [self pickerView:_pickerChecking didSelectRow:0 inComponent:0];
+    [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[0] integerValue] inComponent:1];
+    [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[0] integerValue] inComponent:2];
+    [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[0] integerValue] inComponent:3];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

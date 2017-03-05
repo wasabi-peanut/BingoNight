@@ -334,7 +334,7 @@
 
     _arrayGameColorSettings = [[NSMutableArray alloc] initWithArray:_arrayGameColorSettingsShell[colorScheme]];
     _arrayGridPatterns =      [[NSMutableArray alloc] initWithArray:_arrayGridsShell[gridScheme]];
-    _labelGameComments.text =  _arrayGameComments[_incomingGameNumber];
+    _labelGameComments.text =  _arrayGameComments[_incomingGameNumber-1];
     
     
     
