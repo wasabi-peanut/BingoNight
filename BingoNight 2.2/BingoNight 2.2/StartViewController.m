@@ -94,7 +94,7 @@
                                 @1,@4,@1, //12,13,14 is ball roll, display and drop seconds;
                                 @1, //15 is smart selector on (i.e. value of one)
                                 @0, //16 use Special Checking is ON
-                                @1, //17 add image is OFF.
+                                @0, //17 add image is OFF.
                                 @10, //18 X coordinate of image
                                 @10, //19  Y coordinate of image
                                 @100, //20 width of image
@@ -106,7 +106,7 @@
         
     }
     
-    
+   
     _numberOfGames = [[DefaultsDataManager getDataForKey:_keyForNumberOfGames] integerValue];
 
     
@@ -241,11 +241,15 @@
     float width = [_arrayGlobalSettings[20] floatValue];
     float height = [_arrayGlobalSettings[21] floatValue];
     
+    
+        
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xValue, yValue, width, height)];
+   
+    if ([_arrayGlobalSettings[17] integerValue] == 1) {
     imageView.image = [UIImage imageWithData:[DefaultsDataManager getDataForKey:@"imageKey"]];
     
     [_nameOfEvent addSubview:imageView];
-
+    }
    
     if ([_arrayGlobalSettings[24] integerValue]==0) {
         [_nameOfEvent bringSubviewToFront:imageView];

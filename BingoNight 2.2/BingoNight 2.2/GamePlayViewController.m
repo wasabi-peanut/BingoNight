@@ -184,14 +184,14 @@
     if (![_arrayGameColorSettingsShell count]) {
         
         _arrayGameColorSettings = [[NSMutableArray alloc] initWithObjects:
-                                   @255,@255,@255,
                                    @255,@0,@0,
+                                   @255,@255,@255,
                                    @0,@0,@255,
                                    @255,@100,@165,
                                    @130,@130,@130,
                                    @0,@0,@255,
                                    @0,@0,@255,
-                                   @0,nil];
+                                   @3,nil];
         for (int x = 0; x<12; x++) {
             [_arrayGameColorSettingsShell addObject:_arrayGameColorSettings];
              }
@@ -200,18 +200,25 @@
 
     
     
-    if (![_arrayGlobalSettings count]) {
-        _arrayGlobalSettings = [[NSMutableArray alloc]initWithObjects:@(YES),@"Name of Event",//UseSelector and Name 0,1
-                                @100,@100,@100,//text color 2,3,4
-                                @0,@255,@0,//background to text 5,6,7
-                                @"Courier",@64, //font and size 8,9
-                                @1, //10 is row number for font;
-                                @1, //11 is row number for size;
-                                @2,@2,@2, //12,13,14 is delay in seconds for roll, display and drop;
-                                @1, //15 is use Smart Selector;
-                                @1, //16 is use Special Checking
-                                nil];
-        
+   if (![_arrayGlobalSettings count]) {
+       _arrayGlobalSettings = [[NSMutableArray alloc]initWithObjects:@(YES),@"Name of Event",//UseSelector and Name 0,1
+                               @0,@0,@0,//text color 2,3,4
+                               @0,@255,@0,//background to text 5,6,7
+                               @"Arial",@64, //font and size 8,9
+                               @5, //10 is row number for font;
+                               @13, //11 is row number for size;
+                               @1,@4,@1, //12,13,14 is ball roll, display and drop seconds;
+                               @1, //15 is smart selector on (i.e. value of one)
+                               @1, //16 use Special Checking is ON
+                               @0, //17 add image is OFF.
+                               @10, //18 X coordinate of image
+                               @10, //19  Y coordinate of image
+                               @100, //20 width of image
+                               @100, //21 height of image
+                               @0,// 22 DON"T use Raffle
+                               @0,// 23 theme song NOT selected
+                               @0,// 24 Image on TOP
+                               nil];
     }
 
     if (![_arrayGridsShell count]) {
@@ -693,7 +700,7 @@
     for (int z=0; z<_arrayCalledNumbers.count;z++) {
         
         
-        NSLog(@"the called balls array is %li",_arrayCalledNumbers.count);
+        
     
     UIView *shadow =[[UIView alloc] init];
     shadow.layer.shadowColor = [[UIColor blackColor] CGColor];
@@ -714,43 +721,10 @@
     number.center = activeBall.center;
     number.text =  _arrayCalledNumbers[z];
         
-  /*
-    number.textColor = _ballTextColor;
-   // [number setTextAlignment:NSTextAlignmentCenter];
-   // number.font = [UIFont fontWithName:_ballTextFont size:_lastCalledHeight*.4];
-    
-    number.backgroundColor = [UIColor clearColor];
-    if (_useSelector == 1) {
-        number.alpha = 0;}
-    
-    number.layer.contentsScale = 8.0f;
-    
-    
-    [activeBall addSubview:number];
-    [shadow addSubview:activeBall];
-// [self.view addSubview:shadow];
-    
-    
-    activeBall.center = CGPointMake(-100, _ballStartY);*/
-    
-   
-    
-    
     [_arrayCalledBallsLabels insertObject:number atIndex:0];
     [_arrayCalledBalls insertObject:activeBall atIndex:0];
     }
-    
-  
-    
-    
-    
-    //above here
-    
-   /* NSData *dataForCalledBalls = [DefaultsDataManager getDataForKey:@"keyForCalledBalls"];
-    _arrayCalledBalls = [[NSMutableArray alloc]initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:dataForCalledBalls]];
-    NSData *dataForCalledBallsLabels = [DefaultsDataManager getDataForKey:@"keyForCalledBallsLabels"];
-    _arrayCalledBalls = [[NSMutableArray alloc]initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:dataForCalledBallsLabels]];
-    */
+
     
     for (UIButton *myButton in _arrayButtonsCreated) {
         if ([_arrayCalledNumbers containsObject:@(myButton.tag)]){
@@ -1146,12 +1120,15 @@
     number.textColor = _ballTextColor;
     [number setTextAlignment:NSTextAlignmentCenter];
     number.font = [UIFont fontWithName:_ballTextFont size:_lastCalledHeight*.4];
+    number.layer.contentsScale = [[UIScreen mainScreen] scale];
+    
     
     number.backgroundColor = [UIColor clearColor];
     if (_useSelector == 1) {
         number.alpha = 0;}
     
-    number.layer.contentsScale = 8.0f;
+    
+    
     
     
     [activeBall addSubview:number];
@@ -1237,7 +1214,7 @@
     
     [CATransaction commit];
     
-    [UIView animateWithDuration:2 delay:_ballRollTime options:UIViewAnimationOptionCurveEaseIn animations:^{
+    [UIView animateWithDuration:2 delay:_ballRollTime/2 options:UIViewAnimationOptionCurveEaseIn animations:^{
        ((UILabel *) _arrayCalledBallsLabels[0]).alpha = 1;
     } completion:^(BOOL finished) {
         

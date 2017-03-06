@@ -756,7 +756,7 @@
     
     else {
         
-        [self yesImageExist];
+     [self yesImageExist];
      [_arrayGlobalSettings replaceObjectAtIndex:17 withObject:@1];
     _ipc = [[UIImagePickerController alloc] init];
     _ipc.delegate = self;
