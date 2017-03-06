@@ -105,12 +105,12 @@
         for (int x = 0; x<_arrayCoordinatesCheckingSongs.count; x++) {
             if ([_arrayCoordinatesCheckingSongs[x] integerValue]==indexPath.row) {
                 [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:indexPath.row withObject:@(0)];
+                
             }
         }
         
-        
-        
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
