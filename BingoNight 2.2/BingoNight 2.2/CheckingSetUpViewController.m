@@ -43,7 +43,7 @@
     
     //Set up preview Window
     
-
+/*
     _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
     _keyForCoordinatesCheckingSongs = @"keyForCoordinatesCheckingSongs";
     _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
@@ -62,14 +62,14 @@
     [_pickerChecking selectRow:currentCheckingSong inComponent:2 animated:YES];
     [_pickerChecking selectRow:currentWinnerSound inComponent:3 animated:YES];
     
-   /* [self pickerView:_pickerChecking didSelectRow:0 inComponent:0];
+    [self pickerView:_pickerChecking didSelectRow:0 inComponent:0];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[0] integerValue] inComponent:1];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[0] integerValue] inComponent:2];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[0] integerValue] inComponent:3];
-    */
+ 
 
     [self addToMusicArray];
-    
+    */
     
     _gameNumber = 0;
     
@@ -79,8 +79,11 @@
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated{
- 
-    
+    NSLog(@"here");
+    _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
+    _keyForCoordinatesCheckingSongs = @"keyForCoordinatesCheckingSongs";
+    _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
+
     _arrayCoordinatesCheckingPatterns = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingPatterns]];
     _arrayCoordinatesCheckingSongs = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingSongs]];
     _arrayCoordinatesWinnerSounds = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesWinnerSounds]];
@@ -88,11 +91,21 @@
     [self makeArrays];
     [self addToMusicArray];
     
+    
+    NSInteger  currentCheckingPattern =  [_arrayCoordinatesCheckingPatterns[0] integerValue];
+    NSInteger  currentCheckingSong =     [_arrayCoordinatesCheckingSongs[0] integerValue];
+    NSInteger  currentWinnerSound =      [_arrayCoordinatesWinnerSounds[0] integerValue];
+    
+    [_pickerChecking selectRow:currentCheckingPattern inComponent:1 animated:YES];
+    [_pickerChecking selectRow:currentCheckingSong inComponent:2 animated:YES];
+    [_pickerChecking selectRow:currentWinnerSound inComponent:3 animated:YES];
+    
     [self pickerView:_pickerChecking didSelectRow:0 inComponent:0];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[0] integerValue] inComponent:1];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[0] integerValue] inComponent:2];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[0] integerValue] inComponent:3];
-}
+
+ }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [avPlayer stop];

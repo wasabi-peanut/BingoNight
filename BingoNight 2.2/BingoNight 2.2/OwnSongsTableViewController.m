@@ -103,7 +103,7 @@
         [_arrayOfSongArtists removeObjectAtIndex:indexPath.row];
         
         for (int x = 0; x<_arrayCoordinatesCheckingSongs.count; x++) {
-            if ([_arrayCoordinatesCheckingSongs[x] integerValue]==indexPath.row) {
+            if ([_arrayCoordinatesCheckingSongs[x] integerValue]==indexPath.row+14) {
                 [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:indexPath.row withObject:@(0)];
                 
             }
@@ -113,7 +113,8 @@
         
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+    [DefaultsDataManager saveData:_arrayCoordinatesCheckingSongs forKey:_keyForCoordinatesCheckingSongs];
     [self saveThePlaylist];
     
 }
