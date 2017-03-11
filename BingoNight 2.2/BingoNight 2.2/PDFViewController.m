@@ -121,7 +121,7 @@
         
         void (^completionHandler)(UIPrintInteractionController *, BOOL,NSError *) = ^(UIPrintInteractionController *pic, BOOL completed, NSError *error){
             if (!completed && error){
-                NSLog(@"Failed");
+               
             }
         };
     

@@ -22,7 +22,7 @@
 @implementation CheckingSetUpViewController
 
 - (void)viewDidLoad {
-    NSLog(@"View Did Load");
+   
       self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"greystone.jpg"]];
     
     _height = [UIScreen mainScreen].bounds.size.height ;
@@ -52,7 +52,7 @@
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated{
-    NSLog(@"View Did Appear");
+   
     _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
     _keyForCoordinatesCheckingSongs = @"keyForCoordinatesCheckingSongs";
     _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
@@ -129,7 +129,7 @@
         case 2:
             //choose checkingSong
             
-             NSLog(@"Triggered");
+          
             _songRowSelected = row;
             switch (row) {
                     
@@ -176,7 +176,7 @@
                     _checkingSongTitle = @"rumble";
                     break;
                 default:
-                    NSLog(@"Sending with row %li",row);
+                   
                     [self chooseOwnSong:row];
                     
                     break;
@@ -373,7 +373,7 @@
 -(void)makeArrays{
     
     _arrayOfSongsPicked = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongsPicked]];
-    NSLog(@"Make arrays: The array of songs picker is %li long",_arrayOfSongsPicked.count);
+    
     
     _arrayOfSongNames = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongNames]];
     
@@ -604,7 +604,7 @@
 
 -(void)chooseOwnSong:(NSInteger)rowSelected {
     MPMediaQuery *query = [MPMediaQuery songsQuery];
-    NSLog(@"The array of songs picked is %li items and the row selected is %li",_arrayOfSongsPicked.count, rowSelected);
+  
     
     [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:_arrayOfSongsPicked[rowSelected-14] forProperty:MPMediaItemPropertyPersistentID]];
     

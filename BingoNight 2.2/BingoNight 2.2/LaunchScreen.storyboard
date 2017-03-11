@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,15 +23,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bingo_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="whP-Tb-WWn">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <rect key="frame" x="93" y="70" width="838" height="628"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.1419270932674408" green="0.2305564284324646" blue="0.60165542364120483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="whP-Tb-WWn" secondAttribute="trailing" id="5JA-iu-7sq"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="whP-Tb-WWn" secondAttribute="bottom" id="aui-ai-Lgv"/>
-                            <constraint firstItem="whP-Tb-WWn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="d3p-GF-7N8"/>
-                            <constraint firstItem="whP-Tb-WWn" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="j8Q-bS-9CZ"/>
+                            <constraint firstAttribute="trailing" secondItem="whP-Tb-WWn" secondAttribute="trailing" multiplier="1.1" id="5JA-iu-7sq"/>
+                            <constraint firstItem="whP-Tb-WWn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="OjV-IT-ZkK"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="whP-Tb-WWn" secondAttribute="bottom" multiplier="1.1" id="aui-ai-Lgv"/>
+                            <constraint firstItem="whP-Tb-WWn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jbU-zc-rCD"/>
                         </constraints>
                     </view>
                 </viewController>

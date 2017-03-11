@@ -1543,6 +1543,8 @@
         }
         [DefaultsDataManager saveData:_arrayCoordinatesColors forKey:_keyForCoordinatesColors];
         [_pickerPresets selectRow:0 inComponent:1 animated:YES];
+        [self pickerView:_pickerPresets didSelectRow:0 inComponent:1];
+        
         
     }
     if (alertNumber == 3) {
@@ -1587,6 +1589,9 @@
         }
         [DefaultsDataManager saveData:_arrayCoordinatesGrids forKey:_keyForCoordinatesGrid];
         [_pickerPresets selectRow:0 inComponent:2 animated:YES];
+        [self pickerView:_pickerPresets didSelectRow:0 inComponent:2];
+        
+
         
         
     }

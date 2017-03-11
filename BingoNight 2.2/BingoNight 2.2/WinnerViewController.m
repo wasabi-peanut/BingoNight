@@ -32,8 +32,6 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [self displayWinnerLogo];
-    NSLog(@"The winner sound number is %li",_winnerSoundNumber);
-
 }
 
 - (void)didReceiveMemoryWarning {
