@@ -77,6 +77,8 @@
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[0] integerValue] inComponent:1];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[0] integerValue] inComponent:2];
     [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[0] integerValue] inComponent:3];
+    
+    [_pickerChecking reloadAllComponents];
 
  }
 
@@ -98,7 +100,7 @@
 
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"Triggered");
+   
     
     
     switch (component) {
@@ -597,7 +599,7 @@
     
     [_arrayCheckingSongs addObjectsFromArray:_arrayOfSongNames];
     [_pickerChecking reloadAllComponents];
-    
+      
 }
 
 -(void)chooseOwnSong:(NSInteger)rowSelected {

@@ -105,13 +105,20 @@
         [_arrayOfSongNames removeObjectAtIndex:indexPath.row];
         [_arrayOfSongsPicked removeObjectAtIndex:indexPath.row];
         [_arrayOfSongArtists removeObjectAtIndex:indexPath.row];
+        NSLog(@"The deleted row is %li",indexPath.row);
         
-        for (int x = 0; x<_arrayCoordinatesCheckingSongs.count; x++) {
+        
+       for (int x = 0; x<_arrayCoordinatesCheckingSongs.count; x++) {
             if ([_arrayCoordinatesCheckingSongs[x] integerValue]==indexPath.row+14) {
-                [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:indexPath.row withObject:@(0)];
+                [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:x withObject:@(0)];
                 NSLog(@"I change coordinate to 0 for index path %li",indexPath.row);
                 
             }
+           
+           if ([_arrayCoordinatesCheckingSongs[x] integerValue] > indexPath.row+14) {
+               [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:x withObject:@([_arrayCoordinatesCheckingSongs[x] integerValue]-1)];
+               NSLog(@"I lowered coordinate by 1 for index path %li ",indexPath.row);
+           }
             
         }
        
