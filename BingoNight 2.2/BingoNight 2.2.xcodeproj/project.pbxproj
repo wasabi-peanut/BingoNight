@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5897585A1DFE5BBF0004D5AF /* CheckingSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 589758591DFE5BBF0004D5AF /* CheckingSetUpViewController.m */; };
+		58BD13401E7493EB008D6269 /* bingo_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 58BD133F1E7493EB008D6269 /* bingo_logo.png */; };
 		58C248831E6FBB12005B9645 /* OwnSongs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C248821E6FBB12005B9645 /* OwnSongs.storyboard */; };
 		58C248851E6FBC14005B9645 /* GameSequence.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C248841E6FBC14005B9645 /* GameSequence.storyboard */; };
 		E30283691E3EEA8C0058D5C8 /* RaffleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E30283681E3EEA8C0058D5C8 /* RaffleViewController.m */; };
@@ -620,6 +621,7 @@
 /* Begin PBXFileReference section */
 		589758581DFE5BBF0004D5AF /* CheckingSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckingSetUpViewController.h; sourceTree = "<group>"; };
 		589758591DFE5BBF0004D5AF /* CheckingSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckingSetUpViewController.m; sourceTree = "<group>"; };
+		58BD133F1E7493EB008D6269 /* bingo_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bingo_logo.png; sourceTree = "<group>"; };
 		58C248821E6FBB12005B9645 /* OwnSongs.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OwnSongs.storyboard; sourceTree = "<group>"; };
 		58C248841E6FBC14005B9645 /* GameSequence.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GameSequence.storyboard; sourceTree = "<group>"; };
 		E30283671E3EEA8C0058D5C8 /* RaffleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleViewController.h; sourceTree = "<group>"; };
@@ -1691,6 +1693,7 @@
 		E39824E61DE5053100ACC5A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				58BD133F1E7493EB008D6269 /* bingo_logo.png */,
 				E328E6021E0641BE004F10DA /* Songs */,
 				E328E6011E0641B5004F10DA /* Images */,
 				E39824E71DE5053100ACC5A7 /* main.m */,
@@ -2416,6 +2419,7 @@
 				E3E6F4791E261FE8003E3732 /* Basketball-Bingo5.png in Resources */,
 				E37B80C51E31D74D00E59AC3 /* Shark-Bingo86.png in Resources */,
 				E37B80861E31D74D00E59AC3 /* Shark-Bingo23.png in Resources */,
+				58BD13401E7493EB008D6269 /* bingo_logo.png in Resources */,
 				E3FDF5101E296AAC001A9111 /* fireworks4.png in Resources */,
 				E3E6F3B61E26144E003E3732 /* bird15.png in Resources */,
 				E37B7F6D1E31CA9800E59AC3 /* Google23.png in Resources */,
