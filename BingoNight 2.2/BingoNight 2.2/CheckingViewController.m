@@ -51,14 +51,15 @@
     
     
     
-/*  //FOR TESTING
-    _arrayCalledNumbers = [[NSMutableArray alloc] init];
+  //FOR TESTING
+/*    _arrayCalledNumbers = [[NSMutableArray alloc] init];
     for (int z=1; z<=75; z++) {
         [_arrayCalledNumbers addObject:@(z)];
         
     }
-    //END TESTING
   */
+    //END TESTING
+ 
     
     _arrayCalledNumbersSorted = [_arrayCalledNumbers sortedArrayUsingSelector:@selector(compare:)];
     
@@ -67,9 +68,7 @@
   
     
 
-    [self setUpMenuBar];
-    
-    [self AnimationSelector];
+   
     
     
     
@@ -84,6 +83,8 @@
 -(void)viewDidAppear:(BOOL)animated{
     //[self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
     [self createCalledDisplay];
+    [self setUpMenuBar];
+    [self AnimationSelector];
     
 }
 
