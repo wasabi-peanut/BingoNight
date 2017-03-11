@@ -22,7 +22,7 @@
 @implementation CheckingSetUpViewController
 
 - (void)viewDidLoad {
-    
+    NSLog(@"View Did Load");
       self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"greystone.jpg"]];
     
     _height = [UIScreen mainScreen].bounds.size.height ;
@@ -43,33 +43,6 @@
     
     //Set up preview Window
     
-/*
-    _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
-    _keyForCoordinatesCheckingSongs = @"keyForCoordinatesCheckingSongs";
-    _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
-
-    _arrayCoordinatesCheckingPatterns = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingPatterns]];
-    _arrayCoordinatesCheckingSongs = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesCheckingSongs]];
-    _arrayCoordinatesWinnerSounds = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForCoordinatesWinnerSounds]];
-    
-    [self makeArrays];
-    
-    NSInteger  currentCheckingPattern =  [_arrayCoordinatesCheckingPatterns[0] integerValue];
-    NSInteger  currentCheckingSong =     [_arrayCoordinatesCheckingSongs[0] integerValue];
-    NSInteger  currentWinnerSound =      [_arrayCoordinatesWinnerSounds[0] integerValue];
-    
-    [_pickerChecking selectRow:currentCheckingPattern inComponent:1 animated:YES];
-    [_pickerChecking selectRow:currentCheckingSong inComponent:2 animated:YES];
-    [_pickerChecking selectRow:currentWinnerSound inComponent:3 animated:YES];
-    
-    [self pickerView:_pickerChecking didSelectRow:0 inComponent:0];
-    [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingPatterns[0] integerValue] inComponent:1];
-    [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesCheckingSongs[0] integerValue] inComponent:2];
-    [self pickerView:_pickerChecking didSelectRow:[_arrayCoordinatesWinnerSounds[0] integerValue] inComponent:3];
- 
-
-    [self addToMusicArray];
-    */
     
     _gameNumber = 0;
     
@@ -79,7 +52,7 @@
     // Do any additional setup after loading the view.
 }
 -(void)viewDidAppear:(BOOL)animated{
-    NSLog(@"here");
+    NSLog(@"View Did Appear");
     _keyForCoordinatesCheckingPatterns = @"keyForCoordinatesCheckingPatterns";
     _keyForCoordinatesCheckingSongs = @"keyForCoordinatesCheckingSongs";
     _keyForCoordinatesWinnerSounds = @"keyForCoordinatesWinnerSounds";
@@ -125,6 +98,7 @@
 
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    NSLog(@"Triggered");
     
     
     switch (component) {
@@ -152,6 +126,8 @@
             
         case 2:
             //choose checkingSong
+            
+             NSLog(@"Triggered");
             _songRowSelected = row;
             switch (row) {
                     
@@ -198,7 +174,9 @@
                     _checkingSongTitle = @"rumble";
                     break;
                 default:
+                    NSLog(@"Sending with row %li",row);
                     [self chooseOwnSong:row];
+                    
                     break;
             }
             [avPlayer stop];
@@ -393,6 +371,7 @@
 -(void)makeArrays{
     
     _arrayOfSongsPicked = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongsPicked]];
+    NSLog(@"Make arrays: The array of songs picker is %li long",_arrayOfSongsPicked.count);
     
     _arrayOfSongNames = [[NSMutableArray alloc] initWithArray:[DefaultsDataManager getArrayForKey:_keyForArrayOfSongNames]];
     
@@ -618,13 +597,16 @@
     
     [_arrayCheckingSongs addObjectsFromArray:_arrayOfSongNames];
     [_pickerChecking reloadAllComponents];
-  
+    
 }
 
 -(void)chooseOwnSong:(NSInteger)rowSelected {
     MPMediaQuery *query = [MPMediaQuery songsQuery];
+    NSLog(@"The array of songs picked is %li items and the row selected is %li",_arrayOfSongsPicked.count, rowSelected);
+    
     [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:_arrayOfSongsPicked[rowSelected-14] forProperty:MPMediaItemPropertyPersistentID]];
     
+   // [query addFilterPredicate:[MPMediaPropertyPredicate predicateWithValue:_arrayOfSongsPicked[0] forProperty:MPMediaItemPropertyPersistentID]];
     
     [_musicPlayer setQueueWithQuery:query];
     

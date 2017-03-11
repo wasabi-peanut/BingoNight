@@ -28,7 +28,7 @@
     
     [super viewDidLoad];
     
-    [self loadThePlayList];
+   
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -37,6 +37,10 @@
      self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
         }
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self loadThePlayList];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -105,16 +109,21 @@
         for (int x = 0; x<_arrayCoordinatesCheckingSongs.count; x++) {
             if ([_arrayCoordinatesCheckingSongs[x] integerValue]==indexPath.row+14) {
                 [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:indexPath.row withObject:@(0)];
+                NSLog(@"I change coordinate to 0 for index path %li",indexPath.row);
                 
             }
+            
         }
-        
+       
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        NSLog(@"The array of song names i %@",_arrayOfSongNames);
+        
         
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
     [DefaultsDataManager saveData:_arrayCoordinatesCheckingSongs forKey:_keyForCoordinatesCheckingSongs];
+    
     [self saveThePlaylist];
     
 }
