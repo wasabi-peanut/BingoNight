@@ -133,13 +133,19 @@
                                             <color key="NSStrokeColor" red="0.61175999999999997" green="0.81960999999999995" blue="0.12941" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="Animations: www.heathersanimations.com Sounds: www.soundbible.com">
+                                    <fragment content="Animations and backgrounds: www.heathersanimations.com Sounds: www.soundbible.com">
                                         <attributes>
                                             <font key="NSFont" size="9" name=".AppleSystemUIFont"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winning Sound" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxI-W8-Rb2">
+                                <rect key="frame" x="744" y="64" width="200" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.081578743829999995" blue="0.049568739209999997" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -149,14 +155,17 @@
                             <constraint firstItem="TQE-AC-M5P" firstAttribute="centerX" secondItem="T4O-id-PL2" secondAttribute="centerX" multiplier="1.5" id="6cG-K0-uCh"/>
                             <constraint firstItem="njf-LL-0mp" firstAttribute="leading" secondItem="T4O-id-PL2" secondAttribute="leadingMargin" constant="50" id="6d7-6e-HAV"/>
                             <constraint firstItem="UFW-ga-2mI" firstAttribute="leading" secondItem="TQE-AC-M5P" secondAttribute="trailing" constant="30" id="Afw-UX-o5o"/>
+                            <constraint firstItem="gxI-W8-Rb2" firstAttribute="leading" secondItem="TQE-AC-M5P" secondAttribute="leading" id="CiZ-nm-SSI"/>
                             <constraint firstItem="njf-LL-0mp" firstAttribute="top" secondItem="vuD-Mf-jBv" secondAttribute="bottom" constant="50" id="D1k-Oa-lSG"/>
                             <constraint firstItem="tKA-vC-fwq" firstAttribute="width" secondItem="My2-nl-6Xe" secondAttribute="width" id="DEb-gp-k7A"/>
                             <constraint firstItem="TQE-AC-M5P" firstAttribute="centerY" secondItem="h9H-sE-pKe" secondAttribute="centerY" id="Eug-Aa-AYa"/>
                             <constraint firstItem="KnM-53-p5h" firstAttribute="centerY" secondItem="tKA-vC-fwq" secondAttribute="centerY" id="FZG-9F-lRX"/>
+                            <constraint firstItem="gxI-W8-Rb2" firstAttribute="height" secondItem="KnM-53-p5h" secondAttribute="height" id="G4y-L3-Tvj"/>
                             <constraint firstItem="KnM-53-p5h" firstAttribute="width" secondItem="tKA-vC-fwq" secondAttribute="width" id="G5D-x8-ABz"/>
                             <constraint firstItem="h9H-sE-pKe" firstAttribute="height" secondItem="cUp-sy-4cL" secondAttribute="height" id="IGZ-Rw-ldV"/>
                             <constraint firstItem="h9H-sE-pKe" firstAttribute="centerY" secondItem="cUp-sy-4cL" secondAttribute="centerY" id="JNs-hv-rIU"/>
                             <constraint firstItem="tKA-vC-fwq" firstAttribute="centerX" secondItem="T4O-id-PL2" secondAttribute="centerX" multiplier="0.8" id="MOH-ga-ie9"/>
+                            <constraint firstItem="gxI-W8-Rb2" firstAttribute="centerY" secondItem="KnM-53-p5h" secondAttribute="centerY" id="N0i-IZ-uSn"/>
                             <constraint firstItem="Zxi-pN-exS" firstAttribute="leading" secondItem="cUp-sy-4cL" secondAttribute="leading" id="Nlp-pj-qlu"/>
                             <constraint firstItem="KnM-53-p5h" firstAttribute="centerX" secondItem="T4O-id-PL2" secondAttribute="centerX" multiplier="1.2" id="Pqw-j1-OSJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VRq-wE-D4h" secondAttribute="trailing" id="SYj-uY-s5v"/>
@@ -168,6 +177,7 @@
                             <constraint firstItem="VRq-wE-D4h" firstAttribute="centerX" secondItem="T4O-id-PL2" secondAttribute="centerX" multiplier="1.76" id="eUO-lV-Xt3"/>
                             <constraint firstItem="UFW-ga-2mI" firstAttribute="width" secondItem="TQE-AC-M5P" secondAttribute="width" id="eVs-nh-EZ6"/>
                             <constraint firstItem="UFW-ga-2mI" firstAttribute="height" secondItem="TQE-AC-M5P" secondAttribute="height" id="haA-FY-uzR"/>
+                            <constraint firstItem="gxI-W8-Rb2" firstAttribute="width" secondItem="KnM-53-p5h" secondAttribute="width" id="hou-cf-BGa"/>
                             <constraint firstItem="Zxi-pN-exS" firstAttribute="centerY" secondItem="T4O-id-PL2" secondAttribute="centerY" multiplier="0.95" id="kjR-1y-Tnd"/>
                             <constraint firstItem="CKQ-nv-tCL" firstAttribute="top" secondItem="VRq-wE-D4h" secondAttribute="bottom" constant="10" id="lQn-eu-Df0"/>
                             <constraint firstItem="njf-LL-0mp" firstAttribute="top" secondItem="My2-nl-6Xe" secondAttribute="bottom" id="lwx-6g-gkQ"/>

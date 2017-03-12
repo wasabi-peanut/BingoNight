@@ -17,6 +17,10 @@
 
 @implementation WinnerViewController
 
+- (BOOL)prefersStatusBarHidden{
+    return YES;
+}
+
 - (void)viewDidLoad {
      [self.navigationController setNavigationBarHidden:YES];
     
