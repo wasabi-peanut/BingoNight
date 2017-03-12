@@ -74,14 +74,6 @@
     
     
     
-    //OTHER
-  //  _fontSize = [[UITextField alloc] initWithFrame:CGRectMake(875, 650, 50, 50)];
-    
-   // [_fontSize setDelegate:self];
-   // [_fontSize addTarget:self action:@selector(fontSizeStartEdit:) forControlEvents:UIControlEventEditingDidBegin];
-   // [_fontSize addTarget:self action:@selector(fontSizeEndEdit:) forControlEvents:UIControlEventEditingDidEnd];
-    
-    
     _fontSize.text = @"Size";
     _fontSize.backgroundColor = [UIColor whiteColor];
     _fontSize.layer.borderColor = [[UIColor blackColor] CGColor];
@@ -424,7 +416,6 @@
 }
 
 - (IBAction)sliderChanged:(id)sender {
-    _changeHappened = YES;
     
     
     
@@ -536,19 +527,7 @@
 
 
 -(IBAction)fontSizeStartEdit:(id)sender {
- /*   [UIView animateWithDuration:0.5 animations:^{
-        
-        _fontSize.frame = CGRectMake(875, 300, 50, 50);
-        _fontSize.textColor = [UIColor redColor];
-        _fontSize.backgroundColor = [UIColor whiteColor];
-        _fontSize.layer.borderColor = [[UIColor blackColor] CGColor];
-        _fontSize.layer.borderWidth = 2;
-        [self.view bringSubviewToFront:_fontSize];
-        _fontSize.text = @"";
-        
-        
-       
-    }];*/
+
     
     float height = self.view.bounds.size.height;
     float width = self.view.bounds.size.width;
@@ -598,7 +577,6 @@
     
     [_fontSize resignFirstResponder];
     
-   // _changeHappened = YES;
     
     
     
@@ -608,7 +586,7 @@
 //NOTE: this works because added delegate statement <UITextFieldDelegate> in h file
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-   // _changeHappened = YES;
+   
     [textField resignFirstResponder];
     return YES;
 }

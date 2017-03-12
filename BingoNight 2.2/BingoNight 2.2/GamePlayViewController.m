@@ -34,10 +34,9 @@
     
     _ballCount = 0;
   
-    //[[UIApplication sharedApplication] setStatusBarHidden:YES];
     
     _keyForCalledNumbers = @"keyForCalledNumbers";
-   // _useSpecialChecking = NO;
+   
     
     
     _ready = YES;
@@ -184,14 +183,15 @@
     if (![_arrayGameColorSettingsShell count]) {
         
         _arrayGameColorSettings = [[NSMutableArray alloc] initWithObjects:
-                                   @255,@0,@0,
                                    @255,@255,@255,
-                                   @0,@0,@255,
-                                   @255,@100,@165,
+                                   @255,@255,@0,
+                                   @255,@0,@0,
+                                   @175,@175,@0,
                                    @130,@130,@130,
-                                   @0,@0,@255,
-                                   @0,@0,@255,
-                                   @3,nil];
+                                   @255,@0,@0,
+                                   @255,@0,@0,
+                                   @2,
+                                   nil];
         for (int x = 0; x<12; x++) {
             [_arrayGameColorSettingsShell addObject:_arrayGameColorSettings];
              }
@@ -492,7 +492,6 @@
         button.frame = CGRectMake(x, y, width, height);
         [button setTitle:buttonLabel forState:UIControlStateNormal];
         [button addTarget:self action:@selector(numberPressed:) forControlEvents:UIControlEventTouchUpInside];
-       // [button addTarget:self action:@selector(deselectButton) forControlEvents:UIControlEventTouchDragExit];
         
         
         button.backgroundColor = _boxBackgroundColor;

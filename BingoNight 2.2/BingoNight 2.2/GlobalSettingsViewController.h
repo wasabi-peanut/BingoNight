@@ -54,7 +54,7 @@
 @property float height;
 @property float width;
 
-@property Boolean changeHappened;
+//@property Boolean changeHappened;
 
 //SEGMENT
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentTextOrBackground;

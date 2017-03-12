@@ -32,7 +32,7 @@
     
     
     _protectedGrids = 6;
-    _protectedPresets = 18;
+    _protectedPresets = 19;
     
     
     _height = [UIScreen mainScreen].bounds.size.height;
@@ -526,6 +526,7 @@
     
     if (![_arrayPickerPresets count]) {
         _arrayPickerPresets = [[NSMutableArray alloc] initWithObjects:
+                               @"White",
                                @"Red",
                                @"Blue",
                                @"Green",
@@ -658,6 +659,18 @@
     
     
     if (![_arrayGameColorSettingsShell count]) {
+        
+        
+        NSMutableArray *WhitePreset = [[NSMutableArray alloc] initWithObjects:
+                                     @255,@255,@255,
+                                     @255,@255,@0,
+                                     @255,@0,@0,
+                                     @175,@175,@0,
+                                     @130,@130,@130,
+                                     @255,@0,@0,
+                                     @255,@0,@0,
+                                     @2,
+                                     nil];
         
         NSMutableArray *RedPreset = [[NSMutableArray alloc] initWithObjects:
                                      @255,@0,@0,
@@ -864,7 +877,7 @@
                               @0,@0,@255,@0,@0,
                               @255,@0,
                               nil];
-        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects:RedPreset,BluePreset,GreenPreset,OrangePreset,YellowPreset, BlackPreset, PinkPreset, HolidayPreset,AutumnPreset,FourthPreset,MidnightPreset,NewsPreset,WinterPreset,UnderTheSea,PJs,Disco,Party,Viva,nil];
+        _arrayGameColorSettingsShell = [[NSMutableArray alloc] initWithObjects: WhitePreset,RedPreset,BluePreset,GreenPreset,OrangePreset,YellowPreset, BlackPreset, PinkPreset, HolidayPreset,AutumnPreset,FourthPreset,MidnightPreset,NewsPreset,WinterPreset,UnderTheSea,PJs,Disco,Party,Viva,nil];
        
     }
     
