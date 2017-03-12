@@ -151,6 +151,12 @@
         [_arrayOfSongArtists insertObject:artist atIndex:toIndex];
         
     }
+    
+    for (int x = 0; x<_arrayCoordinatesCheckingSongs.count; x++) {
+        if ([_arrayCoordinatesCheckingSongs[x] integerValue]==fromIndex+14) {
+            [_arrayCoordinatesCheckingSongs replaceObjectAtIndex:x withObject:@(toIndex+14)];
+        }
+    }
     [self.tableView reloadData];
     [self saveThePlaylist];
 

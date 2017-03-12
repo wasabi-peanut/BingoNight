@@ -238,7 +238,7 @@
                                 @"Arial",@64, //font and size 8,9
                                 @5, //10 is row number for font;
                                 @13, //11 is row number for size;
-                                @1,@4,@1, //12,13,14 is ball roll, display and drop seconds;
+                                @1,@3,@1, //12,13,14 is ball roll, display and drop seconds;
                                 @1, //15 is smart selector on (i.e. value of one)
                                 @1, //16 use Special Checking is on
                                 @0, //17 add image is Off.
