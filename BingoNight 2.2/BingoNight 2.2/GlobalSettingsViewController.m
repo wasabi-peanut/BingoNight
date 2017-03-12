@@ -356,6 +356,10 @@
     }
     else{
         [_btnImage setTitle:@"Get Image" forState:UIControlStateNormal];
+        _sliderX.enabled = NO;
+        _sliderY.enabled = NO;
+        _sliderWidth.enabled = NO;
+        _sliderHeight.enabled = NO;
     }
     
 }
@@ -710,6 +714,11 @@
 -(void)yesImageExist {
     [_imageView removeFromSuperview];
     
+    _sliderX.enabled = YES;
+    _sliderY.enabled = YES;
+    _sliderWidth.enabled = YES;
+    _sliderHeight.enabled = YES;
+    
     [self makeFrame:[_arrayGlobalSettings[18] floatValue] yValue:[_arrayGlobalSettings[19] floatValue] width:[_arrayGlobalSettings[20] floatValue] height:[_arrayGlobalSettings[21] floatValue]];
         [_btnImage setTitle:@"Delete Image" forState:UIControlStateNormal];
     _sliderX.value = [_arrayGlobalSettings[18] floatValue];
@@ -751,6 +760,10 @@
         [_imageView removeFromSuperview];
         [_btnImage setTitle:@"Get Image" forState:UIControlStateNormal];
         [_arrayGlobalSettings replaceObjectAtIndex:17 withObject:@0];
+        _sliderX.enabled = NO;
+        _sliderY.enabled = NO;
+        _sliderWidth.enabled = NO;
+        _sliderHeight.enabled = NO;
          
     }
     
