@@ -1119,7 +1119,7 @@
     number.textColor = _ballTextColor;
     [number setTextAlignment:NSTextAlignmentCenter];
     number.font = [UIFont fontWithName:_ballTextFont size:_lastCalledHeight*.4];
-    number.layer.contentsScale = [[UIScreen mainScreen] scale];
+    number.layer.contentsScale = [[UIScreen mainScreen] scale]*8;
     
     
     number.backgroundColor = [UIColor clearColor];
@@ -1141,12 +1141,7 @@
  
     [_arrayCalledBallsLabels insertObject:number atIndex:0];
     [_arrayCalledBalls insertObject:activeBall atIndex:0];
-    
- /*   NSData *dataCalledBalls = [NSKeyedArchiver archivedDataWithRootObject:_arrayCalledBalls];
-    [DefaultsDataManager saveData:dataCalledBalls forKey:@"keyForCalledBalls"];
-    NSData *dataCalledBallsLabels = [NSKeyedArchiver archivedDataWithRootObject:_arrayCalledBallsLabels];
-    [DefaultsDataManager saveData:dataCalledBallsLabels forKey:@"keyForCalledBallsLabels"];
-*/
+
     
     
     

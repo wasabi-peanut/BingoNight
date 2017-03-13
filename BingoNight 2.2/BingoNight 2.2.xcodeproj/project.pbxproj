@@ -25,6 +25,7 @@
 		E3481FC31E09EE7D004F4A33 /* stadium.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBD1E09EE7D004F4A33 /* stadium.mp3 */; };
 		E3481FC41E09EE7D004F4A33 /* tada.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E3481FBE1E09EE7D004F4A33 /* tada.mp3 */; };
 		E3583A201E541580004ABC40 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3583A1F1E541580004ABC40 /* MediaPlayer.framework */; };
+		E3730E461E763D3100147B5B /* yellowRaffleTicket.png in Resources */ = {isa = PBXBuildFile; fileRef = E3730E451E763D3100147B5B /* yellowRaffleTicket.png */; };
 		E3749F821E43152700178ACD /* RaffleSetUpTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3749F811E43152700178ACD /* RaffleSetUpTableViewController.m */; };
 		E37B7F571E31CA9800E59AC3 /* Google1.png in Resources */ = {isa = PBXBuildFile; fileRef = E37B7EE01E31CA9800E59AC3 /* Google1.png */; };
 		E37B7F581E31CA9800E59AC3 /* Google2.png in Resources */ = {isa = PBXBuildFile; fileRef = E37B7EE11E31CA9800E59AC3 /* Google2.png */; };
@@ -639,6 +640,7 @@
 		E3481FBD1E09EE7D004F4A33 /* stadium.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stadium.mp3; sourceTree = "<group>"; };
 		E3481FBE1E09EE7D004F4A33 /* tada.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tada.mp3; sourceTree = "<group>"; };
 		E3583A1F1E541580004ABC40 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		E3730E451E763D3100147B5B /* yellowRaffleTicket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowRaffleTicket.png; sourceTree = "<group>"; };
 		E3749F801E43152700178ACD /* RaffleSetUpTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaffleSetUpTableViewController.h; sourceTree = "<group>"; };
 		E3749F811E43152700178ACD /* RaffleSetUpTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaffleSetUpTableViewController.m; sourceTree = "<group>"; };
 		E37B7EE01E31CA9800E59AC3 /* Google1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Google1.png; sourceTree = "<group>"; };
@@ -1278,6 +1280,7 @@
 		E328E6011E0641B5004F10DA /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E3730E451E763D3100147B5B /* yellowRaffleTicket.png */,
 				E329E04E1E58E40B00B0971C /* raffleTicket.png */,
 				E329E0501E59158C00B0971C /* spots.jpg */,
 				E37B7DF11E31C77D00E59AC3 /* Google */,
@@ -2344,6 +2347,7 @@
 				E39825481DE5054B00ACC5A7 /* LaunchScreen.xib in Resources */,
 				E37B80C21E31D74D00E59AC3 /* Shark-Bingo83.png in Resources */,
 				E3E6F4D41E261FE8003E3732 /* Basketball-Bingo96.png in Resources */,
+				E3730E461E763D3100147B5B /* yellowRaffleTicket.png in Resources */,
 				E3E6F5041E261FE8003E3732 /* Basketball-Bingo144.png in Resources */,
 				E3E6F4B81E261FE8003E3732 /* Basketball-Bingo68.png in Resources */,
 				E3E6F4ED1E261FE8003E3732 /* Basketball-Bingo121.png in Resources */,

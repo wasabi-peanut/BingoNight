@@ -30,7 +30,7 @@
     }
     
     
-    _imageViewRaffleImage.image = [UIImage imageNamed:@"raffleTicket.png"];
+    _imageViewRaffleImage.image = [UIImage imageNamed:@"yellowRaffleTicket.png"];
    // float widthImage = _imageViewRaffleImage.bounds.size.width;
    // float heightImage = _imageViewRaffleImage.bounds.size.height;
     
