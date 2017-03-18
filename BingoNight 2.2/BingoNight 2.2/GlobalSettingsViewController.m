@@ -26,6 +26,10 @@
 
 - (void)viewDidLoad {
     
+ /*   CGAffineTransform transformRotate = CGAffineTransformMakeRotation(M_PI_2);
+    _sliderLineHeight.transform = transformRotate;
+    
+   */
     
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard)];
@@ -71,6 +75,10 @@
     
     _sliderY.minimumValue = 0;
     _sliderY.maximumValue = _totalHeight*.5;
+    
+    _sliderLineHeight.minimumValue = 0;
+    _sliderLineHeight.maximumValue = 300;
+    
     
     
     
@@ -245,42 +253,129 @@
         
            }
    
+    [self applyLineSpacing:0.5 fontSize:48];
     
-    NSString *fontName = [_arrayGlobalSettings objectAtIndex:8];
-    NSInteger fontSize = [[_arrayGlobalSettings objectAtIndex:10] floatValue];
-    
+    _fontName = [_arrayGlobalSettings objectAtIndex:8];
+    _floatFontSize = [[_arrayGlobalSettings objectAtIndex:10] floatValue];
     
     CGFloat width = [UIScreen mainScreen].bounds.size.width;
     CGFloat height = [UIScreen mainScreen].bounds.size.height;
     
   
     _viewNameOfEvent = [[UIView alloc] initWithFrame:CGRectMake(0, 44, width, height/2)];
-    _nameOfEvent = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, width, height/2)];
+    _nameOfEvent = [[CursorFixedTextView alloc]initWithFrame:CGRectMake(0, 0, width, height/2)];
     
-  
-    _nameOfEvent.font = [UIFont fontWithName:fontName size:fontSize];
+  /*
+    _nameOfEvent.font = [UIFont fontWithName:_fontName size:_floatFontSize];
     _nameOfEvent.textAlignment = NSTextAlignmentCenter;
     
     _nameOfEvent.text = [_arrayGlobalSettings objectAtIndex:1];
+   */
+    
     
     _nameOfEvent.scrollEnabled = NO;
-    
     [_nameOfEvent setDelegate:self];
     
     
     [self.view addSubview:_viewNameOfEvent];
     [_viewNameOfEvent addSubview:_nameOfEvent];
-    
+    _nameOfEvent.clipsToBounds = NO;
     
     
     if ([_arrayGlobalSettings[17] integerValue] == 1) {
         [self yesImageExist];
     }
 
-    
+    [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:_sliderLineHeight.value alignmentValue:1];
     [self applySettings];
     
    
+}
+
+
+
+-(void)handleEventName: (NSString*)text eventFont: (NSString *)eventFont eventFontSize: (float)eventFontSize lineSpacing: (float)heightValue alignmentValue: (NSInteger) alignmentValue {
+    //create style
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    
+  
+    paragraphStyle.lineSpacing = heightValue;
+    paragraphStyle.lineHeightMultiple = 0.5;
+    paragraphStyle.paragraphSpacingBefore = 0;
+    paragraphStyle.paragraphSpacing = 0;
+    paragraphStyle.minimumLineHeight = 0;
+    paragraphStyle.maximumLineHeight = eventFontSize;
+   
+     _nameOfEvent.textContainerInset = UIEdgeInsetsMake(eventFontSize/1.5, 0, -eventFontSize, 0);
+    
+  
+    
+    
+    
+    switch (alignmentValue) {
+        case 0:
+            paragraphStyle.alignment = NSTextAlignmentLeft;
+            break;
+        case 1:
+            paragraphStyle.alignment = NSTextAlignmentCenter;
+            break;
+        case 2:
+            paragraphStyle.alignment = NSTextAlignmentRight;
+            break;
+        default:
+            paragraphStyle.alignment = NSTextAlignmentLeft;
+            break;
+    }
+    
+
+    
+    NSDictionary *attributeDictionary = @{
+                                          NSParagraphStyleAttributeName: paragraphStyle,
+                                          NSFontAttributeName: [UIFont fontWithName:eventFont size:eventFontSize],
+                                          
+                                          };
+    _nameOfEvent.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributeDictionary];
+    
+    
+}
+
+-(void)applyLineSpacing: (float)heightValue fontSize: (float)fontSize{
+    
+    NSString *fontName = [_arrayGlobalSettings objectAtIndex:8];
+  //  fontSize = [[_arrayGlobalSettings objectAtIndex:10] floatValue];
+    
+    NSLog(@"the font name is %@ and the size is %f",fontName,fontSize);
+    
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    
+    
+    paragraphStyle.headIndent = 15; // <--- indention if you need it
+    paragraphStyle.firstLineHeadIndent = 15;
+    
+    paragraphStyle.lineSpacing = 10; // <--- magic line spacing here!
+    paragraphStyle.lineHeightMultiple = heightValue;
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    
+    
+    
+    NSDictionary *attrsDictionary =
+    @{ NSParagraphStyleAttributeName: paragraphStyle,
+       NSFontAttributeName:[UIFont fontWithName:fontName size:fontSize],
+       }; // <-- there are many more attrs, e.g NSFontAttributeName
+    
+    self.nameOfEvent.attributedText = [[NSAttributedString alloc] initWithString:@"Hello World\nHello World\nHello World" attributes:attrsDictionary];
+    
+    
+    
+}
+
+- (IBAction)segmentAlignmentChanged:(UISegmentedControl *)sender {
+    
+     [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:_sliderLineHeight.value alignmentValue:sender.selectedSegmentIndex];
+}
+
+- (IBAction)sliderLIneHeightChanged:(id)sender {
+    [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:_sliderLineHeight.value alignmentValue:3];
 }
 
 -(void)applySettings {
@@ -512,15 +607,15 @@
     
     _font = [_arrayGlobalSettings objectAtIndex:8];
      size = [[_arrayGlobalSettings objectAtIndex:9] floatValue];
-    _nameOfEvent.font = [UIFont fontWithName:_font size:size];
     
-  
+    
+      [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:_sliderLineHeight.value alignmentValue:1];
+   
     _fontSize.text = [NSString stringWithFormat:@"%@",[_arrayGlobalSettings objectAtIndex:9]];
     
-  [self.view bringSubviewToFront:_fontSize];
+    [self.view bringSubviewToFront:_fontSize];
     
 
-   // _changeHappened = YES;
     
 }
 
@@ -584,6 +679,8 @@
 
 
 //NOTE: this works because added delegate statement <UITextFieldDelegate> in h file
+
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
    
@@ -591,6 +688,10 @@
     return YES;
 }
 
+-(BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    _nameOfEvent.font = [UIFont fontWithName:_arrayGlobalSettings[8] size:[_arrayGlobalSettings[9] floatValue]];
+    return YES;
+}
 
 -(BOOL)textViewShouldEndEditing:(UITextView *)textView {
     [textView resignFirstResponder];

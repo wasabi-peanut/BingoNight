@@ -354,10 +354,13 @@
    
     
     if (pickerView == _pickerGameSettings) {
-  
+        NSLog(@"the attribute is %li",_attributeNumber);
+        
             _attributeSelected = [_arrayPickerGameColors objectAtIndex:row];
             _attributeNumber = row+1;
         
+        NSLog(@"the attribute is %li",_attributeNumber);
+
             
             if (row == 7) {
                 UITextField *textField = [_arrayDisplayButtons objectAtIndex:9];
@@ -457,6 +460,7 @@
     
     [self theProcess];
     
+    NSLog(@"The grid selected is %li",_gridSelected);
     
     
 }

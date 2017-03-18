@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
-
+#import "CursorFixedTextView.h"
 
 
 @interface GlobalSettingsViewController : UIViewController <UIAlertViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPopoverPresentationControllerDelegate, MPMediaPickerControllerDelegate>
@@ -49,7 +49,7 @@
 
 
 //OTHER
-@property (strong, nonatomic) UITextView *nameOfEvent;
+@property (strong, nonatomic) CursorFixedTextView *nameOfEvent;
 @property (strong, nonatomic) UIView *viewNameOfEvent;
 @property float height;
 @property float width;
@@ -70,8 +70,16 @@
 @property (strong, nonatomic) NSMutableArray *arrayPickerSize;
 
 @property (strong, nonatomic) NSString *font;
+@property float floatFontSize;
 //@property (strong, nonatomic) UITextField *fontSize;
 @property (strong, nonatomic) IBOutlet UITextField *fontSize;
+@property (strong, nonatomic) NSString *fontName;
+@property (strong, nonatomic) IBOutlet UISlider *sliderLineHeight;
+- (IBAction)segmentAlignmentChanged:(id)sender;
+
+
+- (IBAction)sliderLIneHeightChanged:(id)sender;
+
 
 
 //STEPPER DELAY
@@ -106,6 +114,8 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnSetUpRaffle;
 - (IBAction)btnSetUpRaffleSelected:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *txtRaffleSetUp;
+
+
 
 
 //IMAGE HANDLING

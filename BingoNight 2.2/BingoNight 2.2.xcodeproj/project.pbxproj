@@ -287,6 +287,7 @@
 		E37B80E51E31D74D00E59AC3 /* Shark-Bingo118.png in Resources */ = {isa = PBXBuildFile; fileRef = E37B80591E31D74D00E59AC3 /* Shark-Bingo118.png */; };
 		E37B80E61E31D74D00E59AC3 /* Shark-Bingo119.png in Resources */ = {isa = PBXBuildFile; fileRef = E37B805A1E31D74D00E59AC3 /* Shark-Bingo119.png */; };
 		E37B80E71E31D74D00E59AC3 /* Shark-Bingo120.png in Resources */ = {isa = PBXBuildFile; fileRef = E37B805B1E31D74D00E59AC3 /* Shark-Bingo120.png */; };
+		E38199601E7CD1C000FAE8A0 /* CursorFixedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E381995F1E7CD1C000FAE8A0 /* CursorFixedTextView.m */; };
 		E39824E81DE5053100ACC5A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E39824E71DE5053100ACC5A7 /* main.m */; };
 		E39825011DE5053100ACC5A7 /* BingoNight_2_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825001DE5053100ACC5A7 /* BingoNight_2_2Tests.m */; };
 		E398250C1DE5053100ACC5A7 /* BingoNight_2_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E398250B1DE5053100ACC5A7 /* BingoNight_2_2UITests.m */; };
@@ -903,6 +904,8 @@
 		E37B80591E31D74D00E59AC3 /* Shark-Bingo118.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shark-Bingo118.png"; sourceTree = "<group>"; };
 		E37B805A1E31D74D00E59AC3 /* Shark-Bingo119.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shark-Bingo119.png"; sourceTree = "<group>"; };
 		E37B805B1E31D74D00E59AC3 /* Shark-Bingo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shark-Bingo120.png"; sourceTree = "<group>"; };
+		E381995E1E7CD1C000FAE8A0 /* CursorFixedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CursorFixedTextView.h; sourceTree = "<group>"; };
+		E381995F1E7CD1C000FAE8A0 /* CursorFixedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CursorFixedTextView.m; sourceTree = "<group>"; };
 		E39824E31DE5053100ACC5A7 /* BingoNight 2.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BingoNight 2.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39824E71DE5053100ACC5A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E39824F71DE5053100ACC5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -1659,6 +1662,8 @@
 				E398251E1DE5054B00ACC5A7 /* LocalSettingsViewController.m */,
 				E398251F1DE5054B00ACC5A7 /* GlobalSettingsViewController.h */,
 				E39825201DE5054B00ACC5A7 /* GlobalSettingsViewController.m */,
+				E381995E1E7CD1C000FAE8A0 /* CursorFixedTextView.h */,
+				E381995F1E7CD1C000FAE8A0 /* CursorFixedTextView.m */,
 				E39825211DE5054B00ACC5A7 /* StartViewController.h */,
 				E39825221DE5054B00ACC5A7 /* StartViewController.m */,
 				E39825231DE5054B00ACC5A7 /* GamePlayViewController.h */,
@@ -2774,6 +2779,7 @@
 				E39825471DE5054B00ACC5A7 /* AppDelegate.m in Sources */,
 				E398253F1DE5054B00ACC5A7 /* GamePlayViewController.m in Sources */,
 				E398253E1DE5054B00ACC5A7 /* StartViewController.m in Sources */,
+				E38199601E7CD1C000FAE8A0 /* CursorFixedTextView.m in Sources */,
 				E398253D1DE5054B00ACC5A7 /* GlobalSettingsViewController.m in Sources */,
 				E39825401DE5054B00ACC5A7 /* PDFViewController.m in Sources */,
 				E398253C1DE5054B00ACC5A7 /* LocalSettingsViewController.m in Sources */,
