@@ -26,7 +26,9 @@
 
 - (void)viewDidLoad {
     
- /*   CGAffineTransform transformRotate = CGAffineTransformMakeRotation(M_PI_2);
+ /* 
+  //To rotate slider
+  CGAffineTransform transformRotate = CGAffineTransformMakeRotation(M_PI_2);
     _sliderLineHeight.transform = transformRotate;
     
    */
@@ -160,7 +162,7 @@
         
     }
     
-    
+    _sliderLineHeight.value = [_arrayGlobalSettings[26] floatValue];
     
     [self loadPickerArrays];
     
@@ -173,6 +175,7 @@
     _stepperDrop.value = [[_arrayGlobalSettings objectAtIndex:14] floatValue];
     _labelDropTime.text = [NSString stringWithFormat:@"%2.1f seconds",_stepperDrop.value];
     
+    _segmentAlignment.selectedSegmentIndex = [_arrayGlobalSettings[25] integerValue];
     
     
     
@@ -249,11 +252,13 @@
                                 @0,//22  DON"T use raffle
                                 @0,//23 Theme NOT selected
                                 @0,//24 Image On Top
+                                @0,//25 Alignment
+                                @100,//26 Line Space
                                 nil];
         
            }
    
-    [self applyLineSpacing:0.5 fontSize:48];
+  // [self applyLineSpacing:0.5 fontSize:48];
     
     _fontName = [_arrayGlobalSettings objectAtIndex:8];
     _floatFontSize = [[_arrayGlobalSettings objectAtIndex:10] floatValue];
@@ -279,14 +284,15 @@
     
     [self.view addSubview:_viewNameOfEvent];
     [_viewNameOfEvent addSubview:_nameOfEvent];
-    _nameOfEvent.clipsToBounds = NO;
+    
+    //_nameOfEvent.clipsToBounds = NO;
     
     
     if ([_arrayGlobalSettings[17] integerValue] == 1) {
         [self yesImageExist];
     }
 
-    [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:_sliderLineHeight.value alignmentValue:1];
+    [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:[_arrayGlobalSettings[26] integerValue] alignmentValue:[_arrayGlobalSettings[25]integerValue]];
     [self applySettings];
     
    
@@ -335,47 +341,25 @@
                                           
                                           };
     _nameOfEvent.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributeDictionary];
-    
+     _nameOfEvent.textColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:2] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:3] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:4]floatValue]/255 alpha:1];
     
 }
 
--(void)applyLineSpacing: (float)heightValue fontSize: (float)fontSize{
-    
-    NSString *fontName = [_arrayGlobalSettings objectAtIndex:8];
-  //  fontSize = [[_arrayGlobalSettings objectAtIndex:10] floatValue];
-    
-    NSLog(@"the font name is %@ and the size is %f",fontName,fontSize);
-    
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    
-    
-    paragraphStyle.headIndent = 15; // <--- indention if you need it
-    paragraphStyle.firstLineHeadIndent = 15;
-    
-    paragraphStyle.lineSpacing = 10; // <--- magic line spacing here!
-    paragraphStyle.lineHeightMultiple = heightValue;
-    paragraphStyle.alignment = NSTextAlignmentCenter;
-    
-    
-    
-    NSDictionary *attrsDictionary =
-    @{ NSParagraphStyleAttributeName: paragraphStyle,
-       NSFontAttributeName:[UIFont fontWithName:fontName size:fontSize],
-       }; // <-- there are many more attrs, e.g NSFontAttributeName
-    
-    self.nameOfEvent.attributedText = [[NSAttributedString alloc] initWithString:@"Hello World\nHello World\nHello World" attributes:attrsDictionary];
-    
-    
-    
-}
+
 
 - (IBAction)segmentAlignmentChanged:(UISegmentedControl *)sender {
     
-     [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:_sliderLineHeight.value alignmentValue:sender.selectedSegmentIndex];
+    [_arrayGlobalSettings replaceObjectAtIndex:25 withObject:@(sender.selectedSegmentIndex)];
+    [DefaultsDataManager saveData:_arrayGlobalSettings forKey:_keyForGlobalSettings];
+    
+      [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:[_arrayGlobalSettings[26] integerValue] alignmentValue:[_arrayGlobalSettings[25]integerValue]];
+    
 }
 
 - (IBAction)sliderLIneHeightChanged:(id)sender {
-    [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:_sliderLineHeight.value alignmentValue:3];
+    [_arrayGlobalSettings replaceObjectAtIndex:26 withObject:@(_sliderLineHeight.value)];
+    [DefaultsDataManager saveData:_arrayGlobalSettings forKey:_keyForGlobalSettings];
+    [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:[_arrayGlobalSettings[26] integerValue] alignmentValue:[_arrayGlobalSettings[25]integerValue]];
 }
 
 -(void)applySettings {
@@ -449,12 +433,14 @@
         _sliderHeight.enabled = NO;
     }
     
+    //Populate Name of Event
+    
+     [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:[_arrayGlobalSettings[26] integerValue] alignmentValue:[_arrayGlobalSettings[25]integerValue]];
 }
 
 - (IBAction)changeSwitchUseSelector:(id)sender {
     
-
-    if (_switchUseSelector.isOn == YES) {
+  if (_switchUseSelector.isOn == YES) {
         [_arrayGlobalSettings replaceObjectAtIndex:0 withObject:@1];
        
         
@@ -464,10 +450,7 @@
         [_arrayGlobalSettings replaceObjectAtIndex:0 withObject:@0];
        
     }
-   
-    
-    
-    
+ 
 }
 
 
@@ -532,6 +515,7 @@
             [_arrayGlobalSettings replaceObjectAtIndex:5 withObject:redValue];
             [_arrayGlobalSettings replaceObjectAtIndex:6 withObject:greenValue];
             [_arrayGlobalSettings replaceObjectAtIndex:7 withObject:blueValue];
+            
             break;
         
         default:
@@ -609,7 +593,7 @@
      size = [[_arrayGlobalSettings objectAtIndex:9] floatValue];
     
     
-      [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:_sliderLineHeight.value alignmentValue:1];
+      [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:[_arrayGlobalSettings[26] integerValue] alignmentValue:[_arrayGlobalSettings[25]integerValue]];
    
     _fontSize.text = [NSString stringWithFormat:@"%@",[_arrayGlobalSettings objectAtIndex:9]];
     

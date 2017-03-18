@@ -1311,6 +1311,7 @@
                         <outlet property="labelSongData" destination="hu5-Ru-Te5" id="jMz-KY-y5h"/>
                         <outlet property="labelUseSelector" destination="WTF-CE-w8M" id="bHp-Cs-1Hn"/>
                         <outlet property="pickerFonts" destination="WaL-mY-mpS" id="qwX-NF-ZwY"/>
+                        <outlet property="segmentAlignment" destination="RZ1-gj-AIh" id="OxN-mc-R8R"/>
                         <outlet property="segmentOverUnder" destination="cRs-qM-f9i" id="wd8-Dl-sjA"/>
                         <outlet property="segmentTextOrBackground" destination="grC-dF-rMO" id="77J-L2-xmO"/>
                         <outlet property="sliderBlue" destination="XQy-rL-Das" id="eFe-kD-IYd"/>
