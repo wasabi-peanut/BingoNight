@@ -38,7 +38,7 @@
                                 <rect key="frame" x="103" y="164" width="818" height="504"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Gy-TI-eWc" userLabel="View Right Edge">
-                                <rect key="frame" x="921" y="383.5" width="1" height="1"/>
+                                <rect key="frame" x="921" y="384" width="1" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="BIG-gH-5gM"/>
@@ -46,7 +46,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCg-O1-MKs" userLabel="View Left Edge">
-                                <rect key="frame" x="102" y="383.5" width="1" height="1"/>
+                                <rect key="frame" x="102" y="384" width="1" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="OmU-kW-Wey"/>
@@ -54,7 +54,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trS-Bt-HZm">
-                                <rect key="frame" x="220.5" y="198" width="531.5" height="353"/>
+                                <rect key="frame" x="221" y="198" width="531" height="353"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -254,19 +254,121 @@
                     <view key="view" contentMode="scaleToFill" id="NMm-Xx-NTc">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bid-WV-VKm">
+                                <rect key="frame" x="30" y="748" width="10" height="10"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="10" id="rl2-lW-hyj"/>
+                                    <constraint firstAttribute="height" constant="10" id="tJA-27-Rre"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="0.59842609489999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bid-WV-VKm" firstAttribute="leading" secondItem="NMm-Xx-NTc" secondAttribute="leadingMargin" constant="10" id="1yb-ee-MGm"/>
+                            <constraint firstItem="jDk-Cg-Mam" firstAttribute="top" secondItem="bid-WV-VKm" secondAttribute="bottom" constant="10" id="c72-JJ-OV2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Css-vK-2WU"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="viewCloudAnchor" destination="bid-WV-VKm" id="oZ3-Nd-Uul"/>
                         <segue destination="kky-gz-aUo" kind="show" identifier="segueIntroToStart" id="tUt-7s-SEd"/>
                         <segue destination="i4h-wU-u70" kind="show" identifier="segueIntroToSetUp" id="4IB-yY-Rnf"/>
                         <segue destination="T8H-v7-vHP" kind="show" identifier="segueIntroToInstructions" id="66x-yL-g2W"/>
+                        <segue destination="MG7-Q1-Gq1" kind="popoverPresentation" identifier="segueIntroToCloud" popoverAnchorView="bid-WV-VKm" id="dTg-5G-K2R">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wKT-K6-ubD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1224" y="-1575"/>
+        </scene>
+        <!--Cloud View Controller-->
+        <scene sceneID="sBJ-Bn-hDm">
+            <objects>
+                <viewController id="MG7-Q1-Gq1" customClass="CloudViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qha-1b-8gY"/>
+                        <viewControllerLayoutGuide type="bottom" id="3t9-VJ-fW3"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.5" contentMode="scaleToFill" id="bn9-f6-UuW">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QrZ-L2-JuZ">
+                                <rect key="frame" x="412" y="142" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="bcv-OT-ciT"/>
+                                    <constraint firstAttribute="width" constant="200" id="nvR-2v-Xsn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Load From iCloud"/>
+                                <connections>
+                                    <action selector="btnCloudLoadPressed:" destination="MG7-Q1-Gq1" eventType="touchUpInside" id="BhG-4y-YSI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kp-6G-2BU">
+                                <rect key="frame" x="412" y="591.5" width="200" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Save To iCloud"/>
+                                <connections>
+                                    <action selector="btnCloudSavePressed:" destination="MG7-Q1-Gq1" eventType="touchUpInside" id="qqU-iP-7O5"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALL SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-GP-4mw">
+                                <rect key="frame" x="412" y="94" width="200" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygo-o3-lKa">
+                                <rect key="frame" x="412" y="252" width="200" height="329.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Use these buttons to back up your settings to the cloud or to download saved settings.  ">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="WARNING: Downloading from the cloud will replace your current settings">
+                                        <attributes>
+                                            <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                            <font key="NSOriginalFont" size="17" name=".AppleSystemUIFontEmphasized"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95378079380000003" green="0.9090157391" blue="0.79755930659999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ygo-o3-lKa" firstAttribute="width" secondItem="QrZ-L2-JuZ" secondAttribute="width" id="5Zb-JW-0Ht"/>
+                            <constraint firstItem="QA7-GP-4mw" firstAttribute="top" secondItem="Qha-1b-8gY" secondAttribute="bottom" id="7rf-IZ-ESx"/>
+                            <constraint firstItem="QA7-GP-4mw" firstAttribute="centerX" secondItem="QrZ-L2-JuZ" secondAttribute="centerX" id="CSH-K0-FD9"/>
+                            <constraint firstItem="2kp-6G-2BU" firstAttribute="leading" secondItem="QrZ-L2-JuZ" secondAttribute="leading" id="Foo-Qh-b5k"/>
+                            <constraint firstItem="2kp-6G-2BU" firstAttribute="top" secondItem="ygo-o3-lKa" secondAttribute="bottom" constant="10" id="JgM-VJ-h17"/>
+                            <constraint firstItem="QrZ-L2-JuZ" firstAttribute="centerY" secondItem="bn9-f6-UuW" secondAttribute="centerY" multiplier="0.5" id="Jtl-qb-EVj"/>
+                            <constraint firstItem="2kp-6G-2BU" firstAttribute="height" secondItem="QrZ-L2-JuZ" secondAttribute="height" id="McS-Or-Ezr"/>
+                            <constraint firstItem="2kp-6G-2BU" firstAttribute="centerY" secondItem="bn9-f6-UuW" secondAttribute="centerY" multiplier="1.67" id="Nbz-3L-Lyw"/>
+                            <constraint firstItem="ygo-o3-lKa" firstAttribute="top" secondItem="QrZ-L2-JuZ" secondAttribute="bottom" constant="10" id="VQa-u2-q4p"/>
+                            <constraint firstItem="QrZ-L2-JuZ" firstAttribute="centerX" secondItem="bn9-f6-UuW" secondAttribute="centerX" id="X1L-mP-z4g"/>
+                            <constraint firstItem="2kp-6G-2BU" firstAttribute="width" secondItem="QrZ-L2-JuZ" secondAttribute="width" id="Xbk-d2-zVv"/>
+                            <constraint firstItem="QA7-GP-4mw" firstAttribute="height" secondItem="QrZ-L2-JuZ" secondAttribute="height" id="bWV-dB-yQb"/>
+                            <constraint firstItem="QA7-GP-4mw" firstAttribute="width" secondItem="QrZ-L2-JuZ" secondAttribute="width" id="gMJ-6e-5Dv"/>
+                            <constraint firstItem="ygo-o3-lKa" firstAttribute="centerX" secondItem="bn9-f6-UuW" secondAttribute="centerX" id="m39-bC-SaR"/>
+                        </constraints>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="768"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tuq-1c-U0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1876.7578124999998" y="-845.3125"/>
         </scene>
         <!--UITabBarController-foj-WQ-Y35-->
         <scene sceneID="9y5-cc-h6Y">

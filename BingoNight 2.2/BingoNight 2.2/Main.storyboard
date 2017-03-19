@@ -900,7 +900,7 @@
                                 </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="wZO-vN-6Vb">
-                                <rect key="frame" x="410" y="650" width="128" height="31"/>
+                                <rect key="frame" x="410" y="651" width="128" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Nw0-Zl-1OE"/>
                                 </constraints>
@@ -908,8 +908,14 @@
                                     <action selector="sliderLIneHeightChanged:" destination="YIq-qZ-unX" eventType="valueChanged" id="cTR-BV-2Kg"/>
                                 </connections>
                             </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line Spacing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwW-WU-VJO">
+                                <rect key="frame" x="412" y="651" width="124" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.88189572699999996" green="0.0" blue="0.0095694561229999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="50" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQ7-ja-JRm" userLabel="Label Font Size Display">
-                                <rect key="frame" x="342" y="650.5" width="50" height="30"/>
+                                <rect key="frame" x="342" y="651" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="3Q8-7O-QyG"/>
                                     <constraint firstAttribute="height" constant="30" id="qrS-kT-s67"/>
@@ -1143,6 +1149,7 @@
                             <constraint firstItem="hJN-yV-QPY" firstAttribute="top" secondItem="1Dg-Vp-zT4" secondAttribute="bottom" constant="45" id="4gz-DI-Kmg"/>
                             <constraint firstItem="DKv-xT-PCI" firstAttribute="centerY" secondItem="XIE-7e-c8R" secondAttribute="centerY" id="58D-WN-dhk"/>
                             <constraint firstItem="1vW-nx-XqU" firstAttribute="centerY" secondItem="1P6-NG-cBH" secondAttribute="centerY" id="5MA-FV-pQb"/>
+                            <constraint firstItem="IwW-WU-VJO" firstAttribute="width" secondItem="wZO-vN-6Vb" secondAttribute="width" id="5tI-xq-HoX"/>
                             <constraint firstItem="jfE-tx-aPH" firstAttribute="width" secondItem="cQ7-ja-JRm" secondAttribute="width" id="66c-d1-ch6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="8iM-Q4-XMj" secondAttribute="trailing" constant="5" id="6WR-lF-aN3"/>
                             <constraint firstItem="kT3-RO-8dE" firstAttribute="trailing" secondItem="7Wi-v8-qD4" secondAttribute="trailing" id="6do-2C-9zW"/>
@@ -1187,10 +1194,12 @@
                             <constraint firstItem="DrD-cL-UZ1" firstAttribute="height" secondItem="19z-gF-g6j" secondAttribute="height" id="KyJ-r0-8lZ"/>
                             <constraint firstItem="taz-Kf-hKj" firstAttribute="centerY" secondItem="8dt-eT-15K" secondAttribute="centerY" id="LMC-z1-1NE"/>
                             <constraint firstItem="tvf-BO-Ufg" firstAttribute="leading" secondItem="p7q-Rq-MLR" secondAttribute="leading" id="Lva-q4-Joa"/>
+                            <constraint firstItem="IwW-WU-VJO" firstAttribute="centerY" secondItem="wZO-vN-6Vb" secondAttribute="centerY" id="MUV-9k-G3T"/>
                             <constraint firstItem="Gms-CN-1a6" firstAttribute="leading" secondItem="y61-tt-ATN" secondAttribute="leading" id="MgH-0l-sdz"/>
                             <constraint firstItem="bQW-p6-f5k" firstAttribute="height" secondItem="AS6-wA-yB3" secondAttribute="height" id="NB7-9g-1mN"/>
                             <constraint firstItem="Fur-FM-vQv" firstAttribute="height" secondItem="taz-Kf-hKj" secondAttribute="height" id="NGi-Rf-vA3"/>
                             <constraint firstItem="2kh-BG-8yH" firstAttribute="leading" secondItem="h7Q-TT-ZFg" secondAttribute="leading" id="NM2-p7-YGl"/>
+                            <constraint firstItem="IwW-WU-VJO" firstAttribute="height" secondItem="wZO-vN-6Vb" secondAttribute="height" id="NMS-Q0-wFJ"/>
                             <constraint firstItem="aFo-TF-3z9" firstAttribute="height" secondItem="MdL-Lr-jU4" secondAttribute="height" id="NO7-i3-j0W"/>
                             <constraint firstItem="D4d-Nf-4Xb" firstAttribute="leading" secondItem="XIE-7e-c8R" secondAttribute="trailing" constant="5" id="NOq-bN-57i"/>
                             <constraint firstItem="cRs-qM-f9i" firstAttribute="leading" secondItem="DKv-xT-PCI" secondAttribute="trailing" id="NeB-9z-tyA"/>
@@ -1267,6 +1276,7 @@
                             <constraint firstItem="wZO-vN-6Vb" firstAttribute="leading" secondItem="cQ7-ja-JRm" secondAttribute="trailing" constant="20" id="rIs-kP-try"/>
                             <constraint firstItem="Aoh-Ph-Jjc" firstAttribute="centerY" secondItem="SGL-Rk-we9" secondAttribute="centerY" multiplier="1.17" id="rWT-wO-xXg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iT6-E8-Jop" secondAttribute="trailing" constant="5" id="rip-NI-9dJ"/>
+                            <constraint firstItem="IwW-WU-VJO" firstAttribute="centerX" secondItem="wZO-vN-6Vb" secondAttribute="centerX" id="rlB-Lx-2U5"/>
                             <constraint firstItem="wZO-vN-6Vb" firstAttribute="centerY" secondItem="cQ7-ja-JRm" secondAttribute="centerY" id="rpB-zH-jml"/>
                             <constraint firstItem="XIE-7e-c8R" firstAttribute="leading" secondItem="DKv-xT-PCI" secondAttribute="trailing" multiplier="1.8" id="rq5-Sx-4OY"/>
                             <constraint firstItem="sNR-dU-v7Y" firstAttribute="leading" secondItem="MdL-Lr-jU4" secondAttribute="trailing" constant="3" id="rrY-8v-HB7"/>
@@ -1444,7 +1454,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="G8w-R9-6IC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JBl-gg-rGT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="JBl-gg-rGT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1512,7 +1522,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEm-CL-MjT">
-                                <rect key="frame" x="40" y="40" width="622.5" height="688"/>
+                                <rect key="frame" x="39" y="40" width="623.5" height="688"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
                                     <fragment>

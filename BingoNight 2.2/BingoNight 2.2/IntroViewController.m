@@ -8,7 +8,7 @@
 
 #import "IntroViewController.h"
 #import "StartViewController.h"
-
+#import "MKiCloudSync.h"
 
 @interface IntroViewController ()
 
@@ -23,6 +23,9 @@
 - (void)viewDidLoad {
    
     [self.navigationController setNavigationBarHidden:YES];
+    
+   
+
  //   [self.navigationController prefersStatusBarHidden];
   
     _restoreMode = 0;
@@ -142,6 +145,22 @@
     [_btnRestoreGame addTarget:self action:@selector(restoreGame) forControlEvents:UIControlEventTouchDown];
     
     
+    _btnCloud = [[UIButton alloc] init];
+    _btnCloud.frame = CGRectMake(10, height*.95, .2*width, .05*height);
+    _btnCloud.backgroundColor = [UIColor whiteColor];
+    _btnCloud.layer.cornerRadius = 10;
+    
+    [_btnCloud setTitle:@"Cloud" forState:UIControlStateNormal];
+    [_btnCloud setTitleColor:buttonTextColor forState:UIControlStateNormal];
+    [_btnCloud setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
+    [_btnCloud setBackgroundColor:[UIColor lightGrayColor]];
+    
+    _btnCloud.titleLabel.textColor = buttonTextColor;
+    _btnCloud.titleLabel.font = [UIFont fontWithName:buttonFontName size:.03 * width];
+    [_btnCloud addTarget:self action:@selector(pushCloud) forControlEvents:UIControlEventTouchDown];
+    
+    
+    
     [self.view addSubview:_labelTitleBox];
     [self.view addSubview:_labelBottomBox];
     [self.view addSubview:_labelCreditBox];
@@ -150,6 +169,7 @@
     [self.view addSubview:_btnSetUp];
     [self.view addSubview:_btnInstructions];
     [self.view addSubview:_btnRestoreGame];
+    [self.view addSubview:_btnCloud];
     
     
     
@@ -191,6 +211,10 @@
     
 }
 
+-(void)pushCloud{
+    [self performSegueWithIdentifier:@"segueIntroToCloud" sender:self];
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString: @"segueIntroToStart" ]){
@@ -201,14 +225,12 @@
         _restoreMode = 0;
     }
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)btnPushFromCloud:(id)sender {
+    [MKiCloudSync updateToiCloud];
 }
-*/
 
+- (IBAction)btnPullFromCloud:(id)sender {
+    [MKiCloudSync updateFromiCloud];
+}
 @end

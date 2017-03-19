@@ -288,6 +288,7 @@
 		E37B80E61E31D74D00E59AC3 /* Shark-Bingo119.png in Resources */ = {isa = PBXBuildFile; fileRef = E37B805A1E31D74D00E59AC3 /* Shark-Bingo119.png */; };
 		E37B80E71E31D74D00E59AC3 /* Shark-Bingo120.png in Resources */ = {isa = PBXBuildFile; fileRef = E37B805B1E31D74D00E59AC3 /* Shark-Bingo120.png */; };
 		E38199601E7CD1C000FAE8A0 /* CursorFixedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = E381995F1E7CD1C000FAE8A0 /* CursorFixedTextView.m */; };
+		E381996A1E7DABFB00FAE8A0 /* MKiCloudSync.m in Sources */ = {isa = PBXBuildFile; fileRef = E38199691E7DABFB00FAE8A0 /* MKiCloudSync.m */; };
 		E39824E81DE5053100ACC5A7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E39824E71DE5053100ACC5A7 /* main.m */; };
 		E39825011DE5053100ACC5A7 /* BingoNight_2_2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39825001DE5053100ACC5A7 /* BingoNight_2_2Tests.m */; };
 		E398250C1DE5053100ACC5A7 /* BingoNight_2_2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E398250B1DE5053100ACC5A7 /* BingoNight_2_2UITests.m */; };
@@ -311,6 +312,7 @@
 		E398254A1DE5054B00ACC5A7 /* GamePlayTrash.txt in Resources */ = {isa = PBXBuildFile; fileRef = E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */; };
 		E398254B1DE5054B00ACC5A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */; };
 		E3C55F671E64C03500078604 /* OwnSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C55F661E64C03500078604 /* OwnSongsTableViewController.m */; };
+		E3CE9D0B1E7E30200009594E /* CloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CE9D0A1E7E30200009594E /* CloudViewController.m */; };
 		E3DD22CB1E1046EE002041C3 /* stop2.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22CA1E1046EE002041C3 /* stop2.png */; };
 		E3DD22CD1E1046F6002041C3 /* play2.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22CC1E1046F6002041C3 /* play2.png */; };
 		E3DD22D21E104E74002041C3 /* stop1.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22D01E104E74002041C3 /* stop1.png */; };
@@ -906,6 +908,10 @@
 		E37B805B1E31D74D00E59AC3 /* Shark-Bingo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Shark-Bingo120.png"; sourceTree = "<group>"; };
 		E381995E1E7CD1C000FAE8A0 /* CursorFixedTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CursorFixedTextView.h; sourceTree = "<group>"; };
 		E381995F1E7CD1C000FAE8A0 /* CursorFixedTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CursorFixedTextView.m; sourceTree = "<group>"; };
+		E38199611E7DA4E600FAE8A0 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		E38199681E7DABFB00FAE8A0 /* MKiCloudSync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKiCloudSync.h; sourceTree = "<group>"; };
+		E38199691E7DABFB00FAE8A0 /* MKiCloudSync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKiCloudSync.m; sourceTree = "<group>"; };
+		E381996B1E7DAD1800FAE8A0 /* BingoNight 2.2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "BingoNight 2.2.entitlements"; sourceTree = "<group>"; };
 		E39824E31DE5053100ACC5A7 /* BingoNight 2.2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BingoNight 2.2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E39824E71DE5053100ACC5A7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E39824F71DE5053100ACC5A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -949,6 +955,8 @@
 		E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3C55F651E64C03500078604 /* OwnSongsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnSongsTableViewController.h; sourceTree = "<group>"; };
 		E3C55F661E64C03500078604 /* OwnSongsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnSongsTableViewController.m; sourceTree = "<group>"; };
+		E3CE9D091E7E30200009594E /* CloudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudViewController.h; sourceTree = "<group>"; };
+		E3CE9D0A1E7E30200009594E /* CloudViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CloudViewController.m; sourceTree = "<group>"; };
 		E3DD22CA1E1046EE002041C3 /* stop2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop2.png; sourceTree = "<group>"; };
 		E3DD22CC1E1046F6002041C3 /* play2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play2.png; sourceTree = "<group>"; };
 		E3DD22D01E104E74002041C3 /* stop1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop1.png; sourceTree = "<group>"; };
@@ -1642,9 +1650,12 @@
 		E39824E51DE5053100ACC5A7 /* BingoNight 2.2 */ = {
 			isa = PBXGroup;
 			children = (
+				E381996B1E7DAD1800FAE8A0 /* BingoNight 2.2.entitlements */,
 				E39825191DE5054B00ACC5A7 /* Assets.xcassets */,
 				E398251A1DE5054B00ACC5A7 /* Main.storyboard */,
 				58C248841E6FBC14005B9645 /* GameSequence.storyboard */,
+				E3CE9D091E7E30200009594E /* CloudViewController.h */,
+				E3CE9D0A1E7E30200009594E /* CloudViewController.m */,
 				58C248821E6FBB12005B9645 /* OwnSongs.storyboard */,
 				E3C55F651E64C03500078604 /* OwnSongsTableViewController.h */,
 				E3C55F661E64C03500078604 /* OwnSongsTableViewController.m */,
@@ -1686,6 +1697,8 @@
 				E39825301DE5054B00ACC5A7 /* WinnerViewController.m */,
 				E39825311DE5054B00ACC5A7 /* DefaultsDataManager.h */,
 				E39825321DE5054B00ACC5A7 /* DefaultsDataManager.m */,
+				E38199681E7DABFB00FAE8A0 /* MKiCloudSync.h */,
+				E38199691E7DABFB00FAE8A0 /* MKiCloudSync.m */,
 				E39825331DE5054B00ACC5A7 /* AppDelegate.h */,
 				E39825341DE5054B00ACC5A7 /* AppDelegate.m */,
 				E39825351DE5054B00ACC5A7 /* LaunchScreen.xib */,
@@ -1701,6 +1714,7 @@
 		E39824E61DE5053100ACC5A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E38199611E7DA4E600FAE8A0 /* fontawesome-webfont.ttf */,
 				58BD133F1E7493EB008D6269 /* bingo_logo.png */,
 				E328E6021E0641BE004F10DA /* Songs */,
 				E328E6011E0641B5004F10DA /* Images */,
@@ -2134,7 +2148,12 @@
 					E39824E21DE5053100ACC5A7 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 46FKL82M3N;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					E39824FB1DE5053100ACC5A7 = {
 						CreatedOnToolsVersion = 8.1;
@@ -2781,8 +2800,10 @@
 				E398253E1DE5054B00ACC5A7 /* StartViewController.m in Sources */,
 				E38199601E7CD1C000FAE8A0 /* CursorFixedTextView.m in Sources */,
 				E398253D1DE5054B00ACC5A7 /* GlobalSettingsViewController.m in Sources */,
+				E3CE9D0B1E7E30200009594E /* CloudViewController.m in Sources */,
 				E39825401DE5054B00ACC5A7 /* PDFViewController.m in Sources */,
 				E398253C1DE5054B00ACC5A7 /* LocalSettingsViewController.m in Sources */,
+				E381996A1E7DABFB00FAE8A0 /* MKiCloudSync.m in Sources */,
 				E39825421DE5054B00ACC5A7 /* CreateCardArrays.m in Sources */,
 				E30283691E3EEA8C0058D5C8 /* RaffleViewController.m in Sources */,
 				E3749F821E43152700178ACD /* RaffleSetUpTableViewController.m in Sources */,
@@ -2920,12 +2941,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "BingoNight 2.2/BingoNight 2.2.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 46FKL82M3N;
 				INFOPLIST_FILE = "BingoNight 2.2/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "AandA.BingoNight-2-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AandADev.BingoNight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "faeb791b-c739-4410-8fc1-bfa57f860a2a";
+				PROVISIONING_PROFILE_SPECIFIER = "BingoNight-Development";
 			};
 			name = Debug;
 		};
@@ -2933,12 +2958,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "BingoNight 2.2/BingoNight 2.2.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 46FKL82M3N;
 				INFOPLIST_FILE = "BingoNight 2.2/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "AandA.BingoNight-2-2";
+				PRODUCT_BUNDLE_IDENTIFIER = com.AandADev.BingoNight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1bcf4d12-de3b-49ae-b0cf-5c538a1ac5ca";
+				PROVISIONING_PROFILE_SPECIFIER = "BingoNight-Development";
 			};
 			name = Release;
 		};

@@ -209,16 +209,19 @@
                                @13, //11 is row number for size;
                                @1,@3,@1, //12,13,14 is ball roll, display and drop seconds;
                                @1, //15 is smart selector on (i.e. value of one)
-                               @1, //16 use Special Checking is ON
-                               @0, //17 add image is OFF.
+                               @1, //16 use Special Checking is on
+                               @0, //17 add image is Off.
                                @10, //18 X coordinate of image
                                @10, //19  Y coordinate of image
                                @100, //20 width of image
                                @100, //21 height of image
-                               @0,// 22 DON"T use Raffle
-                               @0,// 23 theme song NOT selected
-                               @0,// 24 Image on TOP
+                               @0,//22  DON"T use raffle
+                               @0,//23 Theme NOT selected
+                               @0,//24 Image On Top
+                               @0,//25 Alignment
+                               @100,//26 Line Space
                                nil];
+
     }
 
     if (![_arrayGridsShell count]) {

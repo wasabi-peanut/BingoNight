@@ -12,6 +12,7 @@
 
 
 
+
 @interface StartViewController ()
 
 @end
@@ -55,13 +56,7 @@
    */
     [super viewDidLoad];
     
-    
-  
-    
-    
-    
-    
-    
+   
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -91,17 +86,19 @@
                                 @"Arial",@64, //font and size 8,9
                                 @5, //10 is row number for font;
                                 @13, //11 is row number for size;
-                                @1,@4,@1, //12,13,14 is ball roll, display and drop seconds;
+                                @1,@3,@1, //12,13,14 is ball roll, display and drop seconds;
                                 @1, //15 is smart selector on (i.e. value of one)
-                                @0, //16 use Special Checking is ON
-                                @0, //17 add image is OFF.
+                                @1, //16 use Special Checking is on
+                                @0, //17 add image is Off.
                                 @10, //18 X coordinate of image
                                 @10, //19  Y coordinate of image
                                 @100, //20 width of image
                                 @100, //21 height of image
-                                @0,// 22 DON"T use Raffle
-                                @0,// 23 theme song NOT selected
-                                @0,// 24 Image on TOP
+                                @0,//22  DON"T use raffle
+                                @0,//23 Theme NOT selected
+                                @0,//24 Image On Top
+                                @0,//25 Alignment
+                                @100,//26 Line Space
                                 nil];
         
     }
@@ -158,9 +155,6 @@
     
     if (_numberOfGames >6) {
         
-    
-    
-   
     NSInteger startX = 50;
     NSInteger startY = _height/2+100;
     NSInteger startAdjust = _width/_numberOfGames + 50;
@@ -278,10 +272,55 @@
         _btnStop.alpha = 0;
     }
 
-
+[self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:[_arrayGlobalSettings[26] integerValue] alignmentValue:[_arrayGlobalSettings[25]integerValue]];
 
 
 }
+-(void)handleEventName: (NSString*)text eventFont: (NSString *)eventFont eventFontSize: (float)eventFontSize lineSpacing: (float)heightValue alignmentValue: (NSInteger) alignmentValue {
+    //create style
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    
+    
+    paragraphStyle.lineSpacing = heightValue;
+    paragraphStyle.lineHeightMultiple = 0.5;
+    paragraphStyle.paragraphSpacingBefore = 0;
+    paragraphStyle.paragraphSpacing = 0;
+    paragraphStyle.minimumLineHeight = 0;
+    paragraphStyle.maximumLineHeight = eventFontSize;
+    
+    _nameOfEvent.textContainerInset = UIEdgeInsetsMake(eventFontSize/1.5, 0, -eventFontSize, 0);
+    
+    
+    
+    
+    
+    switch (alignmentValue) {
+        case 0:
+            paragraphStyle.alignment = NSTextAlignmentLeft;
+            break;
+        case 1:
+            paragraphStyle.alignment = NSTextAlignmentCenter;
+            break;
+        case 2:
+            paragraphStyle.alignment = NSTextAlignmentRight;
+            break;
+        default:
+            paragraphStyle.alignment = NSTextAlignmentLeft;
+            break;
+    }
+    
+    
+    
+    NSDictionary *attributeDictionary = @{
+                                          NSParagraphStyleAttributeName: paragraphStyle,
+                                          NSFontAttributeName: [UIFont fontWithName:eventFont size:eventFontSize],
+                                          
+                                          };
+    _nameOfEvent.attributedText = [[NSAttributedString alloc] initWithString:text attributes:attributeDictionary];
+    _nameOfEvent.textColor = [UIColor colorWithRed:[[_arrayGlobalSettings objectAtIndex:2] floatValue]/255 green:[[_arrayGlobalSettings  objectAtIndex:3] floatValue]/255 blue:[[_arrayGlobalSettings objectAtIndex:4]floatValue]/255 alpha:1];
+    
+}
+
 
 -(IBAction)gameSelected:(UIButton*)sender {
     

@@ -79,7 +79,7 @@
     _sliderY.maximumValue = _totalHeight*.5;
     
     _sliderLineHeight.minimumValue = 0;
-    _sliderLineHeight.maximumValue = 300;
+    _sliderLineHeight.maximumValue = 500;
     
     
     
@@ -270,14 +270,7 @@
     _viewNameOfEvent = [[UIView alloc] initWithFrame:CGRectMake(0, 44, width, height/2)];
     _nameOfEvent = [[CursorFixedTextView alloc]initWithFrame:CGRectMake(0, 0, width, height/2)];
     
-  /*
-    _nameOfEvent.font = [UIFont fontWithName:_fontName size:_floatFontSize];
-    _nameOfEvent.textAlignment = NSTextAlignmentCenter;
-    
-    _nameOfEvent.text = [_arrayGlobalSettings objectAtIndex:1];
-   */
-    
-    
+ 
     _nameOfEvent.scrollEnabled = NO;
     [_nameOfEvent setDelegate:self];
     
@@ -285,7 +278,7 @@
     [self.view addSubview:_viewNameOfEvent];
     [_viewNameOfEvent addSubview:_nameOfEvent];
     
-    //_nameOfEvent.clipsToBounds = NO;
+    _nameOfEvent.clipsToBounds = NO;
     
     
     if ([_arrayGlobalSettings[17] integerValue] == 1) {
@@ -357,7 +350,10 @@
 }
 
 - (IBAction)sliderLIneHeightChanged:(id)sender {
+   
+    
     [_arrayGlobalSettings replaceObjectAtIndex:26 withObject:@(_sliderLineHeight.value)];
+
     [DefaultsDataManager saveData:_arrayGlobalSettings forKey:_keyForGlobalSettings];
     [self handleEventName:_arrayGlobalSettings[1] eventFont:_arrayGlobalSettings[8] eventFontSize:[_arrayGlobalSettings[9] floatValue] lineSpacing:[_arrayGlobalSettings[26] integerValue] alignmentValue:[_arrayGlobalSettings[25]integerValue]];
 }

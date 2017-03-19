@@ -74,11 +74,12 @@
 //@property (strong, nonatomic) UITextField *fontSize;
 @property (strong, nonatomic) IBOutlet UITextField *fontSize;
 @property (strong, nonatomic) NSString *fontName;
-@property (strong, nonatomic) IBOutlet UISlider *sliderLineHeight;
+
+
 - (IBAction)segmentAlignmentChanged:(id)sender;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentAlignment;
 
-
+@property (strong, nonatomic) IBOutlet UISlider *sliderLineHeight;
 - (IBAction)sliderLIneHeightChanged:(id)sender;
 
 

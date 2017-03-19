@@ -19,8 +19,14 @@
 @property (strong, nonatomic) UIButton *btnSetUp;
 @property (strong, nonatomic) UIButton *btnInstructions;
 @property (strong, nonatomic) UIButton *btnRestoreGame;
+@property (strong, nonatomic) UIButton *btnCloud;
+@property (strong, nonatomic) IBOutlet UIView *viewCloudAnchor;
+
 
 @property NSInteger restoreMode;
+- (IBAction)btnPushFromCloud:(id)sender;
+
+- (IBAction)btnPullFromCloud:(id)sender;
 
 
 
