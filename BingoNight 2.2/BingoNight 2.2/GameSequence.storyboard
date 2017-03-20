@@ -257,7 +257,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bid-WV-VKm">
                                 <rect key="frame" x="30" y="748" width="10" height="10"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="10" id="rl2-lW-hyj"/>
                                     <constraint firstAttribute="height" constant="10" id="tJA-27-Rre"/>
@@ -278,7 +278,7 @@
                         <segue destination="i4h-wU-u70" kind="show" identifier="segueIntroToSetUp" id="4IB-yY-Rnf"/>
                         <segue destination="T8H-v7-vHP" kind="show" identifier="segueIntroToInstructions" id="66x-yL-g2W"/>
                         <segue destination="MG7-Q1-Gq1" kind="popoverPresentation" identifier="segueIntroToCloud" popoverAnchorView="bid-WV-VKm" id="dTg-5G-K2R">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                            <popoverArrowDirection key="popoverArrowDirection"/>
                         </segue>
                     </connections>
                 </viewController>
@@ -318,7 +318,7 @@
                                     <action selector="btnCloudSavePressed:" destination="MG7-Q1-Gq1" eventType="touchUpInside" id="qqU-iP-7O5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALL SETTINGS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-GP-4mw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOUD SYNC " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QA7-GP-4mw">
                                 <rect key="frame" x="412" y="94" width="200" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

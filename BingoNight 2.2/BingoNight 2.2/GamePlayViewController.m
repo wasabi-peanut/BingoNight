@@ -988,7 +988,7 @@
          }
    
     else {
-    _checking = [[UILabel alloc] initWithFrame:CGRectMake (.1*_width, .8*_height, _width*.8, _height*.1)];
+    _checking = [[UILabel alloc] initWithFrame:CGRectMake (.4*_width, .8*_height, _width*.5, _height*.1)];
     _checking.text = @"Hold Your Cards";
     _checking.backgroundColor = _boxBackgroundColor;
     _checking.textColor = _boxLetterColor;

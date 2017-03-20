@@ -146,14 +146,14 @@
     
     
     _btnCloud = [[UIButton alloc] init];
-    _btnCloud.frame = CGRectMake(10, height*.95, .2*width, .05*height);
+    _btnCloud.frame = CGRectMake(10, height*.95, .05*width, .05*height);
     _btnCloud.backgroundColor = [UIColor whiteColor];
     _btnCloud.layer.cornerRadius = 10;
     
-    [_btnCloud setTitle:@"Cloud" forState:UIControlStateNormal];
+    [_btnCloud setTitle:@"\u2601" forState:UIControlStateNormal];
     [_btnCloud setTitleColor:buttonTextColor forState:UIControlStateNormal];
     [_btnCloud setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
-    [_btnCloud setBackgroundColor:[UIColor lightGrayColor]];
+    [_btnCloud setBackgroundColor:[UIColor clearColor]];
     
     _btnCloud.titleLabel.textColor = buttonTextColor;
     _btnCloud.titleLabel.font = [UIFont fontWithName:buttonFontName size:.03 * width];
