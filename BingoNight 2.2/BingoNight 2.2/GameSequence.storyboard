@@ -54,7 +54,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="trS-Bt-HZm">
-                                <rect key="frame" x="221" y="198" width="531" height="353"/>
+                                <rect key="frame" x="220" y="198" width="532" height="353"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -311,7 +311,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2kp-6G-2BU">
-                                <rect key="frame" x="412" y="591.5" width="200" height="100"/>
+                                <rect key="frame" x="412" y="592" width="200" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save To iCloud"/>
                                 <connections>
@@ -325,7 +325,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygo-o3-lKa">
-                                <rect key="frame" x="412" y="252" width="200" height="329.5"/>
+                                <rect key="frame" x="412" y="252" width="200" height="330"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Use these buttons to back up your settings to the cloud or to download saved settings.  ">
                                         <attributes>

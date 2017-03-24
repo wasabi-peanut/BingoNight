@@ -16,6 +16,7 @@
 		E3749FA81E449AB900178ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3749FA61E449AB900178ACD /* LaunchScreen.storyboard */; };
 		E3749FB31E449ABA00178ACD /* testSplitViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3749FB21E449ABA00178ACD /* testSplitViewTests.m */; };
 		E3749FBE1E449ABA00178ACD /* testSplitViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3749FBD1E449ABA00178ACD /* testSplitViewUITests.m */; };
+		E3CE9D531E82DEF30009594E /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CE9D521E82DEF30009594E /* StartViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		E3749FB91E449ABA00178ACD /* testSplitViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testSplitViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3749FBD1E449ABA00178ACD /* testSplitViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testSplitViewUITests.m; sourceTree = "<group>"; };
 		E3749FBF1E449ABA00178ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3CE9D511E82DEF30009594E /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartViewController.h; sourceTree = "<group>"; };
+		E3CE9D521E82DEF30009594E /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				E3749F981E449AB900178ACD /* AppDelegate.h */,
 				E3749F991E449AB900178ACD /* AppDelegate.m */,
 				E3749F9B1E449AB900178ACD /* MasterViewController.h */,
+				E3CE9D511E82DEF30009594E /* StartViewController.h */,
+				E3CE9D521E82DEF30009594E /* StartViewController.m */,
 				E3749F9C1E449AB900178ACD /* MasterViewController.m */,
 				E3749F9E1E449AB900178ACD /* DetailViewController.h */,
 				E3749F9F1E449AB900178ACD /* DetailViewController.m */,
@@ -283,6 +288,7 @@
 			files = (
 				E3749F9A1E449AB900178ACD /* AppDelegate.m in Sources */,
 				E3749F9D1E449AB900178ACD /* MasterViewController.m in Sources */,
+				E3CE9D531E82DEF30009594E /* StartViewController.m in Sources */,
 				E3749F971E449AB900178ACD /* main.m in Sources */,
 				E3749FA01E449AB900178ACD /* DetailViewController.m in Sources */,
 			);
@@ -522,6 +528,7 @@
 				E3749FC41E449ABA00178ACD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3749FC51E449ABA00178ACD /* Build configuration list for PBXNativeTarget "testSplitViewTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +537,7 @@
 				E3749FC71E449ABA00178ACD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E3749FC81E449ABA00178ACD /* Build configuration list for PBXNativeTarget "testSplitViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +546,7 @@
 				E3749FCA1E449ABA00178ACD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -19,12 +19,82 @@
     [super viewDidLoad];
      [self.navigationController setNavigationBarHidden:NO];
     
+    [self createArrayOfSections];
+    [self createArrayOfTopics];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+-(void)viewDidAppear:(BOOL)animated{
+   
+}
+
+-(void)popoverPresentationControllerDidDismissPopover:(UIPopoverPresentationController *)popoverPresentationController{
+   //   _path = [NSIndexPath indexPathForRow:_path.row inSection:_path.section];
+  //  [self tableView:_tableViewInstructions didSelectRowAtIndexPath:_path];
+    
+    
+}
+
+
+
+-(void)createArrayOfSections{
+    _arrayOfSections = [[NSMutableArray alloc] initWithObjects:
+                      @"Introduction",
+                      @"Play Game",
+                      @"Set Up Local",
+                      @"Set Up Global",
+                      @"Restore and Backup",
+                        nil
+                        ];
+    
+}
+
+-(void)createArrayOfTopics{
+    _arrayOfTopicsIntro = [[NSMutableArray alloc] initWithObjects:
+                      @"Welcome",
+                    nil];
+    
+    _arrayOfTopicsPlay = [[NSMutableArray alloc] initWithObjects:
+                          @"Choose Game Screen",
+                          @"Raffle",
+                          @"Theme Song",
+                          @"Game Display",
+                          @"Ball Display",
+                          @"Checking",
+                          @"Winner",
+                          nil];
+    
+    _arrayOfTopicsSetupLocal = [[NSMutableArray alloc] initWithObjects:
+                            @"Number of Games",
+                            @"Color Schemes",
+                            @"Grids",
+                            @"Customize Grid",
+                            @"Game Comments",
+                            nil];
+    
+    _arrayOfTopicsSetupGlobal = [[NSMutableArray alloc] initWithObjects:
+                                @"Event Screen",
+                                @"Add Image",
+                                @"Use Auto Select",
+                                @"Smart Ball Choice",
+                                @"Special Checking",
+                                @"Ball Animation Settings",
+                                @"Raffle",
+                                @"Make Cards",
+                                @"Theme Song",
+                                nil];
+
+    _arrayOfTopicsRestore = [[NSMutableArray alloc] initWithObjects:
+                                 @"Restore Game",
+                                 @"iCloud Settings",
+                                 nil];
+
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -38,50 +108,86 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return _arrayOfSections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    NSInteger rows;
+    switch (section) {
+        case 0:
+           rows = _arrayOfTopicsIntro.count;
+            break;
+        case 1:
+            rows = _arrayOfTopicsPlay.count;
+            break;
+        case 2:
+            rows = _arrayOfTopicsSetupLocal.count;
+            break;
+        case 3:
+            rows = _arrayOfTopicsSetupGlobal.count;
+            break;
+        case 4:
+            rows = _arrayOfTopicsRestore.count;
+            break;
+        
+        default:
+            rows = 2;
+            break;
+    }
+    return rows;
 }
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
      NSString *sectionName;
     
-    switch (section) {
-        case 0:
-            sectionName = @"Section One";
-            break;
-        case 1:
-            sectionName = @"Section Two";
-            break;
-        default:
-            break;
-    }
-   
-    
+    sectionName = _arrayOfSections[section];
     return sectionName;
     
 }
 
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-   // UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
- UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
 
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+  
     // Configure the cell...
     
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cell"];
     }
     
-    cell.textLabel.text = @"Topic";
+    NSString * title;
+    
+    switch (indexPath.section) {
+        case 0:
+            title = _arrayOfTopicsIntro[indexPath.row];
+            break;
+        case 1:
+            title= _arrayOfTopicsPlay[indexPath.row];
+            break;
+        case 2:
+            title= _arrayOfTopicsSetupLocal[indexPath.row];
+            break;
+        case 3:
+            title = _arrayOfTopicsSetupGlobal[indexPath.row];
+            break;
+        case 4:
+            title = _arrayOfTopicsRestore[indexPath.row];
+            break;
+     
+        default:
+            break;
+    }
     
     
-    
+    cell.textLabel.text = title;
     
     return cell;
 }
+
+
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
@@ -92,16 +198,52 @@
     _rowSelected = indexPath.row;
     _sectionSelected = indexPath.section;
     
+    switch (indexPath.section) {
+        case 0:
+            _topic = _arrayOfTopicsIntro[indexPath.row];
+            break;
+        case 1:
+            _topic= _arrayOfTopicsPlay[indexPath.row];
+            break;
+        case 2:
+            _topic= _arrayOfTopicsSetupLocal[indexPath.row];
+            break;
+        case 3:
+            _topic = _arrayOfTopicsSetupGlobal[indexPath.row];
+            break;
+        case 4:
+            _topic = _arrayOfTopicsRestore[indexPath.row];
+            break;
+            
+        default:
+            break;
+    }
     
     
     [self performSegueWithIdentifier:@"segueInstructionsToText" sender:self];
+    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString: @"segueInstructionsToText"]){
         TextViewController *view = [segue destinationViewController];
+    /*
+        view.modalPresentationStyle = UIModalPresentationPopover;
+      [self presentViewController:view animated:YES completion:nil];*/
+        
+        _popView = [view popoverPresentationController];
+        _popView.delegate = self;
+     
+        _popView.sourceView = self.view;
+        _popView.sourceRect = CGRectMake(400, [UIScreen mainScreen].bounds.size.height*.15, 800, 700);
+        
+        view.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width*.8, [UIScreen mainScreen].bounds.size.height*.9);
         view.sendingRow = _rowSelected ;
         view.sendingSection = _sectionSelected;
+        view.incomingTopic = _topic;
+        
+      
+        
              
         
         

@@ -11,5 +11,17 @@
 @interface TextViewController : UIViewController
 @property NSUInteger sendingRow;
 @property NSUInteger sendingSection;
+@property NSString *incomingTopic;
+
 @property (strong, nonatomic) IBOutlet UITextView *textViewText;
+
+@property (strong, nonatomic) NSMutableArray *arrayContentIntro;
+@property (strong, nonatomic) NSMutableArray *arrayContentGamePlay;
+@property (strong, nonatomic) NSMutableArray *arrayContentSetupLocal;
+@property (strong, nonatomic) NSMutableArray *arrayContentSetupGlobal;
+@property (strong, nonatomic) NSMutableArray *arrayContentRestore;
+
+
+
+
 @end
