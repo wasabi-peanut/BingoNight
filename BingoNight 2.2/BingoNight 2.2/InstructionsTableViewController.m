@@ -241,13 +241,9 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" for
         view.sendingRow = _rowSelected ;
         view.sendingSection = _sectionSelected;
         view.incomingTopic = _topic;
-        
-      
-        
-             
-        
-        
+       
     }
+   // _popView.passthroughViews = [[[NSArray alloc] initWithObjects:_tableViewInstructions, nil];
     
 }
 
