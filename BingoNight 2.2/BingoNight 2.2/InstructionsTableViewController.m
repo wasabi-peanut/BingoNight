@@ -69,6 +69,7 @@
                           nil];
     
     _arrayOfTopicsSetupLocal = [[NSMutableArray alloc] initWithObjects:
+                            @"Overview",
                             @"Number of Games",
                             @"Color Schemes",
                             @"Grids",
@@ -146,9 +147,6 @@
 }
 
 
-
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
   
@@ -193,6 +191,11 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" for
     return 50;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 75;
+}
+
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     _rowSelected = indexPath.row;
@@ -220,6 +223,7 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" for
     }
     
     
+    
     [self performSegueWithIdentifier:@"segueInstructionsToText" sender:self];
     
 }
@@ -227,23 +231,28 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" for
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString: @"segueInstructionsToText"]){
         TextViewController *view = [segue destinationViewController];
-    /*
-        view.modalPresentationStyle = UIModalPresentationPopover;
-      [self presentViewController:view animated:YES completion:nil];*/
+    
+     // view.modalPresentationStyle = UIModalPresentationPopover;
+     // [self presentViewController:view animated:YES completion:nil];
         
         _popView = [view popoverPresentationController];
         _popView.delegate = self;
      
         _popView.sourceView = self.view;
-        _popView.sourceRect = CGRectMake(400, [UIScreen mainScreen].bounds.size.height*.15, 800, 700);
+        _popView.sourceRect = CGRectMake([UIScreen mainScreen].bounds.size.width*.3, [UIScreen mainScreen].bounds.size.height*.15, 800, 700);
         
         view.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width*.8, [UIScreen mainScreen].bounds.size.height*.9);
         view.sendingRow = _rowSelected ;
         view.sendingSection = _sectionSelected;
         view.incomingTopic = _topic;
-       
+        
+        _popView.passthroughViews = [[NSArray alloc] initWithObjects:_tableViewInstructions, nil];
+        [self dismissViewControllerAnimated:_popView completion:nil];
+        
     }
-   // _popView.passthroughViews = [[[NSArray alloc] initWithObjects:_tableViewInstructions, nil];
+    
+   
+    
     
 }
 
@@ -253,7 +262,7 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" for
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+
 
 
 // Override to support editing the table view.
@@ -281,7 +290,6 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" for
 }
 
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
