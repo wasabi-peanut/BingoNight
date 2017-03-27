@@ -246,15 +246,13 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" for
         view.sendingSection = _sectionSelected;
         view.incomingTopic = _topic;
         
-        _popView.passthroughViews = [[NSArray alloc] initWithObjects:_tableViewInstructions, nil];
-        [self dismissViewControllerAnimated:_popView completion:nil];
+       _popView.passthroughViews = [[NSArray alloc] initWithObjects:_tableViewInstructions, nil];
+      //  [self dismissViewControllerAnimated:_popView completion:nil];
         
     }
-    
-   
-    
-    
+ 
 }
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -290,13 +288,7 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" for
 }
 
 
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
 */
 
 @end

@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    _textViewText.backgroundColor = [UIColor whiteColor];
     
     [self createContentArrays];
     [self chooseContent];
@@ -33,55 +33,82 @@
 
 -(void)chooseContent {
     
-    NSString * content;
+    NSString * body;
     
     switch (_sendingSection) {
         case 0:
-            content = _arrayContentIntro[_sendingRow];
+            body = _arrayContentIntro[_sendingRow];
             break;
         case 1:
-            content = _arrayContentGamePlay[_sendingRow];
+            body = _arrayContentGamePlay[_sendingRow];
             break;
         case 2:
-            content = _arrayContentSetupLocal[_sendingRow];
+            body = _arrayContentSetupLocal[_sendingRow];
             break;
         case 3:
-            content = _arrayContentSetupGlobal[_sendingRow];
+            body = _arrayContentSetupGlobal[_sendingRow];
             break;
         case 4:
-            content = _arrayContentRestore[_sendingRow];
+            body = _arrayContentRestore[_sendingRow];
             break;
         default:
             
             break;
     }
     
-    _textViewText.font = [UIFont fontWithName:@"Helvetica" size:14];
+    UIFont *titleFont = [UIFont fontWithName:@"Helvetica" size:32];
+    UIColor*titleFontColor = [UIColor blueColor];
     
-    UIFont *boldFont = [UIFont fontWithName:@"Helvetica" size:24];
+    UIFont *bodyFont = [UIFont fontWithName:@"Helvetica" size:18];
+    UIColor*bodyFontColor = [UIColor grayColor];
     
-    UIColor*fontColor = [UIColor redColor];
+    NSRange titleRange = NSMakeRange(0, _incomingTopic.length);
+    NSRange bodyRange = NSMakeRange(_incomingTopic.length, body.length+4);
+
+    NSMutableParagraphStyle *titleStyle = [[NSMutableParagraphStyle alloc] init];
+    titleStyle.alignment = NSTextAlignmentCenter;
     
-    NSRange boldedRange = NSMakeRange(0, _incomingTopic.length);
-    NSString *text = [NSString stringWithFormat:@"%@ \n \n%@",_incomingTopic,content];
-    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:text];
+    NSMutableParagraphStyle *bodyStyle = [[NSMutableParagraphStyle alloc] init];
+    bodyStyle.alignment = NSTextAlignmentJustified;
     
     
-    [attrString beginEditing];
-    [attrString addAttribute:NSFontAttributeName
-                       value:boldFont
-                       range:boldedRange
+    NSString *text = [NSString stringWithFormat:@"%@ \n \n%@",_incomingTopic,body];
+    NSMutableAttributedString *attrText = [[NSMutableAttributedString alloc] initWithString:text];
+    
+    [attrText beginEditing];
+    [attrText addAttribute:NSFontAttributeName
+                       value:titleFont
+                       range:titleRange
      ];
     
-    [attrString addAttribute:NSForegroundColorAttributeName
-                       value:fontColor
-                       range:boldedRange];
+    [attrText addAttribute:NSParagraphStyleAttributeName
+                     value:titleStyle
+                     range:titleRange];
     
+    [attrText addAttribute:NSParagraphStyleAttributeName
+                     value:bodyStyle
+                     range:bodyRange];
+    
+    [attrText addAttribute:NSFontAttributeName
+                     value:bodyFont
+                     range:bodyRange];
+    
+    [attrText addAttribute:NSForegroundColorAttributeName
+                       value:titleFontColor
+                       range:titleRange];
+    
+    [attrText addAttribute:NSForegroundColorAttributeName
+                     value:bodyFontColor
+                     range:bodyRange];
    
-    [attrString endEditing];
-    _textViewText.attributedText = attrString;
-    _textViewText.layer.borderColor = [[UIColor redColor] CGColor];
-    _textViewText.layer.borderWidth = 5;
+    [attrText endEditing];
+    
+    
+    _textViewText.attributedText = attrText;
+    
+    
+    _textViewText.layer.borderColor = [[UIColor blueColor] CGColor];
+    _textViewText.layer.borderWidth = 1;
     _textViewText.editable = NO;
     
     
