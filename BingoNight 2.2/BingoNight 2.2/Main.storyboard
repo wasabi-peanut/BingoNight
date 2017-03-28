@@ -750,7 +750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Ze-O6-kgB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="-152"/>
+            <point key="canvasLocation" x="1701" y="-877"/>
         </scene>
         <!--Global-->
         <scene sceneID="BVX-iA-bWF">
@@ -1217,7 +1217,6 @@
                             <constraint firstItem="bQW-p6-f5k" firstAttribute="leading" secondItem="AS6-wA-yB3" secondAttribute="leading" id="SgX-x2-rwK"/>
                             <constraint firstItem="h7Q-TT-ZFg" firstAttribute="leading" secondItem="MQZ-05-QpK" secondAttribute="leading" id="TDb-Nj-5t9"/>
                             <constraint firstItem="y61-tt-ATN" firstAttribute="leading" secondItem="jo7-Tu-OYc" secondAttribute="leading" id="Tfl-jU-bCn"/>
-                            <constraint firstItem="ORC-sm-nWI" firstAttribute="top" secondItem="8iM-Q4-XMj" secondAttribute="bottom" constant="10" id="Txn-jo-0iS"/>
                             <constraint firstItem="AKC-Us-Mgz" firstAttribute="leading" secondItem="7Wi-v8-qD4" secondAttribute="leading" id="U9l-PX-N6v"/>
                             <constraint firstItem="jfE-tx-aPH" firstAttribute="leading" secondItem="iT6-E8-Jop" secondAttribute="leading" id="UuP-zw-6j7"/>
                             <constraint firstItem="jo7-Tu-OYc" firstAttribute="leading" secondItem="WTF-CE-w8M" secondAttribute="leading" id="UvZ-QS-ZYc"/>
@@ -1241,6 +1240,7 @@
                             <constraint firstItem="sNR-dU-v7Y" firstAttribute="centerY" secondItem="MdL-Lr-jU4" secondAttribute="centerY" id="bD9-oz-pq7"/>
                             <constraint firstItem="jo7-Tu-OYc" firstAttribute="height" secondItem="WTF-CE-w8M" secondAttribute="height" id="bIa-XV-kIX"/>
                             <constraint firstItem="WTF-CE-w8M" firstAttribute="height" secondItem="grC-dF-rMO" secondAttribute="height" id="cN8-vK-uHl"/>
+                            <constraint firstItem="8iM-Q4-XMj" firstAttribute="top" secondItem="iT6-E8-Jop" secondAttribute="bottom" constant="10" id="cY7-t8-Yec"/>
                             <constraint firstItem="QIA-Aj-xCt" firstAttribute="height" secondItem="D4d-Nf-4Xb" secondAttribute="height" id="cYF-Ja-vId"/>
                             <constraint firstItem="y61-tt-ATN" firstAttribute="width" secondItem="jo7-Tu-OYc" secondAttribute="width" id="cft-NG-jWS"/>
                             <constraint firstItem="7Wi-v8-qD4" firstAttribute="height" secondItem="sNR-dU-v7Y" secondAttribute="height" id="cr4-B7-Rnr"/>
@@ -1447,7 +1447,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPs-FU-79o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034" y="-152"/>
+            <point key="canvasLocation" x="1701" y="-1"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ltV-kl-Tjm">
@@ -1501,8 +1501,6 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="5Qi-kE-rOA"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableViewInstructions" destination="Wkv-L1-aPo" id="9ph-ql-JRN"/>
                         <segue destination="e2U-cu-a5a" kind="popoverPresentation" identifier="segueInstructionsToText" popoverAnchorView="Wkv-L1-aPo" id="d9o-B6-Zvh">
@@ -1512,7 +1510,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7bw-4T-3w5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="-184"/>
+            <point key="canvasLocation" x="364" y="-62"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="etR-Se-McQ">
@@ -1523,11 +1521,11 @@
                         <viewControllerLayoutGuide type="bottom" id="sQf-0n-tre"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Qnh-fa-iqB">
-                        <rect key="frame" x="0.0" y="64" width="1200" height="1120"/>
+                        <rect key="frame" x="0.0" y="64" width="1024" height="816"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gEm-CL-MjT">
-                                <rect key="frame" x="40" y="20" width="1120" height="1080"/>
+                                <rect key="frame" x="51" y="-0.5" width="922" height="817"/>
                                 <color key="backgroundColor" red="0.95378079380000003" green="0.9090157391" blue="0.79755930659999996" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -1542,10 +1540,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gEm-CL-MjT" firstAttribute="centerX" secondItem="Qnh-fa-iqB" secondAttribute="centerX" id="8W0-6P-qsJ"/>
-                            <constraint firstItem="gEm-CL-MjT" firstAttribute="top" secondItem="PhV-M7-dGJ" secondAttribute="bottom" constant="20" id="div-Jk-raA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gEm-CL-MjT" secondAttribute="trailing" constant="20" id="oqG-bQ-Fki"/>
-                            <constraint firstItem="gEm-CL-MjT" firstAttribute="centerY" secondItem="Qnh-fa-iqB" secondAttribute="centerY" id="tAj-II-7Of"/>
+                            <constraint firstItem="gEm-CL-MjT" firstAttribute="centerX" secondItem="Qnh-fa-iqB" secondAttribute="centerX" id="1OW-nW-ET8"/>
+                            <constraint firstItem="gEm-CL-MjT" firstAttribute="height" secondItem="Qnh-fa-iqB" secondAttribute="height" constant="0.90000000000000002" id="3Ci-14-04I"/>
+                            <constraint firstItem="gEm-CL-MjT" firstAttribute="centerY" secondItem="Qnh-fa-iqB" secondAttribute="centerY" id="9y5-ky-YHF"/>
+                            <constraint firstItem="gEm-CL-MjT" firstAttribute="width" secondItem="Qnh-fa-iqB" secondAttribute="width" multiplier="0.9" id="IdT-FH-TbB"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -1556,13 +1554,15 @@
                     <value key="contentSizeForViewInPopover" type="size" width="800" height="600"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="1024" height="880"/>
                     <connections>
                         <outlet property="textViewText" destination="gEm-CL-MjT" id="kN4-d8-Ve0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0e-FX-D4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="329" y="769"/>
+            <point key="canvasLocation" x="362" y="977"/>
         </scene>
         <!--OwnSongs-->
         <scene sceneID="5di-hE-mdW">

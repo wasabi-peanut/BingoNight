@@ -30,6 +30,4 @@
 
 @property (strong,nonatomic) NSMutableArray *arrayOfSections;
 
-
-
 @end

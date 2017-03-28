@@ -19,6 +19,8 @@
     [super viewDidLoad];
      [self.navigationController setNavigationBarHidden:NO];
     
+    
+    
     [self createArrayOfSections];
     [self createArrayOfTopics];
     
@@ -232,22 +234,28 @@ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" for
     if ([[segue identifier] isEqualToString: @"segueInstructionsToText"]){
         TextViewController *view = [segue destinationViewController];
     
-     // view.modalPresentationStyle = UIModalPresentationPopover;
-     // [self presentViewController:view animated:YES completion:nil];
-        
         _popView = [view popoverPresentationController];
         _popView.delegate = self;
      
         _popView.sourceView = self.view;
-        _popView.sourceRect = CGRectMake([UIScreen mainScreen].bounds.size.width*.3, [UIScreen mainScreen].bounds.size.height*.15, 800, 700);
-        
+        _popView.sourceRect = CGRectMake([UIScreen mainScreen].bounds.size.width*.3, [UIScreen mainScreen].bounds.size.height*.2, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
+
+      
         view.preferredContentSize = CGSizeMake([UIScreen mainScreen].bounds.size.width*.8, [UIScreen mainScreen].bounds.size.height*.9);
         view.sendingRow = _rowSelected ;
         view.sendingSection = _sectionSelected;
         view.incomingTopic = _topic;
         
-       _popView.passthroughViews = [[NSArray alloc] initWithObjects:_tableViewInstructions, nil];
-      //  [self dismissViewControllerAnimated:_popView completion:nil];
+        NSMutableArray *ptView = [[NSMutableArray alloc] init];
+        UITableViewCell *cell;
+        for (cell in _tableViewInstructions.visibleCells) {
+            [ptView addObject:cell];
+        }
+        
+        _popView.passthroughViews = ptView;
+        [self dismissViewControllerAnimated:_popView completion:nil];
+        
+        
         
     }
  
