@@ -2966,7 +2966,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.AandADev.BingoNight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1bcf4d12-de3b-49ae-b0cf-5c538a1ac5ca";
+				PROVISIONING_PROFILE = "faeb791b-c739-4410-8fc1-bfa57f860a2a";
 				PROVISIONING_PROFILE_SPECIFIER = "BingoNight-Development";
 			};
 			name = Release;

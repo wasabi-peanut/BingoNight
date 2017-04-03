@@ -54,7 +54,7 @@
     //Labels
     
     _labelTitleBox = [[UILabel alloc] initWithFrame:CGRectMake(horizontalPercentage*width, .1*height, width*(1-2*horizontalPercentage), .25*height)];
-    _labelTitleBox.text = @"BINGO NIGHT";
+    _labelTitleBox.text = @"My Bingo Event";
     _labelTitleBox.textColor = labelTextColor;
     _labelTitleBox.backgroundColor = [UIColor clearColor];
     _labelTitleBox.font = [UIFont fontWithName:labelFontName size:width*.1];
@@ -66,7 +66,7 @@
     
 
     _labelBottomBox = [[UILabel alloc] initWithFrame:CGRectMake(horizontalPercentage*width, .75*height, width*(1-2*horizontalPercentage), .1*height)];
-     _labelBottomBox.text = @"Your Bingo Night Event Companion";
+     _labelBottomBox.text = @"Make Your Bingo Night Special";
      _labelBottomBox.textColor = labelTextColor;
      _labelBottomBox.backgroundColor = [UIColor clearColor];
      _labelBottomBox.font = [UIFont fontWithName:labelFontName size:width*.05];

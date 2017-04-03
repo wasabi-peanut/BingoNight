@@ -765,7 +765,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jdx-R9-pMk">
-                                <rect key="frame" x="417" y="474" width="52" height="30"/>
+                                <rect key="frame" x="417" y="474.5" width="52" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="OJD-9H-P6c"/>
                                 </constraints>
@@ -828,7 +828,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ball Display Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wi-v8-qD4" userLabel="Label Display Seconds">
-                                <rect key="frame" x="667" y="608" width="100" height="30"/>
+                                <rect key="frame" x="667" y="608.5" width="100" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -846,7 +846,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sNR-dU-v7Y" userLabel="Label Roll Seconds">
-                                <rect key="frame" x="667" y="542" width="100" height="30"/>
+                                <rect key="frame" x="667" y="542.5" width="100" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -858,7 +858,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label Drop Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AKC-Us-Mgz">
-                                <rect key="frame" x="667" y="674" width="100" height="30"/>
+                                <rect key="frame" x="667" y="674.5" width="100" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -894,7 +894,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQZ-05-QpK" userLabel="Switch Skip Columns">
-                                <rect key="frame" x="417" y="509" width="52" height="30"/>
+                                <rect key="frame" x="417" y="509.5" width="52" height="30"/>
                                 <connections>
                                     <action selector="switchUnmarkedColumnsChanged:" destination="YIq-qZ-unX" eventType="valueChanged" id="aUY-R2-ib0"/>
                                 </connections>
@@ -930,13 +930,13 @@
                                 </connections>
                             </textField>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h7Q-TT-ZFg" userLabel="Switch Special Checking">
-                                <rect key="frame" x="417" y="544" width="52" height="30"/>
+                                <rect key="frame" x="417" y="544.5" width="52" height="30"/>
                                 <connections>
                                     <action selector="switchSpecialCheckingMoved:" destination="YIq-qZ-unX" eventType="valueChanged" id="R8f-rc-z0r"/>
                                 </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2kh-BG-8yH">
-                                <rect key="frame" x="417" y="579" width="52" height="30"/>
+                                <rect key="frame" x="417" y="579.5" width="52" height="30"/>
                                 <connections>
                                     <action selector="switchRaffleValueChange:" destination="YIq-qZ-unX" eventType="valueChanged" id="j5e-KC-wSY"/>
                                 </connections>
