@@ -200,6 +200,53 @@
             </objects>
             <point key="canvasLocation" x="2555" y="-1570"/>
         </scene>
+        <!--In App Purchase View Controller-->
+        <scene sceneID="iIG-Pe-im7">
+            <objects>
+                <viewController id="hNe-cW-qUE" customClass="InAppPurchaseViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jAW-i7-0qd"/>
+                        <viewControllerLayoutGuide type="bottom" id="OWu-QI-eOX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qFX-Th-wW7">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXG-iR-Rhb">
+                                <rect key="frame" x="362" y="120" width="300" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Erp-3i-W2z"/>
+                                    <constraint firstAttribute="height" constant="200" id="mzi-Cg-0eb"/>
+                                </constraints>
+                                <string key="text">Commercial use of this program requires an annual license. Please click the button below to complete your purchase.  Enjoy My Bingo Event for personal and classroom use without purchasing a license.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE6-3l-ZbQ">
+                                <rect key="frame" x="409" y="334" width="207" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="Wk5-uC-c2a"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="szv-84-fqN"/>
+                                </constraints>
+                                <state key="normal" title="Buy License ($99.99 per year)"/>
+                                <connections>
+                                    <action selector="tapBuyLicense" destination="hNe-cW-qUE" eventType="touchUpInside" id="Ftg-Kc-30F"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.95378079380000003" green="0.9090157391" blue="0.79755930659999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="RE6-3l-ZbQ" firstAttribute="centerY" secondItem="qFX-Th-wW7" secondAttribute="centerY" id="3uK-Hc-IAU"/>
+                            <constraint firstItem="RE6-3l-ZbQ" firstAttribute="centerX" secondItem="qFX-Th-wW7" secondAttribute="centerX" id="9rg-UR-zDc"/>
+                            <constraint firstItem="JXG-iR-Rhb" firstAttribute="centerX" secondItem="qFX-Th-wW7" secondAttribute="centerX" id="Htx-iE-E6t"/>
+                            <constraint firstItem="JXG-iR-Rhb" firstAttribute="top" secondItem="jAW-i7-0qd" secondAttribute="bottom" constant="100" id="JB7-cH-xRW"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rY0-jN-lfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266.796875" y="-759.375"/>
+        </scene>
         <!--Checking View Controller-->
         <scene sceneID="Ipk-QW-ZBh">
             <objects>
@@ -263,22 +310,34 @@
                                     <constraint firstAttribute="height" constant="10" id="tJA-27-Rre"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMD-Ch-7Ua">
+                                <rect key="frame" x="984" y="748" width="10" height="10"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.59842609489999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bid-WV-VKm" firstAttribute="leading" secondItem="NMm-Xx-NTc" secondAttribute="leadingMargin" constant="10" id="1yb-ee-MGm"/>
+                            <constraint firstItem="aMD-Ch-7Ua" firstAttribute="width" secondItem="bid-WV-VKm" secondAttribute="width" id="HZi-Yl-Yy2"/>
+                            <constraint firstItem="aMD-Ch-7Ua" firstAttribute="height" secondItem="bid-WV-VKm" secondAttribute="height" id="PVO-gj-mwn"/>
                             <constraint firstItem="jDk-Cg-Mam" firstAttribute="top" secondItem="bid-WV-VKm" secondAttribute="bottom" constant="10" id="c72-JJ-OV2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aMD-Ch-7Ua" secondAttribute="trailing" constant="10" id="ggP-oG-4Jj"/>
+                            <constraint firstItem="jDk-Cg-Mam" firstAttribute="top" secondItem="aMD-Ch-7Ua" secondAttribute="bottom" constant="10" id="r6N-0T-4Ik"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Css-vK-2WU"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="viewCloudAnchor" destination="bid-WV-VKm" id="oZ3-Nd-Uul"/>
+                        <outlet property="viewLicenseAnchor" destination="aMD-Ch-7Ua" id="Dwf-4f-BT9"/>
                         <segue destination="kky-gz-aUo" kind="show" identifier="segueIntroToStart" id="tUt-7s-SEd"/>
                         <segue destination="i4h-wU-u70" kind="show" identifier="segueIntroToSetUp" id="4IB-yY-Rnf"/>
                         <segue destination="T8H-v7-vHP" kind="show" identifier="segueIntroToInstructions" id="66x-yL-g2W"/>
                         <segue destination="MG7-Q1-Gq1" kind="popoverPresentation" identifier="segueIntroToCloud" popoverAnchorView="bid-WV-VKm" id="dTg-5G-K2R">
                             <popoverArrowDirection key="popoverArrowDirection"/>
+                        </segue>
+                        <segue destination="hNe-cW-qUE" kind="popoverPresentation" identifier="segueIntroToInAppPurchase" popoverAnchorView="aMD-Ch-7Ua" id="pJj-9c-YQE">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
                 </viewController>
@@ -368,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tuq-1c-U0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876.7578124999998" y="-845.3125"/>
+            <point key="canvasLocation" x="1893" y="-781"/>
         </scene>
         <!--UITabBarController-foj-WQ-Y35-->
         <scene sceneID="9y5-cc-h6Y">

@@ -20,7 +20,11 @@
 @property (strong, nonatomic) UIButton *btnInstructions;
 @property (strong, nonatomic) UIButton *btnRestoreGame;
 @property (strong, nonatomic) UIButton *btnCloud;
+@property (strong, nonatomic) UIButton *btnLicense;
+
+
 @property (strong, nonatomic) IBOutlet UIView *viewCloudAnchor;
+@property (strong, nonatomic) IBOutlet UIView *viewLicenseAnchor;
 
 
 @property NSInteger restoreMode;

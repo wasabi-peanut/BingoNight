@@ -311,6 +311,8 @@
 		E39825491DE5054B00ACC5A7 /* LocalSettingsTrash.txt in Resources */ = {isa = PBXBuildFile; fileRef = E39825361DE5054B00ACC5A7 /* LocalSettingsTrash.txt */; };
 		E398254A1DE5054B00ACC5A7 /* GamePlayTrash.txt in Resources */ = {isa = PBXBuildFile; fileRef = E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */; };
 		E398254B1DE5054B00ACC5A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */; };
+		E3A58EEE1E9285590087E0F1 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3A58EED1E9285590087E0F1 /* StoreKit.framework */; };
+		E3A58EF11E9286690087E0F1 /* InAppPurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A58EF01E9286690087E0F1 /* InAppPurchaseViewController.m */; };
 		E3C55F671E64C03500078604 /* OwnSongsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C55F661E64C03500078604 /* OwnSongsTableViewController.m */; };
 		E3CE9D0B1E7E30200009594E /* CloudViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3CE9D0A1E7E30200009594E /* CloudViewController.m */; };
 		E3DD22CB1E1046EE002041C3 /* stop2.png in Resources */ = {isa = PBXBuildFile; fileRef = E3DD22CA1E1046EE002041C3 /* stop2.png */; };
@@ -953,6 +955,9 @@
 		E39825361DE5054B00ACC5A7 /* LocalSettingsTrash.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LocalSettingsTrash.txt; sourceTree = "<group>"; };
 		E39825371DE5054B00ACC5A7 /* GamePlayTrash.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = GamePlayTrash.txt; sourceTree = "<group>"; };
 		E39825381DE5054B00ACC5A7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3A58EED1E9285590087E0F1 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E3A58EEF1E9286690087E0F1 /* InAppPurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InAppPurchaseViewController.h; path = ../InAppPurchaseViewController.h; sourceTree = "<group>"; };
+		E3A58EF01E9286690087E0F1 /* InAppPurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InAppPurchaseViewController.m; path = ../InAppPurchaseViewController.m; sourceTree = "<group>"; };
 		E3C55F651E64C03500078604 /* OwnSongsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnSongsTableViewController.h; sourceTree = "<group>"; };
 		E3C55F661E64C03500078604 /* OwnSongsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnSongsTableViewController.m; sourceTree = "<group>"; };
 		E3CE9D091E7E30200009594E /* CloudViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CloudViewController.h; sourceTree = "<group>"; };
@@ -1257,6 +1262,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3A58EEE1E9285590087E0F1 /* StoreKit.framework in Frameworks */,
 				E3583A201E541580004ABC40 /* MediaPlayer.framework in Frameworks */,
 				E328E6001E063BCC004F10DA /* AVFoundation.framework in Frameworks */,
 			);
@@ -1282,6 +1288,7 @@
 		E328E5FE1E063BCC004F10DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E3A58EED1E9285590087E0F1 /* StoreKit.framework */,
 				E3583A1F1E541580004ABC40 /* MediaPlayer.framework */,
 				E328E5FF1E063BCC004F10DA /* AVFoundation.framework */,
 			);
@@ -1654,9 +1661,11 @@
 				E39825191DE5054B00ACC5A7 /* Assets.xcassets */,
 				E398251A1DE5054B00ACC5A7 /* Main.storyboard */,
 				58C248841E6FBC14005B9645 /* GameSequence.storyboard */,
+				58C248821E6FBB12005B9645 /* OwnSongs.storyboard */,
+				E3A58EEF1E9286690087E0F1 /* InAppPurchaseViewController.h */,
+				E3A58EF01E9286690087E0F1 /* InAppPurchaseViewController.m */,
 				E3CE9D091E7E30200009594E /* CloudViewController.h */,
 				E3CE9D0A1E7E30200009594E /* CloudViewController.m */,
-				58C248821E6FBB12005B9645 /* OwnSongs.storyboard */,
 				E3C55F651E64C03500078604 /* OwnSongsTableViewController.h */,
 				E3C55F661E64C03500078604 /* OwnSongsTableViewController.m */,
 				E3749F801E43152700178ACD /* RaffleSetUpTableViewController.h */,
@@ -2788,6 +2797,7 @@
 			files = (
 				E3E6F3721E1212F4003E3732 /* checkingPatterns.m in Sources */,
 				E39825441DE5054B00ACC5A7 /* CheckingViewController.m in Sources */,
+				E3A58EF11E9286690087E0F1 /* InAppPurchaseViewController.m in Sources */,
 				E39824E81DE5053100ACC5A7 /* main.m in Sources */,
 				E39825411DE5054B00ACC5A7 /* PDFRenderer.m in Sources */,
 				E3F66C911DF9000D000B3D06 /* TextViewController.m in Sources */,

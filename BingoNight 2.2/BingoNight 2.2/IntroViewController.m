@@ -160,6 +160,20 @@
     [_btnCloud addTarget:self action:@selector(pushCloud) forControlEvents:UIControlEventTouchDown];
     
     
+    _btnLicense = [[UIButton alloc] init];
+    _btnLicense.frame = CGRectMake(0.82 * width,0.96 * height, .15*width, .03* height);
+    _btnLicense.backgroundColor = [UIColor whiteColor];
+    _btnLicense.layer.cornerRadius = 10;
+    
+    [_btnLicense setTitle:@"Buy License" forState:UIControlStateNormal];
+    [_btnLicense setTitleColor:buttonTextColor forState:UIControlStateNormal];
+    _btnLicense.titleLabel.font = [UIFont fontWithName:buttonFontName size:.02 * width];
+    [_btnLicense addTarget:self action:@selector(pushLicense) forControlEvents:UIControlEventTouchDown];
+    
+    
+
+    
+    
     
     [self.view addSubview:_labelTitleBox];
     [self.view addSubview:_labelBottomBox];
@@ -170,6 +184,7 @@
     [self.view addSubview:_btnInstructions];
     [self.view addSubview:_btnRestoreGame];
     [self.view addSubview:_btnCloud];
+    [self.view addSubview:_btnLicense];
     
     
     
@@ -200,8 +215,12 @@
 
 -(void)pushInstructions{
     [self performSegueWithIdentifier:@"segueIntroToInstructions" sender:self];
-    //Do something
     
+    
+}
+
+-(void)pushLicense{
+    [self performSegueWithIdentifier:@"segueIntroToInAppPurchase" sender:self];
 }
 
 -(void)restoreGame {
