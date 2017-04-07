@@ -231,8 +231,9 @@
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    NSInteger rows;
-    if (pickerView == _pickerChecking) {
+    NSInteger rows = 0;
+   
+    
         switch (component) {
             case 0:
                 rows = _arrayGameNumbers.count;
@@ -251,7 +252,7 @@
                 break;
         }
   
-    }
+    
     
     return rows;
 }

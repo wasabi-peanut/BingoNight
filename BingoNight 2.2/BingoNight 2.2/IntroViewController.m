@@ -184,7 +184,7 @@
     [self.view addSubview:_btnInstructions];
     [self.view addSubview:_btnRestoreGame];
     [self.view addSubview:_btnCloud];
-    [self.view addSubview:_btnLicense];
+   // [self.view addSubview:_btnLicense];
     
     
     
