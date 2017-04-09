@@ -17,8 +17,8 @@
 
 @implementation InAppPurchaseViewController
 
-#warning MATCH THIS WITH THE NAME IN APP STORE
-#define kBuyLicenseProductIdentifier @"License Agreement"
+
+#define kBuyLicenseProductIdentifier @"CommercialUse_1YR"
 
 
 - (void)viewDidLoad {

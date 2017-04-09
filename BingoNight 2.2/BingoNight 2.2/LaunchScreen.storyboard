@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="ipad9_7" orientation="landscape">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="ipad12_9" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,19 +19,37 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1366" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bingo_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="whP-Tb-WWn">
-                                <rect key="frame" x="93" y="70" width="838" height="628"/>
+                                <rect key="frame" x="124" y="93" width="1118" height="838"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AandA Development" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11r-Ip-m2E">
+                                <rect key="frame" x="605" y="939" width="157" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.aandadevelopment.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvg-VS-KWo">
+                                <rect key="frame" x="570" y="970" width="226" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.1419270932674408" green="0.2305564284324646" blue="0.60165542364120483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="whP-Tb-WWn" secondAttribute="trailing" multiplier="1.1" id="5JA-iu-7sq"/>
+                            <constraint firstItem="11r-Ip-m2E" firstAttribute="top" secondItem="whP-Tb-WWn" secondAttribute="bottom" constant="10" id="8L7-ZR-IdC"/>
+                            <constraint firstItem="11r-Ip-m2E" firstAttribute="centerX" secondItem="whP-Tb-WWn" secondAttribute="centerX" id="9Rt-48-Q4o"/>
                             <constraint firstItem="whP-Tb-WWn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="OjV-IT-ZkK"/>
+                            <constraint firstItem="11r-Ip-m2E" firstAttribute="top" secondItem="whP-Tb-WWn" secondAttribute="bottom" constant="8" symbolic="YES" id="USl-TT-ODA"/>
                             <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="whP-Tb-WWn" secondAttribute="bottom" multiplier="1.1" id="aui-ai-Lgv"/>
+                            <constraint firstItem="Zvg-VS-KWo" firstAttribute="centerX" secondItem="11r-Ip-m2E" secondAttribute="centerX" id="bpI-9g-ALJ"/>
+                            <constraint firstItem="11r-Ip-m2E" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="diz-eU-uWf"/>
                             <constraint firstItem="whP-Tb-WWn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jbU-zc-rCD"/>
+                            <constraint firstItem="Zvg-VS-KWo" firstAttribute="top" secondItem="11r-Ip-m2E" secondAttribute="bottom" constant="10" id="sT2-4l-YPL"/>
                         </constraints>
                     </view>
                 </viewController>

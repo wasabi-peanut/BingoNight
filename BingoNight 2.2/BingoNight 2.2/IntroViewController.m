@@ -77,7 +77,7 @@
      _labelBottomBox.layer.shadowOpacity = 1;
 
     _labelCreditBox = [[UILabel alloc] initWithFrame:CGRectMake(horizontalPercentage*width, .90*height, width*(1-2*horizontalPercentage), .05*height)];
-    _labelCreditBox.text = @"An A&A Developments Production";
+    _labelCreditBox.text = @"An A&A Development Production";
     _labelCreditBox.textColor = labelTextColor;
     _labelCreditBox.backgroundColor = [UIColor clearColor];
     _labelCreditBox.font = [UIFont fontWithName:labelFontName size:width*.025];
@@ -159,7 +159,8 @@
     _btnCloud.titleLabel.font = [UIFont fontWithName:buttonFontName size:.03 * width];
     [_btnCloud addTarget:self action:@selector(pushCloud) forControlEvents:UIControlEventTouchDown];
     
-    
+//USE THIS FOR IN APP LICENSE PURCHASE
+    /*
     _btnLicense = [[UIButton alloc] init];
     _btnLicense.frame = CGRectMake(0.82 * width,0.96 * height, .15*width, .03* height);
     _btnLicense.backgroundColor = [UIColor whiteColor];
@@ -169,7 +170,7 @@
     [_btnLicense setTitleColor:buttonTextColor forState:UIControlStateNormal];
     _btnLicense.titleLabel.font = [UIFont fontWithName:buttonFontName size:.02 * width];
     [_btnLicense addTarget:self action:@selector(pushLicense) forControlEvents:UIControlEventTouchDown];
-    
+    */
     
 
     
@@ -184,7 +185,7 @@
     [self.view addSubview:_btnInstructions];
     [self.view addSubview:_btnRestoreGame];
     [self.view addSubview:_btnCloud];
-   // [self.view addSubview:_btnLicense];
+  //  [self.view addSubview:_btnLicense];
     
     
     
