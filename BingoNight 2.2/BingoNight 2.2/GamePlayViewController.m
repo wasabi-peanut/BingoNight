@@ -701,9 +701,6 @@
     
     for (int z=0; z<_arrayCalledNumbers.count;z++) {
         
-        
-        
-    
     UIView *shadow =[[UIView alloc] init];
     shadow.layer.shadowColor = [[UIColor blackColor] CGColor];
     shadow.layer.shadowOpacity = 0.5f;
@@ -716,14 +713,17 @@
     activeBall =[[BallColorView alloc] initWithFrame:CGRectMake(0, 0, _lastCalledWidth/1, _lastCalledHeight/1)];
     activeBall.layer.cornerRadius = activeBall.bounds.size.height/2;
     activeBall.clipsToBounds = YES;
-    
+     
    // [self.view addSubview:activeBall];
     
     UILabel *number = [[UILabel alloc]initWithFrame:CGRectMake(0,0, _lastCalledWidth/1 , _lastCalledHeight/1)];
     number.center = activeBall.center;
-    number.text =  _arrayCalledNumbers[z];
+#warning WHY DID I NEED TO COMMENT OUT THIS LINE?
+    //number.text =  _arrayCalledNumbers[z];
+        number.text = [NSString stringWithFormat:@"%@",_arrayCalledNumbers[z]];
         
-    [_arrayCalledBallsLabels insertObject:number atIndex:0];
+        
+   [_arrayCalledBallsLabels insertObject:number atIndex:0];
     [_arrayCalledBalls insertObject:activeBall atIndex:0];
     }
 
