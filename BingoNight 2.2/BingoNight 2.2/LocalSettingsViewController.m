@@ -1496,7 +1496,7 @@
         }];
         
         UIAlertAction *DoNotDeletePreset = [UIAlertAction actionWithTitle:@"Do Not Delete" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            //
+            
         }];
         
         if ((_presetSelected<_protectedPresets && sentNumber == 2) || (_gridSelected<_protectedGrids && sentNumber == 4)) {

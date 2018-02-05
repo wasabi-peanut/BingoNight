@@ -718,9 +718,9 @@
     
     UILabel *number = [[UILabel alloc]initWithFrame:CGRectMake(0,0, _lastCalledWidth/1 , _lastCalledHeight/1)];
     number.center = activeBall.center;
-#warning WHY DID I NEED TO COMMENT OUT THIS LINE?
+//#warning WHY DID I NEED TO COMMENT OUT THIS LINE?
     //number.text =  _arrayCalledNumbers[z];
-        number.text = [NSString stringWithFormat:@"%@",_arrayCalledNumbers[z]];
+    number.text = [NSString stringWithFormat:@"%@",_arrayCalledNumbers[z]];
         
         
    [_arrayCalledBallsLabels insertObject:number atIndex:0];
