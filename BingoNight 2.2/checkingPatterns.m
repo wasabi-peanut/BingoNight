@@ -1337,7 +1337,7 @@
     }
     if (_gameOver == 0)  {
         [UIView animateWithDuration:3 animations:^{
-            _banner.alpha = 0;
+            self->_banner.alpha = 0;
         }];
     }
     

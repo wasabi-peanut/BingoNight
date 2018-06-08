@@ -1488,10 +1488,10 @@
         UIAlertAction *DeletePreset = [UIAlertAction actionWithTitle:@"Delete It" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             
             if (sentNumber == 2) {
-                [self alertActionWithAlertNumber:sentNumber name:nil preset:_presetSelected];
+                [self alertActionWithAlertNumber:sentNumber name:nil preset:self.presetSelected];
             }
             if (sentNumber == 4) {
-                [self alertActionWithAlertNumber:sentNumber name:nil preset:_gridSelected];
+                [self alertActionWithAlertNumber:sentNumber name:nil preset:self.gridSelected];
             }
         }];
         

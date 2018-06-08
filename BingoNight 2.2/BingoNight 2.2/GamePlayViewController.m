@@ -1000,7 +1000,7 @@
     
     _checking.alpha = 0;
     [UIView animateWithDuration:1.0 delay:0.5 options:UIViewAnimationOptionRepeat | UIViewAnimationOptionAutoreverse animations:^{
-        _checking.alpha = 1;
+        self.checking.alpha = 1;
     } completion:nil];
     
     _winnerCycle = YES;
@@ -1212,7 +1212,7 @@
     [CATransaction commit];
     
     [UIView animateWithDuration:2 delay:_ballRollTime/2 options:UIViewAnimationOptionCurveEaseIn animations:^{
-       ((UILabel *) _arrayCalledBallsLabels[0]).alpha = 1;
+        ((UILabel *) self.arrayCalledBallsLabels[0]).alpha = 1;
     } completion:^(BOOL finished) {
         
     }];
@@ -1238,14 +1238,14 @@
         
         
         
-            _ready = YES;
+            self.ready = YES;
         [self createBar];
-        if (_useSelector) {
-            for (UIButton *myButton in _arrayButtonsCreated) {
+        if (self.useSelector) {
+            for (UIButton *myButton in self.arrayButtonsCreated) {
         
-                if (myButton.tag == _numberCalled){
-                    myButton.backgroundColor = _usedBoxBackgroundColor;
-                    myButton.tintColor = _usedBoxLetterColor;
+                if (myButton.tag == self.numberCalled){
+                    myButton.backgroundColor = self.usedBoxBackgroundColor;
+                    myButton.tintColor = self.usedBoxLetterColor;
                 }
             }
             
