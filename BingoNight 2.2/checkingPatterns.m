@@ -10,6 +10,8 @@
 
 @interface checkingPatterns()  <UICollisionBehaviorDelegate>
 
+//TEST GITHUB
+
 
 @end
 
