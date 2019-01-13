@@ -17,7 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+   //[self.navigationController setNavigationBarHidden:NO animated:NO];
+    self.navigationController.navigationBarHidden=NO;
+    
     _height = [UIScreen mainScreen].bounds.size.height;
     _width = [UIScreen mainScreen].bounds.size.width;
     

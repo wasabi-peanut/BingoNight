@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     
-     _musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
+    _musicPlayer = [MPMusicPlayerController applicationMusicPlayer];
     _keyForArrayOfSongNames = @"keyForArrayOfSongNames";
     _keyForArrayOfSongsPicked = @"keyForArrayOfSongsPicked";
     _keyForArrayOfSongArtists = @"keyForArrayOfSongArtists";
